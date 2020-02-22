@@ -1,19 +1,21 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Business</title>
-</head>
-<body>
-    <h1>Business</h1>
-    <hr>
-    @foreach($businesses as $business)
-        <h1>Name: {{ $business->name }}</h1>
-        <h2>Client: {{ $business->client }}</h2>
+@extends('app')
+
+@section('title', 'Business')
+
+@section('content')
+    <div class="sub-title">
+        <div class="container">
+            <h1 class="text-ellipsis text-center">
+                Business
+            </h1>
+        </div>
+    </div>
+    <section class="bg-white">
         <hr>
-    @endforeach
-</body>
-</html>
+        @foreach($businesses as $business)
+            <h1>Name: {{ $business->name }}</h1>
+            <h2>Client: {{ $business->client }}</h2>
+            <hr>
+        @endforeach
+    </section>
+@endsection
