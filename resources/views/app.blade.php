@@ -30,10 +30,10 @@
                         <a class="nav-link js-scroll-trigger" href="{{ url('/about') }}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="{{ url('business') }}">Business</a>
+                        <a class="nav-link js-scroll-trigger" href="{{ url('/businesses') }}">Business</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="{{ url('career') }}">Careers</a>
+                        <a class="nav-link js-scroll-trigger" href="{{ url('/career') }}">Careers</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link js-scroll-trigger" href="{{ url('/contact') }}">Contact</a>

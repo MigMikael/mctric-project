@@ -4,9 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Business;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class BusinessController extends Controller
 {
+    public $status = [
+        'on going' => 'On Going',
+        'in process' => 'In Process',
+        'complete' => 'Complete'
+    ];
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +22,7 @@ class BusinessController extends Controller
     public function index()
     {
         $businesses = Business::all();
-        return response(view('business', ['businesses' => $businesses]));
+        return response(view('business.index', ['businesses' => $businesses]));
     }
 
     /**
@@ -25,18 +32,22 @@ class BusinessController extends Controller
      */
     public function create()
     {
-        //
+        return response(view('business.create', ['status' => $this->status]));
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        $business = $request->all();
+        $business['slug'] = str_replace(" ", "_", $business['name']);
+        Business::create($business);
+
+        return redirect()->action("BusinessController@index");
     }
 
     /**
@@ -53,34 +64,46 @@ class BusinessController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Business  $business
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
      */
-    public function edit(Business $business)
+    public function edit($id)
     {
-        //
+        $business = Business::findOrFail($id);
+        Log::info("Business");
+        Log::info($business->name);
+
+        return view('business.edit', ['business' => $business, 'status' => $this->status]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Business  $business
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, Business $business)
+    public function update(Request $request, $id)
     {
-        //
+        $business = Business::findOrFail($id);
+        $updateBusiness = $request->all();
+        $updateBusiness['slug'] = str_replace(" ", "_", $updateBusiness['name']);
+
+        $business->update($updateBusiness);
+        return redirect()->action("BusinessController@index");
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Business  $business
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy(Business $business)
+    public function destroy($id)
     {
-        //
+        $business = Business::findOrFail($id);
+        $business->delete();
+
+        return redirect()->action("BusinessController@index");
     }
 }
