@@ -29,6 +29,7 @@ class CreateBusinessesTable extends Migration
             $table->string('category')->default("");    // MechanicalElectrical, CivilConstruction, UtilityPipeline, RenewEnergy, SupplyChain
             $table->string('status')->default("");      // OnGoing, InProcess, Complete
             $table->boolean('display')->default(false); // show or not show
+            $table->integer('image');
             $table->timestamps();
         });
     }

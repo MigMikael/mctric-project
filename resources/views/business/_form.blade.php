@@ -49,6 +49,11 @@
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
+    {!! Form::label('image', 'Image') !!}
+    {!! Form::file('image', ['class' => 'form-control', 'id' => 'upload', 'value' => 'Choose a file', 'accept' => 'image/*']) !!}
+</div>
+
+<div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('Display') !!}
     {!! Form::select('display', [true => "Show", false => "Not Show"], null, ['class' => 'form-control']) !!}
 </div>

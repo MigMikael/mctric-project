@@ -11,7 +11,7 @@
         </div>
     </div>
     <section class="bg-light">
-        {!! Form::model($business, ['url' => 'businesses/'.$business->id, 'method' => 'put']) !!}
+        {!! Form::model($business, ['url' => 'businesses/'.$business->id, 'method' => 'put', 'files' => 'true']) !!}
             @include('business._form')
             <button class="btn btn-primary form-control" type="submit">Finish</button>
         {!! Form::close() !!}

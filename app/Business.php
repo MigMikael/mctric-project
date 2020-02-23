@@ -20,7 +20,8 @@ class Business extends Model
         'slug',
         'category',
         'status',
-        'display'
+        'display',
+        'image'
     ];
 
     public function scopeShow($query) {

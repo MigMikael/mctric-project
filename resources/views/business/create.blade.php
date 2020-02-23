@@ -11,7 +11,7 @@
         </div>
     </div>
     <section class="bg-light">
-        {!! Form::open(['url' => 'businesses', 'method' => 'post']) !!}
+        {!! Form::open(['url' => 'businesses', 'method' => 'post', 'files' => 'true']) !!}
             @include('business._form')
             <button class="btn btn-primary form-control" type="submit">Finish</button>
         {!! Form::close() !!}

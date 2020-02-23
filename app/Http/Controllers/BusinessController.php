@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Business;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use App\Traits\ImageTrait;
 
 class BusinessController extends Controller
 {
+    use ImageTrait;
     public $status = [
         'on going' => 'On Going',
         'in process' => 'In Process',
@@ -45,6 +47,11 @@ class BusinessController extends Controller
     {
         $business = $request->all();
         $business['slug'] = str_replace(" ", "_", $business['name']);
+
+        $image = $request->file('image');
+        $image = $this->storeImage($image, "");
+        $business['image'] = $image->id;
+
         Business::create($business);
 
         return redirect()->action("BusinessController@index");
