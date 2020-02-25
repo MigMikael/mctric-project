@@ -16,7 +16,7 @@
         <div>
             @foreach($businesses as $business)
                 <div style="background-image: url('{{ url('image/show/'.$business->image) }}'); background-size: cover; padding-top: 3%; padding-bottom: 3%">
-                    <div class="col-md-8" style="background-color: rgba(255, 255, 255, 0.5)">
+                    <div class="col-md-6" style="background-color: rgba(255, 255, 255, 0.7)">
                         <h1>Name: {{ $business->name }}</h1>
                         @if($business->client != "")
                             <h2>Client: {{ $business->client }}</h2>
