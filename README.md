@@ -39,6 +39,7 @@ _ทดสอบการติดตั้ง composer ด้วยการพ
 
 ## เชื่อมต่อ Database
 เปิดไฟล์ .env ด้วย text editor อะไรก็ได้ จากนั้นแก้แก้บรรทัดที่ 12 - 14 ตามนี้ (username & pass ตามที่ตั้งไว้ ของผมเป็นแบบนี้)
+
 DB_DATABASE=mctric_db
 
 DB_USERNAME=root
