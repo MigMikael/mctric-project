@@ -22,10 +22,17 @@ Route::get('/contact', function() {
     return view('contact');
 });
 
-Route::get('/business', "BusinessController@index");
-
 Route::get('/about', function() {
     return view('about');
 });
+
+Route::get('/businesses', "BusinessController@index");
+Route::get('/businesses/create', "BusinessController@create");
+Route::post('/businesses', "BusinessController@store");
+Route::get('/businesses/{id}/edit', "BusinessController@edit");
+Route::put('/businesses/{id}', "BusinessController@update");
+Route::delete('/businesses/{id}', "BusinessController@destroy");
+
+Route::get('image/show/{id}', 'ImageController@show');
 
 Route::get('/test', "HomeController@test");
