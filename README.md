@@ -8,15 +8,18 @@ https://www.apachefriends.org/index.html
 https://getcomposer.org/Composer-Setup.exe
 
 _ทดสอบการติดตั้ง composer ด้วยการพิมพ์คำสั่งต่อไปนี้ใน command line_
+
 `composer`
 
 ---
 
 ## ติดตั้งตัวโปรเจค
 โคลนโปรเจคจาก Github
+
 `git clone https://github.com/MigMikael/mctric-project.git`
 
 ย้ายไป branch dev
+
 `git checkout dev`
 
 `git pull origin dev`
@@ -25,9 +28,11 @@ _ทดสอบการติดตั้ง composer ด้วยการพ
 
 ## ติดตั้ง Package ที่จำเป็น
 เปิด command line แล้ว cd ไปในโฟลเดอร์โปรเจค (cd mctric-project) จากนั้นพิมพ์คำสั่ง
+
 `composer install`
 
 ก็อบปี้ไฟล์ .env.example ที่อยู่ภายในโปรเจคแล้วเปลี่ยนชื่อเป็น .env จากนั้นพิมพ์คำสั่ง
+
 `php artisan key:generate`
 
 ---
@@ -46,6 +51,7 @@ DB_PASSWORD=
 (จริงๆ ชื่อดาต้าเบสจะตั้งอะไรก็ได้แหละขอให้เหมือนกันกับในไฟล์ .env)
 
 เปิด command line cd ไปที่โฟลเดอร์โปรเจคแล้วพิมคำสั่ง
+
 `php artisan migrate`
 
 ---
