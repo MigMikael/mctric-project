@@ -18,6 +18,7 @@ _ทดสอบการติดตั้ง composer ด้วยการพ
 
 ย้ายไป branch dev
 `git checkout dev`
+
 `git pull origin dev`
 
 ---
