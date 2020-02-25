@@ -40,15 +40,21 @@ _ทดสอบการติดตั้ง composer ด้วยการพ
 ## เชื่อมต่อ Database
 เปิดไฟล์ .env ด้วย text editor อะไรก็ได้ จากนั้นแก้แก้บรรทัดที่ 12 - 14 ตามนี้ (username & pass ตามที่ตั้งไว้ ของผมเป็นแบบนี้)
 DB_DATABASE=mctric_db
+
 DB_USERNAME=root
+
 DB_PASSWORD=
+
 
 เปิด xampp จากนั้น start Apache และ MySQL
 
+
 เข้า web browser ไปที่ phpmyadmin http://localhost/phpmyadmin
+
 
 ในแถบด้านซ้ายบนกด New ช่อง Database name ใส่ชื่อดาต้าเบสตามที่ได้ใส่ไว้ในไฟล์ .env (mctric_db) กดปุ่ม Create
 (จริงๆ ชื่อดาต้าเบสจะตั้งอะไรก็ได้แหละขอให้เหมือนกันกับในไฟล์ .env)
+
 
 เปิด command line cd ไปที่โฟลเดอร์โปรเจคแล้วพิมคำสั่ง
 
