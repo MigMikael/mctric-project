@@ -8,9 +8,61 @@
             <h1 class="text-ellipsis text-center">
                 Business
             </h1>
+            <!--
             <a href="{{ url('businesses/create') }}" class="btn btn-primary">Create</a>
+            -->
         </div>
     </div>
+    <section class="services">
+        <div class="container">
+           <div class="section-title">
+              <h2>บริการของเรา</h2>
+              <p class="col-md-8 offset-md-2">คำอธิบาย</p>
+           </div>
+           <div class="row">
+              <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                 <div class="service-box">
+                     <div class="services-wrapper">
+                    <h4><a href="">Civil & Construction</a></h4>
+                      </div>
+                 </div>
+              </div>
+              <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                 <div class="service-box">
+                 <div class="services-wrapper">
+                    <h4><a href="">Mechanical, Electrical and Plumbing services (MEP)</a></h4>
+                  </div>
+                 </div>
+              </div>
+              <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                 <div class="service-box">
+                 <div class="services-wrapper">
+                    <h4><a href="">Utility Pipeline</a></h4>
+                  </div>
+                 </div>
+              </div>
+              <div class="col-lg-2">
+              </div>
+              <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                 <div class="service-box">
+                 <div class="services-wrapper">
+                    <h4><a href="">Renewable Energy</a></h4>
+                  </div>
+                 </div>
+              </div>
+              <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                 <div class="service-box">
+                 <div class="services-wrapper">
+                    <h4><a href="">Logistic system</a></h4>
+                  </div>
+                 </div>
+              </div>
+              <div class="col-lg-2">
+              </div>
+           </div>
+        </div>
+    </section>
+    <!--
     <section class="bg-white">
         <hr>
         <div>
@@ -51,4 +103,5 @@
             @endforeach
         </div>
     </section>
+    -->
 @endsection
