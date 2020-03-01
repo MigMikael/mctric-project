@@ -47,11 +47,11 @@
             </div>
         </div>
     </section>
-    <section class="bg-primary">
+    <section class="bg-white">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-white text-center" style="padding-bottom: 50px;">รายชื่อผู้บริหาร</h1>
+                    <h1 class="text-center" style="padding-bottom: 50px;">รายชื่อผู้บริหาร</h1>
                 </div>
             </div>
             <div class="row">
