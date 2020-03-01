@@ -61,11 +61,12 @@ class BusinessController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Business  $business
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(Business $business)
+    public function show($id)
     {
-        //
+        $business = Business::findOrFail($id);
+        return view('business.show', ['business' => $business]);
     }
 
     /**
