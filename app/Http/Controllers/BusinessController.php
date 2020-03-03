@@ -11,9 +11,17 @@ class BusinessController extends Controller
 {
     use ImageTrait;
     public $status = [
-        'on going' => 'On Going',
-        'in process' => 'In Process',
+        'on_going' => 'On Going',
+        'in_process' => 'In Process',
         'complete' => 'Complete'
+    ];
+
+    public $category = [
+        'mechanical_electrical_services_plumbing_services' => 'Mechanical & Electrical Services & Plumbing Services (MEP)',
+        'civil_construction' => 'Civil & Construction',
+        'utility_pipeline' => 'Utility Pipeline',
+        'renew_energy' => 'Renew Energy',
+        'supply_chain_automation_systems' => 'Supply Chain Automation Systems'
     ];
 
     /**
@@ -27,6 +35,17 @@ class BusinessController extends Controller
         return response(view('business.index', ['businesses' => $businesses]));
     }
 
+    public function filter($category)
+    {
+        Log::info("Category");
+        Log::info($category);
+        $businesses = Business::where("category", "=", $category)->get();
+        return view('business.list', [
+            'businesses' => $businesses,
+            'category' => $this->category[$category]
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -34,13 +53,16 @@ class BusinessController extends Controller
      */
     public function create()
     {
-        return response(view('business.create', ['status' => $this->status]));
+        return response(view('business.create', [
+            'status' => $this->status,
+            'category' => $this->category
+        ]));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
@@ -60,7 +82,7 @@ class BusinessController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Business  $business
+     * @param \App\Business $business
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show($id)
@@ -81,7 +103,11 @@ class BusinessController extends Controller
         Log::info("Business");
         Log::info($business->name);
 
-        return view('business.edit', ['business' => $business, 'status' => $this->status]);
+        return view('business.edit', [
+            'business' => $business,
+            'status' => $this->status,
+            'category' => $this->category
+        ]);
     }
 
     /**

@@ -18,11 +18,11 @@ Route::get('/career', function () {
     return view('career');
 });
 
-Route::get('/contact', function() {
+Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/about', function() {
+Route::get('/about', function () {
     return view('about');
 });
 
@@ -33,6 +33,7 @@ Route::get('/businesses/{id}/edit', "BusinessController@edit");
 Route::get('/businesses/{id}', "BusinessController@show");
 Route::put('/businesses/{id}', "BusinessController@update");
 Route::delete('/businesses/{id}', "BusinessController@destroy");
+Route::get('/businesses/category/{category}', "BusinessController@filter");
 
 Route::get('image/show/{id}', 'ImageController@show');
 

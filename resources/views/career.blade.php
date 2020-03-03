@@ -14,8 +14,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 order-lg-3 v-center">
-                    <img src="https://images.pexels.com/photos/2036686/pexels-photo-2036686.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                         style="height: 300px; width: 100%; object-fit: cover;">
+                    <img
+                        src="https://images.pexels.com/photos/2036686/pexels-photo-2036686.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        style="height: 300px; width: 100%; object-fit: cover;">
                 </div>
                 <div class="col-md-1 order-lg-2"></div>
                 <div class="col-md-5 order-lg-1 v-center">
@@ -27,8 +28,9 @@
             </div>
             <div class="row" style="padding-top: 20px">
                 <div class="col-md-6 v-center">
-                    <img src="https://images.pexels.com/photos/310479/pexels-photo-310479.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                         style="height: 300px; width: 100%; object-fit: cover;">
+                    <img
+                        src="https://images.pexels.com/photos/310479/pexels-photo-310479.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                        style="height: 300px; width: 100%; object-fit: cover;">
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-5 v-center">
@@ -54,7 +56,9 @@
                         <div class="card-body">
                             <h5 class="card-title text-center">ตำแหน่ง</h5>
                             <div class="text-center">
-                                <button type="button" class="btn learn-more-btn" data-toggle="modal" data-target="#myModal">รายละเอียด</button>
+                                <button type="button" class="btn learn-more-btn" data-toggle="modal"
+                                        data-target="#myModal">รายละเอียด
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -67,7 +71,9 @@
                         <div class="card-body">
                             <h5 class="card-title text-center">ตำแหน่ง</h5>
                             <div class="text-center">
-                                <button type="button" class="btn learn-more-btn" data-toggle="modal" data-target="#myModal">รายละเอียด</button>
+                                <button type="button" class="btn learn-more-btn" data-toggle="modal"
+                                        data-target="#myModal">รายละเอียด
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -80,7 +86,9 @@
                         <div class="card-body">
                             <h5 class="card-title text-center">ตำแหน่ง</h5>
                             <div class="text-center">
-                                <button type="button" class="btn learn-more-btn" data-toggle="modal" data-target="#myModal">รายละเอียด</button>
+                                <button type="button" class="btn learn-more-btn" data-toggle="modal"
+                                        data-target="#myModal">รายละเอียด
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -93,7 +101,9 @@
                         <div class="card-body">
                             <h5 class="card-title text-center">ตำแหน่ง</h5>
                             <div class="text-center">
-                                <button type="button" class="btn learn-more-btn" data-toggle="modal" data-target="#myModal">รายละเอียด</button>
+                                <button type="button" class="btn learn-more-btn" data-toggle="modal"
+                                        data-target="#myModal">รายละเอียด
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -106,7 +116,9 @@
                         <div class="card-body">
                             <h5 class="card-title text-center">ตำแหน่ง</h5>
                             <div class="text-center">
-                                <button type="button" class="btn learn-more-btn" data-toggle="modal" data-target="#myModal">รายละเอียด</button>
+                                <button type="button" class="btn learn-more-btn" data-toggle="modal"
+                                        data-target="#myModal">รายละเอียด
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -119,7 +131,9 @@
                         <div class="card-body">
                             <h5 class="card-title text-center">ตำแหน่ง</h5>
                             <div class="text-center">
-                                <button type="button" class="btn learn-more-btn" data-toggle="modal" data-target="#myModal">รายละเอียด</button>
+                                <button type="button" class="btn learn-more-btn" data-toggle="modal"
+                                        data-target="#myModal">รายละเอียด
+                                </button>
                             </div>
                         </div>
                     </div>

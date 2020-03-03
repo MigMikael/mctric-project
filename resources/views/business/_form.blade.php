@@ -40,7 +40,7 @@
 
 <div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('Category') !!}
-    {!! Form::text('category', null, ['class' => 'form-control']) !!}
+    {!! Form::select('category', $category, null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">

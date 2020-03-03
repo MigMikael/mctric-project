@@ -10,9 +10,11 @@
                 <div class="w-100 text-white" style="z-index: 3">
                     <h1 class="header-title">McTRIC</h1><h4>Public Company Limited</h4><br>
                     <!--<p class="header-subtitle">Company Description</p>-->
-                    <button type="button" class="btn view-btn video-btn" data-toggle="modal" data-src="https://player.vimeo.com/video/383726515" data-target="#myModal">
+                    <button type="button" class="btn view-btn video-btn" data-toggle="modal"
+                            data-src="https://player.vimeo.com/video/383726515" data-target="#myModal">
                         <i class="fas fa-play-circle fa-lg"></i> Watch Our
-                        Story</button>
+                        Story
+                    </button>
                 </div>
             </div>
         </div>
