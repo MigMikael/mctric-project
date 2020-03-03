@@ -21,21 +21,27 @@
            </div>
            <div class="row">
               <div class="col-lg-4 col-md-6" data-aos="fade-up">
-                 <div class="service-box">
+                  <div></div>
+                 <div class="service-box" style="background-image: url(https://image.freepik.com/free-photo/construction-silhouette_1127-3246.jpg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+                 background-blend-mode: overlay;
+                 background-position: center; background-size: cover;">
                      <div class="services-wrapper">
                     <h4><a href="">Civil & Construction</a></h4>
                       </div>
                  </div>
               </div>
               <div class="col-lg-4 col-md-6" data-aos="fade-up">
-                 <div class="service-box">
+                 <div class="service-box" style="background-image: url(https://image.freepik.com/free-photo/tools-equipment-plumbing-table_23-2147772310.jpg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+                 background-blend-mode: overlay; background-position: center; background-size: cover;">
                  <div class="services-wrapper">
                     <h4><a href="">Mechanical, Electrical and Plumbing services (MEP)</a></h4>
                   </div>
                  </div>
               </div>
               <div class="col-lg-4 col-md-6" data-aos="fade-up">
-                 <div class="service-box">
+                 <div class="service-box" style="background-image: url(https://image.freepik.com/free-photo/air-conditioning-buildings_179755-11.jpg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+                 background-blend-mode: overlay;
+                 background-position: center; background-size: cover;">
                  <div class="services-wrapper">
                     <h4><a href="">Utility Pipeline</a></h4>
                   </div>
@@ -44,14 +50,18 @@
               <div class="col-lg-2">
               </div>
               <div class="col-lg-4 col-md-6" data-aos="fade-up">
-                 <div class="service-box">
+                 <div class="service-box" style="background-image: url(https://image.freepik.com/free-photo/man-worker-firld-by-solar-panels_1303-15597.jpg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+                 background-blend-mode: overlay;
+                 background-position: center; background-size: cover;">
                  <div class="services-wrapper">
-                    <h4><a href="">Renewable Energy</a></h4>
+                    <h4 style="text-white"><a href="">Renewable Energy</a></h4>
                   </div>
                  </div>
               </div>
               <div class="col-lg-4 col-md-6" data-aos="fade-up">
-                 <div class="service-box">
+                 <div class="service-box" style="background-image: url(https://image.freepik.com/free-photo/foreman-control-loading-containers-box-truck_28668-241.jpg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+                 background-blend-mode: overlay;
+                 background-position: center; background-size: cover;">
                  <div class="services-wrapper">
                     <h4><a href="">Logistic system</a></h4>
                   </div>
