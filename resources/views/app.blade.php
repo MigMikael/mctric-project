@@ -44,6 +44,26 @@
                         Cheque
                     </a>
                 </li>
+                @if(Auth::check())
+                    {{--User Loggin--}}
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{{ url('/dashboard') }}">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('logout') }}"
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+                    </li>
+                    <form id="logout-form" action="{{ url('logout') }}" method="POST">
+                        {{ csrf_field() }}
+                    </form>
+                @else
+                    {{--User Not Loggin--}}
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="{{ url('/login') }}">Login</a>
+                    </li>
+                @endif
             </ul>
         </div>
     </div>

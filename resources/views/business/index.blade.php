@@ -8,7 +8,7 @@
             <h1 class="text-ellipsis text-center">
                 Business
             </h1>
-            <a href="{{ url('businesses/create') }}" class="btn btn-primary">Create</a>
+{{--            <a href="{{ url('businesses/create') }}" class="btn btn-primary">Create</a>--}}
         </div>
     </div>
     <section class="services">
