@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Business;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -28,6 +29,9 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard');
+        $businesses = Business::all();
+        return view('dashboard', [
+            'businesses' => $businesses
+        ]);
     }
 }

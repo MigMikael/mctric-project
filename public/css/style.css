@@ -6,6 +6,7 @@ body {
 
 .navbar {
     /*background-color:#0a183d !important;*/
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
     width: 100%;
 }
@@ -144,7 +145,7 @@ header {
     background-size: cover;
 }
 
-.view-btn:hover { 
+.view-btn:hover {
     /*color: #fc0254 !important;
     background: #FFFFFF !important;*/
     color: #FBA100 !important;
@@ -161,12 +162,12 @@ ol.circle {
     counter-reset: item;
     padding: 0px;
   }
- 
+
   ol.circle > li{
     counter-increment: item;
     margin-bottom: 5px;
   }
- 
+
  ol.circle > li:before {
     margin-right: 10px;
     content: counter(item);
@@ -177,12 +178,12 @@ ol.circle {
     text-align: center;
     display: inline-block;
   }
-  
+
   .modal-dialog {
       max-width: 800px;
       margin: 30px auto;
     }
-    
+
     .modal-body {
         position:relative;
         padding:0px;
@@ -269,6 +270,7 @@ header .overlay {
 }
 
 .text-center {
+    padding-top: 25px;
     text-align: center;
 }
 
