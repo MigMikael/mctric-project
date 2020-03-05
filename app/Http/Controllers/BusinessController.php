@@ -124,7 +124,7 @@ class BusinessController extends Controller
         $updateBusiness['slug'] = str_replace(" ", "_", $updateBusiness['name']);
 
         $business->update($updateBusiness);
-        return redirect()->action("BusinessController@index");
+        return redirect()->action("BusinessController@filter", ['category' => $business->category]);
     }
 
     /**
