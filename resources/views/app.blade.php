@@ -80,18 +80,13 @@
     $(function () {
         $(window).scroll(function () {
             //ADD CLASS
-            if ($(".navbar").offset().top > 500) {
+            if ($(".navbar").offset().top > 300) {
                 $(".fixed-top").addClass("top-nav-collapse");
             } else {
                 $(".fixed-top").removeClass("top-nav-collapse");
             }
         });
     });
-</script>
-<script>
-    function NewTabCareer() {
-        window.open("http://www.mctric.com/fromwork", "_blank");
-    }
 </script>
 <script>
     $(document).ready(function () {

@@ -19,7 +19,6 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up">
-                    <div></div>
                     <div class="service-box" style="background-image: url(https://image.freepik.com/free-photo/construction-silhouette_1127-3246.jpg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
                  background-blend-mode: overlay;
                  background-position: center; background-size: cover;">
