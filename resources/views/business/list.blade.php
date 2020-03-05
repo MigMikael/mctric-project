@@ -26,12 +26,6 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="card-footer text-center">
-                            {!! Form::model($business, ['method' => 'delete', 'url' => '/businesses/'.$business->id]) !!}
-                            <a href="{{ url('businesses/'. $business->id ."/edit") }}" class="btn btn-warning">Edit</a>
-                            <button class="btn btn-danger" type="submit">Delete</button>
-                            {!! Form::close() !!}
-                        </div>
                     </div>
                 </div>
                 @endforeach

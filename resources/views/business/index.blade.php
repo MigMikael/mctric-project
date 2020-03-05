@@ -8,9 +8,31 @@
             <h1 class="text-ellipsis text-center">
                 Business
             </h1>
-            <a href="{{ url('businesses/create') }}" class="btn btn-primary">Create</a>
         </div>
     </div>
+    <section class="bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="bottom15">Construction Company</h1>
+                    <p>We aim to bring our wealth of experience to the management of any construction or re-fit programme.</p>
+                    <p>This leaves our customers to continue with their core business interests unimpeded by unnecessary distractions. Virtus Contracts Limited undertake office refits / refurbishments, interior design, property construction / alteration projects and contract management.</p>
+                    <p>Engaging with Virtus means that you have instant access to our broad range of Construction Management expertise over all industry and business sectors.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="img-show" src="https://www.virtus-contracts.co.uk/wp-content/uploads/2019/12/homepage-image-1-1.jpg" alt="">
+                </div>
+                <div class="col-md-4">
+                    <img class="img-show" src="https://www.virtus-contracts.co.uk/wp-content/uploads/2019/12/homepage-image-1-1.jpg" alt="">
+                </div>
+                <div class="col-md-4">
+                    <img class="img-show" src="https://www.virtus-contracts.co.uk/wp-content/uploads/2019/12/homepage-image-1-1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="services">
         <div class="container">
             <div class="section-title">

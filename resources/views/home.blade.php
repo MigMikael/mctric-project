@@ -37,9 +37,9 @@
         </div>
     </section>
     <section style="background-image: url(https://images.pexels.com/photos/310479/pexels-photo-310479.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+    background-blend-mode: overlay;
     background-size: cover;
-    width: 100%;
-    background-attachment: fixed; color: #FFFFFF">
+    width: 100%; color: #FFFFFF; background-position: center center">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">

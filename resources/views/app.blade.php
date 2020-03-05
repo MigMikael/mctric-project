@@ -27,21 +27,21 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ url('/about') }}">About</a>
+                    <a class="nav-link js-scroll-trigger" href="{{ url('/about') }}">ABOUT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ url('/businesses') }}">Business</a>
+                    <a class="nav-link js-scroll-trigger" href="{{ url('/businesses') }}">BUSINESS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ url('/career') }}">Careers</a>
+                    <a class="nav-link js-scroll-trigger" href="{{ url('/career') }}">CAREERS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ url('/contact') }}">Contact</a>
+                    <a class="nav-link js-scroll-trigger" href="{{ url('/contact') }}">CONTACT</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger"
                        href="http://203.154.157.184/Cheque_Tracking/Cheque/login.php">
-                        Cheque
+                        CHEQUE TRACKING
                     </a>
                 </li>
             </ul>
@@ -80,7 +80,7 @@
     $(function () {
         $(window).scroll(function () {
             //ADD CLASS
-            if ($(".navbar").offset().top > 300) {
+            if ($(".navbar").offset().top > 250) {
                 $(".fixed-top").addClass("top-nav-collapse");
             } else {
                 $(".fixed-top").removeClass("top-nav-collapse");
