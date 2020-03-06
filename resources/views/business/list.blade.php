@@ -14,9 +14,9 @@
         <div class="container">
             <div class="row">
                 @foreach($businesses as $business)
-                <div class="col-md-4">
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                     <div class="card">
-                        <img class="card-img-top" src="{{ url('image/show/'.$business->image) }}" alt="Card image cap">
+                        <img class="card-img-top" src="{{ url('image/show/'.$business->cover_image) }}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title text-center">{{ $business->name }}</h5>
                             <div class="text-center">

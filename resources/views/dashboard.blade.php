@@ -21,7 +21,10 @@
                     <a class="nav-link" data-toggle="tab" href="#career">Career</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#user">User</a>
+                    <a class="nav-link" data-toggle="tab" href="#client">Client</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#award">Award</a>
                 </li>
             </ul>
 
@@ -36,7 +39,7 @@
                         @foreach($businesses as $business)
                             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                                 <div class="card">
-                                    <img class="card-img-top" src="{{ url('image/show/'.$business->image) }}"
+                                    <img class="card-img-top" src="{{ url('image/show/'.$business->cover_image) }}"
                                          alt="Card image cap">
                                     <div class="card-body">
                                         <h5 class="card-title text-center">{{ $business->name }}</h5>
@@ -64,9 +67,14 @@
                         <h2>จัดการ Career</h2>
                     </div>
                 </div>
-                <div class="tab-pane container fade" id="user">
+                <div class="tab-pane container fade" id="client">
                     <div style="padding-top: 3%; padding-bottom: 3%">
-                        <h2>จัดการ User</h2>
+                        <h2>จัดการ Client</h2>
+                    </div>
+                </div>
+                <div class="tab-pane container fade" id="award">
+                    <div style="padding-top: 3%; padding-bottom: 3%">
+                        <h2>จัดการ Award</h2>
                     </div>
                 </div>
             </div>

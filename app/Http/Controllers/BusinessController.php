@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Business;
+use App\BusinessImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Traits\ImageTrait;
@@ -70,13 +71,26 @@ class BusinessController extends Controller
         $business = $request->all();
         $business['slug'] = str_replace(" ", "_", $business['name']);
 
-        $image = $request->file('image');
-        $image = $this->storeImage($image, "");
-        $business['image'] = $image->id;
+        $file = $request->file('cover_image');
+        $cover_image = $this->storeImage($file, "");
+        $business['cover_image'] = $cover_image->id;
 
-        Business::create($business);
+        $business = Business::create($business);
 
-        return redirect()->action("BusinessController@index");
+        $files = $request->file('images');
+        if ($request->hasFile('images')) {
+            foreach ($files as $file) {
+                $image = $this->storeImage($file, "");
+                $business_image = [
+                    'business_id' => $business->id,
+                    'image_id' => $image->id
+                ];
+                BusinessImage::create($business_image);
+                Log::info("Store success here");
+            }
+        }
+
+        return redirect()->action("BusinessController@filter", ['category' => $business->category]);
     }
 
     /**
@@ -88,6 +102,9 @@ class BusinessController extends Controller
     public function show($id)
     {
         $business = Business::findOrFail($id);
+        $business->images;
+
+        //return $business;
         return view('business.show', ['business' => $business]);
     }
 

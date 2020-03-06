@@ -47,12 +47,12 @@
                 @if(Auth::check())
                     {{--User Loggin--}}
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="{{ url('/dashboard') }}">Dashboard</a>
+                        <a class="nav-link js-scroll-trigger" href="{{ url('/dashboard') }}">DASHBOARD</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('logout') }}"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            Logout
+                            LOGOUT
                         </a>
                     </li>
                     <form id="logout-form" action="{{ url('logout') }}" method="POST">

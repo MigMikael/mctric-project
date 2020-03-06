@@ -10,6 +10,7 @@ class Business extends Model
     protected $table = 'businesses';
     protected $fillable = [
         'name',
+        'description',
         'client',
         'consultant',
         'designer',
@@ -21,8 +22,13 @@ class Business extends Model
         'category',
         'status',
         'display',
-        'image'
+        'cover_image'
     ];
+
+    public function images()
+    {
+        return $this->belongsToMany('App\Image', 'business_image', 'business_id', 'image_id');
+    }
 
     public function scopeShow($query) {
         return $query->where('display', true);

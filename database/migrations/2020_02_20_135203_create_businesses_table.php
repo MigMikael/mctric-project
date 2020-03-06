@@ -17,6 +17,7 @@ class CreateBusinessesTable extends Migration
             $table->bigIncrements('id');
 
             $table->string("name")->default("");
+            $table->text("description")->default("")->nullable();
             $table->string("client")->default("")->nullable();
             $table->string("consultant")->default("")->nullable();
             $table->string("designer")->default("")->nullable();
@@ -29,7 +30,7 @@ class CreateBusinessesTable extends Migration
             $table->string('category')->default("");    // MechanicalElectrical, CivilConstruction, UtilityPipeline, RenewEnergy, SupplyChain
             $table->string('status')->default("");      // OnGoing, InProcess, Complete
             $table->boolean('display')->default(false); // show or not show
-            $table->integer('image');
+            $table->integer('cover_image');
             $table->timestamps();
         });
     }

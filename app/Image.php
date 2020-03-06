@@ -11,4 +11,9 @@ class Image extends Model
     protected $fillable = [
         'name', 'mime', 'original_name'
     ];
+
+    public function businesses()
+    {
+        return $this->belongsToMany('App\Business', 'business_image', 'image_id', 'business_id');
+    }
 }

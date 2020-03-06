@@ -4,6 +4,11 @@
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
+    {!! Form::label('description', 'Description') !!}
+    {!! Form::text('description', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('client', 'Client') !!}
     {!! Form::text('client', null, ['class' => 'form-control']) !!}
 </div>
@@ -49,8 +54,13 @@
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
-    {!! Form::label('image', 'Image') !!}
-    {!! Form::file('image', ['class' => 'form-control', 'id' => 'upload', 'value' => 'Choose a file', 'accept' => 'image/*']) !!}
+    {!! Form::label('cover_image', 'Cover Image') !!}
+    {!! Form::file('cover_image', ['accept'=>'image/*', 'class' => 'form-control', 'id' => 'upload', 'value' => 'Choose a files']) !!}
+</div>
+
+<div class="col-md-12" style="margin-bottom: 3%">
+    {!! Form::label('images', 'Images (Multiple File)') !!}
+    {!! Form::file('images[]', ['multiple'=>true, 'accept'=>'image/*', 'class' => 'form-control', 'id' => 'upload', 'value' => 'Choose a files']) !!}
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
