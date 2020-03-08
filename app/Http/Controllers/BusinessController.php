@@ -77,8 +77,8 @@ class BusinessController extends Controller
 
         $business = Business::create($business);
 
-        $files = $request->file('images');
         if ($request->hasFile('images')) {
+            $files = $request->file('images');
             foreach ($files as $file) {
                 $image = $this->storeImage($file, "");
                 $business_image = [

@@ -26,11 +26,24 @@ Route::get('/about', function () {
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/dashboard', "HomeController@dashboard");
+
     Route::get('/businesses/create', "BusinessController@create");
     Route::post('/businesses', "BusinessController@store");
     Route::get('/businesses/{id}/edit', "BusinessController@edit");
     Route::put('/businesses/{id}', "BusinessController@update");
     Route::delete('/businesses/{id}', "BusinessController@destroy");
+
+    Route::get('/clients/create', "ClientsController@create");
+    Route::post('/clients', "ClientsController@store");
+    Route::get('/clients/{id}/edit', "ClientsController@edit");
+    Route::put('/clients/{id}', "ClientsController@update");
+    Route::delete('/clients/{id}', "ClientsController@destroy");
+
+    Route::get('/awards/create', "AwardsController@create");
+    Route::post('/awards', "AwardsController@store");
+    Route::get('/awards/{id}/edit', "AwardsController@edit");
+    Route::put('/awards/{id}', "AwardsController@update");
+    Route::delete('/awards/{id}', "AwardsController@destroy");
 });
 
 Route::get('/businesses', "BusinessController@index");

@@ -146,7 +146,7 @@
                                 <img class="d-block w-100" src="https://images.pexels.com/photos/209719/pexels-photo-209719.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Second slide" style="height: 300px; width: 100%; object-fit: cover;">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="https://images.pexels.com/photos/2422293/pexels-photo-2422293.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Third slide" style="height: 300px; width: 100%; object-fit: cover;"> 
+                                <img class="d-block w-100" src="https://images.pexels.com/photos/2422293/pexels-photo-2422293.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Third slide" style="height: 300px; width: 100%; object-fit: cover;">
                             </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -193,6 +193,52 @@
                     <p>Phone: +66 (0) 2641 2100 <br> Fax: +66 (0) 2641 2030</p>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="bg-white">
+        <div class="row">
+            <h1>Client</h1>
+            @foreach($clients as $client)
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="card">
+                        <img class="card-img-top" src="{{ url('image/show/'.$client->image_id) }}"
+                             alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ $client->name }}</h5>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        {!! Form::model($client, ['method' => 'delete', 'url' => '/clients/'.$client->id]) !!}
+                        <a href="{{ url('clients/'. $client->id .'/edit') }}"
+                           class="btn btn-warning">Edit</a>
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                        {!! Form::close() !!}
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </section>
+    <section class="bg-white">
+        <div class="row">
+            <h1>Award</h1>
+            @foreach($awards as $award)
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="card">
+                        <img class="card-img-top" src="{{ url('image/show/'.$award->image_id) }}"
+                             alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ $award->name }}</h5>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        {!! Form::model($award, ['method' => 'delete', 'url' => '$/awards/'.$award->id]) !!}
+                        <a href="{{ url('awards/'. $award->id .'/edit') }}"
+                           class="btn btn-warning">Edit</a>
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                        {!! Form::close() !!}
+                    </div>
+                </div>
+            @endforeach
         </div>
     </section>
      <footer class="py-5" style="background-color: #0a183d !important">
