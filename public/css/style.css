@@ -117,7 +117,8 @@ header {
 }
 
 .logo-company {
-    width: 100%;
+    width: auto;
+    height: 70px;
 }
 
 .text-white {
@@ -428,7 +429,7 @@ header .overlay {
 
 @media only screen and (max-width: 575px) {
     .logo-company {
-        width: 200px;
+        height: 50px;
     }
 
     header {

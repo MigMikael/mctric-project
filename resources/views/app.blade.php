@@ -18,7 +18,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="{{ url('/') }}">
-            <img class="logo-company" src="http://mctric.com/assets/img/logo.png">
+            <img class="logo-company" src="{{url('/image/logo.png')}}">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
