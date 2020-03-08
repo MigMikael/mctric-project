@@ -207,6 +207,7 @@
                             <h5 class="card-title text-center">{{ $client->name }}</h5>
                         </div>
                     </div>
+                    @if(Auth::check())
                     <div class="card-footer text-center">
                         {!! Form::model($client, ['method' => 'delete', 'url' => '/clients/'.$client->id]) !!}
                         <a href="{{ url('clients/'. $client->id .'/edit') }}"
@@ -214,6 +215,7 @@
                         <button class="btn btn-danger" type="submit">Delete</button>
                         {!! Form::close() !!}
                     </div>
+                    @endif
                 </div>
             @endforeach
         </div>
@@ -230,6 +232,7 @@
                             <h5 class="card-title text-center">{{ $award->name }}</h5>
                         </div>
                     </div>
+                    @if(Auth::check())
                     <div class="card-footer text-center">
                         {!! Form::model($award, ['method' => 'delete', 'url' => '$/awards/'.$award->id]) !!}
                         <a href="{{ url('awards/'. $award->id .'/edit') }}"
@@ -237,6 +240,7 @@
                         <button class="btn btn-danger" type="submit">Delete</button>
                         {!! Form::close() !!}
                     </div>
+                    @endif
                 </div>
             @endforeach
         </div>
