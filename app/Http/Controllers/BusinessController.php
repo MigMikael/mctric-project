@@ -92,7 +92,8 @@ class BusinessController extends Controller
             }
         }
 
-        return redirect()->action("BusinessController@filter", ['category' => $business->category]);
+        //return redirect()->action("BusinessController@filter", ['category' => $business->category]);
+        return redirect()->action("HomeController@dashboard");
     }
 
     /**
@@ -142,8 +143,23 @@ class BusinessController extends Controller
         $updateBusiness = $request->all();
         $updateBusiness['slug'] = str_replace(" ", "_", $updateBusiness['name']);
 
+        if ($request->hasFile('images')) {
+            BusinessImage::where('business_id', '=', $business->id)->delete();
+            $files = $request->file('images');
+            foreach ($files as $file) {
+                $image = $this->storeImage($file, "");
+                $business_image = [
+                    'business_id' => $business->id,
+                    'image_id' => $image->id
+                ];
+                BusinessImage::create($business_image);
+                Log::info("Store success here");
+            }
+        }
+
         $business->update($updateBusiness);
-        return redirect()->action("BusinessController@filter", ['category' => $business->category]);
+        //return redirect()->action("BusinessController@filter", ['category' => $business->category]);
+        return redirect()->action("HomeController@dashboard");
     }
 
     /**
@@ -154,6 +170,7 @@ class BusinessController extends Controller
      */
     public function destroy($id)
     {
+        # TODO Delete Related images
         $business = Business::findOrFail($id);
         $business->delete();
 

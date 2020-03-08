@@ -20,11 +20,13 @@ class CreateBusinessImageTable extends Migration
 
             $table->foreign('business_id')
                 ->references('id')
-                ->on('businesses');
+                ->on('businesses')
+                ->onDelete('cascade');
 
             $table->foreign('image_id')
                 ->references('id')
-                ->on('images');
+                ->on('images')
+                ->onDelete('cascade');
         });
     }
 
