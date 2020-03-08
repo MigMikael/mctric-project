@@ -41,6 +41,12 @@
                     <a class="nav-link js-scroll-trigger" href="{{ url('/contact') }}">CONTACT</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="{{ url('/awards') }}">AWARDS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="{{ url('/clients') }}">CLIENTS</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link js-scroll-trigger"
                        href="http://203.154.157.184/Cheque_Tracking/Cheque/login.php">
                         CHEQUE TRACKING

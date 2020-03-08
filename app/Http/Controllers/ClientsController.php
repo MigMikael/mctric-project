@@ -12,11 +12,12 @@ class ClientsController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-        //
+        $clients = Clients::all();
+        return view('client.index', ['clients' => $clients]);
     }
 
     /**
