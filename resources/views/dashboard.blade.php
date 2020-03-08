@@ -64,7 +64,28 @@
                 </div>
                 <div class="tab-pane container fade" id="career">
                     <div style="padding-top: 3%; padding-bottom: 3%">
-                        <h2>จัดการ Career</h2>
+                        <h2>จัดการ Career <a class="btn btn-primary" href="{{ url("careers/create") }}">Create</a>
+                        </h2>
+                    </div>
+                    <div class="row">
+                        @foreach($careers as $career)
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                                <div class="card">
+                                    <img class="card-img-top" src="{{ url('image/show/'.$career->image_id) }}"
+                                         alt="Card image cap">
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">{{ $career->name }}</h5>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-center">
+                                    {!! Form::model($career, ['method' => 'delete', 'url' => '/careers/'.$career->id]) !!}
+                                    <a href="{{ url('careers/'. $career->id .'/edit') }}"
+                                       class="btn btn-warning">Edit</a>
+                                    <button class="btn btn-danger" type="submit">Delete</button>
+                                    {!! Form::close() !!}
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="tab-pane container fade" id="client">

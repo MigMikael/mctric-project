@@ -33,7 +33,9 @@ class BusinessController extends Controller
     public function index()
     {
         $businesses = Business::all();
-        return response(view('business.index', ['businesses' => $businesses]));
+        return response(view('business.index', [
+            'businesses' => $businesses
+        ]));
     }
 
     public function filter($category)

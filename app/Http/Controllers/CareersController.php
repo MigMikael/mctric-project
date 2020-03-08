@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Awards;
+use App\Careers;
 use Illuminate\Http\Request;
 use App\Traits\ImageTrait;
 
-class AwardsController extends Controller
+class CareersController extends Controller
 {
     use ImageTrait;
     /**
@@ -16,7 +16,10 @@ class AwardsController extends Controller
      */
     public function index()
     {
-        //
+        $careers = Careers::all();
+        return response(view('career.index', [
+            'careers' => $careers
+        ]));
     }
 
     /**
@@ -26,7 +29,7 @@ class AwardsController extends Controller
      */
     public function create()
     {
-        return response(view('award.create'));
+        return response(view('career.create'));
     }
 
     /**
@@ -37,24 +40,26 @@ class AwardsController extends Controller
      */
     public function store(Request $request)
     {
-        $award = $request->all();
-        $file = $request->file('image');
-        $image = $this->storeImage($file, '');
-        $award['image_id'] = $image->id;
-
-        Awards::create($award);
+        $career = $request->all();
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $image = $this->storeImage($file, "");
+            $career['image_id'] = $image->id;
+        }
+        Careers::create($career);
         return redirect()->action("HomeController@dashboard");
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Awards  $awards
-     * @return \Illuminate\Http\Response
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(Awards $awards)
+    public function show($id)
     {
-        //
+        $career = Careers::findOrFail($id);
+        return view('career.show', ['career' => $career]);
     }
 
     /**
@@ -65,10 +70,10 @@ class AwardsController extends Controller
      */
     public function edit($id)
     {
-        $award = Awards::findOrFail($id);
+        $career = Careers::findOrFail($id);
 
-        return view('award.edit', [
-            'award' => $award
+        return view('career.edit', [
+            'career' => $career
         ]);
     }
 
@@ -81,29 +86,29 @@ class AwardsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $award = Awards::findOrFail($id);
-        $updateAward = $request->all();
+        $career = Careers::findOrFail($id);
+        $updateCareer = $request->all();
 
         if ($request->hasFile('image')) {
             $file = $request->file('image');
-            $image = $this->storeImage($file, "");
-            $updateAward['image_id'] = $image->id;
+            $image = $this->storeImage($file, '');
+            $updateCareer['image_id'] = $image->id;
         }
 
-        $award->update($updateAward);
+        $career->update($updateCareer);
         return redirect()->action("HomeController@dashboard");
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Awards  $awards
+     * @param $id
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
-        $award = Awards::findOrFail($id);
-        $award->delete();
+        $career = Careers::findOrFail($id);
+        $career->delete();
 
         return redirect()->action("HomeController@dashboard");
     }
