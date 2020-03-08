@@ -33,7 +33,7 @@
                     <a class="nav-link js-scroll-trigger" href="{{ url('/businesses') }}">BUSINESS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ url('/career') }}">CAREERS</a>
+                    <a class="nav-link js-scroll-trigger" href="{{ url('/careers') }}">CAREERS</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="{{ url('/contact') }}">CONTACT</a>
@@ -61,7 +61,7 @@
                 @else
                     {{--User Not Loggin--}}
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="{{ url('/login') }}">Login</a>
+                        <a class="nav-link js-scroll-trigger" href="{{ url('/login') }}">LOGIN</a>
                     </li>
                 @endif
             </ul>

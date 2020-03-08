@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Business;
+use App\Careers;
+use App\Clients;
+use App\Awards;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,14 +27,25 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $clients = Clients::all();
+        $awards = Awards::all();
+        return view('home', [
+            'clients' => $clients,
+            'awards' => $awards
+        ]);
     }
 
     public function dashboard()
     {
         $businesses = Business::all();
+        $clients = Clients::all();
+        $awards = Awards::all();
+        $careers = Careers::all();
         return view('dashboard', [
-            'businesses' => $businesses
+            'businesses' => $businesses,
+            'clients' => $clients,
+            'awards' => $awards,
+            'careers' => $careers
         ]);
     }
 }
