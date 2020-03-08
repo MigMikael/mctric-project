@@ -117,7 +117,8 @@ header {
 }
 
 .logo-company {
-    width: 100%;
+    width: auto;
+    height: 70px;
 }
 
 .text-white {
@@ -406,9 +407,35 @@ header .overlay {
 .img-show {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    object-fit: fill;
     margin-bottom: 20px;
 }
+
+.owl-carousel .item {
+    background: #42bdc2;
+    padding: 30px 0px;
+    margin: 10px;
+    color: #FFF;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-align: center;
+    height: 170px;
+  }
+
+  .image-client {
+      height: 150px;
+      object-fit: cover;
+      padding: 0 15px;
+  }
+
+  .section-title {
+      padding-bottom: 25px;
+  }
+
+  .client-wrapper {
+      padding-bottom: 25px;
+  }
 
 @media only screen and (max-width: 991px) {
     .showcase .showcase-text {
@@ -428,7 +455,7 @@ header .overlay {
 
 @media only screen and (max-width: 575px) {
     .logo-company {
-        width: 200px;
+        height: 50px;
     }
 
     header {

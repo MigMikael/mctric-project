@@ -52,10 +52,17 @@
     </section>
     <section class="services">
         <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center section-title">SERVICE</h1>
+                </div>
+            </div>
+            <!--
             <div class="section-title">
                 <h2>บริการของเรา</h2>
                 <p class="col-md-8 offset-md-2">คำอธิบาย</p>
             </div>
+            -->
             <div class="row">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up">
                     <div class="service-box" style="background-image: url(https://image.freepik.com/free-photo/construction-silhouette_1127-3246.jpg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
@@ -113,14 +120,30 @@
             </div>
         </div>
     </section>
+    <section style="background: #ebeff2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center section-title">CLIENT</h1>
+                </div>
+            </div>
+            <div class="client-wrapper">
+                <div class="owl-carousel">
+                    @foreach($clients as $client)
+                    <img class="image-client" src="{{ url('image/show/'.$client->image_id) }}">
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="bg-primary">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                        <h1 class="text-white text-center" style="padding-bottom: 50px;">CAREERS</h1>
+                    <h1 class="text-white text-center section-title">CAREERS</h1>
                 </div>
             </div>
-            <div class="row" style="padding-bottom: 50px;">
+            <div class="row" style="padding-bottom: 25px;">
                 <div class="col-md-6 v-center">
                     <div class="desc">
                             <h2 class="text-white" style="padding-bottom: 10px;">Why join us ?</h2>
@@ -172,8 +195,8 @@
     <section class="bg-white">
         <div class="container">
             <div class="row">
-                <div class="col-md-12" style="padding-bottom: 50px;">
-                    <h1 class="text-center">CONTACT</h1>
+                <div class="col-md-12">
+                    <h1 class="text-center section-title">CONTACT</h1>
                 </div>
                 <div class="col-md-6">
                     <iframe class="resp-iframe"
@@ -195,33 +218,9 @@
             </div>
         </div>
     </section>
+    <!--
     <section class="bg-white">
-        <div class="row">
-            <h1>Client</h1>
-            @foreach($clients as $client)
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <div class="card">
-                        <img class="card-img-top" src="{{ url('image/show/'.$client->image_id) }}"
-                             alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">{{ $client->name }}</h5>
-                        </div>
-                    </div>
-                    @if(Auth::check())
-                    <div class="card-footer text-center">
-                        {!! Form::model($client, ['method' => 'delete', 'url' => '/clients/'.$client->id]) !!}
-                        <a href="{{ url('clients/'. $client->id .'/edit') }}"
-                           class="btn btn-warning">Edit</a>
-                        <button class="btn btn-danger" type="submit">Delete</button>
-                        {!! Form::close() !!}
-                    </div>
-                    @endif
-                </div>
-            @endforeach
-        </div>
-    </section>
-    <section class="bg-white">
-        <div class="row">
+        <div class="container">
             <h1>Award</h1>
             @foreach($awards as $award)
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
@@ -232,19 +231,11 @@
                             <h5 class="card-title text-center">{{ $award->name }}</h5>
                         </div>
                     </div>
-                    @if(Auth::check())
-                    <div class="card-footer text-center">
-                        {!! Form::model($award, ['method' => 'delete', 'url' => '$/awards/'.$award->id]) !!}
-                        <a href="{{ url('awards/'. $award->id .'/edit') }}"
-                           class="btn btn-warning">Edit</a>
-                        <button class="btn btn-danger" type="submit">Delete</button>
-                        {!! Form::close() !!}
-                    </div>
-                    @endif
                 </div>
             @endforeach
         </div>
     </section>
+    -->
      <footer class="py-5" style="background-color: #0a183d !important">
         <div class="container">
             <p class="m-0 text-center text-white">Copyright &copy; 2019 - McTRIC Public Co.,Ltd.</p>

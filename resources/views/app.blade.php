@@ -8,6 +8,8 @@
     <title>@yield('title')</title>
 
     <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('css/owl.carousel.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/owl.theme.default.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('vendor/bootstrap/css/bootstrap.min.css') }}">
     <link href="{{ URL::asset('css/scrolling-nav.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
@@ -18,7 +20,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="{{ url('/') }}">
-            <img class="logo-company" src="http://mctric.com/assets/img/logo.png">
+            <img class="logo-company" src="{{url('/image/logo.png')}}">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -102,6 +104,8 @@
 <script src="{{ URL::asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 <!-- Custom JavaScript for this theme -->
 <script src="{{ URL::asset('js/scrolling-nav.js') }}"></script>
+<script src="{{ URL::asset('js/owl.carousel.js') }}"></script>
+<script src="{{ URL::asset('js/owl.autoplay.js') }}"></script>
 <script>
     $(function () {
         $(window).scroll(function () {
@@ -134,6 +138,38 @@
             $("#video").attr('src', $videoSrc);
         })
         // document ready
+    });
+</script>
+<script>
+$(document).ready(function(){
+    var owl = $(".owl-carousel");
+    owl.owlCarousel({
+        items: 4,
+        loop: true,
+        autoplay: true,
+        autoPlaySpeed: 5000,
+        autoPlayTimeout: 5000,
+        autoplayHoverPause: true,
+        responsiveClass:true,
+        responsive: {
+            0: {
+                items: 2,
+                nav:true
+                },
+                400: {
+                items: 2,
+                nav:false
+                },
+                600:{
+                    items: 3,
+                    nav:false
+                    },
+                    1000:{
+                    items: 4,
+                    nav: true
+                    },
+            }
+        })
     });
 </script>
 </body>
