@@ -57,6 +57,9 @@ Route::get('/businesses/category/{category}', "BusinessController@filter");
 Route::get('/careers', "CareersController@index");
 Route::get('/careers/{id}', "CareersController@show");
 
+Route::get('/awards', "AwardsController@index");
+Route::get('/clients', "ClientsController@index");
+
 Route::get('image/show/{id}', 'ImageController@show');
 
 Route::get('/test', "HomeController@test");
