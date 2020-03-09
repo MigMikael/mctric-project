@@ -170,7 +170,6 @@ class BusinessController extends Controller
      */
     public function destroy($id)
     {
-        # TODO Delete Related images
         $business = Business::findOrFail($id);
         $business->delete();
 

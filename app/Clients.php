@@ -14,5 +14,8 @@ class Clients extends Model
         'image_id'
     ];
 
-
+    public function image()
+    {
+        return $this->hasOne('App\Image', 'image_id');
+    }
 }
