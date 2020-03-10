@@ -22,7 +22,8 @@ class CreateClientsTable extends Migration
 
             $table->foreign('image_id')
                 ->references('id')
-                ->on('images');
+                ->on('images')
+                ->onDelete('cascade');
         });
     }
 
