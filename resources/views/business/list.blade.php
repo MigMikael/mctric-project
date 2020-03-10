@@ -22,7 +22,7 @@
                             <div class="text-center">
                                 <button type="button" class="btn learn-more-btn"
                                     onclick="location.href='{{ url('businesses/'.$business->id) }}'">
-                                    รายละเอียด
+                                    READ MORE
                                 </button>
                             </div>
                         </div>

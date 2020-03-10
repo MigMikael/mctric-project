@@ -27,6 +27,13 @@
                             <h4>Qualification</h4>
                             <p>{!! $career->qualification !!}</p>
                         </div>
+                        <div class="card-footer text-center" style="background-color: #FFFFFF !important;
+                        border-top: unset !important;">
+                            <button type="button" class="btn learn-more-btn"
+                            onclick="location.href='http://www.mctric.com/fromwork'">
+                            APPLY
+                        </button>
+                        </div>
                     </div>
                 </div>
             </div>
