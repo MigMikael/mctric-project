@@ -3,7 +3,7 @@
 @section('title', 'Business')
 
 @section('content')
-<div class="sub-title">
+<div class="sub-title" style="background-image: url({{ url('image/show/'.$business->cover_image) }}) !important;">
     <div class="container">
         <h1 class="text-ellipsis text-center">
             {{ $business->name }}
@@ -15,24 +15,32 @@
         <div class="row">
             <div class="col-md-6">
                 <h1 class="bottom15">{{ $business->name }}</h1>
-                <p>{{ $business->description }}</p>
+                <p><strong>Client: </strong> {{ $business->client }}</p>
+                <p><strong>Consultant: </strong> {{ $business->consultant }}</p>
+                <p><strong>Designer: </strong> {{ $business->designer }}</p>
+                <p><strong>Main Contractor: </strong> {{ $business->contructor }}</p>
+                <p><strong>Contract Period: </strong> {{ $business->contract_period }}</p>
+                <p><strong>Contract Value: </strong> {{ $business->contract_value }}</p>
+                <p><strong>Description: </strong> {{ $business->description }}</p>
             </div>
             <div class="col-md-6">
-                <img src="{{ url('image/show/'.$business->cover_image) }}" style="width: 100%; height: 100%; object-fit: contain">
+                <div class="image">
+                    <img class="img-show image-business" src="{{ url('image/show/'.$business->cover_image) }}">
+                </div>
             </div>
         </div>
     </div>
 </section>
-<section class="bg-white">
+<section class="bg-primary">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 style="padding-bottom: 50px;">Project Photo</h1>
+                <h1 class="text-white" style="padding-bottom: 25px;">Project Photo</h1>
             </div>
             @foreach($business->images as $image)
                 <div class="col-md-4">
                     <div class="image">
-                        <img class="img-show" src="{{ url('image/show/'.$image->id) }}" alt="">
+                        <img class="img-show image-business-list" src="{{ url('image/show/'.$image->id) }}" alt="">
                     </div>
                 </div>
             @endforeach
