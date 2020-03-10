@@ -459,6 +459,14 @@ header .overlay {
     .header-title {
         font-size: 42px;
     }
+
+    .sub-title {
+        background-attachment: initial !important;
+    }
+
+    .sub-title h1 {
+        font-size: 28px !important;
+    }
 }
 
 @media only screen and (max-width: 575px) {
