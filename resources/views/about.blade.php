@@ -6,7 +6,7 @@
     <div class="sub-title">
         <div class="container">
             <h1 class="text-ellipsis text-center">
-                About
+                ABOUT
             </h1>
         </div>
     </div>
@@ -14,9 +14,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 order-lg-3 v-center">
-                    <img
+                    <div class="image">
+                        <img
                         src="https://images.pexels.com/photos/2036686/pexels-photo-2036686.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                         style="height: 300px; width: 100%; object-fit: cover;">
+                    </div>
                 </div>
                 <div class="col-md-1 order-lg-2"></div>
                 <div class="col-md-5 order-lg-1 v-center">
@@ -29,9 +31,11 @@
             </div>
             <div class="row" style="padding-top: 20px">
                 <div class="col-md-6 v-center">
-                    <img
+                    <div class="image">
+                        <img
                         src="https://images.pexels.com/photos/310479/pexels-photo-310479.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                         style="height: 300px; width: 100%; object-fit: cover;">
+                    </div>
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-5 v-center">
@@ -49,19 +53,21 @@
             </div>
         </div>
     </section>
-    <section class="bg-white">
+    <section class="bg-primary">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-center" style="padding-bottom: 50px;">รายชื่อผู้บริหาร</h1>
+                    <h1 class="text-center text-white" style="padding-bottom: 50px;">รายชื่อผู้บริหาร</h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
-                        <img class="card-img-top"
+                        <div class="image">
+                            <img class="card-img-top"
                              src="https://images.pexels.com/photos/842567/pexels-photo-842567.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                              alt="Card image cap">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title text-center">ชื่อ - นามสกุล <br>ตำแหน่ง</h5>
                         </div>
@@ -69,9 +75,11 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img class="card-img-top"
+                        <div class="image">
+                            <img class="card-img-top"
                              src="https://images.pexels.com/photos/842567/pexels-photo-842567.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                              alt="Card image cap">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title text-center">ชื่อ - นามสกุล <br>ตำแหน่ง</h5>
                         </div>
@@ -79,9 +87,11 @@
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img class="card-img-top"
-                             src="https://images.pexels.com/photos/842567/pexels-photo-842567.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                             alt="Card image cap">
+                        <div class="image">
+                            <img class="card-img-top"
+                            src="https://images.pexels.com/photos/842567/pexels-photo-842567.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                            alt="Card image cap">
+                        </div>
                         <div class="card-body">
                             <h5 class="card-title text-center">ชื่อ - นามสกุล <br>ตำแหน่ง</h5>
                         </div>

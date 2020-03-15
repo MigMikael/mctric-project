@@ -6,7 +6,7 @@
     <div class="sub-title">
         <div class="container">
             <h1 class="text-ellipsis text-center">
-                Business
+                BUSINESSES
             </h1>
         </div>
     </div>
@@ -22,22 +22,28 @@
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <img class="img-show" src="https://www.virtus-contracts.co.uk/wp-content/uploads/2019/12/homepage-image-1-1.jpg" alt="">
+                    <div class="image">
+                        <img class="img-show" src="https://www.virtus-contracts.co.uk/wp-content/uploads/2019/12/homepage-image-1-1.jpg" alt="">
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <img class="img-show" src="https://www.virtus-contracts.co.uk/wp-content/uploads/2019/12/homepage-image-1-1.jpg" alt="">
+                    <div class="image">
+                        <img class="img-show" src="https://www.virtus-contracts.co.uk/wp-content/uploads/2019/12/homepage-image-1-1.jpg" alt="">
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <img class="img-show" src="https://www.virtus-contracts.co.uk/wp-content/uploads/2019/12/homepage-image-1-1.jpg" alt="">
+                    <div class="image">
+                        <img class="img-show" src="https://www.virtus-contracts.co.uk/wp-content/uploads/2019/12/homepage-image-1-1.jpg" alt="">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="services">
+    <section class="services bg-primary">
         <div class="container">
             <div class="section-title">
-                <h2>บริการของเรา</h2>
-                <p class="col-md-8 offset-md-2">คำอธิบาย</p>
+                <h2 class="text-white">Service</h2>
+                <p class="col-md-8 offset-md-2 text-white">Service Description</p>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up">

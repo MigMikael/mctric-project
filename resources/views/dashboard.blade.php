@@ -130,7 +130,7 @@
                                     </div>
                                 </div>
                                 <div class="card-footer text-center">
-                                    {!! Form::model($award, ['method' => 'delete', 'url' => '$/awards/'.$award->id]) !!}
+                                    {!! Form::model($award, ['method' => 'delete', 'url' => '/awards/'.$award->id]) !!}
                                     <a href="{{ url('awards/'. $award->id .'/edit') }}"
                                        class="btn btn-warning">Edit</a>
                                     <button class="btn btn-danger" type="submit">Delete</button>

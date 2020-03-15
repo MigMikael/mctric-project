@@ -50,11 +50,11 @@
             </div>
         </div>
     </section>
-    <section class="services">
+    <section class="services bg-white">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-center section-title">SERVICE</h1>
+                    <h1 class="text-center section-title">SERVICES</h1>
                 </div>
             </div>
             <!--
@@ -120,22 +120,6 @@
             </div>
         </div>
     </section>
-    <section style="background: #ebeff2">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="text-center section-title">CLIENT</h1>
-                </div>
-            </div>
-            <div class="client-wrapper">
-                <div class="owl-carousel">
-                    @foreach($clients as $client)
-                    <img class="image-client" src="{{ url('image/show/'.$client->image_id) }}">
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </section>
     <section class="bg-primary">
         <div class="container">
             <div class="row">
@@ -155,39 +139,56 @@
                     </div>
                 </div>
                 <div class="col-md-6 v-center">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img class="d-block w-100" src="https://images.pexels.com/photos/2760243/pexels-photo-2760243.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="First slide" style="height: 300px; width: 100%; object-fit: cover;">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="https://images.pexels.com/photos/209719/pexels-photo-209719.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Second slide" style="height: 300px; width: 100%; object-fit: cover;">
-                            </div>
-                            <div class="carousel-item">
-                                <img class="d-block w-100" src="https://images.pexels.com/photos/2422293/pexels-photo-2422293.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Third slide" style="height: 300px; width: 100%; object-fit: cover;">
-                            </div>
+                    <div class="owl-job owl-carousel">
+                        @foreach($careers as $career)
+                        <div class="image">
+                            <img class="d-block w-100" src="{{ url('image/show/'.$career->image_id) }}" style="height: 300px; width: 100%; object-fit: cover;">
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                        @endforeach
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center align-items-center">
-                        <button type="button" class="btn view-btn" onclick="location.href='{{ url('/career') }}'">See All jobs</button>
+                        <button type="button" class="btn view-btn" onclick="location.href='{{ url('/careers') }}'">See All jobs</button>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center section-title">CLIENTS</h1>
+                </div>
+            </div>
+            <div class="client-wrapper">
+                <div class="owl-general owl-carousel">
+                    @foreach($clients as $client)
+                    <div class="image">
+                        <img class="image-client" src="{{ url('image/show/'.$client->image_id) }}">
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center text-white  section-title">AWARDS</h1>
+                </div>
+            </div>
+            <div class="client-wrapper">
+                <div class="owl-general owl-carousel">
+                    @foreach($awards as $award)
+                    <div class="image">
+                        <img class="image-client" src="{{ url('image/show/'.$award->image_id) }}">
+                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

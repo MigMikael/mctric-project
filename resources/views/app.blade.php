@@ -32,19 +32,19 @@
                     <a class="nav-link js-scroll-trigger" href="{{ url('/about') }}">ABOUT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ url('/businesses') }}">BUSINESS</a>
+                    <a class="nav-link js-scroll-trigger" href="{{ url('/businesses') }}">BUSINESSES</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="{{ url('/careers') }}">CAREERS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ url('/contact') }}">CONTACT</a>
+                    <a class="nav-link js-scroll-trigger" href="{{ url('/clients') }}">CLIENTS</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="{{ url('/awards') }}">AWARDS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ url('/clients') }}">CLIENTS</a>
+                    <a class="nav-link js-scroll-trigger" href="{{ url('/contact') }}">CONTACT</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger"
@@ -142,8 +142,8 @@
 </script>
 <script>
 $(document).ready(function(){
-    var owl = $(".owl-carousel");
-    owl.owlCarousel({
+    
+    $(".owl-general").owlCarousel({
         items: 4,
         loop: true,
         autoplay: true,
@@ -170,7 +170,18 @@ $(document).ready(function(){
                     },
             }
         })
+
+        $('.owl-job').owlCarousel({
+            items: 1,
+            loop: true,
+            autoplay: true,
+            autoPlaySpeed: 5000,
+            autoPlayTimeout: 5000,
+            autoplayHoverPause: true,
+        })
+
     });
+    
 </script>
 </body>
 </html>

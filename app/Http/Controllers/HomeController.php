@@ -29,9 +29,11 @@ class HomeController extends Controller
     {
         $clients = Clients::all();
         $awards = Awards::all();
+        $careers = Careers::all();
         return view('home', [
             'clients' => $clients,
-            'awards' => $awards
+            'awards' => $awards,
+            'careers' => $careers
         ]);
     }
 
