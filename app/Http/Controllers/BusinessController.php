@@ -143,6 +143,12 @@ class BusinessController extends Controller
         $updateBusiness = $request->all();
         $updateBusiness['slug'] = str_replace(" ", "_", $updateBusiness['name']);
 
+        if ($request->hasFile('cover_image')) {
+            $file = $request->file('cover_image');
+            $cover_image = $this->storeImage($file, '');
+            $updateBusiness['cover_image'] = $cover_image->id;
+        }
+
         if ($request->hasFile('images')) {
             BusinessImage::where('business_id', '=', $business->id)->delete();
             $files = $request->file('images');
