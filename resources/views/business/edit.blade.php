@@ -6,14 +6,24 @@
     <div class="sub-title">
         <div class="container">
             <h1 class="text-ellipsis text-center">
-                Business
+                Edit Business Form
             </h1>
         </div>
     </div>
     <section class="bg-light">
-        {!! Form::model($business, ['url' => 'businesses/'.$business->id, 'method' => 'put', 'files' => 'true']) !!}
-        @include('business._form')
-        <button class="btn btn-primary form-control" type="submit">Finish</button>
-        {!! Form::close() !!}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-style">
+                        {!! Form::model($business, ['url' => 'businesses/'.$business->id, 'method' => 'put', 'files' => 'true']) !!}
+                        @include('business._edit-form')
+                        <div class="text-center">
+                            <button class="btn btn-primary form-control submit-edit-btn" type="submit">Finish</button>
+                        </div>
+                        {!! Form::close() !!}
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 @endsection

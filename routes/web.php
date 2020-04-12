@@ -58,7 +58,10 @@ Route::get('/careers', "CareersController@index");
 Route::get('/careers/{id}', "CareersController@show");
 
 Route::get('/awards', "AwardsController@index");
+Route::get('/awards/{id}', "AwardsController@show");
+
 Route::get('/clients', "ClientsController@index");
+Route::get('/clients/{id}', "ClientsController@show");
 
 Route::get('image/show/{id}', 'ImageController@show');
 

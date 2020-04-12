@@ -15,9 +15,10 @@
     <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
           integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="https://cdn.tiny.cloud/1/u2m105u0299tvcdij68weonnlsw7ra9as7rkuh3a37rhykr1/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top {{ (request()->is('/')) ? 'navbar' : 'navbar-main-color' }}" id="mainNav">
     <div class="container">
         <a class="navbar-brand js-scroll-trigger" href="{{ url('/') }}">
             <img class="logo-company" src="{{url('/image/logo.png')}}">
@@ -29,22 +30,22 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ url('/about') }}">ABOUT</a>
+                    <a class="nav-link js-scroll-trigger {{ (request()->is('about')) ? 'active' : '' }}" href="{{ url('/about') }}">ABOUT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ url('/businesses') }}">BUSINESSES</a>
+                    <a class="nav-link js-scroll-trigger {{ (request()->is('businesses')) ? 'active' : '' }}" href="{{ url('/businesses') }}">BUSINESSES</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ url('/careers') }}">CAREERS</a>
+                    <a class="nav-link js-scroll-trigger {{ (request()->is('careers')) ? 'active' : '' }}" href="{{ url('/careers') }}">CAREERS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ url('/clients') }}">CLIENTS</a>
+                    <a class="nav-link js-scroll-trigger {{ (request()->is('clients')) ? 'active' : '' }}" href="{{ url('/clients') }}">CLIENTS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ url('/awards') }}">AWARDS</a>
+                    <a class="nav-link js-scroll-trigger {{ (request()->is('awards')) ? 'active' : '' }}" href="{{ url('/awards') }}">AWARDS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="{{ url('/contact') }}">CONTACT</a>
+                    <a class="nav-link js-scroll-trigger {{ (request()->is('contact')) ? 'active' : '' }}" href="{{ url('/contact') }}">CONTACT</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger"
@@ -55,7 +56,7 @@
                 @if(Auth::check())
                     {{--User Loggin--}}
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="{{ url('/dashboard') }}">DASHBOARD</a>
+                        <a class="nav-link js-scroll-trigger {{ (request()->is('dashboard')) ? 'active' : '' }}" href="{{ url('/dashboard') }}">DASHBOARD</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('logout') }}"
@@ -69,7 +70,7 @@
                 @else
                     {{--User Not Loggin--}}
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="{{ url('/login') }}">LOGIN</a>
+                        <a class="nav-link js-scroll-trigger {{ (request()->is('login')) ? 'active' : '' }}" href="{{ url('/login') }}">LOGIN</a>
                     </li>
                 @endif
             </ul>
@@ -125,7 +126,6 @@
         $('.video-btn').click(function () {
             $videoSrc = $(this).data("src");
         });
-        console.log($videoSrc);
         // when the modal is opened autoplay it
         $('#myModal').on('shown.bs.modal', function (e) {
             // set the video src to autoplay and not to show related video.
@@ -183,5 +183,18 @@ $(document).ready(function(){
     });
     
 </script>
+<script>
+    tinymce.init({
+    selector: 'textarea',
+    height: 500,
+    plugins: [
+    "advlist autolink lists link image charmap print preview anchor",
+    "searchreplace visualblocks code fullscreen",
+    "insertdatetime media table paste imagetools wordcount"
+    ],
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+    content_css: '//www.tiny.cloud/css/codepen.min.css'
+    });
+  </script>
 </body>
 </html>

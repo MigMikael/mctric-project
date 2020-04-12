@@ -24,6 +24,17 @@
                                 src="{{ url('image/show/'.$award->image_id) }}"
                                 alt="Card image cap">
                             </div>
+                            <div class="card-body">
+                                <h5 class="card-title text-center">
+                                    {!! $award->name !!}
+                                </h5>
+                                <div class="text-center">
+                                    <button type="button" class="btn learn-more-btn"
+                                            onclick="location.href='{{ url('awards/'.$award->id) }}'">
+                                        READ MORE
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 @endforeach

@@ -5,7 +5,7 @@
 
 <div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('description', 'Description') !!}
-    {!! Form::text('description', null, ['class' => 'form-control']) !!}
+    <textarea name="description"></textarea>
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
@@ -55,12 +55,14 @@
 
 <div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('cover_image', 'Cover Image') !!}
-    {!! Form::file('cover_image', ['accept'=>'image/*', 'class' => 'form-control', 'id' => 'upload', 'value' => 'Choose a files']) !!}
+    {!! Form::file('cover_image', ['accept'=>'image/*', 'class' => 'form-control', 'id' => 'upload', 'value' => 'Choose
+    a files']) !!}
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('images', 'Images (Multiple File)') !!}
-    {!! Form::file('images[]', ['multiple'=>true, 'accept'=>'image/*', 'class' => 'form-control', 'id' => 'upload', 'value' => 'Choose a files']) !!}
+    {!! Form::file('images[]', ['multiple'=>true, 'accept'=>'image/*', 'class' => 'form-control', 'id' => 'upload',
+    'value' => 'Choose a files']) !!}
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">

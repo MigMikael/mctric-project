@@ -21,7 +21,7 @@
                 <p><strong>Main Contractor: </strong> {{ $business->contructor }}</p>
                 <p><strong>Contract Period: </strong> {{ $business->contract_period }}</p>
                 <p><strong>Contract Value: </strong> {{ $business->contract_value }}</p>
-                <p><strong>Description: </strong> {{ $business->description }}</p>
+                <p><strong>Description: </strong> {!! $business->description !!}</p>
             </div>
             <div class="col-md-6">
                 <div class="image">

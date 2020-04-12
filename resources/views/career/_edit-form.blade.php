@@ -10,10 +10,10 @@
 
 <div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('description', 'Description') !!}
-    {!! Form::text('description', null, ['class' => 'form-control']) !!}
+    <textarea name="description">{{ $career-> description }}</textarea>
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('qualification', 'Qualification') !!}
-    {!! Form::text('qualification', null, ['class' => 'form-control']) !!}
+    <textarea name="qualification">{{ $career-> qualification }}</textarea>
 </div>

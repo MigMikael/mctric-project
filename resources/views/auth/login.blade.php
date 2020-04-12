@@ -9,8 +9,8 @@
         </div>
     </div>
     <section class="bg-light">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row justify-content-center" style="margin-left: 0px !important; margin-right: 0px !important;">
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 

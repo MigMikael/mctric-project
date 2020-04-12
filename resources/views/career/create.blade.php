@@ -3,17 +3,27 @@
 @section('title', 'Create Career')
 
 @section('content')
-    <div class="sub-title">
-        <div class="container">
-            <h1 class="text-ellipsis text-center">
-                Career
-            </h1>
+<div class="sub-title">
+    <div class="container">
+        <h1 class="text-ellipsis text-center">
+            Create Career Form
+        </h1>
+    </div>
+</div>
+<section class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-style">
+                    {!! Form::open(['url' => 'careers', 'method' => 'post', 'files' => 'true']) !!}
+                    @include('career._create-form')
+                    <div class="text-center">
+                        <button class="btn btn-primary form-control submit-edit-btn" type="submit">Finish</button>
+                    </div>
+                    {!! Form::close() !!}
+                </div>
+            </div>
         </div>
     </div>
-    <section class="bg-light">
-        {!! Form::open(['url' => 'careers', 'method' => 'post', 'files' => 'true']) !!}
-        @include('career._form')
-        <button class="btn btn-primary form-control" type="submit">Finish</button>
-        {!! Form::close() !!}
-    </section>
+</section>
 @endsection

@@ -53,9 +53,10 @@ class AwardsController extends Controller
      * @param  \App\Awards  $awards
      * @return \Illuminate\Http\Response
      */
-    public function show(Awards $awards)
+    public function show($id)
     {
-        //
+        $award = Awards::findOrFail($id);
+        return view('award.show', ['award' => $award]);
     }
 
     /**

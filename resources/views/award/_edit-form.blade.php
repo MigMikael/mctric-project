@@ -10,5 +10,5 @@
 
 <div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('description', 'Description') !!}
-    {!! Form::text('description', null, ['class' => 'form-control']) !!}
+    <textarea name="description">{{ $award-> description }}</textarea>
 </div>
