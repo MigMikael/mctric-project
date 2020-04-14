@@ -131,14 +131,6 @@
                                 alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title text-center">{{ $client->name }}</h5>
-                                <!--
-                                <div class="text-center">
-                                    <button type="button" class="btn learn-more-btn"
-                                        onclick="location.href='{{ url('clients/'.$client->id) }}'">
-                                        รายละเอียด
-                                    </button>
-                                </div>
-                                -->
                             </div>
                             <div class="card-footer text-center">
                                 {!! Form::model($client, ['method' => 'delete', 'url' => '/clients/'.$client->id]) !!}
@@ -172,14 +164,12 @@
                                 alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title text-center">{{ $award->name }}</h5>
-                                <!--
                                 <div class="text-center">
                                     <button type="button" class="btn learn-more-btn"
                                         onclick="location.href='{{ url('awards/'.$award->id) }}'">
                                         รายละเอียด
                                     </button>
                                 </div>
-                                -->
                             </div>
                             <div class="card-footer text-center">
                                 {!! Form::model($award, ['method' => 'delete', 'url' => '/awards/'.$award->id]) !!}

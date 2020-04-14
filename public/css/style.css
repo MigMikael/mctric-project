@@ -482,6 +482,11 @@ header .overlay {
     border-bottom: 1px solid #dee2e6;
 }
 
+.vertical-center {
+    display: flex;
+    align-items:center;
+}
+
 @media only screen and (max-width: 991px) {
     .showcase .showcase-text {
         padding-left: 10px !important;

@@ -3,7 +3,7 @@
 @section('title', 'Award')
 
 @section('content')
-    <div class="sub-title" style="background-image: url({{ url('image/show/'.$award->image_id) }}) !important;">
+    <div class="sub-title">
         <div class="container">
             <h1 class="text-ellipsis text-center">
                 {!! $award->name !!}
@@ -12,15 +12,21 @@
     </div>
     <section class="bg-white">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <div class="card-body">
+            <div class="card" style="padding: 25px">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="text-center">
+                            <img src="{{ url('image/show/'.$award->image_id) }}" style="width: 100%">
+                        </div>
+                    </div>
+                    <div class="col-md-6 vertical-center">
+                        <div>
                             <h4>Name</h4>
                             <p>{!! $award->name !!}</p>
-                            <hr>
                             <h4>Description</h4>
-                            <p>{!! $award->description !!}</p>
+                            <p>
+                                {!! $award->description !!}
+                            </p>
                         </div>
                     </div>
                 </div>
