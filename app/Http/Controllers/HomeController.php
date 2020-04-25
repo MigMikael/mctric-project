@@ -39,7 +39,7 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        $businesses = Business::all();
+        $businesses = Business::paginate(6);
         $clients = Clients::all();
         $awards = Awards::all();
         $careers = Careers::all();

@@ -6,7 +6,7 @@
     <div class="sub-title">
         <div class="container">
             <h1 class="text-ellipsis text-center">
-                CONTACT
+                {{ __('messages.contact.contactHeading') }}
             </h1>
         </div>
     </div>
@@ -20,15 +20,15 @@
                 </div>
                 <div class="col-md-1" style="padding-bottom: 50px;"></div>
                 <div class="col-md-5">
-                    <h5>Address</h5>
+                    <h5>{{ __('messages.contact.contactAddress') }}</h5>
                     <p>121/105 อาคารอาร์เอส ทาวเวอร์ ชั้น 39 <br> ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง กรุงเทพมหานคร 10400
                     </p>
 
-                    <h5>Email Us At</h5>
+                    <h5>{{ __('messages.contact.contactEmail') }}</h5>
                     <p>ADMIN@MCTRIC.COM</p>
 
-                    <h5>Call Us</h5>
-                    <p>Phone: +66 (0) 2641 2100 <br> Fax: +66 (0) 2641 2030</p>
+                    <h5>{{ __('messages.contact.contactCall') }}</h5>
+                    <p>{{ __('messages.contact.contactPhone') }}: +66 (0) 2641 2100 <br> {{ __('messages.contact.contactFax') }}: +66 (0) 2641 2030</p>
                 </div>
             </div>
         </div>

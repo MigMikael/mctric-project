@@ -6,7 +6,7 @@
     <div class="sub-title">
         <div class="container">
             <h1 class="text-ellipsis text-center">
-                BUSINESSES
+                {{ __('messages.business.businessHeading') }}
             </h1>
         </div>
     </div>
@@ -18,7 +18,7 @@
                  background-blend-mode: overlay;
                  background-position: center; background-size: cover;">
                         <div class="services-wrapper">
-                            <h4><a href="{{ url('businesses/category/civil_construction') }}">Civil & Construction</a>
+                            <h4><a href="{{ url('businesses/category/civil_construction') }}">{{ __('messages.business.civilMenu') }}</a>
                             </h4>
                         </div>
                     </div>
@@ -28,8 +28,7 @@
                  background-blend-mode: overlay; background-position: center; background-size: cover;">
                         <div class="services-wrapper">
                             <h4>
-                                <a href="{{ url('businesses/category/mechanical_electrical_services_plumbing_services') }}">Mechanical,
-                                    Electrical and Plumbing services (MEP)</a></h4>
+                                <a href="{{ url('businesses/category/mechanical_electrical_services_plumbing_services') }}">{{ __('messages.business.mechanicalMenu') }}</a></h4>
                         </div>
                     </div>
                 </div>
@@ -38,7 +37,7 @@
                  background-blend-mode: overlay;
                  background-position: center; background-size: cover;">
                         <div class="services-wrapper">
-                            <h4><a href="{{ url('businesses/category/utility_pipeline') }}">Utility Pipeline</a></h4>
+                            <h4><a href="{{ url('businesses/category/utility_pipeline') }}">{{ __('messages.business.utilityMenu') }}</a></h4>
                         </div>
                     </div>
                 </div>
@@ -49,8 +48,7 @@
                  background-blend-mode: overlay;
                  background-position: center; background-size: cover;">
                         <div class="services-wrapper">
-                            <h4 style="text-white"><a href="{{ url('businesses/category/renew_energy') }}">Renewable
-                                    Energy</a></h4>
+                            <h4 style="text-white"><a href="{{ url('businesses/category/renew_energy') }}">{{ __('messages.business.renewableMenu') }}</a></h4>
                         </div>
                     </div>
                 </div>
@@ -59,8 +57,7 @@
                  background-blend-mode: overlay;
                  background-position: center; background-size: cover;">
                         <div class="services-wrapper">
-                            <h4><a href="{{ url('businesses/category/supply_chain_automation_systems') }}">Supply Chain
-                                    Automation Systems</a></h4>
+                            <h4><a href="{{ url('businesses/category/supply_chain_automation_systems') }}">{{ __('messages.business.supplyMenu') }}</a></h4>
                         </div>
                     </div>
                 </div>

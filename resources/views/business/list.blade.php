@@ -6,7 +6,7 @@
     <div class="sub-title">
         <div class="container">
             <h1 class="text-ellipsis text-center">
-                {{ $category }}
+                {{ __($categoryTranslate) }}
             </h1>
         </div>
     </div>
@@ -22,13 +22,16 @@
                             <div class="text-center">
                                 <button type="button" class="btn learn-more-btn"
                                     onclick="location.href='{{ url('businesses/'.$business->id) }}'">
-                                    READ MORE
+                                    {{ __('messages.business.businessReadMore') }}
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 @endforeach
+            </div>
+            <div class="row" style="justify-content: center">
+                {{ $businesses->links() }}
             </div>
         </div>
     </section>

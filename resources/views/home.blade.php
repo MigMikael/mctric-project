@@ -12,8 +12,7 @@
                     <!--<p class="header-subtitle">Company Description</p>-->
                     <button type="button" class="btn view-btn video-btn" data-toggle="modal"
                             data-src="https://player.vimeo.com/video/383726515" data-target="#myModal">
-                        <i class="fas fa-play-circle fa-lg"></i> Watch Our
-                        Story
+                        <i class="fas fa-play-circle fa-lg"></i> {{ __('messages.home.watchStoryButton') }}
                     </button>
                 </div>
             </div>
@@ -23,10 +22,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h1 class="bottom15">Construction Company</h1>
-                    <p>We aim to bring our wealth of experience to the management of any construction or re-fit programme.</p>
-                    <p>This leaves our customers to continue with their core business interests unimpeded by unnecessary distractions. Virtus Contracts Limited undertake office refits / refurbishments, interior design, property construction / alteration projects and contract management.</p>
-                    <p>Engaging with Virtus means that you have instant access to our broad range of Construction Management expertise over all industry and business sectors.</p>
+                    <h1 class="bottom15">{{ __('messages.home.aboutHeading') }}</h1>
+                    <p>{{ __('messages.home.aboutParagraphOne') }}</p>
+                    <p>{{ __('messages.home.aboutParagraphTwo') }}</p>
+                    <p>{{ __('messages.home.aboutParagraphThree') }}</p>
                 </div>
                 <div class="col-md-6">
                     <div class="image">
@@ -43,9 +42,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h1 class="bottom15">Our Philosophy</h1>
-                    <p>Our aim is to provide clients with absolute certainty in the supply of high quality interior fit-out or refurbishment projects.</p>
-                    <p>To achieve this requires our wealth of experience, excellent communication skills and a truly professional approach.</p>
+                    <h1 class="bottom15">{{ __('messages.home.philosophyHeading') }}</h1>
+                    <p>{{ __('messages.home.philosophyParagraphOne') }}</p>
+                    <p>{{ __('messages.home.philosophyParagraphTwo') }}</p>
                 </div>
             </div>
         </div>
@@ -54,7 +53,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-center section-title">BUSINESSES</h1>
+                    <h1 class="text-center section-title">{{ __('messages.home.businessHeading') }}</h1>
                 </div>
             </div>
             <!--
@@ -69,7 +68,7 @@
                  background-blend-mode: overlay;
                  background-position: center; background-size: cover;">
                         <div class="services-wrapper">
-                            <h4><a href="{{ url('businesses/category/civil_construction') }}">Civil & Construction</a>
+                            <h4><a href="{{ url('businesses/category/civil_construction') }}">{{ __('messages.home.civilMenu') }}</a>
                             </h4>
                         </div>
                     </div>
@@ -79,8 +78,7 @@
                  background-blend-mode: overlay; background-position: center; background-size: cover;">
                         <div class="services-wrapper">
                             <h4>
-                                <a href="{{ url('businesses/category/mechanical_electrical_services_plumbing_services') }}">Mechanical,
-                                    Electrical and Plumbing services (MEP)</a></h4>
+                                <a href="{{ url('businesses/category/mechanical_electrical_services_plumbing_services') }}">{{ __('messages.home.mechanicalMenu') }}</a></h4>
                         </div>
                     </div>
                 </div>
@@ -89,7 +87,7 @@
                  background-blend-mode: overlay;
                  background-position: center; background-size: cover;">
                         <div class="services-wrapper">
-                            <h4><a href="{{ url('businesses/category/utility_pipeline') }}">Utility Pipeline</a></h4>
+                            <h4><a href="{{ url('businesses/category/utility_pipeline') }}">{{ __('messages.home.utilityMenu') }}</a></h4>
                         </div>
                     </div>
                 </div>
@@ -100,8 +98,7 @@
                  background-blend-mode: overlay;
                  background-position: center; background-size: cover;">
                         <div class="services-wrapper">
-                            <h4><a href="{{ url('businesses/category/renew_energy') }}">Renewable
-                                    Energy</a></h4>
+                            <h4><a href="{{ url('businesses/category/renew_energy') }}">{{ __('messages.home.renewableMenu') }}</a></h4>
                         </div>
                     </div>
                 </div>
@@ -110,8 +107,7 @@
                  background-blend-mode: overlay;
                  background-position: center; background-size: cover;">
                         <div class="services-wrapper">
-                            <h4><a href="{{ url('businesses/category/supply_chain_automation_systems') }}">Supply Chain
-                                    Automation Systems</a></h4>
+                            <h4><a href="{{ url('businesses/category/supply_chain_automation_systems') }}">{{ __('messages.home.supplyMenu') }}</a></h4>
                         </div>
                     </div>
                 </div>
@@ -124,18 +120,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-white text-center section-title">CAREERS</h1>
+                    <h1 class="text-white text-center section-title">{{ __('messages.home.careersHeading') }}</h1>
                 </div>
             </div>
             <div class="row" style="padding-bottom: 25px;">
                 <div class="col-md-6 v-center">
                     <div class="desc">
-                            <h2 class="text-white" style="padding-bottom: 10px;">Why join us ?</h2>
-                            <p class="text-white">Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit,
-                                sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra
-                                maecenas accumsan lacus vel facilisis.</p>
+                            <h2 class="text-white" style="padding-bottom: 10px;">{{ __('messages.home.careersSubHeading') }}</h2>
+                            <p class="text-white">{{ __('messages.home.careersParagraphOne') }}</p>
                     </div>
                 </div>
                 <div class="col-md-6 v-center">
@@ -151,7 +143,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center align-items-center">
-                        <button type="button" class="btn view-btn" onclick="location.href='{{ url('/careers') }}'">See All jobs</button>
+                        <button type="button" class="btn view-btn" onclick="location.href='{{ url('/careers') }}'">{{ __('messages.home.careersButton') }}</button>
                     </div>
                 </div>
             </div>
@@ -161,7 +153,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-center section-title">CLIENTS</h1>
+                    <h1 class="text-center section-title">{{ __('messages.home.clientHeading') }}</h1>
                 </div>
             </div>
             <div class="client-wrapper">
@@ -179,7 +171,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-center text-white  section-title">AWARDS</h1>
+                    <h1 class="text-center text-white  section-title">{{ __('messages.home.awardHeading') }}</h1>
                 </div>
             </div>
             <div class="client-wrapper">
@@ -197,7 +189,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-center section-title">CONTACT</h1>
+                    <h1 class="text-center section-title">{{ __('messages.home.contactHeading') }}</h1>
                 </div>
                 <div class="col-md-6">
                     <iframe class="resp-iframe"
@@ -206,15 +198,15 @@
                 </div>
                 <div class="col-md-1" style="padding-bottom: 50px;"></div>
                 <div class="col-md-5">
-                    <h5>Address</h5>
+                    <h5>{{ __('messages.home.contactAddress') }}</h5>
                     <p>121/105 อาคารอาร์เอส ทาวเวอร์ ชั้น 39 <br> ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง กรุงเทพมหานคร 10400
                     </p>
 
-                    <h5>Email Us At</h5>
+                    <h5>{{ __('messages.home.contactEmail') }}</h5>
                     <p>ADMIN@MCTRIC.COM</p>
 
-                    <h5>Call Us</h5>
-                    <p>Phone: +66 (0) 2641 2100 <br> Fax: +66 (0) 2641 2030</p>
+                    <h5>{{ __('messages.home.contactCall') }}</h5>
+                    <p>{{ __('messages.home.contactPhone') }}: +66 (0) 2641 2100 <br> {{ __('messages.home.contactFax') }}: +66 (0) 2641 2030</p>
                 </div>
             </div>
         </div>
@@ -239,7 +231,7 @@
     -->
      <footer class="py-5" style="background-color: #0a183d !important">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; 2019 - McTRIC Public Co.,Ltd.</p>
+            <p class="m-0 text-center text-white">{{ __('messages.home.copyright') }} &copy; 2019 - McTRIC Public Co.,Ltd.</p>
         </div>
     </footer>
 @endsection

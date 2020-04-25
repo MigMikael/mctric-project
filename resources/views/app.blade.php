@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -30,38 +30,38 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger {{ (request()->is('about')) ? 'active' : '' }}" href="{{ url('/about') }}">ABOUT</a>
+                    <a class="nav-link js-scroll-trigger {{ (request()->is('about')) ? 'active' : '' }}" href="{{ url('/about') }}">{{ __('messages.app.aboutMenu') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger {{ (request()->is('businesses')) ? 'active' : '' }}" href="{{ url('/businesses') }}">BUSINESSES</a>
+                    <a class="nav-link js-scroll-trigger {{ (request()->is('businesses')) ? 'active' : '' }}" href="{{ url('/businesses') }}">{{ __('messages.app.businessMenu') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger {{ (request()->is('careers')) ? 'active' : '' }}" href="{{ url('/careers') }}">CAREERS</a>
+                    <a class="nav-link js-scroll-trigger {{ (request()->is('careers')) ? 'active' : '' }}" href="{{ url('/careers') }}">{{ __('messages.app.careerMenu') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger {{ (request()->is('clients')) ? 'active' : '' }}" href="{{ url('/clients') }}">CLIENTS</a>
+                    <a class="nav-link js-scroll-trigger {{ (request()->is('clients')) ? 'active' : '' }}" href="{{ url('/clients') }}">{{ __('messages.app.clientMenu') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger {{ (request()->is('awards')) ? 'active' : '' }}" href="{{ url('/awards') }}">AWARDS</a>
+                    <a class="nav-link js-scroll-trigger {{ (request()->is('awards')) ? 'active' : '' }}" href="{{ url('/awards') }}">{{ __('messages.app.awardMenu') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger {{ (request()->is('contact')) ? 'active' : '' }}" href="{{ url('/contact') }}">CONTACT</a>
+                    <a class="nav-link js-scroll-trigger {{ (request()->is('contact')) ? 'active' : '' }}" href="{{ url('/contact') }}">{{ __('messages.app.contactMenu') }}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger"
                        href="http://203.154.157.184/Cheque_Tracking/Cheque/login.php">
-                        CHEQUE TRACKING
+                        {{ __('messages.app.chequeTrackMenu') }}
                     </a>
                 </li>
                 @if(Auth::check())
                     {{--User Loggin--}}
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger {{ (request()->is('dashboard')) ? 'active' : '' }}" href="{{ url('/dashboard') }}">DASHBOARD</a>
+                        <a class="nav-link js-scroll-trigger {{ (request()->is('dashboard')) ? 'active' : '' }}" href="{{ url('/dashboard') }}">{{ __('messages.app.dashboardMenu') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('logout') }}"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            LOGOUT
+                            {{ __('messages.app.logoutMenu') }}
                         </a>
                     </li>
                     <form id="logout-form" action="{{ url('logout') }}" method="POST">
@@ -70,9 +70,12 @@
                 @else
                     {{--User Not Loggin--}}
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger {{ (request()->is('login')) ? 'active' : '' }}" href="{{ url('/login') }}">LOGIN</a>
+                        <a class="nav-link js-scroll-trigger {{ (request()->is('login')) ? 'active' : '' }}" href="{{ url('/login') }}">{{ __('messages.app.loginMenu') }}</a>
                     </li>
                 @endif
+                <li><a href="{{ url('locale/en') }}" >EN</a></li>
+
+                <li><a href="{{ url('locale/th') }}" >TH</a></li>
             </ul>
         </div>
     </div>
@@ -142,7 +145,7 @@
 </script>
 <script>
 $(document).ready(function(){
-    
+
     $(".owl-general").owlCarousel({
         items: 4,
         loop: true,
@@ -181,7 +184,7 @@ $(document).ready(function(){
         })
 
     });
-    
+
 </script>
 <script>
     tinymce.init({

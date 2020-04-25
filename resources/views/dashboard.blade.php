@@ -6,7 +6,7 @@
 <div class="sub-title">
     <div class="container">
         <h1 class="text-ellipsis text-center">
-            Admin Dashboard
+            {{ __('messages.dashboard.dashboardHeading') }}
         </h1>
     </div>
 </div>
@@ -15,16 +15,16 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs nav-justified">
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#business">Business</a>
+                <a class="nav-link active" data-toggle="tab" href="#business">{{ __('messages.dashboard.businessTab') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#career">Career</a>
+                <a class="nav-link" data-toggle="tab" href="#career">{{ __('messages.dashboard.careerTab') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#client">Client</a>
+                <a class="nav-link" data-toggle="tab" href="#client">{{ __('messages.dashboard.clientTab') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#award">Award</a>
+                <a class="nav-link" data-toggle="tab" href="#award">{{ __('messages.dashboard.awardTab') }}</a>
             </li>
         </ul>
 
@@ -35,10 +35,10 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="pull-left">
-                                <h2>จัดการ Business</h2>
+                                <h2>{{ __('messages.dashboard.businessSubHeading') }}</h2>
                             </div>
                             <div class="pull-right">
-                                <a class="btn btn-primary" href="{{ url("businesses/create") }}">Create</a>
+                                <a class="btn btn-primary" href="{{ url("businesses/create") }}">{{ __('messages.app.createButton') }}</a>
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                                 <div class="text-center">
                                     <button type="button" class="btn learn-more-btn"
                                         onclick="location.href='{{ url('businesses/'.$business->id) }}'">
-                                        รายละเอียด
+                                        {{ __('messages.dashboard.cardButton') }}
                                     </button>
                                 </div>
                             </div>
@@ -62,13 +62,16 @@
                                 {!! Form::model($business, ['method' => 'delete', 'url' =>
                                 '/businesses/'.$business->id]) !!}
                                 <a href="{{ url('businesses/'. $business->id .'/edit/') }}"
-                                    class="btn btn-warning">Edit</a>
-                                <button class="btn btn-danger" type="submit">Delete</button>
+                                    class="btn btn-warning">{{ __('messages.app.editButton') }}</a>
+                                <button class="btn btn-danger" type="submit">{{ __('messages.app.deleteButton') }}</button>
                                 {!! Form::close() !!}
                             </div>
                         </div>
                     </div>
                     @endforeach
+                </div>
+                <div class="row" style="justify-content: center">
+                    {{ $businesses->links() }}
                 </div>
             </div>
             <div class="tab-pane container fade" id="career">
@@ -76,10 +79,10 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="pull-left">
-                                <h2>จัดการ Career</h2>
+                                <h2>{{ __('messages.dashboard.careerSubHeading') }}</h2>
                             </div>
                             <div class="pull-right">
-                                <a class="btn btn-primary" href="{{ url("careers/create") }}">Create</a>
+                                <a class="btn btn-primary" href="{{ url("careers/create") }}">{{ __('messages.app.createButton') }}</a>
                             </div>
                         </div>
                     </div>
@@ -95,14 +98,14 @@
                                 <div class="text-center">
                                     <button type="button" class="btn learn-more-btn"
                                         onclick="location.href='{{ url('careers/'.$career->id) }}'">
-                                        รายละเอียด
+                                        {{ __('messages.dashboard.cardButton') }}
                                     </button>
                                 </div>
                             </div>
                             <div class="card-footer text-center">
                                 {!! Form::model($career, ['method' => 'delete', 'url' => '/careers/'.$career->id]) !!}
-                                <a href="{{ url('careers/'. $career->id .'/edit') }}" class="btn btn-warning">Edit</a>
-                                <button class="btn btn-danger" type="submit">Delete</button>
+                                <a href="{{ url('careers/'. $career->id .'/edit') }}" class="btn btn-warning">{{ __('messages.app.editButton') }}</a>
+                                <button class="btn btn-danger" type="submit">{{ __('messages.app.deleteButton') }}</button>
                                 {!! Form::close() !!}
                             </div>
                         </div>
@@ -115,10 +118,10 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="pull-left">
-                                <h2>จัดการ Client</h2>
+                                <h2>{{ __('messages.dashboard.clientSubHeading') }}</h2>
                             </div>
                             <div class="pull-right">
-                                <a class="btn btn-primary" href="{{ url("clients/create") }}">Create</a>
+                                <a class="btn btn-primary" href="{{ url("clients/create") }}">{{ __('messages.app.createButton') }}</a>
                             </div>
                         </div>
                     </div>
@@ -134,8 +137,8 @@
                             </div>
                             <div class="card-footer text-center">
                                 {!! Form::model($client, ['method' => 'delete', 'url' => '/clients/'.$client->id]) !!}
-                                <a href="{{ url('clients/'. $client->id .'/edit') }}" class="btn btn-warning">Edit</a>
-                                <button class="btn btn-danger" type="submit">Delete</button>
+                                <a href="{{ url('clients/'. $client->id .'/edit') }}" class="btn btn-warning">{{ __('messages.app.editButton') }}</a>
+                                <button class="btn btn-danger" type="submit">{{ __('messages.app.deleteButton') }}</button>
                                 {!! Form::close() !!}
                             </div>
                         </div>
@@ -148,10 +151,10 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="pull-left">
-                                <h2>จัดการ Award</h2>
+                                <h2>{{ __('messages.dashboard.awardSubHeading') }}</h2>
                             </div>
                             <div class="pull-right">
-                                <a class="btn btn-primary" href="{{ url("awards/create") }}">Create</a>
+                                <a class="btn btn-primary" href="{{ url("awards/create") }}">{{ __('messages.app.createButton') }}</a>
                             </div>
                         </div>
                     </div>
@@ -167,14 +170,14 @@
                                 <div class="text-center">
                                     <button type="button" class="btn learn-more-btn"
                                         onclick="location.href='{{ url('awards/'.$award->id) }}'">
-                                        รายละเอียด
+                                        {{ __('messages.dashboard.cardButton') }}
                                     </button>
                                 </div>
                             </div>
                             <div class="card-footer text-center">
                                 {!! Form::model($award, ['method' => 'delete', 'url' => '/awards/'.$award->id]) !!}
-                                <a href="{{ url('awards/'. $award->id .'/edit') }}" class="btn btn-warning">Edit</a>
-                                <button class="btn btn-danger" type="submit">Delete</button>
+                                <a href="{{ url('awards/'. $award->id .'/edit') }}" class="btn btn-warning">{{ __('messages.app.editButton') }}</a>
+                                <button class="btn btn-danger" type="submit">{{ __('messages.app.deleteButton') }}</button>
                                 {!! Form::close() !!}
                             </div>
                         </div>

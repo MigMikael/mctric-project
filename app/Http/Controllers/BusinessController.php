@@ -25,6 +25,14 @@ class BusinessController extends Controller
         'supply_chain_automation_systems' => 'Supply Chain Automation Systems'
     ];
 
+    public $category_translate = [
+        'mechanical_electrical_services_plumbing_services' => 'messages.business.mechanicalMenu',
+        'civil_construction' => 'messages.business.civilMenu',
+        'utility_pipeline' => 'messages.business.utilityMenu',
+        'renew_energy' => 'messages.business.renewableMenu',
+        'supply_chain_automation_systems' => 'messages.business.supplyMenu'
+    ];
+
     /**
      * Display a listing of the resource.
      *
@@ -40,12 +48,12 @@ class BusinessController extends Controller
 
     public function filter($category)
     {
-        Log::info("Category");
-        Log::info($category);
-        $businesses = Business::where("category", "=", $category)->get();
+        //$locale = session('locale');
+        $businesses = Business::where("category", "=", $category)->paginate(6);
         return view('business.list', [
             'businesses' => $businesses,
-            'category' => $this->category[$category]
+            'category' => $this->category[$category],
+            'categoryTranslate' => $this->category_translate[$category]
         ]);
     }
 
@@ -120,8 +128,6 @@ class BusinessController extends Controller
     public function edit($id)
     {
         $business = Business::findOrFail($id);
-        Log::info("Business");
-        Log::info($business->name);
 
         return view('business.edit', [
             'business' => $business,
