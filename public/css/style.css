@@ -38,7 +38,7 @@ nav.top-nav-collapse {
 }
 
 .navbar-dark .navbar-nav .nav-link.active {
-    color: #FBA100 !important
+    color: #FBA100 !important;
 }
 
 header {
@@ -487,6 +487,14 @@ header .overlay {
     align-items:center;
 }
 
+.lang-menu .lang {
+    color: #FFFFFF;
+}
+
+.lang-menu .lang:hover {
+    color: #FBA100 !important;
+}
+
 @media only screen and (max-width: 991px) {
     .showcase .showcase-text {
         padding-left: 10px !important;
@@ -494,6 +502,11 @@ header .overlay {
 
     .desc {
         padding-top: 20px;
+    }
+
+    .img-responsive {
+        width: 100% !important;
+        height: auto !important;
     }
 }
 

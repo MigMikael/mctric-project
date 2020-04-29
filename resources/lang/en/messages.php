@@ -18,6 +18,8 @@ return [
         'deleteButton' => 'Delete'
     ],
     'home' => [
+        'companyTitle' => 'McTRIC',
+        'companySubtitle' => 'Public Company Limited',
         'watchStoryButton' => 'Watch Our Story',
 
         'aboutHeading' => 'Construction Company',

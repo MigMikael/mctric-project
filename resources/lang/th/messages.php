@@ -18,6 +18,8 @@ return [
         'deleteButton' => 'ลบ'
     ],
     'home' => [
+        'companyTitle' => 'แมคทริค',
+        'companySubtitle' => 'บริษัท แมคทริค จำกัด (มหาชน)',
         'watchStoryButton' => 'ดูเรื่องราวของเรา',
 
         'aboutHeading' => 'บริษัทก่อสร้าง',

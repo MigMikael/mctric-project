@@ -30,25 +30,25 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger {{ (request()->is('about')) ? 'active' : '' }}" href="{{ url('/about') }}">{{ __('messages.app.aboutMenu') }}</a>
+                    <a class="nav-link {{ (request()->is('about')) ? 'active' : '' }}" href="{{ url('/about') }}">{{ __('messages.app.aboutMenu') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger {{ (request()->is('businesses')) ? 'active' : '' }}" href="{{ url('/businesses') }}">{{ __('messages.app.businessMenu') }}</a>
+                    <a class="nav-link {{ (request()->is('businesses')) ? 'active' : '' }}" href="{{ url('/businesses') }}">{{ __('messages.app.businessMenu') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger {{ (request()->is('careers')) ? 'active' : '' }}" href="{{ url('/careers') }}">{{ __('messages.app.careerMenu') }}</a>
+                    <a class="nav-link {{ (request()->is('careers')) ? 'active' : '' }}" href="{{ url('/careers') }}">{{ __('messages.app.careerMenu') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger {{ (request()->is('clients')) ? 'active' : '' }}" href="{{ url('/clients') }}">{{ __('messages.app.clientMenu') }}</a>
+                    <a class="nav-link {{ (request()->is('clients')) ? 'active' : '' }}" href="{{ url('/clients') }}">{{ __('messages.app.clientMenu') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger {{ (request()->is('awards')) ? 'active' : '' }}" href="{{ url('/awards') }}">{{ __('messages.app.awardMenu') }}</a>
+                    <a class="nav-link {{ (request()->is('awards')) ? 'active' : '' }}" href="{{ url('/awards') }}">{{ __('messages.app.awardMenu') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger {{ (request()->is('contact')) ? 'active' : '' }}" href="{{ url('/contact') }}">{{ __('messages.app.contactMenu') }}</a>
+                    <a class="nav-link {{ (request()->is('contact')) ? 'active' : '' }}" href="{{ url('/contact') }}">{{ __('messages.app.contactMenu') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger"
+                    <a class="nav-link"
                        href="http://203.154.157.184/Cheque_Tracking/Cheque/login.php">
                         {{ __('messages.app.chequeTrackMenu') }}
                     </a>
@@ -56,7 +56,7 @@
                 @if(Auth::check())
                     {{--User Loggin--}}
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger {{ (request()->is('dashboard')) ? 'active' : '' }}" href="{{ url('/dashboard') }}">{{ __('messages.app.dashboardMenu') }}</a>
+                        <a class="nav-link {{ (request()->is('dashboard')) ? 'active' : '' }}" href="{{ url('/dashboard') }}">{{ __('messages.app.dashboardMenu') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('logout') }}"
@@ -70,12 +70,13 @@
                 @else
                     {{--User Not Loggin--}}
                     <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger {{ (request()->is('login')) ? 'active' : '' }}" href="{{ url('/login') }}">{{ __('messages.app.loginMenu') }}</a>
+                        <a class="nav-link {{ (request()->is('login')) ? 'active' : '' }}" href="{{ url('/login') }}">{{ __('messages.app.loginMenu') }}</a>
                     </li>
                 @endif
-                <li><a href="{{ url('locale/en') }}" >EN</a></li>
-
-                <li><a href="{{ url('locale/th') }}" >TH</a></li>
+                <li class="nav-link lang-menu">
+                    <a href="{{ url('locale/en') }}" class="lang">EN</a> |
+                    <a href="{{ url('locale/th') }}" class="lang">ไทย</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -140,7 +141,6 @@
             // a poor man's stop video
             $("#video").attr('src', $videoSrc);
         })
-        // document ready
     });
 </script>
 <script>
@@ -196,7 +196,9 @@ $(document).ready(function(){
     "insertdatetime media table paste imagetools wordcount"
     ],
     toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-    content_css: '//www.tiny.cloud/css/codepen.min.css'
+    content_css: '//www.tiny.cloud/css/codepen.min.css',
+    image_class_list: [
+    {title: 'Responsive', value: 'img-responsive'}],
     });
   </script>
 </body>
