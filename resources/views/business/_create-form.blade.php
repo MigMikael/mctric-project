@@ -40,7 +40,7 @@
 
 <div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('Scope of Work') !!}
-    {!! Form::text('scope_of_work', null, ['class' => 'form-control']) !!}
+    <textarea name="scope_of_work"></textarea>
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">

@@ -18,10 +18,11 @@
                 <p><strong>Client: </strong> {{ $business->client }}</p>
                 <p><strong>Consultant: </strong> {{ $business->consultant }}</p>
                 <p><strong>Designer: </strong> {{ $business->designer }}</p>
-                <p><strong>Main Contractor: </strong> {{ $business->contructor }}</p>
+                <p><strong>Main Contractor: </strong> {{ $business->constructor }}</p>
                 <p><strong>Contract Period: </strong> {{ $business->contract_period }}</p>
                 <p><strong>Contract Value: </strong> {{ $business->contract_value }}</p>
                 <p><strong>Description: </strong> {!! $business->description !!}</p>
+                <p><strong>Scope of Work: </strong> {!! $business->scope_of_work !!}</p>
             </div>
             <div class="col-md-6">
                 <div class="image">
