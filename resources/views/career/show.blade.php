@@ -13,13 +13,8 @@
     <section class="bg-white">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="card">
-                        <!--
-                        <img class="card-img-top"
-                             src="{{ url('image/show/'.$career->image_id) }}"
-                             alt="Card image cap">
-                        -->
+                <div class="col-md-12">
+                    <div class="card-content">
                         <div class="card-body">
                             <h4>Description</h4>
                             <p>{!! $career->description !!}</p>

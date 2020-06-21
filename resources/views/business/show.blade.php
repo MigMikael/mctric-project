@@ -39,9 +39,9 @@
                 <h1 class="text-white" style="padding-bottom: 25px;">Project Photo</h1>
             </div>
             @foreach($business->images as $image)
-                <div class="col-md-4">
-                    <div class="image">
-                        <img class="img-show image-business-list" src="{{ url('image/show/'.$image->id) }}" alt="">
+                <div class="col-sm-6 col-md-4">
+                    <div class="image image-business-project">
+                        <img class="img-show" src="{{ url('image/show/'.$image->id) }}" alt="">
                     </div>
                 </div>
             @endforeach

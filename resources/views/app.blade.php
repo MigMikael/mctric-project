@@ -39,19 +39,7 @@
                     <a class="nav-link {{ (request()->is('careers')) ? 'active' : '' }}" href="{{ url('/careers') }}">{{ __('messages.app.careerMenu') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('clients')) ? 'active' : '' }}" href="{{ url('/clients') }}">{{ __('messages.app.clientMenu') }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('awards')) ? 'active' : '' }}" href="{{ url('/awards') }}">{{ __('messages.app.awardMenu') }}</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link {{ (request()->is('contact')) ? 'active' : '' }}" href="{{ url('/contact') }}">{{ __('messages.app.contactMenu') }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="http://203.154.157.184/Cheque_Tracking/Cheque/login.php">
-                        {{ __('messages.app.chequeTrackMenu') }}
-                    </a>
                 </li>
                 @if(Auth::check())
                     {{--User Loggin--}}
@@ -67,11 +55,6 @@
                     <form id="logout-form" action="{{ url('logout') }}" method="POST">
                         {{ csrf_field() }}
                     </form>
-                @else
-                    {{--User Not Loggin--}}
-                    <li class="nav-item">
-                        <a class="nav-link {{ (request()->is('login')) ? 'active' : '' }}" href="{{ url('/login') }}">{{ __('messages.app.loginMenu') }}</a>
-                    </li>
                 @endif
                 <li class="nav-link lang-menu">
                     <a href="{{ url('locale/en') }}" class="lang">EN</a> |

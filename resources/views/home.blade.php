@@ -57,12 +57,6 @@
                     <h1 class="text-center section-title">{{ __('messages.home.businessHeading') }}</h1>
                 </div>
             </div>
-            <!--
-            <div class="section-title">
-                <h2>บริการของเรา</h2>
-                <p class="col-md-8 offset-md-2">คำอธิบาย</p>
-            </div>
-            -->
             <div class="row">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up">
                     <div class="service-box" style="background-image: url(https://image.freepik.com/free-photo/construction-silhouette_1127-3246.jpg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
@@ -92,8 +86,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2">
-                </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up">
                     <div class="service-box" style="background-image: url(https://image.freepik.com/free-photo/man-worker-firld-by-solar-panels_1303-15597.jpg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
                  background-blend-mode: overlay;
@@ -112,12 +104,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2">
-                </div>
             </div>
         </div>
     </section>
-    <section class="bg-primary">
+    <section style="background-image: url(https://images.pexels.com/photos/310479/pexels-photo-310479.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+    background-blend-mode: overlay;
+    background-size: cover;
+    width: 100%; color: #FFFFFF; background-position: center center">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -150,7 +143,7 @@
             </div>
         </div>
     </section>
-    <section class="bg-white">
+    <section class="bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -160,14 +153,22 @@
             <div class="client-wrapper">
                 <div class="owl-general owl-carousel">
                     @foreach($clients as $client)
-                    <div class="image">
+                    <div>
                         <img class="image-client" src="{{ url('image/show/'.$client->image_id) }}">
                     </div>
                     @endforeach
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center align-items-center">
+                        <button type="button" class="btn view-btn" onclick="location.href='{{ url('/clients') }}'">See All Client</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+    <!--
     <section class="bg-primary">
         <div class="container">
             <div class="row">
@@ -186,6 +187,7 @@
             </div>
         </div>
     </section>
+    -->
     <section class="bg-white">
         <div class="container">
             <div class="row">
@@ -212,25 +214,7 @@
             </div>
         </div>
     </section>
-    <!--
-    <section class="bg-white">
-        <div class="container">
-            <h1>Award</h1>
-            @foreach($awards as $award)
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <div class="card">
-                        <img class="card-img-top" src="{{ url('image/show/'.$award->image_id) }}"
-                             alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">{{ $award->name }}</h5>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </section>
-    -->
-     <footer class="py-5" style="background-color: #0a183d !important">
+     <footer class="py-5 footer-bg">
         <div class="container">
             <p class="m-0 text-center text-white">{{ __('messages.home.copyright') }} &copy; 2019 - McTRIC Public Co.,Ltd.</p>
         </div>

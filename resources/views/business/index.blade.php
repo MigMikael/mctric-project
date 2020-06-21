@@ -41,8 +41,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2">
-                </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up">
                     <div class="service-box" style="background-image: url(https://image.freepik.com/free-photo/man-worker-firld-by-solar-panels_1303-15597.jpg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
                  background-blend-mode: overlay;
@@ -60,8 +58,6 @@
                             <h4><a href="{{ url('businesses/category/supply_chain_automation_systems') }}">{{ __('messages.business.supplyMenu') }}</a></h4>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-2">
                 </div>
             </div>
         </div>

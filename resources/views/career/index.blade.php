@@ -13,27 +13,14 @@
     <section class="bg-white">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <h1 class="text-center" style="padding-bottom: 50px;">{{ __('messages.career.jobOpening') }}</h1>
-                </div>
                 @foreach($careers as $career)
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <div class="card">
-                        <div class="image">
-                            <img class="card-img-top"
-                            src="{{ url('image/show/'.$career->image_id) }}"
-                            alt="Card image cap">
-                        </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card" onclick="location.href='{{ url('careers/'.$career->id) }}'">
+                        <img class="card-img-top" src="{{ url('image/show/'.$career->image_id) }}" alt="">
                         <div class="card-body">
                             <h5 class="card-title text-center">
                                 {!! $career->name !!}
                             </h5>
-                            <div class="text-center">
-                                <button type="button" class="btn learn-more-btn"
-                                        onclick="location.href='{{ url('careers/'.$career->id) }}'">
-                                    {{ __('messages.career.readMoreButton') }}
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </div>

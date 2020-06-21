@@ -13,9 +13,6 @@
     <section class="bg-white">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <h1 class="text-center" style="padding-bottom: 50px;">{{ __('messages.client.clientSubHeading') }}</h1>
-                </div>
                 @foreach($clients as $client)
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                         <div class="card">

@@ -14,17 +14,11 @@
         <div class="container">
             <div class="row">
                 @foreach($businesses as $business)
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                    <div class="card">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card" onclick="location.href='{{ url('businesses/'.$business->id) }}'">
                         <img class="card-img-top" src="{{ url('image/show/'.$business->cover_image) }}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title text-center">{{ $business->name }}</h5>
-                            <div class="text-center">
-                                <button type="button" class="btn learn-more-btn"
-                                    onclick="location.href='{{ url('businesses/'.$business->id) }}'">
-                                    {{ __('messages.business.businessReadMore') }}
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </div>
