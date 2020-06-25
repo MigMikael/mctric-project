@@ -22,7 +22,8 @@ class BusinessController extends Controller
         'civil_construction' => 'Civil & Construction',
         'utility_pipeline' => 'Utility Pipeline',
         'renew_energy' => 'Renew Energy',
-        'supply_chain_automation_systems' => 'Supply Chain Automation Systems'
+        'supply_chain_automation_systems' => 'Supply Chain Automation Systems',
+        'co_project' => 'Co Project'
     ];
 
     public $category_translate = [
@@ -30,7 +31,8 @@ class BusinessController extends Controller
         'civil_construction' => 'messages.business.civilMenu',
         'utility_pipeline' => 'messages.business.utilityMenu',
         'renew_energy' => 'messages.business.renewableMenu',
-        'supply_chain_automation_systems' => 'messages.business.supplyMenu'
+        'supply_chain_automation_systems' => 'messages.business.supplyMenu',
+        'co_project' => 'messages.business.coProjectMenu'
     ];
 
     /**
@@ -101,7 +103,7 @@ class BusinessController extends Controller
         }
 
         //return redirect()->action("BusinessController@filter", ['category' => $business->category]);
-        return redirect()->action("HomeController@dashboard");
+        return redirect()->action("HomeController@dashboardBusinesses");
     }
 
     /**
@@ -171,7 +173,7 @@ class BusinessController extends Controller
 
         $business->update($updateBusiness);
         //return redirect()->action("BusinessController@filter", ['category' => $business->category]);
-        return redirect()->action("HomeController@dashboard");
+        return redirect()->action("HomeController@dashboardBusinesses");
     }
 
     /**

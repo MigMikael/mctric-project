@@ -63,6 +63,7 @@ return [
         'utilityMenu' => 'Utility Pipeline',
         'renewableMenu' => 'Renewable Energy',
         'supplyMenu' => 'Supply Chain Automation Systems',
+        'coProjectMenu' => 'Co Project',
 
         'businessReadMore' => 'READ MORE'
     ],
@@ -76,6 +77,8 @@ return [
         'clientSubHeading' => 'Client Management',
         'awardTab' => 'Award',
         'awardSubHeading' => 'Award Management',
+        'userTab' => 'User',
+        'userSubHeading' => 'User Management',
 
         'cardButton' => 'Detail'
     ],

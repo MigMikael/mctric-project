@@ -22,12 +22,15 @@ Route::get('/', "HomeController@index");
 Route::get('/contact', function () {
     return view('contact');
 });
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', "HomeController@about");
 
 Route::group(['middleware' => ['auth']], function() {
-    Route::get('/dashboard', "HomeController@dashboard");
+//    Route::get('/dashboard', "HomeController@dashboard");
+    Route::get('/dashboard/businesses', "HomeController@dashboardBusiness");
+    Route::get('/dashboard/careers', "HomeController@dashboardCareers");
+    Route::get('/dashboard/clients', "HomeController@dashboardClients");
+    Route::get('/dashboard/awards', "HomeController@dashboardAwards");
+    Route::get('/dashboard/users', "HomeController@dashboardUsers");
 
     Route::get('/businesses/create', "BusinessController@create");
     Route::post('/businesses', "BusinessController@store");
@@ -52,6 +55,12 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/awards/{id}/edit', "AwardsController@edit");
     Route::put('/awards/{id}', "AwardsController@update");
     Route::delete('/awards/{id}', "AwardsController@destroy");
+
+    Route::get('/users/create', "UsersController@create");
+    Route::post('/users', "UsersController@store");
+    Route::get('/users/{id}/edit', "UsersController@edit");
+    Route::put('/users/{id}', "UsersController@update");
+    Route::delete('/users/{id}', "UsersController@destroy");
 });
 
 Route::get('/businesses', "BusinessController@index");

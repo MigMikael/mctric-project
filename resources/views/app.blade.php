@@ -44,7 +44,7 @@
                 @if(Auth::check())
                     {{--User Loggin--}}
                     <li class="nav-item">
-                        <a class="nav-link {{ (request()->is('dashboard')) ? 'active' : '' }}" href="{{ url('/dashboard') }}">{{ __('messages.app.dashboardMenu') }}</a>
+                        <a class="nav-link {{ (request()->is('dashboard')) ? 'active' : '' }}" href="{{ url('/dashboard/businesses') }}">{{ __('messages.app.dashboardMenu') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('logout') }}"
@@ -52,6 +52,9 @@
                             {{ __('messages.app.logoutMenu') }}
                         </a>
                     </li>
+{{--                    <li class="nav-item">--}}
+{{--                        {{ Auth::user()->name }}--}}
+{{--                    </li>--}}
                     <form id="logout-form" action="{{ url('logout') }}" method="POST">
                         {{ csrf_field() }}
                     </form>

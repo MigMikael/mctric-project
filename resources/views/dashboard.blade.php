@@ -15,22 +15,25 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs nav-justified">
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#business">{{ __('messages.dashboard.businessTab') }}</a>
+                <a class="nav-link @if($activeTab == 'businesses') active @endif" href="{{ url("/dashboard/businesses") }}">{{ __('messages.dashboard.businessTab') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#career">{{ __('messages.dashboard.careerTab') }}</a>
+                <a class="nav-link @if($activeTab == 'careers') active @endif" href="{{ url("/dashboard/careers") }}">{{ __('messages.dashboard.careerTab') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#client">{{ __('messages.dashboard.clientTab') }}</a>
+                <a class="nav-link @if($activeTab == 'clients') active @endif" href="{{ url("/dashboard/clients") }}">{{ __('messages.dashboard.clientTab') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#award">{{ __('messages.dashboard.awardTab') }}</a>
+                <a class="nav-link @if($activeTab == 'awards') active @endif" href="{{ url("/dashboard/awards") }}">{{ __('messages.dashboard.awardTab') }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @if($activeTab == 'users') active @endif" href="{{ url("/dashboard/users") }}">{{ __('messages.dashboard.userTab') }}</a>
             </li>
         </ul>
 
         <!-- Tab panes -->
         <div class="tab-content">
-            <div class="tab-pane container active" id="business">
+            <div class="tab-pane container @if($activeTab == 'businesses') active @endif" id="business">
                 <div style="padding-top: 3%; padding-bottom: 3%">
                     <div class="row">
                         <div class="col-md-12">
@@ -70,11 +73,13 @@
                     </div>
                     @endforeach
                 </div>
+                @if($businesses != [])
                 <div class="row" style="justify-content: center">
                     {{ $businesses->links() }}
                 </div>
+                @endif
             </div>
-            <div class="tab-pane container fade" id="career">
+            <div class="tab-pane container @if($activeTab == 'careers') active @endif" id="career">
                 <div style="padding-top: 3%; padding-bottom: 3%">
                     <div class="row">
                         <div class="col-md-12">
@@ -112,8 +117,13 @@
                     </div>
                     @endforeach
                 </div>
+                @if($careers != [])
+                <div class="row" style="justify-content: center">
+                    {{ $careers->links() }}
+                </div>
+                @endif
             </div>
-            <div class="tab-pane container fade" id="client">
+            <div class="tab-pane container @if($activeTab == 'clients') active @endif" id="client">
                 <div style="padding-top: 3%; padding-bottom: 3%">
                     <div class="row">
                         <div class="col-md-12">
@@ -145,8 +155,14 @@
                     </div>
                     @endforeach
                 </div>
+
+                @if($clients != [])
+                    <div class="row" style="justify-content: center">
+                        {{ $clients->links() }}
+                    </div>
+                @endif
             </div>
-            <div class="tab-pane container fade" id="award">
+            <div class="tab-pane container @if($activeTab == 'awards') active @endif" id="award">
                 <div style="padding-top: 3%; padding-bottom: 3%">
                     <div class="row">
                         <div class="col-md-12">
@@ -182,6 +198,49 @@
                             </div>
                         </div>
                     </div>
+                    @endforeach
+                </div>
+
+                @if($awards != [])
+                    <div class="row" style="justify-content: center">
+                        {{ $awards->links() }}
+                    </div>
+                @endif
+            </div>
+            <div class="tab-pane container @if($activeTab == 'users') active @endif" id="user">
+                <div style="padding-top: 3%; padding-bottom: 3%">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="pull-left">
+                                <h2>{{ __('messages.dashboard.userSubHeading') }}</h2>
+                            </div>
+                            <div class="pull-right">
+                                <a class="btn btn-primary" href="{{ url("/users/create") }}">{{ __('messages.app.createButton') }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    @foreach($users as $user)
+                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">{{ $user->name }}</h5>
+                                    <div class="text-center">
+{{--                                        <button type="button" class="btn learn-more-btn"--}}
+{{--                                                onclick="location.href='{{ url('awards/'.$award->id) }}'">--}}
+{{--                                            {{ __('messages.dashboard.cardButton') }}--}}
+{{--                                        </button>--}}
+                                    </div>
+                                </div>
+                                <div class="card-footer text-center">
+                                    {!! Form::model($user, ['method' => 'delete', 'url' => '/users/'.$user->id]) !!}
+                                    <a href="{{ url('users/'. $user->id .'/edit') }}" class="btn btn-warning">{{ __('messages.app.editButton') }}</a>
+                                    <button class="btn btn-danger" type="submit">{{ __('messages.app.deleteButton') }}</button>
+                                    {!! Form::close() !!}
+                                </div>
+                            </div>
+                        </div>
                     @endforeach
                 </div>
             </div>

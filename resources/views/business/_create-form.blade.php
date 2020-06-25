@@ -24,7 +24,7 @@
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
-    {!! Form::label('Constructor') !!}
+    {!! Form::label('Main Constructor') !!}
     {!! Form::text('constructor', null, ['class' => 'form-control']) !!}
 </div>
 

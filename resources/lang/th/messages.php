@@ -63,6 +63,7 @@ return [
         'utilityMenu' => 'ท่อสาธารณูปโภค',
         'renewableMenu' => 'พลังงานทดแทน',
         'supplyMenu' => 'ระบบอัตโนมัติของซัพพลายเชน',
+        'coProjectMenu' => 'โปรเจคร่วม',
 
         'businessReadMore' => 'ดูเพิ่มเติม'
     ],
@@ -76,6 +77,8 @@ return [
         'clientSubHeading' => 'จัดการลูกค้า',
         'awardTab' => 'รางวัล',
         'awardSubHeading' => 'จัดการรางวัล',
+        'userTab' => 'ผู้ใช้งาน',
+        'userSubHeading' => 'จัดการผู้ใช้งาน',
 
         'cardButton' => 'รายละเอียด'
     ],

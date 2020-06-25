@@ -47,7 +47,7 @@ class CareersController extends Controller
             $career['image_id'] = $image->id;
         }
         Careers::create($career);
-        return redirect()->action("HomeController@dashboard");
+        return redirect()->action("HomeController@dashboardCareers");
     }
 
     /**
@@ -96,7 +96,7 @@ class CareersController extends Controller
         }
 
         $career->update($updateCareer);
-        return redirect()->action("HomeController@dashboard");
+        return redirect()->action("HomeController@dashboardCareers");
     }
 
     /**
@@ -110,6 +110,6 @@ class CareersController extends Controller
         $career = Careers::findOrFail($id);
         $career->delete();
 
-        return redirect()->action("HomeController@dashboard");
+        return redirect()->action("HomeController@dashboardCareers");
     }
 }

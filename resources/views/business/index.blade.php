@@ -59,6 +59,15 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="service-box" style="background-image: url(https://image.freepik.com/free-photo/foreman-control-loading-containers-box-truck_28668-241.jpg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+                 background-blend-mode: overlay;
+                 background-position: center; background-size: cover;">
+                        <div class="services-wrapper">
+                            <h4><a href="{{ url('businesses/category/co_project') }}">{{ __('messages.business.coProjectMenu') }}</a></h4>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

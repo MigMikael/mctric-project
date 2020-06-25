@@ -44,7 +44,7 @@ class ClientsController extends Controller
         $client['image_id'] = $image->id;
 
         Clients::create($client);
-        return redirect()->action("HomeController@dashboard");
+        return redirect()->action("HomeController@dashboardClients");
     }
 
     /**
@@ -93,7 +93,7 @@ class ClientsController extends Controller
         }
 
         $client->update($updateClient);
-        return redirect()->action("HomeController@dashboard");
+        return redirect()->action("HomeController@dashboardClients");
     }
 
     /**
@@ -107,6 +107,6 @@ class ClientsController extends Controller
         $client = Clients::findOrFail($id);
         $client->delete();
 
-        return redirect()->action("HomeController@dashboard");
+        return redirect()->action("HomeController@dashboardClients");
     }
 }

@@ -76,4 +76,47 @@
             </div>
         </div>
     </section>
+    <section class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center section-title">{{ __('messages.home.clientHeading') }}</h1>
+                </div>
+            </div>
+            <div class="client-wrapper">
+                <div class="owl-general owl-carousel">
+                    @foreach($clients as $client)
+                        <div>
+                            <img class="image-client" src="{{ url('image/show/'.$client->image_id) }}">
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center align-items-center">
+                        <button type="button" class="btn view-btn" onclick="location.href='{{ url('/clients') }}'">See All Client</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center section-title">{{ __('messages.home.awardHeading') }}</h1>
+                </div>
+            </div>
+            <div class="client-wrapper">
+                <div class="owl-general owl-carousel">
+                    @foreach($awards as $award)
+                        <div class="image">
+                            <img class="image-client" src="{{ url('image/show/'.$award->image_id) }}">
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection

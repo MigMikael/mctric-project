@@ -44,7 +44,7 @@ class AwardsController extends Controller
         $award['image_id'] = $image->id;
 
         Awards::create($award);
-        return redirect()->action("HomeController@dashboard");
+        return redirect()->action("HomeController@dashboardAwards");
     }
 
     /**
@@ -93,7 +93,7 @@ class AwardsController extends Controller
         }
 
         $award->update($updateAward);
-        return redirect()->action("HomeController@dashboard");
+        return redirect()->action("HomeController@dashboardAwards");
     }
 
     /**
@@ -107,6 +107,6 @@ class AwardsController extends Controller
         $award = Awards::findOrFail($id);
         $award->delete();
 
-        return redirect()->action("HomeController@dashboard");
+        return redirect()->action("HomeController@dashboardAwards");
     }
 }
