@@ -226,12 +226,8 @@
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title text-center">{{ $user->name }}</h5>
-                                    <div class="text-center">
-{{--                                        <button type="button" class="btn learn-more-btn"--}}
-{{--                                                onclick="location.href='{{ url('awards/'.$award->id) }}'">--}}
-{{--                                            {{ __('messages.dashboard.cardButton') }}--}}
-{{--                                        </button>--}}
-                                    </div>
+                                    <hr>
+                                    <h6 class="card-title text-center">{{ $user->email }}</h6>
                                 </div>
                                 <div class="card-footer text-center">
                                     {!! Form::model($user, ['method' => 'delete', 'url' => '/users/'.$user->id]) !!}

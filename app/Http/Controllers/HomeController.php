@@ -82,7 +82,7 @@ class HomeController extends Controller
 
     public function dashboardClients()
     {
-        $clients = Clients::paginate(3);
+        $clients = Clients::paginate(9);
         return view('dashboard', [
             'businesses' => [],
             'clients' => $clients,

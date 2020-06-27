@@ -187,5 +187,6 @@ $(document).ready(function(){
     {title: 'Responsive', value: 'img-responsive'}],
     });
   </script>
+@yield('script')
 </body>
 </html>

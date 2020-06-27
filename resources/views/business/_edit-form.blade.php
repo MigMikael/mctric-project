@@ -53,16 +53,30 @@
     {!! Form::select('status', $status, null, ['class' => 'form-control']) !!}
 </div>
 
+
+<div class="col-md-12" style="margin-bottom: 3%">
+    {!! Form::label('old_cover_image', 'Old Cover Image') !!}
+    <div class="col-xs-12 shadow-img">
+        <img class="card-img-top"
+             src="{{ url('image/show/'.$business->cover_image) }}"
+             alt="Card image cap">
+    </div>
+</div>
+
 <div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('cover_image', 'Cover Image') !!}
-    {!! Form::file('cover_image', ['accept'=>'image/*', 'class' => 'form-control', 'id' => 'upload', 'value' => 'Choose
-    a files']) !!}
+    {!! Form::file('cover_image', ['accept'=>'image/*', 'class' => 'form-control', 'value' => 'Choose
+    a files', 'onchange' => 'readURL(this)']) !!}
+    <div id="previewCard" class="hidden col-xs-12 shadow-img">
+        <img class="card-img-top" id="preview" src="http://placehold.it/180" alt="your image" width="45%" />
+    </div>
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('images', 'Images (Multiple File)') !!}
     {!! Form::file('images[]', ['multiple'=>true, 'accept'=>'image/*', 'class' => 'form-control', 'id' => 'upload',
     'value' => 'Choose a files']) !!}
+    <div id="image-holder" class="col-xs-12"></div>
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">

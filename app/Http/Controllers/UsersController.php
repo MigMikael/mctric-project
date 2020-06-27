@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Log;
 
 class UsersController extends Controller
 {
@@ -15,7 +16,13 @@ class UsersController extends Controller
 
     public function store(Request $request)
     {
-        # Todo Validate Password
+        $this->validate($request, [
+            'name' => 'required|min:3|max:50',
+            'email' => 'required|email',
+            'password' => 'min:6|required_with:password_confirmation|same:password_confirmation',
+            'password_confirmation' => 'min:6'
+        ]);
+
         $user = $request->all();
         User::create($user);
 
@@ -33,11 +40,20 @@ class UsersController extends Controller
 
     public function update(Request $request, $id)
     {
-        # Todo Change Password Sequence
-        $user = User::findOrFail($id);
-        $updateUser = $request->all();
+        $this->validate($request, [
+            'name' => 'required|min:3|max:50',
+            'email' => 'required|email',
+            'password' => 'min:0|same:password_confirmation',
+            'password_confirmation' => 'min:0'
+        ]);
 
-        $user->update($updateUser);
+        $user = User::findOrFail($id);
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+        if($request->has('password')){
+            $user->password = bcrypt($request->get('password'));
+        }
+        $user->save();
         return redirect()->action("HomeController@dashboardUsers");
     }
 

@@ -10,7 +10,7 @@ trait ImageTrait
 {
     public function storeImage($file, $type)
     {
-        Log::info($file);
+//        Log::info($file);
         $ex = $file->getClientOriginalExtension();
         Storage::disk('local')->put($file->getFilename() . '.' . $ex, File::get($file));
 

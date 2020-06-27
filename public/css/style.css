@@ -49,7 +49,7 @@ nav.top-nav-collapse {
 section {
     padding: 120px 0;
 }
-  
+
 
 header {
     height: 100vh;
@@ -162,7 +162,7 @@ header {
     background-size: cover;
 }
 
-.view-btn:hover { 
+.view-btn:hover {
     /*color: #fc0254 !important;
     background: #FFFFFF !important;*/
     color: #FBA100 !important;
@@ -180,12 +180,12 @@ ol.circle {
     counter-reset: item;
     padding: 0px;
   }
- 
+
   ol.circle > li{
     counter-increment: item;
     margin-bottom: 5px;
   }
- 
+
  ol.circle > li:before {
     margin-right: 10px;
     content: counter(item);
@@ -196,12 +196,12 @@ ol.circle {
     text-align: center;
     display: inline-block;
   }
-  
+
   .modal-dialog {
       max-width: 800px;
       margin: 30px auto;
     }
-    
+
     .modal-body {
         position:relative;
         padding:0px;
@@ -421,14 +421,14 @@ header .overlay {
 }
 
 .image-about > img {
-    height: 300px; 
-    width: 100%; 
+    height: 300px;
+    width: 100%;
     object-fit: cover;
 }
 
 .img-show {
-    height: 300px; 
-    width: 100%; 
+    height: 300px;
+    width: 100%;
     object-fit: cover;
 }
 
@@ -471,8 +471,8 @@ header .overlay {
   }
 
   .form-style {
-    background: #FFFFFF; 
-    border-radius: 25px; 
+    background: #FFFFFF;
+    border-radius: 25px;
     padding: 25px
   }
 
@@ -532,7 +532,7 @@ header .overlay {
     }
 
     .image-about-sec1 > img {
-        height: 200px !important; 
+        height: 200px !important;
     }
 
     .image-business-project > img {
@@ -558,7 +558,7 @@ header .overlay {
     }
 
     .image-about-sec1 > img {
-        height: 200px !important; 
+        height: 200px !important;
     }
 }
 
@@ -580,4 +580,16 @@ header .overlay {
     .image-business-project > img {
         height: 300px !important;
     }
+}
+
+.hidden {
+    display: none;
+}
+
+.shadow-img {
+    box-shadow: 0px 1px 4px rgba(0,0,0,0.1);
+}
+
+.has-error {
+    border-width: 3px;
 }
