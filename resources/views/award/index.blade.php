@@ -13,9 +13,6 @@
     <section class="bg-white">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <h1 class="text-center" style="padding-bottom: 50px;">{{ __('messages.award.awardSubHeading') }}</h1>
-                </div>
                 @foreach($awards as $award)
                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                         <div class="card">

@@ -3,7 +3,7 @@ return [
     'welcome'   => 'ยินดีต้อนรับเข้าสู่แอพของเรา',
     'app'   => [
         'aboutMenu' =>  'เกี่ยวกับ',
-        'businessMenu' => 'โปรเจค',
+        'businessMenu' => 'ธุรกิจของเรา',
         'careerMenu' => 'ตำแหน่งงาน',
         'clientMenu' => 'ลูกค้าของเรา',
         'awardMenu' => 'รางวัล',
@@ -31,7 +31,7 @@ return [
         'philosophyParagraphOne' => 'เป้าหมายของเราคือเพื่อให้ลูกค้ามีความมั่นใจในการจัดหาโครงการตกแต่งภายในที่มีคุณภาพสูงหรือโครงการตกแต่งใหม่',
         'philosophyParagraphTwo' => 'เพื่อให้บรรลุตามนี้ต้องใช้ประสบการณ์ความชำนาญการสื่อสารที่ยอดเยี่ยมและวิธีการที่เป็นมืออาชีพอย่างแท้จริง',
 
-        'businessHeading' => 'โปรเจคของเรา',
+        'businessHeading' => 'ธุรกิจของเรา',
         'civilMenu' => 'งานโยธาและก่อสร้าง',
         'mechanicalMenu' => 'บริการเครื่องกลไฟฟ้าและประปา (MEP)',
         'utilityMenu' => 'ท่อสาธารณูปโภค',
@@ -45,7 +45,7 @@ return [
 
         'clientHeading' => 'ลูกค้าของเรา',
 
-        'awardHeading' => 'รางวัลที่ได้รับ',
+        'awardHeading' => 'รางวัลและการรับรอง',
 
         'contactHeading' => 'ติดต่อเรา',
         'contactAddress' => 'ที่อยู่',
@@ -57,7 +57,7 @@ return [
         'copyright' => 'ลิขสิทธิ์',
     ],
     'business' => [
-        'businessHeading' => 'โปรเจคของเรา',
+        'businessHeading' => 'ธุรกิจของเรา',
         'civilMenu' => 'งานโยธาและก่อสร้าง',
         'mechanicalMenu' => 'บริการเครื่องกลไฟฟ้าและประปา (MEP)',
         'utilityMenu' => 'ท่อสาธารณูปโภค',
@@ -68,8 +68,8 @@ return [
     ],
     'dashboard' => [
         'dashboardHeading' => 'แอดมินแดชบอร์ด',
-        'businessTab' => 'โปรเจค',
-        'businessSubHeading' => 'จัดการโปรเจค',
+        'businessTab' => 'ธุรกิจของเรา',
+        'businessSubHeading' => 'จัดการธุรกิจ',
         'careerTab' => 'ตำแหน่งงาน',
         'careerSubHeading' => 'จัดการตำแหน่งงาน',
         'clientTab' => 'ลูกค้า',
@@ -89,7 +89,7 @@ return [
         'clientSubHeading' => 'ลูกค้าของเรา',
     ],
     'award' => [
-        'awardHeading' => 'รางวัล',
+        'awardHeading' => 'รางวัลและการรับรอง',
         'awardSubHeading' => 'รางวัลและการรับรอง',
     ],
     'contact' => [

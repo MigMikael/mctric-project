@@ -33,10 +33,10 @@
                     <a class="nav-link {{ (request()->is('about')) ? 'active' : '' }}" href="{{ url('/about') }}">{{ __('messages.app.aboutMenu') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('businesses')) ? 'active' : '' }}" href="{{ url('/businesses') }}">{{ __('messages.app.businessMenu') }}</a>
+                    <a class="nav-link {{ (request()->is('businesses*')) ? 'active' : '' }}" href="{{ url('/businesses') }}">{{ __('messages.app.businessMenu') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('careers')) ? 'active' : '' }}" href="{{ url('/careers') }}">{{ __('messages.app.careerMenu') }}</a>
+                    <a class="nav-link {{ (request()->is('careers*')) ? 'active' : '' }}" href="{{ url('/careers') }}">{{ __('messages.app.careerMenu') }}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ (request()->is('contact')) ? 'active' : '' }}" href="{{ url('/contact') }}">{{ __('messages.app.contactMenu') }}</a>
@@ -66,6 +66,12 @@
 </nav>
 
 @yield('content')
+
+<footer class="footer">
+    <div class="container">
+        <p class="m-0 text-center">{{ __('messages.home.copyright') }} &copy; 2019 - McTRIC Public Co.,Ltd.</p>
+    </div>
+</footer>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
