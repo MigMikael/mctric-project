@@ -54,7 +54,7 @@ class HomeController extends Controller
         ]);
     }
 
-    public function dashboardBusiness()
+    public function dashboardBusinesses()
     {
         $businesses = Business::paginate(6);
         return view('dashboard', [

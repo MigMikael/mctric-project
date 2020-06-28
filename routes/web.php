@@ -26,7 +26,7 @@ Route::get('/about', "HomeController@about");
 
 Route::group(['middleware' => ['auth']], function() {
 //    Route::get('/dashboard', "HomeController@dashboard");
-    Route::get('/dashboard/businesses', "HomeController@dashboardBusiness");
+    Route::get('/dashboard/businesses', "HomeController@dashboardBusinesses");
     Route::get('/dashboard/careers', "HomeController@dashboardCareers");
     Route::get('/dashboard/clients', "HomeController@dashboardClients");
     Route::get('/dashboard/awards', "HomeController@dashboardAwards");
