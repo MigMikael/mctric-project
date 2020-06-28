@@ -63,11 +63,7 @@ return [
         'utilityMenu' => 'Utility Pipeline',
         'renewableMenu' => 'Renewable Energy',
         'supplyMenu' => 'Supply Chain Automation Systems',
-<<<<<<< HEAD
         'coProjectMenu' => 'Co Project',
-
-=======
->>>>>>> frontend
         'businessReadMore' => 'READ MORE'
     ],
     'dashboard' => [
