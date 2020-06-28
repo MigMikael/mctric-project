@@ -28,7 +28,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link {{ (request()->is('about')) ? 'active' : '' }}" href="{{ url('/about') }}">{{ __('messages.app.aboutMenu') }}</a>
                 </li>
@@ -41,28 +41,30 @@
                 <li class="nav-item">
                     <a class="nav-link {{ (request()->is('contact')) ? 'active' : '' }}" href="{{ url('/contact') }}">{{ __('messages.app.contactMenu') }}</a>
                 </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
                 @if(Auth::check())
-                    {{--User Loggin--}}
-                    <li class="nav-item">
-                        <a class="nav-link {{ (request()->is('dashboard')) ? 'active' : '' }}" href="{{ url('/dashboard/businesses') }}">{{ __('messages.app.dashboardMenu') }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('logout') }}"
-                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            {{ __('messages.app.logoutMenu') }}
-                        </a>
-                    </li>
-{{--                    <li class="nav-item">--}}
-{{--                        {{ Auth::user()->name }}--}}
-{{--                    </li>--}}
-                    <form id="logout-form" action="{{ url('logout') }}" method="POST">
-                        {{ csrf_field() }}
-                    </form>
-                @endif
-                <li class="nav-link lang-menu">
-                    <a href="{{ url('locale/en') }}" class="lang">EN</a> |
-                    <a href="{{ url('locale/th') }}" class="lang">ไทย</a>
+                {{--User Loggin--}}
+                <li class="nav-item">
+                    <a class="nav-link {{ (request()->is('dashboard')) ? 'active' : '' }}" href="{{ url('/dashboard/businesses') }}">{{ __('messages.app.dashboardMenu') }}</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('logout') }}"
+                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        {{ __('messages.app.logoutMenu') }}
+                    </a>
+                </li>
+                {{--<li class="nav-item">--}}
+                {{--{{ Auth::user()->name }}--}}
+                {{--</li>--}}
+                <form id="logout-form" action="{{ url('logout') }}" method="POST">
+                    {{ csrf_field() }}
+                </form>
+            @endif
+            <li class="nav-link lang-menu">
+                <a href="{{ url('locale/en') }}" class="lang">EN</a> |
+                <a href="{{ url('locale/th') }}" class="lang">ไทย</a>
+            </li>
             </ul>
         </div>
     </div>

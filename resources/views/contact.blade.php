@@ -20,14 +20,14 @@
                 </div>
                 <div class="col-md-1" style="padding-bottom: 50px;"></div>
                 <div class="col-md-5">
-                    <h5>{{ __('messages.contact.contactAddress') }}</h5>
+                    <h5><i class="fas fa-map-marker-alt"></i> {{ __('messages.contact.contactAddress') }}</h5>
                     <p>121/105 อาคารอาร์เอส ทาวเวอร์ ชั้น 39 <br> ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง กรุงเทพมหานคร 10400
                     </p>
 
-                    <h5>{{ __('messages.contact.contactEmail') }}</h5>
+                    <h5><i class="fas fa-envelope"></i> {{ __('messages.contact.contactEmail') }}</h5>
                     <p>ADMIN@MCTRIC.COM</p>
 
-                    <h5>{{ __('messages.contact.contactCall') }}</h5>
+                    <h5><i class="fas fa-phone-square"></i> {{ __('messages.contact.contactCall') }}</h5>
                     <p>{{ __('messages.contact.contactPhone') }}: +66 (0) 2641 2100 <br> {{ __('messages.contact.contactFax') }}: +66 (0) 2641 2030</p>
                 </div>
             </div>

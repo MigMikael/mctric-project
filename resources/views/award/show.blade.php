@@ -16,10 +16,10 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="text-center">
-                            <img src="{{ url('image/show/'.$award->image_id) }}" style="width: 100%">
+                            <img src="{{ url('image/show/'.$award->image_id) }}" style="width: auto; height: 500px;">
                         </div>
                     </div>
-                    <div class="col-md-6 vertical-center">
+                    <div class="col-md-6">
                         <div>
                             <h4>Name</h4>
                             <p>{!! $award->name !!}</p>

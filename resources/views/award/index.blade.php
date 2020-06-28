@@ -14,10 +14,10 @@
         <div class="container">
             <div class="row">
                 @foreach($awards as $award)
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                        <div class="card">
-                            <div class="image">
-                                <img class="card-img-top"
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card" onclick="location.href='{{ url('awards/'.$award->id) }}'">
+                            <div class="image" style="height: 100% !important;">
+                                <img class="award-img-wrapper card-img-top"
                                 src="{{ url('image/show/'.$award->image_id) }}"
                                 alt="Card image cap">
                             </div>
@@ -25,12 +25,6 @@
                                 <h5 class="card-title text-center">
                                     {!! $award->name !!}
                                 </h5>
-                                <div class="text-center">
-                                    <button type="button" class="btn learn-more-btn"
-                                            onclick="location.href='{{ url('awards/'.$award->id) }}'">
-                                        READ MORE
-                                    </button>
-                                </div>
                             </div>
                         </div>
                     </div>

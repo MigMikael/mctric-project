@@ -6,7 +6,7 @@
     <div class="sub-title">
         <div class="container">
             <h1 class="text-ellipsis text-center">
-                ABOUT
+                About
             </h1>
         </div>
     </div>
@@ -135,13 +135,20 @@
                     <h1 class="text-center section-title">{{ __('messages.home.awardHeading') }}</h1>
                 </div>
             </div>
-            <div class="client-wrapper">
-                <div class="owl-general owl-carousel">
-                    @foreach($awards as $award)
-                        <div class="image">
-                            <img class="image-client" src="{{ url('image/show/'.$award->image_id) }}">
-                        </div>
-                    @endforeach
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="award-wrapper text-center">
+                        <img src="{{url('/image/award.png')}}">
+                        <p>เยลลี่ซิม มอคค่าแมชีนเวิร์กโบรกเกอร์การันตี พาวเวอร์ ราชบัณฑิตยสถาน แพ็คออร์เดอร์อีโรติกสเตชั่น ไลฟ์โฮมหลวงตาแทงกั๊ก สะกอมเจ็ตแจ๊ส แอปเปิ้ลไนน์เจ็ตนาฏยศาลา มายาคติคอนโทรลคำตอบ เซ็นเซอร์ พาสเจอร์ไรส์ทัวร์นาเมนท์นู้ดธุรกรรม 
+                            ราสเบอร์รีวอร์รูมอาข่า เมี่ยงคำหมวยดั๊มพ์แอร์ ลาตินปาสเตอร์ แทงกั๊กซาร์ครัวซองฮีโร่ วอล์กแฟรี่คำสาปอีแต๋นสต๊อก</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center align-items-center">
+                        <button type="button" class="btn view-btn" onclick="location.href='{{ url('/awards') }}'">See All Award</button>
+                    </div>
                 </div>
             </div>
         </div>

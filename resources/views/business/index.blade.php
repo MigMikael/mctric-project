@@ -49,11 +49,9 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up">
-                    <div class="service-box" style="background-image: url(https://image.freepik.com/free-photo/foreman-control-loading-containers-box-truck_28668-241.jpg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
-                 background-blend-mode: overlay;
-                 background-position: center; background-size: cover;">
+                    <div class="service-box" onclick="location.href='{{ url('businesses/category/co_project') }}';" style="background-image: url(https://images.pexels.com/photos/3740400/pexels-photo-3740400.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));">
                         <div class="services-wrapper">
-                            <h4><a href="{{ url('businesses/category/co_project') }}">{{ __('messages.business.coProjectMenu') }}</a></h4>
+                            <h4>{{ __('messages.business.coProjectMenu') }}</a></h4>
                         </div>
                     </div>
                 </div>
