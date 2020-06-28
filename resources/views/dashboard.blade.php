@@ -3,35 +3,45 @@
 @section('title', 'Business')
 
 @section('content')
-<div class="sub-title">
-    <div class="container">
-        <h1 class="text-ellipsis text-center">
-            {{ __('messages.dashboard.dashboardHeading') }}
-        </h1>
+<header class="sub-title">
+    <div class="sub-title-overlay"></div>
+    <div class="container h-100">
+        <div class="d-flex h-100 text-center align-items-center" style="padding-top: 60px;">
+            <div class="w-100 text-white" style="z-index: 3">
+                <h1 class="text-ellipsis text-center">
+                    {{ __('messages.dashboard.dashboardHeading') }}
+                </h1>
+            </div>
+        </div>
     </div>
-</div>
+</header>
 <section class="bg-light">
     <div class="container">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs nav-justified">
             <li class="nav-item">
-                <a class="nav-link @if($activeTab == 'businesses') active @endif" href="{{ url("/dashboard/businesses") }}">{{ __('messages.dashboard.businessTab') }}</a>
+                <a class="nav-link @if($activeTab == 'businesses') active @endif"
+                    href="{{ url("/dashboard/businesses") }}">{{ __('messages.dashboard.businessTab') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @if($activeTab == 'careers') active @endif" href="{{ url("/dashboard/careers") }}">{{ __('messages.dashboard.careerTab') }}</a>
+                <a class="nav-link @if($activeTab == 'careers') active @endif"
+                    href="{{ url("/dashboard/careers") }}">{{ __('messages.dashboard.careerTab') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @if($activeTab == 'clients') active @endif" href="{{ url("/dashboard/clients") }}">{{ __('messages.dashboard.clientTab') }}</a>
+                <a class="nav-link @if($activeTab == 'clients') active @endif"
+                    href="{{ url("/dashboard/clients") }}">{{ __('messages.dashboard.clientTab') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @if($activeTab == 'awards') active @endif" href="{{ url("/dashboard/awards") }}">{{ __('messages.dashboard.awardTab') }}</a>
+                <a class="nav-link @if($activeTab == 'awards') active @endif"
+                    href="{{ url("/dashboard/awards") }}">{{ __('messages.dashboard.awardTab') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @if($activeTab == 'users') active @endif" href="{{ url("/dashboard/users") }}">{{ __('messages.dashboard.userTab') }}</a>
+                <a class="nav-link @if($activeTab == 'users') active @endif"
+                    href="{{ url("/dashboard/users") }}">{{ __('messages.dashboard.userTab') }}</a>
             </li>
         </ul>
 
-        <!-- Tab panes -->
+        <!-- Tab panels -->
         <div class="tab-content">
             <div class="tab-pane container @if($activeTab == 'businesses') active @endif" id="business">
                 <div style="padding-top: 3%; padding-bottom: 3%">
@@ -41,7 +51,8 @@
                                 <h2>{{ __('messages.dashboard.businessSubHeading') }}</h2>
                             </div>
                             <div class="pull-right">
-                                <a class="btn btn-primary" href="{{ url("businesses/create") }}">{{ __('messages.app.createButton') }}</a>
+                                <a class="btn btn-primary"
+                                    href="{{ url("businesses/create") }}">{{ __('messages.app.createButton') }}</a>
                             </div>
                         </div>
                     </div>
@@ -66,7 +77,8 @@
                                 '/businesses/'.$business->id]) !!}
                                 <a href="{{ url('businesses/'. $business->id .'/edit/') }}"
                                     class="btn btn-warning">{{ __('messages.app.editButton') }}</a>
-                                <button class="btn btn-danger" type="submit">{{ __('messages.app.deleteButton') }}</button>
+                                <button class="btn btn-danger"
+                                    type="submit">{{ __('messages.app.deleteButton') }}</button>
                                 {!! Form::close() !!}
                             </div>
                         </div>
@@ -87,7 +99,8 @@
                                 <h2>{{ __('messages.dashboard.careerSubHeading') }}</h2>
                             </div>
                             <div class="pull-right">
-                                <a class="btn btn-primary" href="{{ url("careers/create") }}">{{ __('messages.app.createButton') }}</a>
+                                <a class="btn btn-primary"
+                                    href="{{ url("careers/create") }}">{{ __('messages.app.createButton') }}</a>
                             </div>
                         </div>
                     </div>
@@ -109,8 +122,10 @@
                             </div>
                             <div class="card-footer text-center">
                                 {!! Form::model($career, ['method' => 'delete', 'url' => '/careers/'.$career->id]) !!}
-                                <a href="{{ url('careers/'. $career->id .'/edit') }}" class="btn btn-warning">{{ __('messages.app.editButton') }}</a>
-                                <button class="btn btn-danger" type="submit">{{ __('messages.app.deleteButton') }}</button>
+                                <a href="{{ url('careers/'. $career->id .'/edit') }}"
+                                    class="btn btn-warning">{{ __('messages.app.editButton') }}</a>
+                                <button class="btn btn-danger"
+                                    type="submit">{{ __('messages.app.deleteButton') }}</button>
                                 {!! Form::close() !!}
                             </div>
                         </div>
@@ -131,7 +146,8 @@
                                 <h2>{{ __('messages.dashboard.clientSubHeading') }}</h2>
                             </div>
                             <div class="pull-right">
-                                <a class="btn btn-primary" href="{{ url("clients/create") }}">{{ __('messages.app.createButton') }}</a>
+                                <a class="btn btn-primary"
+                                    href="{{ url("clients/create") }}">{{ __('messages.app.createButton') }}</a>
                             </div>
                         </div>
                     </div>
@@ -147,8 +163,10 @@
                             </div>
                             <div class="card-footer text-center">
                                 {!! Form::model($client, ['method' => 'delete', 'url' => '/clients/'.$client->id]) !!}
-                                <a href="{{ url('clients/'. $client->id .'/edit') }}" class="btn btn-warning">{{ __('messages.app.editButton') }}</a>
-                                <button class="btn btn-danger" type="submit">{{ __('messages.app.deleteButton') }}</button>
+                                <a href="{{ url('clients/'. $client->id .'/edit') }}"
+                                    class="btn btn-warning">{{ __('messages.app.editButton') }}</a>
+                                <button class="btn btn-danger"
+                                    type="submit">{{ __('messages.app.deleteButton') }}</button>
                                 {!! Form::close() !!}
                             </div>
                         </div>
@@ -157,9 +175,9 @@
                 </div>
 
                 @if($clients != [])
-                    <div class="row" style="justify-content: center">
-                        {{ $clients->links() }}
-                    </div>
+                <div class="row" style="justify-content: center">
+                    {{ $clients->links() }}
+                </div>
                 @endif
             </div>
             <div class="tab-pane container @if($activeTab == 'awards') active @endif" id="award">
@@ -170,7 +188,8 @@
                                 <h2>{{ __('messages.dashboard.awardSubHeading') }}</h2>
                             </div>
                             <div class="pull-right">
-                                <a class="btn btn-primary" href="{{ url("awards/create") }}">{{ __('messages.app.createButton') }}</a>
+                                <a class="btn btn-primary"
+                                    href="{{ url("awards/create") }}">{{ __('messages.app.createButton') }}</a>
                             </div>
                         </div>
                     </div>
@@ -192,8 +211,10 @@
                             </div>
                             <div class="card-footer text-center">
                                 {!! Form::model($award, ['method' => 'delete', 'url' => '/awards/'.$award->id]) !!}
-                                <a href="{{ url('awards/'. $award->id .'/edit') }}" class="btn btn-warning">{{ __('messages.app.editButton') }}</a>
-                                <button class="btn btn-danger" type="submit">{{ __('messages.app.deleteButton') }}</button>
+                                <a href="{{ url('awards/'. $award->id .'/edit') }}"
+                                    class="btn btn-warning">{{ __('messages.app.editButton') }}</a>
+                                <button class="btn btn-danger"
+                                    type="submit">{{ __('messages.app.deleteButton') }}</button>
                                 {!! Form::close() !!}
                             </div>
                         </div>
@@ -202,9 +223,9 @@
                 </div>
 
                 @if($awards != [])
-                    <div class="row" style="justify-content: center">
-                        {{ $awards->links() }}
-                    </div>
+                <div class="row" style="justify-content: center">
+                    {{ $awards->links() }}
+                </div>
                 @endif
             </div>
             <div class="tab-pane container @if($activeTab == 'users') active @endif" id="user">
@@ -215,28 +236,31 @@
                                 <h2>{{ __('messages.dashboard.userSubHeading') }}</h2>
                             </div>
                             <div class="pull-right">
-                                <a class="btn btn-primary" href="{{ url("/users/create") }}">{{ __('messages.app.createButton') }}</a>
+                                <a class="btn btn-primary"
+                                    href="{{ url("/users/create") }}">{{ __('messages.app.createButton') }}</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     @foreach($users as $user)
-                        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title text-center">{{ $user->name }}</h5>
-                                    <hr>
-                                    <h6 class="card-title text-center">{{ $user->email }}</h6>
-                                </div>
-                                <div class="card-footer text-center">
-                                    {!! Form::model($user, ['method' => 'delete', 'url' => '/users/'.$user->id]) !!}
-                                    <a href="{{ url('users/'. $user->id .'/edit') }}" class="btn btn-warning">{{ __('messages.app.editButton') }}</a>
-                                    <button class="btn btn-danger" type="submit">{{ __('messages.app.deleteButton') }}</button>
-                                    {!! Form::close() !!}
-                                </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">{{ $user->name }}</h5>
+                                <hr>
+                                <h6 class="card-title text-center">{{ $user->email }}</h6>
+                            </div>
+                            <div class="card-footer text-center">
+                                {!! Form::model($user, ['method' => 'delete', 'url' => '/users/'.$user->id]) !!}
+                                <a href="{{ url('users/'. $user->id .'/edit') }}"
+                                    class="btn btn-warning">{{ __('messages.app.editButton') }}</a>
+                                <button class="btn btn-danger"
+                                    type="submit">{{ __('messages.app.deleteButton') }}</button>
+                                {!! Form::close() !!}
                             </div>
                         </div>
+                    </div>
                     @endforeach
                 </div>
             </div>

@@ -3,10 +3,10 @@ return [
     'welcome'       => 'Welcome to our application',
     'app'   => [
         'aboutMenu' =>  'About',
-        'businessMenu' => 'Businesses',
-        'careerMenu' => 'Careers',
-        'clientMenu' => 'Clients',
-        'awardMenu' => 'Awards',
+        'businessMenu' => 'Business',
+        'careerMenu' => 'Career',
+        'clientMenu' => 'Client',
+        'awardMenu' => 'Award',
         'contactMenu' => 'Contact',
         'chequeTrackMenu' => 'Cheque Tracking',
         'dashboardMenu' => 'Dashboard',
@@ -31,23 +31,23 @@ return [
         'philosophyParagraphOne' => 'Our aim is to provide clients with absolute certainty in the supply of high quality interior fit-out or refurbishment projects.',
         'philosophyParagraphTwo' => 'To achieve this requires our wealth of experience, excellent communication skills and a truly professional approach.',
 
-        'businessHeading' => 'BUSINESSES',
+        'businessHeading' => 'Our Business',
         'civilMenu' => 'Civil & Construction',
         'mechanicalMenu' => 'Mechanical, Electrical and Plumbing services (MEP)',
         'utilityMenu' => 'Utility Pipeline',
         'renewableMenu' => 'Renewable Energy',
         'supplyMenu' => 'Supply Chain Automation Systems',
 
-        'careersHeading' => 'CAREERS',
+        'careersHeading' => 'Our Career',
         'careersSubHeading' => 'Why join us ?',
         'careersParagraphOne' => 'Lorem ipsum dolor sit amet,consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
         'careersButton' => 'See All jobs',
 
-        'clientHeading' => 'CLIENTS',
+        'clientHeading' => 'Our Client',
 
-        'awardHeading' => 'AWARDS',
+        'awardHeading' => 'Our Award',
 
-        'contactHeading' => 'CONTACT',
+        'contactHeading' => 'Contact',
         'contactAddress' => 'Address',
         'contactEmail' => 'Email Us At',
         'contactCall' => 'Call Us',
@@ -57,14 +57,13 @@ return [
         'copyright' => 'Copyright',
     ],
     'business' => [
-        'businessHeading' => 'BUSINESSES',
+        'businessHeading' => 'Business',
         'civilMenu' => 'Civil & Construction',
         'mechanicalMenu' => 'Mechanical, Electrical and Plumbing services (MEP)',
         'utilityMenu' => 'Utility Pipeline',
         'renewableMenu' => 'Renewable Energy',
         'supplyMenu' => 'Supply Chain Automation Systems',
         'coProjectMenu' => 'Co Project',
-
         'businessReadMore' => 'READ MORE'
     ],
     'dashboard' => [
@@ -83,20 +82,20 @@ return [
         'cardButton' => 'Detail'
     ],
     'career' => [
-        'careerHeading' => 'CAREERS',
+        'careerHeading' => 'Career',
         'jobOpening' => 'Job Opening',
         'readMoreButton' => 'READ MORE'
     ],
     'client' => [
-        'clientHeading' => 'CLIENTS',
+        'clientHeading' => 'Client',
         'clientSubHeading' => 'OUR CLIENT',
     ],
     'award' => [
-        'awardHeading' => 'AWARDS',
+        'awardHeading' => 'Award',
         'awardSubHeading' => 'Awards and Accreditations',
     ],
     'contact' => [
-        'contactHeading' => 'CONTACT',
+        'contactHeading' => 'Contact',
         'contactAddress' => 'Address',
         'contactEmail' => 'Email Us At',
         'contactCall' => 'Call Us',
