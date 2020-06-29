@@ -1,7 +1,7 @@
 <div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('old_image', 'Old Logo') !!}
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 shadow-img">
-        <img class="card-img-top"
+        <img class="responsive"
              src="{{ url('image/show/'.$career->image_id) }}"
              alt="Card image cap">
     </div>
@@ -11,7 +11,7 @@
     {!! Form::label('image', 'Image') !!}
     {!! Form::file('image', ['accept'=>'image/*', 'class' => 'form-control', 'id' => 'upload', 'value' => 'Choose a files', 'onchange' => 'readURL(this)']) !!}
     <div id="previewCard" class="hidden col-lg-4 col-md-6 col-sm-6 col-xs-12 shadow-img">
-        <img class="card-img-top" id="preview" src="http://placehold.it/180" alt="your image" />
+        <img class="responsive" id="preview" src="http://placehold.it/180" alt="your image" />
     </div>
 </div>
 
