@@ -22,14 +22,31 @@ return [
         'companySubtitle' => 'Public Company Limited',
         'watchStoryButton' => 'Watch Our Story',
 
-        'aboutHeading' => 'Construction Company',
-        'aboutParagraphOne' => 'We aim to bring our wealth of experience to the management of any construction or re-fit programme.',
-        'aboutParagraphTwo' => 'This leaves our customers to continue with their core business interests unimpeded by unnecessary distractions. Virtus Contracts Limited undertake office refits / refurbishments, interior design, property construction / alteration projects and contract management.',
-        'aboutParagraphThree' => 'Engaging with Virtus means that you have instant access to our broad range of Construction Management expertise over all industry and business sectors.',
+        'aboutHeading' => 'About Us',
+        'aboutParagraphOne' => 'McTRIC for Construction works and MEP Services namely; Condominium, Hotel, Hospital, Shopping Complex, Department Store, Hypermarket, Factory, Processing Line, Outside Plant Utility and more.',
+        'aboutParagraphTwo' => 'We firmly believe our company in reliable, efficient and trustworthy to ensure a service that will maximize customer benefits.',
+        'aboutParagraphThree' => 'When quality is needed, McTric is the ideal company with know –how, unique and exceptional  management skills and commitment to customer needs with our full service mind.',
 
-        'philosophyHeading' => 'Our Philosophy',
-        'philosophyParagraphOne' => 'Our aim is to provide clients with absolute certainty in the supply of high quality interior fit-out or refurbishment projects.',
+        'philosophyHeading' => 'Our Vision',
+        'philosophyParagraphOne' => 'The company is committed to be an expert in engineering, construction work and system installation in various fields.',
         'philosophyParagraphTwo' => 'To achieve this requires our wealth of experience, excellent communication skills and a truly professional approach.',
+
+        'missionHeading' => 'Mission',
+        'missionOne' => 'Deliver quality work that is satisfactory to customers.',
+        'missionTwo' => 'Create compensation at an appropriate level And sustainable for investors.',
+        'missionThree' => 'Develop and improve work efficiency Increase competitiveness.',
+        'missionFour' => 'Run a business by thinking of stakeholders And responsible to society.',
+        'missionFive' => 'Investment and development of the company is personnel Continuously.',
+
+        'policyHeading' => 'Quality Policy',
+        'policyDescription' => 'Develop for a sustainable growth and customers impression.',
+
+        'objectiveHeading' => 'Objective',
+        'objectiveOne' => 'Expand the system installation contractor work to grow continuously.',
+        'objectiveTwo' => 'Quality work Under swipe, estimated and completed as scheduled by the customer.',
+        'objectiveThree' => 'Control the operating system to meet the standards and develop continuously.',
+        'objectiveFour' => 'System management To be effective.',
+        'objectiveFive' => 'Continuously develop knowledge and ability of personnel.',
 
         'businessHeading' => 'Our Business',
         'civilMenu' => 'Civil & Construction',
@@ -37,22 +54,31 @@ return [
         'utilityMenu' => 'Utility Pipeline',
         'renewableMenu' => 'Renewable Energy',
         'supplyMenu' => 'Supply Chain Automation Systems',
+        'coProjectMenu' => 'Co Project',
+
+        'businessButton' => 'See All Business',
 
         'careersHeading' => 'Our Career',
         'careersSubHeading' => 'Why join us ?',
-        'careersParagraphOne' => 'Lorem ipsum dolor sit amet,consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.',
+        'careersParagraphOne' => 'The company is determined to be an expert in engineering, construction and system installation in various fields in order to deliver quality work to customers.',
+        'careersParagraphTwo' => 'Run a business by thinking of stakeholders and responsible to society. Continuously invest and develop the company is personnel. We are looking for idealists who will come to create quality work with us.',
         'careersButton' => 'See All jobs',
 
         'clientHeading' => 'Our Client',
+        'clientButton' => 'See All Client',
 
         'awardHeading' => 'Our Award',
+        'awardDescription' => 'Our company has received awards and certifications from various organizations to guarantee the quality, standard and service of the whole process of the company. So customers can be confident in our quality and service.',
+        'awardButton' => 'See All Award',
 
-        'contactHeading' => 'Contact',
+        'contactHeading' => 'Contact Us',
         'contactAddress' => 'Address',
+        'contactAddressDesc' => '121/105 RS TOWER 39 FL., RATCHADAPISEK RD. DINDAENG, BANGKOK 10400 THAILAND',
         'contactEmail' => 'Email Us At',
+        'contactEmailDesc' => 'ADMIN@MCTRIC.COM',
         'contactCall' => 'Call Us',
-        'contactPhone' => 'Phone',
         'contactFax' => 'Fax',
+        'contactPhone' => 'Phone',
 
         'copyright' => 'Copyright',
     ],
@@ -64,7 +90,17 @@ return [
         'renewableMenu' => 'Renewable Energy',
         'supplyMenu' => 'Supply Chain Automation Systems',
         'coProjectMenu' => 'Co Project',
-        'businessReadMore' => 'READ MORE'
+
+        'client' => 'Client',
+        'designer' => 'Designer',
+        'consultant' => 'Consultant',
+        'mainContractor' => 'Main Contractor',
+        'contractPeriod' => 'Contract Period',
+        'contractValue' => 'Contract Value',
+        'scopeOfWork' => 'Scope of Work',
+        'projectPhoto' => 'Project Photo',
+        
+        'businessReadMore' => 'READ MORE',
     ],
     'dashboard' => [
         'dashboardHeading' => 'Admin Dashboard',

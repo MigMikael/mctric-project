@@ -200,7 +200,7 @@
                         <div class="card">
                             <img class="card-img-top" src="{{ url('image/show/'.$award->image_id) }}"
                                 alt="Card image cap">
-                            <div class="card-body">
+                            <div class="card-body" style="min-height: 150px !important;">
                                 <h5 class="card-title text-center">{{ $award->name }}</h5>
                                 <div class="text-center">
                                     <button type="button" class="btn learn-more-btn"

@@ -22,7 +22,7 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="card" onclick="location.href='{{ url('businesses/'.$business->id) }}'">
                         <img class="card-img-top" src="{{ url('image/show/'.$business->cover_image) }}" alt="Card image cap">
-                        <div class="card-body">
+                        <div class="card-body" style="min-height: 100px !important;">
                             <h5 class="card-title text-center">{{ $business->name }}</h5>
                         </div>
                     </div>

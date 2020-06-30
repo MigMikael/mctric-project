@@ -619,6 +619,22 @@ header .overlay {
     color: #FBA100 !important;
 }
 
+.vision-section {
+    padding-top: 50px;
+}
+
+.mission-section {
+    padding-top: 50px;
+}
+
+.policy-section {
+    padding-top: 50px;
+}
+
+.objective-section {
+    padding-top: 50px;
+}
+
 @media only screen and (max-width: 991px) {
     .navbar-expand-lg > .container {
         padding-right: 15px !important;
@@ -690,6 +706,30 @@ header .overlay {
 
     .image-business {
         margin-bottom: 15px;
+    }
+
+    section {
+        padding: 50px 0 !important; 
+    }
+
+    .sub-title {
+        height: 300px !important;
+    }
+
+    .vision-section {
+        padding-top: 25px !important;
+    }
+
+    .mission-section {
+        padding-top: 0px !important;
+    }
+
+    .policy-section {
+        padding-top: 25px !important;
+    }
+
+    .objective-section {
+        padding-top: 0px !important;
     }
 }
 
