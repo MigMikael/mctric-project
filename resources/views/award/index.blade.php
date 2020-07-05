@@ -15,15 +15,15 @@
         </div>
     </div>
 </header>
-<section class="bg-white">
+<section class="services bg-white">
     <div class="container">
         <div class="row">
             @foreach($awards as $award)
             <div class="col-md-4 col-lg-4">
-                <div class="card" onclick="location.href='{{ url('awards/'.$award->id) }}'">
-                    <img class="card-img-top" src="https://images.unsplash.com/photo-1578269174936-2709b6aeb913?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">{{ $award->name }}</h5>
+                <div class="service-box" onclick="location.href='{{ url('awards/'.$award->id) }}'"
+                    style="background-image: url(https://images.pexels.com/photos/310479/pexels-photo-310479.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));">
+                    <div class="services-wrapper">
+                        <h4>{{ $award->name }}</h4>
                     </div>
                 </div>
             </div>

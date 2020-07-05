@@ -134,7 +134,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="award-wrapper text-center">
-                        <img src="{{url('/image/award.png')}}">
+                        <div style="padding-bottom: 50px;">
+                            <i class="fas fa-award fa-5x"></i>
+                        </div>
                         <p>{{ __('messages.home.awardDescription') }}</p>
                     </div>
                 </div>

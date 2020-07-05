@@ -38,7 +38,7 @@ body {
 
 nav.top-nav-collapse {
     background: rgba(0,0,0,.8) !important;
-    box-shadow: 0 1px 3px rgba(0,0,0,.08);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.8);
     transition: all 0.5s ease;
 }
 
@@ -81,7 +81,7 @@ section {
 
 header {
     height: 100vh;
-    background-image: url('https://images.pexels.com/photos/2036686/pexels-photo-2036686.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-image: url('https://images.pexels.com/photos/310479/pexels-photo-310479.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)');
     /* flex-box thing */
     display: flex;
     flex-direction: column;
@@ -99,8 +99,9 @@ header {
     bottom: 0;
     left: 0;
     z-index: 2;
-    background-color: #080d15;
-    opacity: .2;
+    /*background-color: #080d15;*/
+    background-color: #000000;
+    opacity: .3;
 }
 
 .header-title {
@@ -134,7 +135,7 @@ header {
     padding: 0.75rem 1.75rem;
     border-radius: 50px;
     text-transform: uppercase;
-    background: #FBA100;
+    background: #00345b;
     color: #fff;
     line-height: normal;
     cursor: pointer;
@@ -142,12 +143,20 @@ header {
     margin-top: 50px;
 }
 
-.fa-play-circle {
-    color:#FFFFFF !important;
+.view-btn:hover {
+    color: #00345b !important;
+    background: #FFFFFF !important;
+    border: 2px solid #00345b;
+    transition: all .5s linear;
 }
 
 .video-btn:hover i {
-    color: #FBA100 !important;
+    color: #00345b!important;
+}
+
+
+.fa-play-circle {
+    color:#FFFFFF !important;
 }
 
 .learn-more-btn {
@@ -157,7 +166,7 @@ header {
     min-width: 195px;
     border-radius: 50px;
     text-transform: uppercase;
-    background: #FBA100;
+    background: #00345b;
     color: #fff;
     line-height: normal;
     cursor: pointer;
@@ -172,11 +181,11 @@ header {
     border-radius: 50px;
     text-transform: uppercase;
     background: #FFFFFF;
-    color: #FBA100;
+    color: #00345b;
     line-height: normal;
     cursor: pointer;
     text-align: center;
-    border: 1px solid #FBA100;
+    border: 2px solid #00345b;
     transition: all .5s linear;
 }
 
@@ -210,21 +219,13 @@ header {
     background-size: cover;
 }
 
-.view-btn:hover {
-    /*color: #fc0254 !important;
-    background: #FFFFFF !important;*/
-    color: #FBA100 !important;
-    background: #FFFFFF !important;
-    transition: all .5s linear;
-}
-
 .v-center {
     display: flex;
     align-items: center;
 }
 
 i {
-    color: #FBA100;
+    color: #00345b;
 }
 
 ol.circle {
@@ -241,7 +242,7 @@ ol.circle {
  ol.circle > li:before {
     margin-right: 10px;
     content: counter(item);
-    background: #FBA100;
+    background: #00345b;
     border-radius: 100%;
     color: white;
     width: 1.5em;
@@ -350,8 +351,8 @@ header .overlay {
     bottom: 0;
     left: 0;
     z-index: 2;
-    background-color: #080d15;
-    opacity: .2;
+    background-color: #000000;
+    opacity: .3;
 }
 
 .full-screen {
@@ -597,7 +598,7 @@ header .overlay {
   }
 
   .nav-tabs .nav-link.active {
-    color: #FBA100 !important;
+    color: #00345b !important;
 }
 
 .nav-tabs .nav-link {
@@ -633,6 +634,21 @@ header .overlay {
 
 .objective-section {
     padding-top: 50px;
+}
+
+.btn-primary {
+    background: #00345b;
+    border-color: #00345b;
+    border-radius: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.btn-primary:hover {
+    background: #FFFFFF;
+    color: #00345b;
+    border: 2px solid #00345b;
+    transition: all .5s linear;
 }
 
 @media only screen and (max-width: 991px) {
