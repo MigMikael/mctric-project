@@ -66,7 +66,8 @@ class HomeController extends Controller
             'users' => [],
             'activeTab' => 'summary',
             'inProgressCount' => $inProgressCount,
-            'completeCount' => $completeCount
+            'completeCount' => $completeCount,
+            'search' => null
         ]);
     }
 
@@ -81,7 +82,8 @@ class HomeController extends Controller
             'users' => [],
             'activeTab' => 'businesses',
             'inProgressCount' => null,
-            'completeCount' => null
+            'completeCount' => null,
+            'search' => null
         ]);
     }
 
@@ -96,7 +98,8 @@ class HomeController extends Controller
             'users' => [],
             'activeTab' => 'careers',
             'inProgressCount' => null,
-            'completeCount' => null
+            'completeCount' => null,
+            'search' => null
         ]);
     }
 
@@ -111,7 +114,8 @@ class HomeController extends Controller
             'users' => [],
             'activeTab' => 'clients',
             'inProgressCount' => null,
-            'completeCount' => null
+            'completeCount' => null,
+            'search' => null
         ]);
     }
 
@@ -126,7 +130,8 @@ class HomeController extends Controller
             'users' => [],
             'activeTab' => 'awards',
             'inProgressCount' => null,
-            'completeCount' => null
+            'completeCount' => null,
+            'search' => null
         ]);
     }
 
@@ -141,7 +146,8 @@ class HomeController extends Controller
             'users' => $users,
             'activeTab' => 'users',
             'inProgressCount' => null,
-            'completeCount' => null
+            'completeCount' => null,
+            'search' => null
         ]);
     }
 

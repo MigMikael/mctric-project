@@ -75,14 +75,18 @@ class BusinessController extends Controller
     public function search(Request $request)
     {
         $request = $request->all();
-//        Log::info("Query", $request);
-
         $query = $request['query'];
         $businesses = Business::where("name", "like", "%".$query."%")->where('display', true)->paginate(6);
-        return view('business.list', [
+        return view('dashboard', [
             'businesses' => $businesses,
-//            'status' => $this->status[$status],
-            'headingTranslate' => "Search : ". $query
+            'clients' => [],
+            'awards' => [],
+            'careers' => [],
+            'users' => [],
+            'activeTab' => 'businesses',
+            'inProgressCount' => null,
+            'completeCount' => null,
+            'search' => $query
         ]);
     }
 
