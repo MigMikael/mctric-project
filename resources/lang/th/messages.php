@@ -56,6 +56,7 @@ return [
         'renewableMenu' => 'พลังงานทดแทน',
         'supplyMenu' => 'ระบบอัตโนมัติของซัพพลายเชน',
         'coProjectMenu' => 'โปรเจคร่วม',
+        'jointVentureMenu' => 'โปรเจคร่วม',
         'businessButton' => 'ดูธุรกิจทั้งหมดของเรา',
 
         'careersHeading' => 'ร่วมงานกับเรา',

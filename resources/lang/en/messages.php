@@ -56,6 +56,7 @@ return [
         'renewableMenu' => 'Renewable Energy',
         'supplyMenu' => 'Supply Chain Automation Systems',
         'coProjectMenu' => 'Co Project',
+        'jointVentureMenu' => 'Joint Venture Project',
 
         'businessButton' => 'See All Business',
 
