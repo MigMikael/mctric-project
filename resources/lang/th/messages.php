@@ -79,6 +79,8 @@ return [
         'contactFax' => 'แฟกซ์',
         'contactPhone' => 'โทร',
 
+        'chequeTracking' => 'ติดตามเช็ค',
+
         'copyright' => 'ลิขสิทธิ์',
     ],
     'business' => [

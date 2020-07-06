@@ -21,7 +21,7 @@
             @foreach($awards as $award)
             <div class="col-md-4 col-lg-4">
                 <div class="service-box" onclick="location.href='{{ url('awards/'.$award->id) }}'"
-                    style="background-image: url(https://images.pexels.com/photos/310479/pexels-photo-310479.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));">
+                    style="background-image: url(https://images.pexels.com/photos/310479/pexels-photo-310479.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940), linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));">
                     <div class="services-wrapper">
                         <h4>{{ $award->name }}</h4>
                     </div>

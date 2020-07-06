@@ -5,7 +5,7 @@ body {
 }
 
 .navbar {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     padding: 0px;
 }
 
@@ -16,8 +16,8 @@ body {
 */
 
 .navbar-main-color {
-    background: rgba(0,0,0,.8) !important;
-    box-shadow: 0 1px 3px rgba(0,0,0,.08);
+    background: rgba(0,0,0,0.7) !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.7);
     transition: all 0.5s ease;
 }
 
@@ -37,8 +37,8 @@ body {
 }
 
 nav.top-nav-collapse {
-    background: rgba(0,0,0,.8) !important;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.7) !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.7);
     transition: all 0.5s ease;
 }
 
@@ -47,8 +47,8 @@ nav.top-nav-collapse {
     color: #FFFFFF;
 }
 
+/*
 .navbar-dark .navbar-nav .nav-link:hover {
-    /*color: rgba(255,255,255,.8);*/
     color: #FBA100;
     font-weight: 500;
 }
@@ -56,6 +56,7 @@ nav.top-nav-collapse {
 .navbar-dark .navbar-nav .nav-link.active {
     color: #FBA100 !important;
 }
+*/
 
 .navbar-nav {
     margin-left: 50px !important;
@@ -101,7 +102,7 @@ header {
     z-index: 2;
     /*background-color: #080d15;*/
     background-color: #000000;
-    opacity: .3;
+    opacity: .2;
 }
 
 .header-title {
@@ -135,7 +136,7 @@ header {
     padding: 0.75rem 1.75rem;
     border-radius: 50px;
     text-transform: uppercase;
-    background: #00345b;
+    background: #034679;
     color: #fff;
     line-height: normal;
     cursor: pointer;
@@ -144,14 +145,14 @@ header {
 }
 
 .view-btn:hover {
-    color: #00345b !important;
+    color: #034679 !important;
     background: #FFFFFF !important;
-    border: 2px solid #00345b;
+    border: 2px solid #034679;
     transition: all .5s linear;
 }
 
 .video-btn:hover i {
-    color: #00345b!important;
+    color: #034679!important;
 }
 
 
@@ -166,7 +167,7 @@ header {
     min-width: 195px;
     border-radius: 50px;
     text-transform: uppercase;
-    background: #00345b;
+    background: #034679;
     color: #fff;
     line-height: normal;
     cursor: pointer;
@@ -181,11 +182,11 @@ header {
     border-radius: 50px;
     text-transform: uppercase;
     background: #FFFFFF;
-    color: #00345b;
+    color: #034679;
     line-height: normal;
     cursor: pointer;
     text-align: center;
-    border: 2px solid #00345b;
+    border: 2px solid #034679;
     transition: all .5s linear;
 }
 
@@ -225,7 +226,7 @@ header {
 }
 
 i {
-    color: #00345b;
+    color: #034679;
 }
 
 ol.circle {
@@ -242,7 +243,7 @@ ol.circle {
  ol.circle > li:before {
     margin-right: 10px;
     content: counter(item);
-    background: #00345b;
+    background: #034679;
     border-radius: 100%;
     color: white;
     width: 1.5em;
@@ -352,7 +353,7 @@ header .overlay {
     left: 0;
     z-index: 2;
     background-color: #000000;
-    opacity: .3;
+    opacity: .2;
 }
 
 .full-screen {
@@ -598,7 +599,7 @@ header .overlay {
   }
 
   .nav-tabs .nav-link.active {
-    color: #00345b !important;
+    color: #034679 !important;
 }
 
 .nav-tabs .nav-link {
@@ -617,7 +618,7 @@ header .overlay {
 }
 
 .lang-menu .lang:hover {
-    color: #FBA100 !important;
+    color: #FFFFFF !important;
 }
 
 .vision-section {
@@ -637,8 +638,8 @@ header .overlay {
 }
 
 .btn-primary {
-    background: #00345b;
-    border-color: #00345b;
+    background: #034679;
+    border-color: #034679;
     border-radius: 25px;
     padding-left: 25px;
     padding-right: 25px;
@@ -646,8 +647,34 @@ header .overlay {
 
 .btn-primary:hover {
     background: #FFFFFF;
-    color: #00345b;
-    border: 2px solid #00345b;
+    color: #034679;
+    border: 2px solid #034679;
+    transition: all .5s linear;
+}
+
+.btn-warning {
+    color: #034679;
+    background-color: #FFFFFF;
+    border: 2px solid #034679;
+}
+
+.btn-warning:hover {
+    color: #034679;
+    background-color: #FFFFFF;
+    border: 2px solid #034679;
+    transition: all .5s linear;
+}
+
+.btn-danger {
+    color: #034679;
+    background-color: #FFFFFF;
+    border: 2px solid #034679;
+}
+
+.btn-danger:hover {
+    background: #FFFFFF;
+    color: #034679;
+    border: 2px solid #034679;
     transition: all .5s linear;
 }
 

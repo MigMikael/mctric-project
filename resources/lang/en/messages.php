@@ -79,6 +79,8 @@ return [
         'contactCall' => 'Call Us',
         'contactFax' => 'Fax',
         'contactPhone' => 'Phone',
+        
+        'chequeTracking' => 'Cheque Tracking',
 
         'copyright' => 'Copyright',
     ],

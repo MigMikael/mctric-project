@@ -3,7 +3,7 @@
 @section('title', 'Business')
 
 @section('content')
-<div class="sub-title" style="background-image: url({{ url('image/show/'.$business->cover_image) }}), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) !important;
+<div class="sub-title" style="background-image: url({{ url('image/show/'.$business->cover_image) }}), linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)) !important;
     background-blend-mode: overlay;">
     <div class="container">
         <h1 class="text-ellipsis text-center">
@@ -81,7 +81,7 @@
         </div>
     </div>
 </section>
-<section style="background-image: url({{ url('image/show/'.$business->cover_image) }}), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+<section style="background-image: url({{ url('image/show/'.$business->cover_image) }}), linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));
 background-blend-mode: overlay;
 background-size: cover;
 width: 100%; color: #FFFFFF; background-position: center center; padding: 50px 0 50px 0 !important;">
