@@ -14,15 +14,21 @@ class Business extends Model
         'client',
         'consultant',
         'designer',
-        'constructor',
+        'contractor',
+        'main_contractor',
         'contract_value',
-        'contract_period',
+        'contract_start',
+        'contract_end',
         'scope_of_work',
         'slug',
         'category',
         'status',
+        'completion',
         'display',
-        'cover_image'
+        'cover_image',
+        'social_facebook',
+        'social_youtube',
+        'social_instagram',
     ];
 
     public function images()

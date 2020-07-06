@@ -24,8 +24,13 @@
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
-    {!! Form::label('Main Constructor') !!}
-    {!! Form::text('constructor', null, ['class' => 'form-control']) !!}
+    {!! Form::label('Contractor') !!}
+    {!! Form::text('contractor', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="col-md-12" style="margin-bottom: 3%">
+    {!! Form::label('Main Contractor') !!}
+    {!! Form::text('main_contractor', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
@@ -34,8 +39,13 @@
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
-    {!! Form::label('Contract Period') !!}
-    {!! Form::text('contract_period', null, ['class' => 'form-control']) !!}
+    {!! Form::label('Contract Start') !!}
+    {!! Form::date('contract_start', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
+</div>
+
+<div class="col-md-12" style="margin-bottom: 3%">
+    {!! Form::label('Contract End') !!}
+    {!! Form::date('contract_end', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
@@ -51,6 +61,11 @@
 <div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('Status') !!}
     {!! Form::select('status', $status, null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="col-md-12" style="margin-bottom: 3%">
+    {!! Form::label('Completion (%)') !!}
+    {!! Form::text('completion', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
@@ -73,3 +88,19 @@
     {!! Form::label('Display') !!}
     {!! Form::select('display', [true => "Show", false => "Not Show"], null, ['class' => 'form-control']) !!}
 </div>
+
+<div class="col-md-12" style="margin-bottom: 3%">
+    {!! Form::label('Facebook') !!}
+    {!! Form::text('social_facebook', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="col-md-12" style="margin-bottom: 3%">
+    {!! Form::label('Youtube') !!}
+    {!! Form::text('social_youtube', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="col-md-12" style="margin-bottom: 3%">
+    {!! Form::label('Instagram') !!}
+    {!! Form::text('social_instagram', null, ['class' => 'form-control']) !!}
+</div>
+

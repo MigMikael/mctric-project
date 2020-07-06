@@ -15,7 +15,8 @@ return [
 
         'createButton' => 'สร้าง',
         'editButton' => 'แก้ไข',
-        'deleteButton' => 'ลบ'
+        'deleteButton' => 'ลบ',
+        'searchButton' => 'ต้นหา',
     ],
     'home' => [
         'companyTitle' => 'แมคทริค',
@@ -63,12 +64,15 @@ return [
         'utilityMenu' => 'ท่อสาธารณูปโภค',
         'renewableMenu' => 'พลังงานทดแทน',
         'supplyMenu' => 'ระบบอัตโนมัติของซัพพลายเชน',
-        'coProjectMenu' => 'โปรเจคร่วม',
+        'jointVentureProject' => 'โปรเจคร่วม',
 
         'businessReadMore' => 'ดูเพิ่มเติม'
     ],
     'dashboard' => [
         'dashboardHeading' => 'แอดมินแดชบอร์ด',
+
+        'summaryTab' => 'สรุป',
+        'summarySubHeading' => 'สรุปสถานะธุรกิจ',
         'businessTab' => 'ธุรกิจของเรา',
         'businessSubHeading' => 'จัดการธุรกิจ',
         'careerTab' => 'ตำแหน่งงาน',
@@ -102,5 +106,9 @@ return [
         'contactCall' => 'โทรหาเรา',
         'contactPhone' => 'โทร',
         'contactFax' => 'แฟกซ์',
+    ],
+    'status' => [
+        'workInProgress' => 'ระหว่างการดำเนินการ',
+        'complete' => 'เสร็จสิ้น'
     ]
 ];

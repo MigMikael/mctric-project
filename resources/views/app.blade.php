@@ -46,7 +46,7 @@
                 @if(Auth::check())
                 {{--User Loggin--}}
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('dashboard')) ? 'active' : '' }}" href="{{ url('/dashboard/businesses') }}">{{ __('messages.app.dashboardMenu') }}</a>
+                    <a class="nav-link {{ (request()->is('dashboard')) ? 'active' : '' }}" href="{{ url('/dashboard/summary') }}">{{ __('messages.app.dashboardMenu') }}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('logout') }}"

@@ -54,6 +54,22 @@ class HomeController extends Controller
         ]);
     }
 
+    public function dashboardSummary()
+    {
+        $inProgressCount = Business::where("status", "work_in_process")->count();
+        $completeCount = Business::where("status", "complete")->count();
+        return view('dashboard', [
+            'businesses' => [],
+            'clients' => [],
+            'awards' => [],
+            'careers' => [],
+            'users' => [],
+            'activeTab' => 'summary',
+            'inProgressCount' => $inProgressCount,
+            'completeCount' => $completeCount
+        ]);
+    }
+
     public function dashboardBusinesses()
     {
         $businesses = Business::paginate(6);
@@ -64,6 +80,8 @@ class HomeController extends Controller
             'careers' => [],
             'users' => [],
             'activeTab' => 'businesses',
+            'inProgressCount' => null,
+            'completeCount' => null
         ]);
     }
 
@@ -77,6 +95,8 @@ class HomeController extends Controller
             'careers' => $careers,
             'users' => [],
             'activeTab' => 'careers',
+            'inProgressCount' => null,
+            'completeCount' => null
         ]);
     }
 
@@ -90,6 +110,8 @@ class HomeController extends Controller
             'careers' => [],
             'users' => [],
             'activeTab' => 'clients',
+            'inProgressCount' => null,
+            'completeCount' => null
         ]);
     }
 
@@ -103,6 +125,8 @@ class HomeController extends Controller
             'careers' => [],
             'users' => [],
             'activeTab' => 'awards',
+            'inProgressCount' => null,
+            'completeCount' => null
         ]);
     }
 
@@ -116,6 +140,8 @@ class HomeController extends Controller
             'careers' => [],
             'users' => $users,
             'activeTab' => 'users',
+            'inProgressCount' => null,
+            'completeCount' => null
         ]);
     }
 

@@ -39,7 +39,7 @@
                 <div class="service-box" onclick="location.href='{{ url('businesses/category/utility_pipeline') }}';"
                     style="background-image: url(https://image.freepik.com/free-photo/air-conditioning-buildings_179755-11.jpg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));">
                     <div class="services-wrapper">
-                        <h4>{{ __('messages.home.utilityMenu') }}</a></h4>
+                        <h4>{{ __('messages.home.utilityMenu') }}</h4>
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                 <div class="service-box" onclick="location.href='{{ url('businesses/category/co_project') }}';"
                     style="background-image: url(https://images.pexels.com/photos/3740400/pexels-photo-3740400.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));">
                     <div class="services-wrapper">
-                        <h4>{{ __('messages.business.coProjectMenu') }}</a></h4>
+                        <h4>{{ __('messages.business.jointVentureProject') }}</h4>
                     </div>
                 </div>
             </div>

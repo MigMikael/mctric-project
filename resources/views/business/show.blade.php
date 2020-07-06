@@ -67,6 +67,36 @@
         </div>
     </div>
 </section>
+<section class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div
+                    class="fb-post"
+                    data-href="{!! $business->social_facebook !!}"
+                    data-width="500"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {!! $business->social_youtube !!}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {!! $business->social_instagram !!}
+            </div>
+        </div>
+    </div>
+</section>
 <section style="background-image: url({{ url('image/show/'.$business->cover_image) }}), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
 background-blend-mode: overlay;
 background-size: cover;
@@ -86,4 +116,16 @@ width: 100%; color: #FFFFFF; background-position: center center; padding: 50px 0
         </div>
     </div>
 </section>
+@endsection
+
+@section('script')
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                xfbml      : true,
+                version    : 'v7.0'
+            });
+        };
+    </script>
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 @endsection
