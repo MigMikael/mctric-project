@@ -54,15 +54,11 @@
                             <div class="pull-left">
                                 <h2>{{ __('messages.dashboard.summarySubHeading') }}</h2>
                             </div>
-                            <div class="pull-right">
-                                <a class="btn btn-primary"
-                                   href="{{ url("businesses/create") }}">{{ __('messages.app.createButton') }}</a>
-                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12" style="border-width: 10px; border-color: black" onclick="location.href='{{ url('/businesses/status/work_in_process') }}';">
+                    <div class="col-lg-6 col-md-6 col-sm-12" style="border-width: 10px; border-color: black" onclick="location.href='{{ url('/dashboard/businesses/status/work_in_process') }}';">
                         <h4>{{ __('messages.status.workInProgress') }} </h4>
                         <h4>
                             @if($inProgressCount)
@@ -73,7 +69,7 @@
                         </h4>
                     </div>
 
-                    <div class="col-lg-6 col-md-5 col-sm-12" style="border-width: 10px; border-color: black" onclick="location.href='{{  url('/businesses/status/complete') }}';">
+                    <div class="col-lg-6 col-md-5 col-sm-12" style="border-width: 10px; border-color: black" onclick="location.href='{{  url('/dashboard/businesses/status/complete') }}';">
                         <h4>{{ __('messages.status.complete') }} </h4>
                         <h4>
                             @if($completeCount)

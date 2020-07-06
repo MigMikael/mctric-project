@@ -27,6 +27,7 @@ Route::get('/about', "HomeController@about");
 Route::group(['middleware' => ['auth']], function() {
 //    Route::get('/dashboard', "HomeController@dashboard");
     Route::get('/dashboard/summary', "HomeController@dashboardSummary");
+    Route::get('/dashboard/businesses/status/{status}', "BusinessController@status");
     Route::get('/dashboard/businesses', "HomeController@dashboardBusinesses");
     Route::get('/dashboard/careers', "HomeController@dashboardCareers");
     Route::get('/dashboard/clients', "HomeController@dashboardClients");
@@ -68,7 +69,6 @@ Route::group(['middleware' => ['auth']], function() {
 Route::get('/businesses', "BusinessController@index");
 Route::get('/businesses/{id}', "BusinessController@show");
 Route::get('/businesses/category/{category}', "BusinessController@filter");
-Route::get('/businesses/status/{status}', "BusinessController@status");
 
 Route::get('/careers', "CareersController@index");
 Route::get('/careers/{id}', "CareersController@show");

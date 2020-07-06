@@ -25,6 +25,17 @@
                         <div class="card-body" style="min-height: 100px !important;">
                             <h5 class="card-title text-center">{{ $business->name }} ({{ $business->completion }}%)</h5>
                         </div>
+                        @if(Request::is('dashboard/businesses/status/*'))
+                        <div class="card-footer text-center">
+                            {!! Form::model($business, ['method' => 'delete', 'url' =>
+                            '/businesses/'.$business->id]) !!}
+                            <a href="{{ url('businesses/'. $business->id .'/edit/') }}"
+                               class="btn btn-warning">{{ __('messages.app.editButton') }}</a>
+                            <button class="btn btn-danger"
+                                    type="submit">{{ __('messages.app.deleteButton') }}</button>
+                            {!! Form::close() !!}
+                        </div>
+                        @endif
                     </div>
                 </div>
                 @endforeach
