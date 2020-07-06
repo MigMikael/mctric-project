@@ -73,6 +73,11 @@ section {
     padding: 100px 0;
 }
 
+.responsive {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
 
 header {
     height: 100vh;
@@ -614,28 +619,20 @@ header .overlay {
     color: #FBA100 !important;
 }
 
-#columns {
-	column-width: 320px;
-    column-gap: 15px;
-    width: 90%;
-	max-width: 1100px;
-	margin: 50px auto;
+.vision-section {
+    padding-top: 50px;
 }
 
-div#columns figure {
-	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
-	padding-bottom: 10px;
-    transition: opacity .4s ease-in-out;
-    display: inline-block;
+.mission-section {
+    padding-top: 50px;
 }
 
-div#columns figure img {
-	width: 100%; height: auto;
+.policy-section {
+    padding-top: 50px;
 }
 
-@media screen and (max-width: 750px) { 
-  #columns { column-gap: 0px; }
-  #columns figure { width: 100%; }
+.objective-section {
+    padding-top: 50px;
 }
 
 @media only screen and (max-width: 991px) {
@@ -709,6 +706,30 @@ div#columns figure img {
 
     .image-business {
         margin-bottom: 15px;
+    }
+
+    section {
+        padding: 50px 0 !important; 
+    }
+
+    .sub-title {
+        height: 300px !important;
+    }
+
+    .vision-section {
+        padding-top: 25px !important;
+    }
+
+    .mission-section {
+        padding-top: 0px !important;
+    }
+
+    .policy-section {
+        padding-top: 25px !important;
+    }
+
+    .objective-section {
+        padding-top: 0px !important;
     }
 }
 

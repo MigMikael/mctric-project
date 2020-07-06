@@ -9,7 +9,7 @@
         <div class="d-flex h-100 text-center align-items-center" style="padding-top: 60px;">
             <div class="w-100 text-white" style="z-index: 3">
                 <h1 class="text-ellipsis text-center">
-                    About
+                    {{ __('messages.app.aboutMenu') }}
                 </h1>
             </div>
         </div>
@@ -20,19 +20,10 @@
             <div class="row">
                 <div class="col-md-6 v-center">
                     <div class="desc">
-                       <h2 class="bottom15">McTRIC Public Company Limited</h1>
-                        <p>McTRIC ประกอบกิจการก่อสร้างและบริการ MEP ได้แก่
-                            คอนโดมิเนียม, โรงแรม, โรงพยาบาล, ห้างสรรพสินค้า, ห้างสรรพสินค้า, ไฮเปอร์มาร์เก็ต, โรงงาน, สายการผลิต,
-                            ยูทิลิตี้นอกโรงงานและอื่นๆ
-                        </p>
-                        <p>
-                            เราเชื่อมั่นในบริษัท
-                            ของเราว่ามีความมั่นคง ประสิทธิภาพและเชื่อถือได้ เพื่อให้มั่นใจว่าบริการของเราจะให้ประโยชน์สูงสุดแก่ลูกค้า
-                        </p>
-                        <p>
-                            เมื่อต้องการคุณภาพ McTric เป็นบริษัทในอุดมคติที่
-                            มีความรู้ทักษะการจัดการที่โดดเด่นและไม่เหมือนใครและมีความมุ่งมั่นต่อความต้องการของลูกค้าด้วยใจบริการเต็มรูปแบบของเรา
-                        <p>
+                       <h2 class="bottom15">{{ __('messages.home.aboutHeading') }}</h1>
+                        <p>{{ __('messages.home.aboutParagraphOne') }}</p>
+                        <p>{{ __('messages.home.aboutParagraphTwo') }}</p>
+                        <p>{{ __('messages.home.aboutParagraphThree') }}</p>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -41,7 +32,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row" style="padding-top: 50px;">
+            <div class="row vision-section">
                 <div class="col-md-6">
                     <div class="image image-about">
                         <img src="https://images.pexels.com/photos/2036686/pexels-photo-2036686.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
@@ -49,22 +40,21 @@
                 </div>
                 <div class="col-md-6 v-center">
                     <div class="desc">
-                        <h2 class="bottom15">วิสัยทัศน์</h2>
-                        <p>บริษัทฯ มุ่งมั่นที่จะเป็นผู้เชี่ยวชาญในงานด้านวิศวกรรม
-                            งานรับเหมาก่อสร้าง และการติดตั้งระบบในแขนงต่างๆ</p>
+                        <h2 class="bottom15">{{ __('messages.home.philosophyHeading') }}</h2>
+                        <p>{{ __('messages.home.philosophyParagraphOne') }}</p>
                     </div>
                 </div>
             </div>
-            <div class="row" style="padding-top: 50px;">
+            <div class="row mission-section">
                 <div class="col-md-6 v-center">
                     <div class="desc">
-                        <h2 class="bottom15">พันธกิจ</h2>
+                        <h2 class="bottom15">{{ __('messages.home.missionHeading') }}</h2>
                         <ol class="circle">
-                            <li>ส่งมอบผลงานที่มีคุณภาพให้เป็นที่พึงพอใจแก่ลูกค้า</li>
-                            <li>สร้างผลตอบแทนในระดับที่เหมาะสม และยั่งยืนให้กับนักลงทุน</li>
-                            <li>พัฒนาและปรับปรุงประสิทธิภาพในการทำงาน เพิ่มศักยภาพในการแข่งขัน</li>
-                            <li>ประกอบธุรกิจโดยคำนึกถึงผู้มีส่วนได้ส่วนเสีย และรับผิดชอบต่อสังคม</li>
-                            <li>ลงทุนและพัฒนาบุคคลากรของบริษัทฯ อย่างต่อเนื่อง</li>
+                            <li>{{ __('messages.home.missionOne') }}</li>
+                            <li>{{ __('messages.home.missionTwo') }}</li>
+                            <li>{{ __('messages.home.missionThree') }}</li>
+                            <li>{{ __('messages.home.missionFour') }}</li>
+                            <li>{{ __('messages.home.missionFive') }}</li>
                         </ol>
                     </div>
                 </div>
@@ -74,7 +64,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row" style="padding-top: 50px;">
+            <div class="row policy-section">
                 <div class="col-md-6">
                     <div class="image image-about">
                         <img src="https://images.pexels.com/photos/1770801/pexels-photo-1770801.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
@@ -82,21 +72,21 @@
                 </div>
                 <div class="col-md-6 v-center">
                     <div class="desc">
-                        <h2 class="bottom15">นโยบายคุณภาพ</h2>
-                        <p>พัฒนาอย่างต่อเนื่อง เพื่อคุณภาพที่มั่นคง และความประทับใจของลูกค้า</p>
+                        <h2 class="bottom15">{{ __('messages.home.policyHeading') }}</h2>
+                        <p>{{ __('messages.home.policyDescription') }}</p>
                     </div>
                 </div>
             </div>
-            <div class="row" style="padding-top: 50px;">
+            <div class="row objective-section">
                 <div class="col-md-6 v-center">
                     <div class="desc">
-                        <h2 class="bottom15">วัตถุประสงค์</h2>
+                        <h2 class="bottom15">{{ __('messages.home.objectiveHeading') }}</h2>
                         <ol class="circle">
-                            <li>ขยายงานรับเหมาติดตั้งงานระบบให้เติบโตอย่างต่อเนื่อง</li>
-                            <li>ผลงานได้คุณภาพ ภายใต้งาบประมาณและเสร็จตามกำหนดเวลาที่สัญญาไว้กับลูกค้า</li>
-                            <li>ควบคุมระบบการปฎิบัติงานให้ได้ตามมาตรฐานและเกิดการพัฒนาอย่างต่อเนื่อง</li>
-                            <li>บริหารจัดการระบบภายในบริษัท ให้มีประสิทธิภาพ</li>
-                            <li>พัฒนาความรู้ความสามารถของบุคคลกรอย่างต่อเนื่อง</li>
+                            <li>{{ __('messages.home.objectiveOne') }}</li>
+                            <li>{{ __('messages.home.objectiveTwo') }}</li>
+                            <li>{{ __('messages.home.objectiveThree') }}</li>
+                            <li>{{ __('messages.home.objectiveFour') }}</li>
+                            <li>{{ __('messages.home.objectiveFive') }}</li>
                         </ol>
                     </div>
                 </div>
@@ -127,7 +117,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center align-items-center">
-                        <button type="button" class="btn view-btn" onclick="location.href='{{ url('/clients') }}'">See All Client</button>
+                        <button type="button" class="btn view-btn" onclick="location.href='{{ url('/clients') }}'">
+                            {{ __('messages.home.clientButton') }}</button>
                     </div>
                 </div>
             </div>
@@ -144,15 +135,14 @@
                 <div class="col-md-12">
                     <div class="award-wrapper text-center">
                         <img src="{{url('/image/award.png')}}">
-                        <p>เยลลี่ซิม มอคค่าแมชีนเวิร์กโบรกเกอร์การันตี พาวเวอร์ ราชบัณฑิตยสถาน แพ็คออร์เดอร์อีโรติกสเตชั่น ไลฟ์โฮมหลวงตาแทงกั๊ก สะกอมเจ็ตแจ๊ส แอปเปิ้ลไนน์เจ็ตนาฏยศาลา มายาคติคอนโทรลคำตอบ เซ็นเซอร์ พาสเจอร์ไรส์ทัวร์นาเมนท์นู้ดธุรกรรม 
-                            ราสเบอร์รีวอร์รูมอาข่า เมี่ยงคำหมวยดั๊มพ์แอร์ ลาตินปาสเตอร์ แทงกั๊กซาร์ครัวซองฮีโร่ วอล์กแฟรี่คำสาปอีแต๋นสต๊อก</p>
+                        <p>{{ __('messages.home.awardDescription') }}</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center align-items-center">
-                        <button type="button" class="btn view-btn" onclick="location.href='{{ url('/awards') }}'">See All Award</button>
+                        <button type="button" class="btn view-btn" onclick="location.href='{{ url('/awards') }}'">{{ __('messages.home.awardButton') }}</button>
                     </div>
                 </div>
             </div>

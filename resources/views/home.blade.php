@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'McTRIC Company')
+@section('title', 'McTRIC Public Company Limited')
 
 @section('content')
 <header id="page-top">
@@ -29,9 +29,8 @@
                 <p>{{ __('messages.home.aboutParagraphThree') }}</p>
             </div>
             <div class="col-md-6">
-                <div class="image">
-                    <img src="https://www.virtus-contracts.co.uk/wp-content/uploads/2019/12/homepage-image-1-1.jpg"
-                        alt="">
+                <div class="iframe-container">
+                    <iframe src="https://www.youtube.com/embed/NlIv4u7dtQU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -46,7 +45,7 @@
             <div class="col-md-12 text-center">
                 <h1 class="bottom15">{{ __('messages.home.philosophyHeading') }}</h1>
                 <p>{{ __('messages.home.philosophyParagraphOne') }}</p>
-                <p>{{ __('messages.home.philosophyParagraphTwo') }}</p>
+                <!--<p>{{ __('messages.home.philosophyParagraphTwo') }}</p>-->
             </div>
         </div>
     </div>
@@ -105,7 +104,7 @@
                 <div class="service-box" onclick="location.href='{{ url('businesses/category/co_project') }}';"
                     style="background-image: url(https://images.pexels.com/photos/3740400/pexels-photo-3740400.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));">
                     <div class="services-wrapper">
-                        <h4>{{ __('messages.business.coProjectMenu') }}</h4>
+                        <h4>{{ __('messages.home.coProjectMenu') }}</h4>
                     </div>
                 </div>
             </div>
@@ -114,7 +113,7 @@
             <div class="col-md-12">
                 <div class="text-center align-items-center">
                     <button type="button" class="btn view-btn" style="margin-top: 20px !important;"
-                        onclick="location.href='{{ url('/businesses') }}'">See All Business</button>
+                        onclick="location.href='{{ url('/businesses') }}'">{{ __('messages.home.businessButton') }}</button>
                 </div>
             </div>
         </div>
@@ -136,6 +135,7 @@
                     <h2 class="text-white" style="padding-bottom: 10px;">{{ __('messages.home.careersSubHeading') }}
                     </h2>
                     <p class="text-white">{{ __('messages.home.careersParagraphOne') }}</p>
+                    <p class="text-white">{{ __('messages.home.careersParagraphTwo') }}</p>
                 </div>
             </div>
             <div class="col-md-6 v-center">
@@ -178,8 +178,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="text-center align-items-center">
-                    <button type="button" class="btn view-btn" onclick="location.href='{{ url('/clients') }}'">See All
-                        Client</button>
+                    <button type="button" class="btn view-btn" onclick="location.href='{{ url('/clients') }}'">
+                        {{ __('messages.home.clientButton') }}
+                    </button>
                 </div>
             </div>
         </div>
@@ -199,19 +200,15 @@
             <div class="col-md-12">
                 <div class="award-wrapper text-center">
                     <img src="{{url('/image/award.png')}}">
-                    <p>เยลลี่ซิม มอคค่าแมชีนเวิร์กโบรกเกอร์การันตี พาวเวอร์ ราชบัณฑิตยสถาน แพ็คออร์เดอร์อีโรติกสเตชั่น
-                        ไลฟ์โฮมหลวงตาแทงกั๊ก สะกอมเจ็ตแจ๊ส แอปเปิ้ลไนน์เจ็ตนาฏยศาลา มายาคติคอนโทรลคำตอบ เซ็นเซอร์
-                        พาสเจอร์ไรส์ทัวร์นาเมนท์นู้ดธุรกรรม
-                        ราสเบอร์รีวอร์รูมอาข่า เมี่ยงคำหมวยดั๊มพ์แอร์ ลาตินปาสเตอร์ แทงกั๊กซาร์ครัวซองฮีโร่
-                        วอล์กแฟรี่คำสาปอีแต๋นสต๊อก</p>
+                    <p>{{ __('messages.home.awardDescription') }}</p>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="text-center align-items-center">
-                    <button type="button" class="btn view-btn" onclick="location.href='{{ url('/awards') }}'">See All
-                        Award</button>
+                    <button type="button" class="btn view-btn" onclick="location.href='{{ url('/awards') }}'">
+                        {{ __('messages.home.awardButton') }}</button>
                 </div>
             </div>
         </div>
@@ -230,16 +227,17 @@
             </div>
             <div class="col-md-1" style="padding-bottom: 50px;"></div>
             <div class="col-md-5">
-                <h5>{{ __('messages.home.contactAddress') }}</h5>
-                <p>121/105 อาคารอาร์เอส ทาวเวอร์ ชั้น 39 <br> ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง กรุงเทพมหานคร 10400
+                <h5><i class="fas fa-map-marker-alt"></i> {{ __('messages.contact.contactAddress') }}</h5>
+                <p>
+                    {{ __('messages.home.contactAddressDesc') }}
                 </p>
 
-                <h5>{{ __('messages.home.contactEmail') }}</h5>
-                <p>ADMIN@MCTRIC.COM</p>
+                <h5><i class="fas fa-envelope"></i> {{ __('messages.contact.contactEmail') }}</h5>
+                <p>{{ __('messages.home.contactEmailDesc') }}</p>
 
-                <h5>{{ __('messages.home.contactCall') }}</h5>
-                <p>{{ __('messages.home.contactPhone') }}: +66 (0) 2641 2100 <br> {{ __('messages.home.contactFax') }}:
-                    +66 (0) 2641 2030</p>
+                <h5><i class="fas fa-phone-square"></i> {{ __('messages.contact.contactCall') }}</h5>
+                <p>{{ __('messages.contact.contactPhone') }}: +66 (0) 2641 2100 <br>
+                    {{ __('messages.contact.contactFax') }}: +66 (0) 2641 2030</p>
             </div>
         </div>
     </div>

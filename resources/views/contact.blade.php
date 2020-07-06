@@ -9,7 +9,7 @@
         <div class="d-flex h-100 text-center align-items-center" style="padding-top: 60px;">
             <div class="w-100 text-white" style="z-index: 3">
                 <h1 class="text-ellipsis text-center">
-                    Contact
+                    {{ __('messages.app.contactMenu') }}
                 </h1>
             </div>
         </div>
@@ -26,11 +26,12 @@
             <div class="col-md-1" style="padding-bottom: 50px;"></div>
             <div class="col-md-5">
                 <h5><i class="fas fa-map-marker-alt"></i> {{ __('messages.contact.contactAddress') }}</h5>
-                <p>121/105 อาคารอาร์เอส ทาวเวอร์ ชั้น 39 <br> ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง กรุงเทพมหานคร 10400
+                <p>
+                    {{ __('messages.home.contactAddressDesc') }}
                 </p>
 
                 <h5><i class="fas fa-envelope"></i> {{ __('messages.contact.contactEmail') }}</h5>
-                <p>ADMIN@MCTRIC.COM</p>
+                <p>{{ __('messages.home.contactEmailDesc') }}</p>
 
                 <h5><i class="fas fa-phone-square"></i> {{ __('messages.contact.contactCall') }}</h5>
                 <p>{{ __('messages.contact.contactPhone') }}: +66 (0) 2641 2100 <br>

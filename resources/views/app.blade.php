@@ -6,7 +6,6 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
-
     <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
     <link rel="stylesheet" href="{{ URL::asset('css/owl.carousel.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/owl.theme.default.css') }}">
@@ -72,11 +71,13 @@
 
 @yield('content')
 
+<!--
 <footer class="footer">
     <div class="container">
         <p class="m-0 text-center">{{ __('messages.home.copyright') }} &copy; 2019 - McTRIC Public Co.,Ltd.</p>
     </div>
 </footer>
+-->
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
