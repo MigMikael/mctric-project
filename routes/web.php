@@ -26,12 +26,15 @@ Route::get('/about', "HomeController@about");
 
 Route::group(['middleware' => ['auth']], function() {
 //    Route::get('/dashboard', "HomeController@dashboard");
+    Route::get('/dashboard/summary', "HomeController@dashboardSummary");
+    Route::get('/dashboard/businesses/status/{status}', "BusinessController@status");
     Route::get('/dashboard/businesses', "HomeController@dashboardBusinesses");
     Route::get('/dashboard/careers', "HomeController@dashboardCareers");
     Route::get('/dashboard/clients', "HomeController@dashboardClients");
     Route::get('/dashboard/awards', "HomeController@dashboardAwards");
     Route::get('/dashboard/users', "HomeController@dashboardUsers");
 
+    Route::post('/businesses/search', "BusinessController@search");
     Route::get('/businesses/create', "BusinessController@create");
     Route::post('/businesses', "BusinessController@store");
     Route::get('/businesses/{id}/edit', "BusinessController@edit");

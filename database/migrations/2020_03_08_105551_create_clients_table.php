@@ -16,7 +16,7 @@ class CreateClientsTable extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name')->default("")->nullable();
-            $table->text('description')->default("")->nullable();
+            # $table->text('description')->default("")->nullable();
             $table->unsignedBigInteger('image_id');
             $table->timestamps();
 

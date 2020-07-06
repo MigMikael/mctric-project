@@ -21,16 +21,24 @@ class CreateBusinessesTable extends Migration
             $table->string("client")->default("")->nullable();
             $table->string("consultant")->default("")->nullable();
             $table->string("designer")->default("")->nullable();
-            $table->string("constructor")->default("")->nullable();
+            $table->string("contractor")->default("")->nullable();
+            $table->string("main_contractor")->default("")->nullable();
             $table->string("contract_value")->default("")->nullable();
-            $table->string("contract_period")->default("")->nullable();
             $table->text("scope_of_work")->default("")->nullable();
 
             $table->string('slug')->default("");        // for url convert from name
             $table->string('category')->default("");    // MechanicalElectrical, CivilConstruction, UtilityPipeline, RenewEnergy, SupplyChain
             $table->string('status')->default("");      // OnGoing, InProcess, Complete
+            $table->string('completion')->default("")->nullable();
             $table->boolean('display')->default(false); // show or not show
             $table->integer('cover_image');
+
+            $table->text("social_facebook")->default("")->nullable();
+            $table->text("social_youtube")->default("")->nullable();
+            $table->text("social_instagram")->default("")->nullable();
+
+            $table->date("contract_start")->default(\Carbon\Carbon::now())->nullable();
+            $table->date("contract_end")->default(\Carbon\Carbon::now())->nullable();
             $table->timestamps();
         });
     }

@@ -20,6 +20,10 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs nav-justified">
             <li class="nav-item">
+                <a class="nav-link @if($activeTab == 'summary') active @endif"
+                   href="{{ url("/dashboard/summary") }}">{{ __('messages.dashboard.summaryTab') }}</a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link @if($activeTab == 'businesses') active @endif"
                     href="{{ url("/dashboard/businesses") }}">{{ __('messages.dashboard.businessTab') }}</a>
             </li>
@@ -43,8 +47,55 @@
 
         <!-- Tab panels -->
         <div class="tab-content">
+            <div class="tab-pane container @if($activeTab == 'summary') active @endif" id="summary">
+                <div style="padding-top: 3%; padding-bottom: 3%">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="pull-left">
+                                <h2>{{ __('messages.dashboard.summarySubHeading') }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12" style="border-width: 10px; border-color: black" onclick="location.href='{{ url('/dashboard/businesses/status/work_in_process') }}';">
+                        <h4>{{ __('messages.status.workInProgress') }} </h4>
+                        <h4>
+                            @if($inProgressCount)
+                                ({{ $inProgressCount }} project)
+                            @else
+                                ({{ 0 }} project)
+                            @endif
+                        </h4>
+                    </div>
+
+                    <div class="col-lg-6 col-md-5 col-sm-12" style="border-width: 10px; border-color: black" onclick="location.href='{{  url('/dashboard/businesses/status/complete') }}';">
+                        <h4>{{ __('messages.status.complete') }} </h4>
+                        <h4>
+                            @if($completeCount)
+                                ({{ $completeCount }} project)
+                            @else
+                            ({{ 0 }} project)
+                            @endif
+                        </h4>
+                    </div>
+                </div>
+            </div>
             <div class="tab-pane container @if($activeTab == 'businesses') active @endif" id="business">
                 <div style="padding-top: 3%; padding-bottom: 3%">
+                    <div class="row">
+                        {!! Form::open(['method' => 'post', 'url' => '/businesses/search', 'class' => 'form-inline']) !!}
+                        <div class="col-md-12" style="margin-bottom: 3%">
+                            @if ($search)
+                                {!! Form::text('query', $search, ['class' => 'form-control']) !!}
+                            @else
+                                {!! Form::text('query', null, ['class' => 'form-control']) !!}
+                            @endif
+                            <button class="btn btn-secondary" type="submit">{{ __('messages.app.searchButton') }}</button>
+                        </div>
+                        {!! Form::close() !!}
+                    </div>
+                    <hr>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="pull-left">

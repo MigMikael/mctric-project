@@ -12,9 +12,13 @@ class BusinessController extends Controller
 {
     use ImageTrait;
     public $status = [
-        'on_going' => 'On Going',
-        'in_process' => 'In Process',
+        'work_in_process' => 'Work In Process',
         'complete' => 'Complete'
+    ];
+
+    public $status_translate = [
+        'work_in_process' => 'messages.status.workInProgress',
+        'complete' => 'messages.status.complete'
     ];
 
     public $category = [
@@ -23,7 +27,7 @@ class BusinessController extends Controller
         'utility_pipeline' => 'Utility Pipeline',
         'renew_energy' => 'Renew Energy',
         'supply_chain_automation_systems' => 'Supply Chain Automation Systems',
-        'co_project' => 'Co Project'
+        'joint_venture_project' => 'Joint Venture Project'
     ];
 
     public $category_translate = [
@@ -32,7 +36,7 @@ class BusinessController extends Controller
         'utility_pipeline' => 'messages.business.utilityMenu',
         'renew_energy' => 'messages.business.renewableMenu',
         'supply_chain_automation_systems' => 'messages.business.supplyMenu',
-        'co_project' => 'messages.business.coProjectMenu'
+        'joint_venture_project' => 'messages.business.jointVentureProject'
     ];
 
     /**
@@ -42,7 +46,7 @@ class BusinessController extends Controller
      */
     public function index()
     {
-        $businesses = Business::all();
+        $businesses = Business::where('display', true)->get();
         return response(view('business.index', [
             'businesses' => $businesses
         ]));
@@ -50,12 +54,39 @@ class BusinessController extends Controller
 
     public function filter($category)
     {
-        //$locale = session('locale');
-        $businesses = Business::where("category", "=", $category)->paginate(6);
+        $businesses = Business::where("category", "=", $category)->where('display', true)->paginate(6);
         return view('business.list', [
             'businesses' => $businesses,
             'category' => $this->category[$category],
-            'categoryTranslate' => $this->category_translate[$category]
+            'headingTranslate' => $this->category_translate[$category]
+        ]);
+    }
+
+    public function status($status)
+    {
+        $businesses = Business::where("status", "=", $status)->where('display', true)->paginate(6);
+        return view('business.list', [
+            'businesses' => $businesses,
+            'status' => $this->status[$status],
+            'headingTranslate' => $this->status_translate[$status]
+        ]);
+    }
+
+    public function search(Request $request)
+    {
+        $request = $request->all();
+        $query = $request['query'];
+        $businesses = Business::where("name", "like", "%".$query."%")->where('display', true)->paginate(6);
+        return view('dashboard', [
+            'businesses' => $businesses,
+            'clients' => [],
+            'awards' => [],
+            'careers' => [],
+            'users' => [],
+            'activeTab' => 'businesses',
+            'inProgressCount' => null,
+            'completeCount' => null,
+            'search' => $query
         ]);
     }
 
@@ -98,7 +129,7 @@ class BusinessController extends Controller
                     'image_id' => $image->id
                 ];
                 BusinessImage::create($business_image);
-                Log::info("Store success here");
+                # Log::info("Store success here");
             }
         }
 
@@ -187,6 +218,6 @@ class BusinessController extends Controller
         $business = Business::findOrFail($id);
         $business->delete();
 
-        return redirect()->action("BusinessController@index");
+        return redirect()->action("HomeController@dashboardBusinesses");
     }
 }

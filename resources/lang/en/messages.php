@@ -15,7 +15,8 @@ return [
 
         'createButton' => 'Create',
         'editButton' => 'Edit',
-        'deleteButton' => 'Delete'
+        'deleteButton' => 'Delete',
+        'searchButton' => 'Search',
     ],
     'home' => [
         'companyTitle' => 'McTRIC',
@@ -55,6 +56,7 @@ return [
         'renewableMenu' => 'Renewable Energy',
         'supplyMenu' => 'Supply Chain Automation Systems',
         'coProjectMenu' => 'Co Project',
+        'jointVentureMenu' => 'Joint Venture Project',
 
         'businessButton' => 'See All Business',
 
@@ -91,6 +93,8 @@ return [
         'utilityMenu' => 'Utility Pipeline',
         'renewableMenu' => 'Renewable Energy',
         'supplyMenu' => 'Supply Chain Automation Systems',
+        'jointVentureProject' => 'Joint Venture Project',
+
         'coProjectMenu' => 'Co Project',
 
         'client' => 'Client',
@@ -101,11 +105,14 @@ return [
         'contractValue' => 'Contract Value',
         'scopeOfWork' => 'Scope of Work',
         'projectPhoto' => 'Project Photo',
-        
+
         'businessReadMore' => 'READ MORE',
     ],
     'dashboard' => [
         'dashboardHeading' => 'Admin Dashboard',
+
+        'summaryTab' => 'Summary',
+        'summarySubHeading' => 'Business Status',
         'businessTab' => 'Business',
         'businessSubHeading' => 'Business Management',
         'careerTab' => 'Career',
@@ -139,5 +146,9 @@ return [
         'contactCall' => 'Call Us',
         'contactPhone' => 'Phone',
         'contactFax' => 'Fax',
+    ],
+    'status' => [
+        'workInProgress' => 'Work In Progress',
+        'complete' => 'Complete'
     ]
 ];
