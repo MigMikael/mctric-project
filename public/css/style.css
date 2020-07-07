@@ -558,8 +558,12 @@ header .overlay {
     height: 170px;
   }
 
+  .owl-carousel .owl-item img {
+      width: unset !important;
+  }
+
   .image-client {
-      height: 150px;
+      height: 200px;
       object-fit: cover;
       padding: 0 15px;
   }

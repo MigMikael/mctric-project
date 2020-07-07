@@ -69,7 +69,7 @@
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
-    {!! Form::label('cover_image', 'Cover Image') !!}
+    {!! Form::label('cover_image', 'Cover Image') !!} (ขั้นต่ำ 500 x 500px)
     {!! Form::file('cover_image', ['accept'=>'image/*', 'class' => 'form-control', 'value' => 'Choose
     a files', 'onchange' => 'readURL(this)']) !!}
     <div id="previewCard" class="hidden col-xs-12 shadow-img">
@@ -78,7 +78,7 @@
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
-    {!! Form::label('images', 'Images (Multiple File)') !!}
+    {!! Form::label('images', 'Images (Multiple File)') !!} (ขั้นต่ำ 500 x 500px)
     {!! Form::file('images[]', ['multiple'=>true, 'accept'=>'image/*', 'class' => 'form-control', 'id' => 'upload',
     'value' => 'Choose a files']) !!}
     <div id="image-holder" class="col-xs-12 responsive"></div>
