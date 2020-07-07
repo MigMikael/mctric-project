@@ -36,6 +36,8 @@
                 <h5><i class="fas fa-phone-square"></i> {{ __('messages.contact.contactCall') }}</h5>
                 <p>{{ __('messages.contact.contactPhone') }}: +66 (0) 2641 2100 <br>
                     {{ __('messages.contact.contactFax') }}: +66 (0) 2641 2030</p>
+                <h5><i class="fas fa-money-check-alt"></i> {{ __('messages.app.chequeTrackMenu') }}</h5>
+                <a href="http://203.154.157.184/Cheque_Tracking/Cheque/login.php" style="color: #000000">Cheque Tracking Link</a>
             </div>
         </div>
     </div>

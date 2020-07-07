@@ -16,7 +16,7 @@ return [
         'createButton' => 'สร้าง',
         'editButton' => 'แก้ไข',
         'deleteButton' => 'ลบ',
-        'searchButton' => 'ต้นหา',
+        'searchButton' => 'ค้นหา',
     ],
     'home' => [
         'companyTitle' => 'แมคทริค',
@@ -102,6 +102,8 @@ return [
         'contractValue' => 'มูลค่าสัญญา',
         'scopeOfWork' => 'ขอบเขตงาน',
         'projectPhoto' => 'ภาพโครงการ',
+        'description' => 'รายละเอียดโครงการ',
+        'bath' => 'บาท',
 
         'businessReadMore' => 'ดูเพิ่มเติม'
     ],

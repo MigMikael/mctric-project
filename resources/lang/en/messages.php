@@ -105,6 +105,8 @@ return [
         'contractValue' => 'Contract Value',
         'scopeOfWork' => 'Scope of Work',
         'projectPhoto' => 'Project Photo',
+        'description' => 'Description',
+        'bath' => 'Bath',
 
         'businessReadMore' => 'READ MORE',
     ],

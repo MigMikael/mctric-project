@@ -199,7 +199,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="award-wrapper text-center">
-                    <img src="{{url('/image/award.png')}}">
+                    <div style="padding-bottom: 50px;">
+                        <i class="fas fa-award fa-5x" style="color: #FFFFFF !important;"></i>
+                    </div>
                     <p>{{ __('messages.home.awardDescription') }}</p>
                 </div>
             </div>
@@ -231,13 +233,14 @@
                 <p>
                     {{ __('messages.home.contactAddressDesc') }}
                 </p>
-
                 <h5><i class="fas fa-envelope"></i> {{ __('messages.contact.contactEmail') }}</h5>
                 <p>{{ __('messages.home.contactEmailDesc') }}</p>
 
                 <h5><i class="fas fa-phone-square"></i> {{ __('messages.contact.contactCall') }}</h5>
                 <p>{{ __('messages.contact.contactPhone') }}: +66 (0) 2641 2100 <br>
                     {{ __('messages.contact.contactFax') }}: +66 (0) 2641 2030</p>
+                <h5><i class="fas fa-money-check-alt"></i> {{ __('messages.app.chequeTrackMenu') }}</h5>
+                <a href="http://203.154.157.184/Cheque_Tracking/Cheque/login.php" style="color: #000000">Cheque Tracking Link</a>
             </div>
         </div>
     </div>
