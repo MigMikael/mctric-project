@@ -64,9 +64,9 @@
                            <div class="services-wrapper">
                                 <h5>{{ __('messages.status.workInProgress') }}<br>
                                     @if($inProgressCount)
-                                    ({{ $inProgressCount }} project)
+                                    ({{ $inProgressCount }} {{ __('messages.business.project') }})
                                     @else
-                                    ({{ 0 }} project)
+                                    ({{ 0 }} {{ __('messages.business.project') }})
                                     @endif
                                 </h5>
                             </div>
@@ -78,9 +78,9 @@
                             <div class="services-wrapper">
                                 <h5>{{ __('messages.status.complete') }}<br>
                                     @if($completeCount)
-                                    ({{ $completeCount }} โครงการ)
+                                    ({{ $completeCount }} {{ __('messages.business.project') }})
                                     @else
-                                    ({{ 0 }} โครงการ)
+                                    ({{ 0 }} {{ __('messages.business.project') }})
                                     @endif
                                 </h5>
                             </div>

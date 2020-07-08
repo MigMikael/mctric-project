@@ -6,7 +6,7 @@ return [
         'businessMenu' => 'Business',
         'careerMenu' => 'Career',
         'clientMenu' => 'Client',
-        'awardMenu' => 'Award',
+        'awardMenu' => 'Awards and Accreditations',
         'contactMenu' => 'Contact',
         'chequeTrackMenu' => 'Cheque Tracking',
         'dashboardMenu' => 'Dashboard',
@@ -69,7 +69,7 @@ return [
         'clientHeading' => 'Our Client',
         'clientButton' => 'See All Client',
 
-        'awardHeading' => 'Our Award',
+        'awardHeading' => 'Our Awards and Accreditations',
         'awardDescription' => 'Our company has received awards and certifications from various organizations to guarantee the quality, standard and service of the whole process of the company. So customers can be confident in our quality and service.',
         'awardButton' => 'See All Award',
 
@@ -107,6 +107,7 @@ return [
         'projectPhoto' => 'Project Photo',
         'description' => 'Description',
         'bath' => 'Bath',
+        'project' => 'Project',
 
         'businessReadMore' => 'READ MORE',
     ],
@@ -138,7 +139,7 @@ return [
         'clientSubHeading' => 'OUR CLIENT',
     ],
     'award' => [
-        'awardHeading' => 'Award',
+        'awardHeading' => 'Awards and Accreditations',
         'awardSubHeading' => 'Awards and Accreditations',
     ],
     'contact' => [

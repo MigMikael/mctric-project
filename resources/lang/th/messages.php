@@ -6,7 +6,7 @@ return [
         'businessMenu' => 'ธุรกิจของเรา',
         'careerMenu' => 'ตำแหน่งงาน',
         'clientMenu' => 'ลูกค้าของเรา',
-        'awardMenu' => 'รางวัล',
+        'awardMenu' => 'รางวัลและการรับรองของเรา',
         'contactMenu' => 'ติดต่อ',
         'chequeTrackMenu' => 'ติดตามเช็ค',
         'dashboardMenu' => 'แดชบอร์ด',
@@ -68,7 +68,7 @@ return [
         'clientHeading' => 'ลูกค้าของเรา',
         'clientButton' => 'ดูลูกค้าทั้งหมดของเรา',
 
-        'awardHeading' => 'รางวัลและการรับรอง',
+        'awardHeading' => 'รางวัลและการรับรองของเรา',
         'awardDescription' => 'บริษัทของเราได้รับรางวัลและการรับรองจากองค์กรเพื่อรับประกันคุณภาพ มาตรฐานและบริการตลอดจนทุกกระบวรการของบริษัท เพื่อให้ลูกค้ามั่นใจในคุณภาพและบริการของเรา',
         'awardButton' => 'ดูรางวัลของเราทั้งหมด',
 
@@ -104,6 +104,7 @@ return [
         'projectPhoto' => 'ภาพโครงการ',
         'description' => 'รายละเอียดโครงการ',
         'bath' => 'บาท',
+        'project' => 'โครงการ',
 
         'businessReadMore' => 'ดูเพิ่มเติม'
     ],
@@ -131,11 +132,11 @@ return [
         'readMoreButton' => 'อ่านเพิ่มเติม'
     ],
     'client' => [
-        'clientHeading' => 'ลูกค้า',
+        'clientHeading' => 'ลูกค้าของเรา',
         'clientSubHeading' => 'ลูกค้าของเรา',
     ],
     'award' => [
-        'awardHeading' => 'รางวัลและการรับรอง',
+        'awardHeading' => 'รางวัลและการรับรองของเรา',
         'awardSubHeading' => 'รางวัลและการรับรอง',
     ],
     'contact' => [
