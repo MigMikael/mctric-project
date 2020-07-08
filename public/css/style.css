@@ -859,6 +859,10 @@ select {
         width: 100% !important;
         margin-bottom: 10px;
     }
+
+    .owl-carousel .owl-item img {
+        width: 100% !important;
+    }
 }
 
 .hidden {
