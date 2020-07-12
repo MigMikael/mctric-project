@@ -5,7 +5,7 @@ body {
 }
 
 .navbar {
-    background: rgba(0, 0, 0, 0.6);
+    /*background: rgba(0, 0, 0, 0.6);*/
     padding: 0px;
 }
 
@@ -32,7 +32,7 @@ body {
 .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 20px;
     padding-left: 20px;
-    font-size: 16px !important;
+    font-size: 14px;
     font-weight: 500;
 }
 
@@ -57,10 +57,6 @@ nav.top-nav-collapse {
     color: #FBA100 !important;
 }
 */
-
-.navbar-nav {
-    margin-left: 50px !important;
-}
 
 .tab-content {
     box-shadow: 0px 1px 4px rgba(0,0,0,0.1);
@@ -106,11 +102,11 @@ header {
 }
 
 .header-title {
-    font-size: 65px;
+    font-size: 55px;
 }
 
 .header-subtitle {
-    font-size: 18px;
+    font-size: 22px;
 }
 
 .iframe-container {
@@ -142,6 +138,7 @@ header {
     cursor: pointer;
     text-align: center;
     margin-top: 50px;
+    font-size: 14px;
 }
 
 .view-btn:hover {
@@ -192,7 +189,7 @@ header {
 
 .logo-company {
     width: auto;
-    height: 70px;
+    height: 55px;
 }
 
 .text-white {
@@ -333,7 +330,7 @@ header .overlay {
 */
 
 .sub-title {
-    height: 450px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -728,6 +725,21 @@ select {
     border-radius: 25px !important;
 }
 
+.map-wrapper {
+    width: 100%;
+    overflow: hidden;
+    height: 390px;
+}
+
+.page-item.active .page-link {
+    background-color: #034679 !important;
+    border-color: #034679 !important;
+}
+
+.page-link {
+    color: #034679 !important;
+}
+
 @media only screen and (max-width: 991px) {
     .navbar-expand-lg > .container {
         padding-right: 15px !important;
@@ -737,8 +749,6 @@ select {
     .navbar-expand-lg .navbar-nav .nav-link {
         padding-right: 0px !important;
         padding-left: 0px !important;
-        font-size: 14px !important;
-        font-weight: 500;
     }
 
     .showcase .showcase-text {
@@ -773,8 +783,16 @@ select {
 }
 
 @media only screen and (max-width: 767px) {
+    .h2, h2 {
+        font-size: 1.75rem;
+    }
+
     .header-title {
         font-size: 42px;
+    }
+
+    .header-subtitle {
+        font-size: 18px;
     }
 
     .sub-title {
@@ -806,7 +824,7 @@ select {
     }
 
     .sub-title {
-        height: 300px !important;
+        height: 300px;
     }
 
     .vision-section {
@@ -828,15 +846,55 @@ select {
     .search-business {
         margin-bottom: 10px;
     }
+
+    .about-map-desc-wrapper {
+        margin-top: 15px;
+    }
+
+    .map-wrapper {
+        height: 300px;
+    }
+
+    .about-map-desc-wrapper > h5 {
+        font-size: 18px;
+    }
+
+    .vision-section .desc > p {
+        margin-bottom: 0px;
+    }
+
+    .policy-section .desc > p {
+        margin-bottom: 0px;
+    }
 }
 
 @media only screen and (max-width: 575px) {
+    .h2, h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .section-title {
+        padding-bottom: 25px;
+    }
+
     .logo-company {
         height: 50px;
     }
 
     header {
         top: 0 !important;
+    }
+
+    .header-title {
+        font-size: 32px;
+    }
+
+    .sub-title {
+        height: 250px;
     }
 
     .full-screen {
@@ -862,6 +920,10 @@ select {
 
     .owl-carousel .owl-item img {
         width: 100% !important;
+    }
+
+    .about-map-desc-wrapper > h5 {
+        font-size: 16px;
     }
 }
 

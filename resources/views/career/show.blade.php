@@ -17,17 +17,17 @@
                 <div class="col-md-12">
                     <div class="card-content">
                         <div class="card-body">
-                            <h4>Description</h4>
+                            <h5>{{ __('messages.career.description') }}</h5>
                             <p>{!! $career->description !!}</p>
                             <hr>
-                            <h4>Qualification</h4>
+                            <h5>{{ __('messages.career.qualification') }}</h5>
                             <p>{!! $career->qualification !!}</p>
                         </div>
                         <div class="card-footer text-center" style="background-color: #FFFFFF !important;
                         border-top: unset !important;">
                             <button type="button" class="btn learn-more-btn"
-                            onclick="location.href='http://www.mctric.com/fromwork'">
-                            APPLY
+                            onclick="location.href='https://docs.google.com/forms/d/e/1FAIpQLScLzMQHHkAObKzT2A-SQ2L4QFRKwMB7gcjc13gP1Wb9C5IBeA/viewform'">
+                            {{ __('messages.career.applyBtn') }}
                         </button>
                         </div>
                     </div>

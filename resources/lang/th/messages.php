@@ -2,12 +2,12 @@
 return [
     'welcome'   => 'ยินดีต้อนรับเข้าสู่แอพของเรา',
     'app'   => [
-        'aboutMenu' =>  'เกี่ยวกับ',
+        'aboutMenu' =>  'เกี่ยวกับเรา',
         'businessMenu' => 'ธุรกิจของเรา',
         'careerMenu' => 'ตำแหน่งงาน',
         'clientMenu' => 'ลูกค้าของเรา',
         'awardMenu' => 'รางวัลและการรับรองของเรา',
-        'contactMenu' => 'ติดต่อ',
+        'contactMenu' => 'ติดต่อเรา',
         'chequeTrackMenu' => 'ติดตามเช็ค',
         'dashboardMenu' => 'แดชบอร์ด',
         'logoutMenu' => 'ล็อกเอ้าท์',
@@ -129,7 +129,10 @@ return [
     'career' => [
         'careerHeading' => 'ตำแหน่งงาน',
         'jobOpening' => 'ตำแหน่งงานที่เปิดรับ',
-        'readMoreButton' => 'อ่านเพิ่มเติม'
+        'readMoreButton' => 'อ่านเพิ่มเติม',
+        'description' => 'รายละเอียด',
+        'qualification' => 'คุณสมบัติ',
+        'applyBtn' => 'สมัคร'
     ],
     'client' => [
         'clientHeading' => 'ลูกค้าของเรา',

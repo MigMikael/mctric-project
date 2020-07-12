@@ -2,12 +2,12 @@
 return [
     'welcome'       => 'Welcome to our application',
     'app'   => [
-        'aboutMenu' =>  'About',
+        'aboutMenu' =>  'About Us',
         'businessMenu' => 'Business',
         'careerMenu' => 'Career',
         'clientMenu' => 'Client',
         'awardMenu' => 'Awards and Accreditations',
-        'contactMenu' => 'Contact',
+        'contactMenu' => 'Contact Us',
         'chequeTrackMenu' => 'Cheque Tracking',
         'dashboardMenu' => 'Dashboard',
         'logoutMenu' => 'Logout',
@@ -76,7 +76,7 @@ return [
         'contactHeading' => 'Contact Us',
         'contactAddress' => 'Address',
         'contactAddressDesc' => '121/105 RS TOWER 39 FL., RATCHADAPISEK RD. DINDAENG, BANGKOK 10400 THAILAND',
-        'contactEmail' => 'Email Us At',
+        'contactEmail' => 'Email Us',
         'contactEmailDesc' => 'ADMIN@MCTRIC.COM',
         'contactCall' => 'Call Us',
         'contactFax' => 'Fax',
@@ -132,7 +132,10 @@ return [
     'career' => [
         'careerHeading' => 'Career',
         'jobOpening' => 'Job Opening',
-        'readMoreButton' => 'READ MORE'
+        'readMoreButton' => 'READ MORE',
+        'description' => 'Description',
+        'qualification' => 'Qualification',
+        'applyBtn' => 'Apply'
     ],
     'client' => [
         'clientHeading' => 'Client',
@@ -143,7 +146,7 @@ return [
         'awardSubHeading' => 'Awards and Accreditations',
     ],
     'contact' => [
-        'contactHeading' => 'Contact',
+        'contactHeading' => 'Contact Us',
         'contactAddress' => 'Address',
         'contactEmail' => 'Email Us At',
         'contactCall' => 'Call Us',

@@ -117,7 +117,7 @@
                 </div>
                 <div class="row">
                     @foreach($businesses as $business)
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="col-md-6">
                         <div class="card">
                             <img class="card-img-top" src="{{ url('image/show/'.$business->cover_image) }}"
                                 alt="Card image cap">
@@ -165,7 +165,7 @@
                 </div>
                 <div class="row">
                     @foreach($careers as $career)
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="col-md-6">
                         <div class="card">
                             <img class="card-img-top" src="{{ url('image/show/'.$career->image_id) }}"
                                 alt="Card image cap">
@@ -212,7 +212,7 @@
                 </div>
                 <div class="row">
                     @foreach($clients as $client)
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="col-md-6">
                         <div class="card">
                             <img class="card-img-top" src="{{ url('image/show/'.$client->image_id) }}"
                                 alt="Card image cap">
@@ -254,7 +254,7 @@
                 </div>
                 <div class="row">
                     @foreach($awards as $award)
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="col-md-6">
                         <div class="card">
                             <img class="card-img-top" src="{{ url('image/show/'.$award->image_id) }}"
                                 alt="Card image cap">
@@ -302,7 +302,7 @@
                 </div>
                 <div class="row">
                     @foreach($users as $user)
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title text-center">{{ $user->name }}</h5>

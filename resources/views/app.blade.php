@@ -28,7 +28,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/about') }}">{{ __('messages.app.aboutMenu') }}</a>
                 </li>
@@ -42,7 +42,7 @@
                     <a class="nav-link" href="{{ url('/contact') }}">{{ __('messages.app.contactMenu') }}</a>
                 </li>
             </ul>
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav">
                 @if(Auth::check())
                 {{--User Loggin--}}
                 <li class="nav-item">
@@ -151,23 +151,27 @@ $(document).ready(function(){
         autoplayHoverPause: true,
         responsiveClass:true,
         responsive: {
-            0: {
-                items: 1,
-                nav:true
-                },
-                400: {
-                items: 1,
-                nav:false
-                },
-                600:{
-                    items: 3,
-                    nav:false
-                    },
-                    1000:{
-                    items: 4,
-                    nav: true
-                    },
-            }
+        0: {
+        items: 1,
+        nav:true
+        },
+        400: {
+        items: 2,
+        nav:true
+        },
+        600:{
+        items: 2,
+        nav:true
+        },
+        767:{
+        items: 3,
+        nav:true
+        },
+        1000:{
+        items: 4,
+        nav: true
+        },
+        }
         })
 
         $('.owl-job').owlCarousel({
