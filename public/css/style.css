@@ -734,6 +734,7 @@ select {
 .page-item.active .page-link {
     background-color: #034679 !important;
     border-color: #034679 !important;
+    color: #FFFFFF !important;
 }
 
 .page-link {
@@ -865,6 +866,11 @@ select {
 
     .policy-section .desc > p {
         margin-bottom: 0px;
+    }
+
+    .nav-tabs {
+        min-width: 100%;
+        display: inline-grid;
     }
 }
 
