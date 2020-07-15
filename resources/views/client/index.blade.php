@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'Client')
+@section('title', __('messages.home.webTitle'))
 
 @section('content')
 <header class="sub-title">

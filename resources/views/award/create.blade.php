@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'Create Award')
+@section('title', __('messages.home.webTitle'))
 
 @section('content')
 <div class="sub-title">

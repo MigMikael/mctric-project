@@ -19,6 +19,7 @@ return [
         'searchButton' => 'ค้นหา',
     ],
     'home' => [
+        'webTitle' => 'บริษัท แมคทริค จำกัด (มหาชน)',
         'companyTitle' => 'แมคทริค',
         'companySubtitle' => 'บริษัท แมคทริค จำกัด (มหาชน)',
         'watchStoryButton' => 'ดูเรื่องราวของเรา',

@@ -1,12 +1,12 @@
 @extends('app')
 
-@section('title', 'McTRIC Public Company Limited')
+@section('title', __('messages.home.webTitle'))
 
 @section('content')
 <header id="page-top">
     <div class="overlay"></div>
     <div class="container h-100">
-        <div class="d-flex h-100 text-center align-items-center" style="padding-top: 60px;">
+        <div class="d-flex h-100 text-center align-items-center">
             <div class="w-100 text-white" style="z-index: 3">
                 <h1 class="header-title">{{ __('messages.home.companyTitle') }}</h1>
                 <span  class="header-subtitle">{{ __('messages.home.companySubtitle') }}</span><br>

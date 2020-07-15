@@ -1,6 +1,6 @@
 <?php
 return [
-    'welcome'       => 'Welcome to our application',
+    'welcome' => 'Welcome to our application',
     'app'   => [
         'aboutMenu' =>  'About Us',
         'businessMenu' => 'Business',
@@ -19,6 +19,7 @@ return [
         'searchButton' => 'Search',
     ],
     'home' => [
+        'webTitle' => 'McTRIC Public Company Limited',
         'companyTitle' => 'McTRIC',
         'companySubtitle' => 'Public Company Limited',
         'watchStoryButton' => 'Watch Our Story',
