@@ -57,27 +57,34 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12" style="border-width: 10px; border-color: black" onclick="location.href='{{ url('/dashboard/businesses/status/work_in_process') }}';">
-                        <h4>{{ __('messages.status.workInProgress') }} </h4>
-                        <h4>
-                            @if($inProgressCount)
-                                ({{ $inProgressCount }} project)
-                            @else
-                                ({{ 0 }} project)
-                            @endif
-                        </h4>
+                <div class="row services">
+                    <div class="col-md-6" data-aos="fade-up" onclick="location.href='{{ url('/dashboard/businesses/status/work_in_process') }}';">
+                        <div class="service-box" onclick="location.href='{{ url('businesses/category/civil_construction') }}';"
+                            style="background-image: url(https://images.pexels.com/photos/2138126/pexels-photo-2138126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));">
+                           <div class="services-wrapper">
+                                <h5>{{ __('messages.status.workInProgress') }}<br>
+                                    @if($inProgressCount)
+                                    ({{ $inProgressCount }} {{ __('messages.business.project') }})
+                                    @else
+                                    ({{ 0 }} {{ __('messages.business.project') }})
+                                    @endif
+                                </h5>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="col-lg-6 col-md-5 col-sm-12" style="border-width: 10px; border-color: black" onclick="location.href='{{  url('/dashboard/businesses/status/complete') }}';">
-                        <h4>{{ __('messages.status.complete') }} </h4>
-                        <h4>
-                            @if($completeCount)
-                                ({{ $completeCount }} project)
-                            @else
-                            ({{ 0 }} project)
-                            @endif
-                        </h4>
+                    <div class="col-md-6" data-aos="fade-up" onclick="location.href='{{  url('/dashboard/businesses/status/complete') }}';">
+                        <div class="service-box" onclick="location.href='{{ url('businesses/category/civil_construction') }}';"
+                            style="background-image: url(https://images.pexels.com/photos/1481105/pexels-photo-1481105.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));">
+                            <div class="services-wrapper">
+                                <h5>{{ __('messages.status.complete') }}<br>
+                                    @if($completeCount)
+                                    ({{ $completeCount }} {{ __('messages.business.project') }})
+                                    @else
+                                    ({{ 0 }} {{ __('messages.business.project') }})
+                                    @endif
+                                </h5>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -87,11 +94,11 @@
                         {!! Form::open(['method' => 'post', 'url' => '/businesses/search', 'class' => 'form-inline']) !!}
                         <div class="col-md-12" style="margin-bottom: 3%">
                             @if ($search)
-                                {!! Form::text('query', $search, ['class' => 'form-control']) !!}
+                                {!! Form::text('query', $search, ['class' => 'form-control search-business', 'placeholder'=>'Search by project name']) !!}
                             @else
-                                {!! Form::text('query', null, ['class' => 'form-control']) !!}
+                                {!! Form::text('query', null, ['class' => 'form-control search-business', 'placeholder'=>'Search by project name']) !!}
                             @endif
-                            <button class="btn btn-secondary" type="submit">{{ __('messages.app.searchButton') }}</button>
+                            <button class="btn btn-primary" type="submit">{{ __('messages.app.searchButton') }}</button>
                         </div>
                         {!! Form::close() !!}
                     </div>
@@ -110,11 +117,11 @@
                 </div>
                 <div class="row">
                     @foreach($businesses as $business)
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="col-sm-12 col-md-4">
                         <div class="card">
                             <img class="card-img-top" src="{{ url('image/show/'.$business->cover_image) }}"
                                 alt="Card image cap">
-                            <div class="card-body">
+                            <div class="card-body" style="min-height: 100px;">
                                 <h5 class="card-title text-center">{{ $business->name }}</h5>
                                 <div class="text-center">
                                     <button type="button" class="btn learn-more-btn"
@@ -158,7 +165,7 @@
                 </div>
                 <div class="row">
                     @foreach($careers as $career)
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="col-sm-12 col-md-4">
                         <div class="card">
                             <img class="card-img-top" src="{{ url('image/show/'.$career->image_id) }}"
                                 alt="Card image cap">
@@ -205,7 +212,7 @@
                 </div>
                 <div class="row">
                     @foreach($clients as $client)
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="col-sm-12 col-md-4">
                         <div class="card">
                             <img class="card-img-top" src="{{ url('image/show/'.$client->image_id) }}"
                                 alt="Card image cap">
@@ -247,7 +254,7 @@
                 </div>
                 <div class="row">
                     @foreach($awards as $award)
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="col-sm-12 col-md-4">
                         <div class="card">
                             <img class="card-img-top" src="{{ url('image/show/'.$award->image_id) }}"
                                 alt="Card image cap">
@@ -295,7 +302,7 @@
                 </div>
                 <div class="row">
                     @foreach($users as $user)
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="col-sm-12 col-md-4">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title text-center">{{ $user->name }}</h5>

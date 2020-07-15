@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-md-6 v-center">
                     <div class="desc">
-                       <h2 class="bottom15">{{ __('messages.home.aboutHeading') }}</h1>
+                       <h2 class="bottom15">{{ __('messages.home.aboutHeading') }}</h2>
                         <p>{{ __('messages.home.aboutParagraphOne') }}</p>
                         <p>{{ __('messages.home.aboutParagraphTwo') }}</p>
                         <p>{{ __('messages.home.aboutParagraphThree') }}</p>
@@ -102,7 +102,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-center section-title">{{ __('messages.home.clientHeading') }}</h1>
+                    <h2 class="text-center section-title">{{ __('messages.home.clientHeading') }}</h2>
                 </div>
             </div>
             <div class="client-wrapper">
@@ -128,13 +128,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="text-center section-title">{{ __('messages.home.awardHeading') }}</h1>
+                    <h2 class="text-center section-title">{{ __('messages.home.awardHeading') }}</h2>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="award-wrapper text-center">
-                        <img src="{{url('/image/award.png')}}">
+                        <div style="padding-bottom: 50px;">
+                            <i class="fas fa-award fa-5x"></i>
+                        </div>
                         <p>{{ __('messages.home.awardDescription') }}</p>
                     </div>
                 </div>

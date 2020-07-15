@@ -22,7 +22,7 @@
             <div class="col-md-6 col-lg-4">
                 <div class="card" onclick="location.href='{{ url('careers/'.$career->id) }}'">
                     <img class="card-img-top" src="{{ url('image/show/'.$career->image_id) }}" alt="">
-                    <div class="card-body" style="min-height: 100px !important;">
+                    <div class="card-body">
                         <h5 class="card-title text-center">
                             {!! $career->name !!}
                         </h5>

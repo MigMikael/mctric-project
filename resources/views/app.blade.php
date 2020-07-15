@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ URL::asset('vendor/bootstrap/css/bootstrap.min.css') }}">
     <link href="{{ URL::asset('css/scrolling-nav.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
+    <link rel='icon' href='favicon.ico' type='image/x-icon' >
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
           integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="https://cdn.tiny.cloud/1/u2m105u0299tvcdij68weonnlsw7ra9as7rkuh3a37rhykr1/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
@@ -27,21 +28,21 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('about')) ? 'active' : '' }}" href="{{ url('/about') }}">{{ __('messages.app.aboutMenu') }}</a>
+                    <a class="nav-link" href="{{ url('/about') }}">{{ __('messages.app.aboutMenu') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('businesses*')) ? 'active' : '' }}" href="{{ url('/businesses') }}">{{ __('messages.app.businessMenu') }}</a>
+                    <a class="nav-link" href="{{ url('/businesses') }}">{{ __('messages.app.businessMenu') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('careers*')) ? 'active' : '' }}" href="{{ url('/careers') }}">{{ __('messages.app.careerMenu') }}</a>
+                    <a class="nav-link" href="{{ url('/careers') }}">{{ __('messages.app.careerMenu') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('contact')) ? 'active' : '' }}" href="{{ url('/contact') }}">{{ __('messages.app.contactMenu') }}</a>
+                    <a class="nav-link" href="{{ url('/contact') }}">{{ __('messages.app.contactMenu') }}</a>
                 </li>
             </ul>
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav">
                 @if(Auth::check())
                 {{--User Loggin--}}
                 <li class="nav-item">
@@ -62,7 +63,7 @@
             @endif
             <li class="nav-link lang-menu">
                 <a href="{{ url('locale/en') }}" class="lang">EN</a> |
-                <a href="{{ url('locale/th') }}" class="lang">ไทย</a>
+                <a href="{{ url('locale/th') }}" class="lang">TH</a>
             </li>
             </ul>
         </div>
@@ -150,23 +151,27 @@ $(document).ready(function(){
         autoplayHoverPause: true,
         responsiveClass:true,
         responsive: {
-            0: {
-                items: 2,
-                nav:true
-                },
-                400: {
-                items: 2,
-                nav:false
-                },
-                600:{
-                    items: 3,
-                    nav:false
-                    },
-                    1000:{
-                    items: 4,
-                    nav: true
-                    },
-            }
+        0: {
+        items: 1,
+        nav:true
+        },
+        400: {
+        items: 2,
+        nav:true
+        },
+        600:{
+        items: 2,
+        nav:true
+        },
+        767:{
+        items: 3,
+        nav:true
+        },
+        1000:{
+        items: 4,
+        nav: true
+        },
+        }
         })
 
         $('.owl-job').owlCarousel({

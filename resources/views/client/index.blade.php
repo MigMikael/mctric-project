@@ -22,7 +22,7 @@
             <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 <div class="card" style="cursor: unset !important;">
                     <div class="image">
-                        <img class="card-img-top" src="{{ url('image/show/'.$client->image_id) }}" alt="Card image cap">
+                        <img class="card-img-top" src="{{ url('image/show/'.$client->image_id) }}" style="height: 100% !important;">
                     </div>
                 </div>
             </div>

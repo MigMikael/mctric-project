@@ -2,12 +2,12 @@
 return [
     'welcome'   => 'ยินดีต้อนรับเข้าสู่แอพของเรา',
     'app'   => [
-        'aboutMenu' =>  'เกี่ยวกับ',
+        'aboutMenu' =>  'เกี่ยวกับเรา',
         'businessMenu' => 'ธุรกิจของเรา',
         'careerMenu' => 'ตำแหน่งงาน',
         'clientMenu' => 'ลูกค้าของเรา',
-        'awardMenu' => 'รางวัล',
-        'contactMenu' => 'ติดต่อ',
+        'awardMenu' => 'รางวัลและการรับรองของเรา',
+        'contactMenu' => 'ติดต่อเรา',
         'chequeTrackMenu' => 'ติดตามเช็ค',
         'dashboardMenu' => 'แดชบอร์ด',
         'logoutMenu' => 'ล็อกเอ้าท์',
@@ -16,7 +16,7 @@ return [
         'createButton' => 'สร้าง',
         'editButton' => 'แก้ไข',
         'deleteButton' => 'ลบ',
-        'searchButton' => 'ต้นหา',
+        'searchButton' => 'ค้นหา',
     ],
     'home' => [
         'companyTitle' => 'แมคทริค',
@@ -68,7 +68,7 @@ return [
         'clientHeading' => 'ลูกค้าของเรา',
         'clientButton' => 'ดูลูกค้าทั้งหมดของเรา',
 
-        'awardHeading' => 'รางวัลและการรับรอง',
+        'awardHeading' => 'รางวัลและการรับรองของเรา',
         'awardDescription' => 'บริษัทของเราได้รับรางวัลและการรับรองจากองค์กรเพื่อรับประกันคุณภาพ มาตรฐานและบริการตลอดจนทุกกระบวรการของบริษัท เพื่อให้ลูกค้ามั่นใจในคุณภาพและบริการของเรา',
         'awardButton' => 'ดูรางวัลของเราทั้งหมด',
 
@@ -80,6 +80,8 @@ return [
         'contactCall' => 'โทรหาเรา',
         'contactFax' => 'แฟกซ์',
         'contactPhone' => 'โทร',
+
+        'chequeTracking' => 'ติดตามเช็ค',
 
         'copyright' => 'ลิขสิทธิ์',
     ],
@@ -100,6 +102,9 @@ return [
         'contractValue' => 'มูลค่าสัญญา',
         'scopeOfWork' => 'ขอบเขตงาน',
         'projectPhoto' => 'ภาพโครงการ',
+        'description' => 'รายละเอียดโครงการ',
+        'bath' => 'บาท',
+        'project' => 'โครงการ',
 
         'businessReadMore' => 'ดูเพิ่มเติม'
     ],
@@ -124,14 +129,17 @@ return [
     'career' => [
         'careerHeading' => 'ตำแหน่งงาน',
         'jobOpening' => 'ตำแหน่งงานที่เปิดรับ',
-        'readMoreButton' => 'อ่านเพิ่มเติม'
+        'readMoreButton' => 'อ่านเพิ่มเติม',
+        'description' => 'รายละเอียด',
+        'qualification' => 'คุณสมบัติ',
+        'applyBtn' => 'สมัคร'
     ],
     'client' => [
-        'clientHeading' => 'ลูกค้า',
+        'clientHeading' => 'ลูกค้าของเรา',
         'clientSubHeading' => 'ลูกค้าของเรา',
     ],
     'award' => [
-        'awardHeading' => 'รางวัลและการรับรอง',
+        'awardHeading' => 'รางวัลและการรับรองของเรา',
         'awardSubHeading' => 'รางวัลและการรับรอง',
     ],
     'contact' => [

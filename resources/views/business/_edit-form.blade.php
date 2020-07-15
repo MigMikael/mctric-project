@@ -35,7 +35,7 @@
 
 <div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('Contract Value') !!}
-    {!! Form::text('contract_value', null, ['class' => 'form-control']) !!}
+    {!! Form::number('contract_value', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
@@ -64,8 +64,8 @@
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
-    {!! Form::label('Completion (%)') !!}
-    {!! Form::text('completion', null, ['class' => 'form-control']) !!}
+    {!! Form::label('Completion (%)') !!}<br>
+    {!! Form::selectRange('completion', 0, 100) !!}
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">

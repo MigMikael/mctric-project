@@ -3,7 +3,7 @@
 @section('title', 'Business')
 
 @section('content')
-<div class="sub-title" style="background-image: url({{ url('image/show/'.$business->cover_image) }}), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) !important;
+<div class="sub-title" style="background-image: url({{ url('image/show/'.$business->cover_image) }}), linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)) !important;
     background-blend-mode: overlay;">
     <div class="container">
         <h1 class="text-ellipsis text-center">
@@ -21,52 +21,82 @@
             </div>
             <div class="col-md-6">
                 <div class="row">
+                    @if ($business->description != '')
+                    <div class="col-md-12">
+                        {!! $business->description !!}
+                    </div>
+                    @endif
+                    @if ($business->client != '')
                     <div class="col-sm-6 col-md-6">
-                        <i class="fas fa-user fa-lg"></i><br>
+                        <i class="fas fa-user fa-lg"></i>
                         <strong>{{ __('messages.business.client') }}: </strong>
                         <p>{{ $business->client }}</p>
                     </div>
+                    @endif
+                    @if ($business->consultant != '')
                     <div class="col-sm-6 col-md-6">
-                        <i class="fas fa-users-cog fa-lg"></i><br>
+                        <i class="fas fa-users-cog fa-lg"></i>
                         <strong>{{ __('messages.business.consultant') }}: </strong>
                         <p>{{ $business->consultant }}</p>
                     </div>
+                    @endif
+                    @if ($business->designer != '')
                     <div class="col-sm-6 col-md-6">
-                        <i class="fas fa-drafting-compass fa-lg"></i><br>
+                        <i class="fas fa-drafting-compass fa-lg"></i>
                         <strong>{{ __('messages.business.designer') }}: </strong>
                         <p>{{ $business->designer }}</p>
                     </div>
+                    @endif
+                    @if ($business->contractor != '')
                     <div class="col-sm-6 col-md-6">
-                        <i class="fas fa-hard-hat fa-lg"></i><br>
+                        <i class="fas fa-hard-hat fa-lg"></i>
                         <strong>{{ __('messages.business.mainContractor') }}: </strong>
-                        <p>{{ $business->constructor }}</p>
+                        <p>{{ $business->contractor }}</p>
                     </div>
+                    @endif
+                    @if ($business->contract_start != '' && $business->contract_end != '')
                     <div class="col-sm-6 col-md-6">
-                        <i class="far fa-clock fa-lg"></i><br>
+                        <i class="far fa-clock fa-lg"></i>
                         <strong>{{ __('messages.business.contractPeriod') }}: </strong>
-                        <p>{{ $business->contract_period }}</p>
+                        <p>{{ date('d/m/Y', strtotime($business->contract_start)) }} -
+                            {{ date('d/m/Y', strtotime($business->contract_end)) }}</p>
                     </div>
+                    @endif
+                    @if ($business->contract_value != '')
                     <div class="col-sm-6 col-md-6">
-                        <i class="fas fa-dollar-sign fa-lg"></i><br>
+                        <i class="fas fa-dollar-sign fa-lg"></i>
                         <strong>{{ __('messages.business.contractValue') }}: </strong>
-                        <p>{{ $business->contract_value }}</p>
+                        <p>{{ number_format($business->contract_value) }} {{ __('messages.business.bath') }}</p>
                     </div>
-                    <!--
-                    <div class="col-md-12">
-                        <strong>Description: </strong>
-                        {!! $business->description !!}
-                    </div>
-                    -->
-                    <div class="col-sm-12 col-md-12">
-                        <i class="fas fa-list-alt fa-lg"></i><br>
+                    @endif
+                    @if ($business->scope_of_work != '')
+                    <div class="col-sm-6 col-md-6">
+                        <i class="fas fa-list-alt fa-lg"></i>
                         <strong>{{ __('messages.business.scopeOfWork') }}: </strong>
                         {!! $business->scope_of_work !!}
                     </div>
+                    @endif
+                    @if ($business->social_facebook != '' || $business->social_youtube != '' || $business->social_instagram != '')
+                    <div class="col-md-6">
+                        <div class="business-icon">
+                            @if ($business->social_facebook != '')
+                            <i class="fab fa-facebook fa-2x" onclick="window.location.href='{{ $business->social_facebook }}'"></i>
+                            @endif
+                            @if ($business->social_youtube != '')
+                            <i class="fab fa-youtube fa-2x" onclick="window.location.href='{{ $business->social_youtube }}'"></i>
+                            @endif
+                            @if ($business->social_instagram != '')
+                            <i class="fab fa-instagram fa-2x" onclick="window.location.href='{{ $business->social_instagram }}'"></i>
+                            @endif
+                        </div>
+                    </div>
+                    @endif
                 </div>
             </div>
         </div>
     </div>
 </section>
+<!--
 <section class="bg-light">
     <div class="container">
         <div class="row">
@@ -97,7 +127,8 @@
         </div>
     </div>
 </section>
-<section style="background-image: url({{ url('image/show/'.$business->cover_image) }}), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+-->
+<section style="background-image: url({{ url('image/show/'.$business->cover_image) }}), linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));
 background-blend-mode: overlay;
 background-size: cover;
 width: 100%; color: #FFFFFF; background-position: center center; padding: 50px 0 50px 0 !important;">
@@ -107,11 +138,11 @@ width: 100%; color: #FFFFFF; background-position: center center; padding: 50px 0
                 <h1 class="text-white" style="padding-bottom: 25px;">{{ __('messages.business.projectPhoto') }}</h1>
             </div>
             @foreach($business->images as $image)
-                <div class="col-sm-6 col-md-4">
-                    <div class="image image-business-project">
-                        <img class="img-max-width" src="{{ url('image/show/'.$image->id) }}" alt="">
-                    </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="image image-business-project">
+                    <img class="img-max-width" src="{{ url('image/show/'.$image->id) }}" alt="">
                 </div>
+            </div>
             @endforeach
         </div>
     </div>
@@ -119,13 +150,13 @@ width: 100%; color: #FFFFFF; background-position: center center; padding: 50px 0
 @endsection
 
 @section('script')
-    <script>
-        window.fbAsyncInit = function() {
+<script>
+    window.fbAsyncInit = function() {
             FB.init({
                 xfbml      : true,
                 version    : 'v7.0'
             });
         };
-    </script>
-    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+</script>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 @endsection

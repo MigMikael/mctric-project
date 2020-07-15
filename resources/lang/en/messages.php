@@ -2,12 +2,12 @@
 return [
     'welcome'       => 'Welcome to our application',
     'app'   => [
-        'aboutMenu' =>  'About',
+        'aboutMenu' =>  'About Us',
         'businessMenu' => 'Business',
         'careerMenu' => 'Career',
         'clientMenu' => 'Client',
-        'awardMenu' => 'Award',
-        'contactMenu' => 'Contact',
+        'awardMenu' => 'Awards and Accreditations',
+        'contactMenu' => 'Contact Us',
         'chequeTrackMenu' => 'Cheque Tracking',
         'dashboardMenu' => 'Dashboard',
         'logoutMenu' => 'Logout',
@@ -69,18 +69,20 @@ return [
         'clientHeading' => 'Our Client',
         'clientButton' => 'See All Client',
 
-        'awardHeading' => 'Our Award',
+        'awardHeading' => 'Our Awards and Accreditations',
         'awardDescription' => 'Our company has received awards and certifications from various organizations to guarantee the quality, standard and service of the whole process of the company. So customers can be confident in our quality and service.',
         'awardButton' => 'See All Award',
 
         'contactHeading' => 'Contact Us',
         'contactAddress' => 'Address',
         'contactAddressDesc' => '121/105 RS TOWER 39 FL., RATCHADAPISEK RD. DINDAENG, BANGKOK 10400 THAILAND',
-        'contactEmail' => 'Email Us At',
+        'contactEmail' => 'Email Us',
         'contactEmailDesc' => 'ADMIN@MCTRIC.COM',
         'contactCall' => 'Call Us',
         'contactFax' => 'Fax',
         'contactPhone' => 'Phone',
+        
+        'chequeTracking' => 'Cheque Tracking',
 
         'copyright' => 'Copyright',
     ],
@@ -103,6 +105,9 @@ return [
         'contractValue' => 'Contract Value',
         'scopeOfWork' => 'Scope of Work',
         'projectPhoto' => 'Project Photo',
+        'description' => 'Description',
+        'bath' => 'Bath',
+        'project' => 'Project',
 
         'businessReadMore' => 'READ MORE',
     ],
@@ -127,18 +132,21 @@ return [
     'career' => [
         'careerHeading' => 'Career',
         'jobOpening' => 'Job Opening',
-        'readMoreButton' => 'READ MORE'
+        'readMoreButton' => 'READ MORE',
+        'description' => 'Description',
+        'qualification' => 'Qualification',
+        'applyBtn' => 'Apply'
     ],
     'client' => [
         'clientHeading' => 'Client',
         'clientSubHeading' => 'OUR CLIENT',
     ],
     'award' => [
-        'awardHeading' => 'Award',
+        'awardHeading' => 'Awards and Accreditations',
         'awardSubHeading' => 'Awards and Accreditations',
     ],
     'contact' => [
-        'contactHeading' => 'Contact',
+        'contactHeading' => 'Contact Us',
         'contactAddress' => 'Address',
         'contactEmail' => 'Email Us At',
         'contactCall' => 'Call Us',

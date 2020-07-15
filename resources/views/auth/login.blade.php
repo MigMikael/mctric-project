@@ -7,7 +7,7 @@
         <div class="d-flex h-100 text-center align-items-center" style="padding-top: 60px;">
             <div class="w-100 text-white" style="z-index: 3">
                 <h1 class="text-ellipsis text-center">
-                    Login
+                    {{ __('messages.app.loginMenu') }}
                 </h1>
             </div>
         </div>
