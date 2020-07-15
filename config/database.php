@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Str;
 
-if (getenv("APP_ENV") == 'local'){
+if (getenv("APP_ENV") == 'local' || getenv("APP_ENV") == 'hostinger'){
     return [
         'default' => env('DB_CONNECTION', 'mysql'),
         'connections' => [
