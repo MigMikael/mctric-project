@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'Client')
+@section('title', __('messages.home.webTitle'))
 
 @section('content')
     <div class="sub-title" style="background-image: url({{ url('image/show/'.$client->image_id) }}) !important;">

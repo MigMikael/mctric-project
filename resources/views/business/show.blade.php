@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'Business')
+@section('title', __('messages.home.webTitle'))
 
 @section('content')
 <div class="sub-title" style="background-image: url({{ url('image/show/'.$business->cover_image) }}), linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)) !important;
