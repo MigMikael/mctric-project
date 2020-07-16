@@ -6,7 +6,7 @@
 <div class="sub-title">
     <div class="container">
         <h1 class="text-ellipsis text-center">
-            Create Client Form
+            Create Award Form
         </h1>
     </div>
 </div>
