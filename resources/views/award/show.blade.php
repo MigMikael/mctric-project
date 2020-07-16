@@ -24,7 +24,7 @@
                     height: auto;">
             </div>
             <div class="card-body">
-                <h5 class="card-title text-center">{{ $award->description }}</h5>
+                <h5 class="card-title text-center">{!! $award->description !!}</h5>
             </div>
         </div>
     </div>

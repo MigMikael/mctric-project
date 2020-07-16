@@ -3,7 +3,7 @@
 @section('title', __('messages.home.webTitle'))
 
 @section('content')
-    <div class="sub-title" style="background-image: url({{ url('image/show/'.$career->image_id) }}) , linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)) !important;
+    <div class="sub-title" style="background-image: url({{ url('image/show/'.$career->image_id) }}) , linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) !important;
         background-blend-mode: overlay;">
         <div class="container">
             <h1 class="text-ellipsis text-center">

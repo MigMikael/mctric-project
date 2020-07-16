@@ -386,6 +386,7 @@ header .overlay {
     font-weight: bold;
     text-align: left;
     margin: 20px 0;
+    font-size: 36px;
 }
 
 .card-content {
@@ -802,7 +803,7 @@ select {
     }
 
     .sub-title h1 {
-        font-size: 28px !important;
+        font-size: 28px;
     }
 
     .image-about-sec1 {
@@ -902,6 +903,10 @@ select {
 
     .sub-title {
         height: 200px;
+    }
+
+    .sub-title h1 {
+        font-size: 22px;
     }
 
     .full-screen {

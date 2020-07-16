@@ -3,7 +3,7 @@
 @section('title', __('messages.home.webTitle'))
 
 @section('content')
-<div class="sub-title" style="background-image: url({{ url('image/show/'.$business->cover_image) }}), linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)) !important;
+<div class="sub-title" style="background-image: url({{ url('image/show/'.$business->cover_image) }}), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) !important;
     background-blend-mode: overlay;">
     <div class="container">
         <h1 class="text-ellipsis text-center">
@@ -128,15 +128,17 @@
     </div>
 </section>
 -->
-<section style="background-image: url({{ url('image/show/'.$business->cover_image) }}), linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));
+<section style="background-image: url({{ url('image/show/'.$business->cover_image) }}), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
 background-blend-mode: overlay;
 background-size: cover;
 width: 100%; color: #FFFFFF; background-position: center center; padding: 50px 0 50px 0 !important;">
     <div class="container">
         <div class="row">
+            <!--
             <div class="col-md-12">
                 <h1 class="text-white" style="padding-bottom: 25px;">{{ __('messages.business.projectPhoto') }}</h1>
             </div>
+            -->
             @foreach($business->images as $image)
             <div class="col-sm-6 col-md-4">
                 <div class="image image-business-project">
