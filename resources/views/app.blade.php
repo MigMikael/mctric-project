@@ -13,6 +13,12 @@
     <link href="{{ URL::asset('css/scrolling-nav.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
     <link rel="icon" href="{{ URL::asset('favicon.ico') }}" type="image/x-icon"/>
+    <link rel="shortcut icon" type="image/ico" href="{{ URL::asset('favicon.ico') }}"/>
+    <link rel="shortcut icon" type="image/png" href="{{url('/image/logo.png')}}"/>
+    <link rel="shortcut icon" href="{{ URL::asset('favicon.ico') }}" type='image/x-icon' />
+    <meta property="og:title" content="McTRIC Public Company Limited" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="{{url('/image/logo.png')}}" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
           integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="https://cdn.tiny.cloud/1/u2m105u0299tvcdij68weonnlsw7ra9as7rkuh3a37rhykr1/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
