@@ -12,10 +12,11 @@
     <link rel="stylesheet" href="{{ URL::asset('vendor/bootstrap/css/bootstrap.min.css') }}">
     <link href="{{ URL::asset('css/scrolling-nav.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
-    <link rel="icon" href="{{ URL::asset('favicon.ico') }}" type="image/x-icon"/>
-    <link rel="shortcut icon" type="image/ico" href="{{ URL::asset('favicon.ico') }}"/>
-    <link rel="shortcut icon" type="image/png" href="{{url('/image/logo.png')}}"/>
-    <link rel="shortcut icon" href="{{ URL::asset('favicon.ico') }}" type='image/x-icon' />
+    <link rel="icon" sizes="16x16" href="{{url('/image/favicon.ico')}}" type="image/x-icon"/>
+    <link rel="icon" sizes="32x32" href="{{ URL::asset('favicon.ico') }}" type="image/x-icon"/>
+    <link rel="shortcut icon" sizes="32x32" type="image/ico" href="{{ URL::asset('favicon.ico') }}"/>
+    <link rel="shortcut icon" sizes="398x472" type="image/png" href="{{url('/image/logo.png')}}"/>
+    <link rel="shortcut icon" sizes="32x32" href="{{ URL::asset('favicon.ico') }}" type='image/x-icon' />
     <meta property="og:title" content="McTRIC Public Company Limited" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="{{url('/image/logo.png')}}" />
