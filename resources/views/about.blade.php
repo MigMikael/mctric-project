@@ -19,7 +19,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 v-center">
-                    <div class="desc">
+                    <div>
                        <h2 class="bottom15">{{ __('messages.home.aboutHeading') }}</h2>
                         <p>{{ __('messages.home.aboutParagraphOne') }}</p>
                         <p>{{ __('messages.home.aboutParagraphTwo') }}</p>

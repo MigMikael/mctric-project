@@ -941,6 +941,10 @@ select {
     .about-map-desc-wrapper > h5 {
         font-size: 16px;
     }
+
+    .contact-content-title {
+        font-size: 1rem;
+    }
 }
 
 .hidden {

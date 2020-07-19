@@ -233,7 +233,7 @@
             <div class="col-md-6">
                 <div class="row about-map-desc-wrapper">
                     <div class="col-md-12">
-                        <h5><i class="fas fa-map-marker-alt"></i> {{ __('messages.contact.contactAddress') }}</h5>
+                        <h5 class="contact-content-title"><i class="fas fa-map-marker-alt"></i> {{ __('messages.contact.contactAddress') }}</h5>
                         <p>
                             {{ __('messages.home.contactAddressDesc') }}
                         </p>
@@ -241,22 +241,22 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <h5><i class="fas fa-envelope"></i> {{ __('messages.contact.contactEmail') }}</h5>
+                        <h5 class="contact-content-title"><i class="fas fa-envelope"></i> {{ __('messages.contact.contactEmail') }}</h5>
                         <p>{{ __('messages.home.contactEmailDesc') }}</p>
                     </div>
                     <div class="col-md-6">
-                        <h5><i class="fas fa-phone-square"></i> {{ __('messages.contact.contactCall') }}</h5>
+                        <h5 class="contact-content-title"><i class="fas fa-phone-square"></i> {{ __('messages.contact.contactCall') }}</h5>
                         <p>{{ __('messages.contact.contactPhone') }}: +66 (0) 2641 2100 <br>
                             {{ __('messages.contact.contactFax') }}: +66 (0) 2641 2030</p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6" style="margin-bottom: 1rem;">
-                        <h5><i class="fas fa-money-check-alt"></i> {{ __('messages.app.chequeTrackMenu') }}</h5>
+                        <h5 class="contact-content-title"><i class="fas fa-money-check-alt"></i> {{ __('messages.app.chequeTrackMenu') }}</h5>
                         <a href="http://203.154.157.184/Cheque_Tracking/Cheque/login.php" style="color: #000000;">Cheque Tracking Link</a>
                     </div>
                     <div class="col-md-6" style="margin-bottom: 1rem;">
-                        <h5><i class="fas fa-file-alt"></i> Internal McTRIC</h5>
+                        <h5 class="contact-content-title"><i class="fas fa-file-alt"></i> Internal McTRIC</h5>
                         <a href="http://mctric.quickconnect.to/" style="color: #000000;"> Internal McTRIC Link</a>
                     </div>
                 </div>
