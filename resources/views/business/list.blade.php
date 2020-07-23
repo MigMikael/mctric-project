@@ -17,6 +17,11 @@
 </header>
     <section class="bg-white">
         <div class="container">
+            @if(Request::is('dashboard/businesses/status/*'))
+            <div style="position: fixed; top: 50%; left: 27px; z-index: 100;">
+                <button type="button" class="btn btn-primary" onclick="location.href='{{ url('dashboard/summary/') }}'">Back</button>
+            </div>
+            @endif
             <div class="row">
                 @foreach($businesses as $business)
                 <div class="col-md-6 col-lg-4">

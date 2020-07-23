@@ -12,6 +12,10 @@
 </div>
 <section class="bg-light">
     <div class="container">
+        <div style="position: fixed; top: 50%; left: 27px; z-index: 100;">
+            <button type="button" class="btn btn-primary"
+                onclick="location.href='{{ url('dashboard/businesses/') }}'">Back</button>
+        </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="form-style">
