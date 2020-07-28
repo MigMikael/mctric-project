@@ -88,7 +88,7 @@
 -->
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal" id="myModal">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body">
@@ -102,6 +102,19 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div id="modal-preview" class="modal" onclick="this.style.display='none'">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+        <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <img id="img-preview" style="max-width:100%">
+        </div>
+    </div>
     </div>
 </div>
 
@@ -138,6 +151,7 @@
             // set the video src to autoplay and not to show related video.
             // Youtube related video is like a box of chocolates... you never know what you're gonna get
             $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+            $('.modal-backdrop').remove();
         })
         // stop playing the youtube video when I close the modal
         $('#myModal').on('hide.bs.modal', function (e) {
@@ -145,6 +159,12 @@
             $("#video").attr('src', $videoSrc);
         })
     });
+</script>
+<script>
+    function onClick(element) {
+        document.getElementById("img-preview").src = element.src;
+        document.getElementById("modal-preview").style.display = "block";
+}
 </script>
 <script>
 $(document).ready(function(){
@@ -207,7 +227,7 @@ $(document).ready(function(){
     image_class_list: [
     {title: 'Responsive', value: 'img-responsive'}],
     });
-  </script>
+</script>
 @yield('script')
 </body>
 </html>

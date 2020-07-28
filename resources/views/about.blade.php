@@ -20,7 +20,7 @@
             <div class="row">
                 <div class="col-md-6 v-center">
                     <div>
-                       <h2 class="bottom15">{{ __('messages.home.aboutHeading') }}</h2>
+                        <h2 class="bottom15">{{ __('messages.home.aboutHeading') }}</h2>
                         <p>{{ __('messages.home.aboutParagraphOne') }}</p>
                         <p>{{ __('messages.home.aboutParagraphTwo') }}</p>
                         <p>{{ __('messages.home.aboutParagraphThree') }}</p>
@@ -32,68 +32,41 @@
                     </div>
                 </div>
             </div>
-            <div class="row vision-section">
-                <div class="col-md-6">
-                    <div class="image image-about">
-                        <img src="https://images.pexels.com/photos/2036686/pexels-photo-2036686.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-                    </div>
+        </div>
+    </section>
+    <section class="bg-light">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <h2 class="bottom15">{{ __('messages.home.philosophyHeading') }}</h2>
+                    <p>{{ __('messages.home.philosophyParagraphOne') }}</p>
                 </div>
-                <div class="col-md-6 v-center">
-                    <div class="desc">
-                        <h2 class="bottom15">{{ __('messages.home.philosophyHeading') }}</h2>
-                        <p>{{ __('messages.home.philosophyParagraphOne') }}</p>
-                    </div>
+                <div class="col-md-4">
+                    <h2 class="bottom15">{{ __('messages.home.missionHeading') }}</h2>
+                    <p>{{ __('messages.home.missionOne') }} <br>
+                        {{ __('messages.home.missionTwo') }} <br>
+                        {{ __('messages.home.missionThree') }}
+                    </p>
                 </div>
-            </div>
-            <div class="row mission-section">
-                <div class="col-md-6 v-center">
-                    <div class="desc">
-                        <h2 class="bottom15">{{ __('messages.home.missionHeading') }}</h2>
-                        <ol class="circle">
-                            <li>{{ __('messages.home.missionOne') }}</li>
-                            <li>{{ __('messages.home.missionTwo') }}</li>
-                            <li>{{ __('messages.home.missionThree') }}</li>
-                            <li>{{ __('messages.home.missionFour') }}</li>
-                            <li>{{ __('messages.home.missionFive') }}</li>
-                        </ol>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="image image-about">
-                        <img src="https://images.pexels.com/photos/310479/pexels-photo-310479.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-                    </div>
+                <div class="col-md-4">
+                    <h2 class="bottom15">{{ __('messages.home.policyHeading') }}</h2>
+                    <p>{{ __('messages.home.policyDescription') }}</p>
                 </div>
             </div>
-            <div class="row policy-section">
-                <div class="col-md-6">
-                    <div class="image image-about">
-                        <img src="https://images.pexels.com/photos/1770801/pexels-photo-1770801.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-                    </div>
-                </div>
-                <div class="col-md-6 v-center">
-                    <div class="desc">
-                        <h2 class="bottom15">{{ __('messages.home.policyHeading') }}</h2>
-                        <p>{{ __('messages.home.policyDescription') }}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row objective-section">
-                <div class="col-md-6 v-center">
-                    <div class="desc">
-                        <h2 class="bottom15">{{ __('messages.home.objectiveHeading') }}</h2>
-                        <ol class="circle">
-                            <li>{{ __('messages.home.objectiveOne') }}</li>
-                            <li>{{ __('messages.home.objectiveTwo') }}</li>
-                            <li>{{ __('messages.home.objectiveThree') }}</li>
-                            <li>{{ __('messages.home.objectiveFour') }}</li>
-                            <li>{{ __('messages.home.objectiveFive') }}</li>
-                        </ol>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="image image-about">
-                        <img src="https://images.pexels.com/photos/2138126/pexels-photo-2138126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-                    </div>
+        </div>
+    </section>
+    <section class="bg-white">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h2 class="bottom15">{{ __('messages.home.objectiveHeading') }}</h2>
+                    <p>
+                        {{ __('messages.home.objectiveOne') }}<br>
+                        {{ __('messages.home.objectiveTwo') }}<br>
+                        {{ __('messages.home.objectiveThree') }}<br>
+                        {{ __('messages.home.objectiveFour') }}<br>
+                        {{ __('messages.home.objectiveFive') }}<br>
+                    </p>
                 </div>
             </div>
         </div>

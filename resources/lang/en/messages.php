@@ -30,15 +30,12 @@ return [
         'aboutParagraphThree' => 'When quality is needed, McTric is the ideal company with know –how, unique and exceptional  management skills and commitment to customer needs with our full service mind.',
 
         'philosophyHeading' => 'Our Vision',
-        'philosophyParagraphOne' => 'The company is committed to be an expert in engineering, construction work and system installation in various fields.',
-        'philosophyParagraphTwo' => 'To achieve this requires our wealth of experience, excellent communication skills and a truly professional approach.',
+        'philosophyParagraphOne' => 'Best Quality',
 
-        'missionHeading' => 'Mission',
-        'missionOne' => 'Deliver quality work that is satisfactory to customers.',
-        'missionTwo' => 'Create compensation at an appropriate level And sustainable for investors.',
-        'missionThree' => 'Develop and improve work efficiency Increase competitiveness.',
-        'missionFour' => 'Run a business by thinking of stakeholders And responsible to society.',
-        'missionFive' => 'Investment and development of the company is personnel Continuously.',
+        'missionHeading' => 'Our Mission',
+        'missionOne' => 'Well Plan',
+        'missionTwo' => 'Good Method',
+        'missionThree' => 'No Delay',
 
         'policyHeading' => 'Quality Policy',
         'policyDescription' => 'Develop for a sustainable growth and customers impression.',

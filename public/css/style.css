@@ -49,6 +49,10 @@ nav.top-nav-collapse {
     color: #FFFFFF;
 }
 
+.fixed-top {
+    z-index: 10 !important;
+}
+
 /*
 .navbar-dark .navbar-nav .nav-link:hover {
     color: #FBA100;
@@ -195,7 +199,7 @@ button.btn-danger:hover {
 
 .logo-company {
     width: auto;
-    height: 60px;
+    height: 80px;
 }
 
 .text-white {
@@ -212,6 +216,16 @@ button.btn-danger:hover {
 
 .bg-primary {
     background: #001659 !important;
+}
+
+.bg-light {
+    background-image: url(https://images.pexels.com/photos/310479/pexels-photo-310479.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+    background-blend-mode: overlay;
+    background-size: cover;
+    width: 100%;
+    color: #FFFFFF;
+    background-position: center center;
+    background-color: transparent !important;
 }
 
 .showcase .showcase-text {
@@ -254,6 +268,13 @@ ol.circle {
     display: inline-block;
   }
 
+  /* The Modal (background) */
+.modal {
+    z-index: 20; /* Sit on top */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+  
   .modal-dialog {
       max-width: 800px;
       margin: 30px auto;
@@ -595,6 +616,7 @@ header .overlay {
   .image-business-project {
       height: 250px;
       margin-bottom: 20px;
+      cursor: pointer;
   }
 
   .form-style {
@@ -883,6 +905,10 @@ select {
         min-width: 100%;
         display: inline-grid;
     }
+
+    .tab-content {
+        padding: 0px;
+    }
 }
 
 @media only screen and (max-width: 575px) {
@@ -899,7 +925,7 @@ select {
     }
 
     .logo-company {
-        height: 50px;
+        height: 70px;
     }
 
     header {

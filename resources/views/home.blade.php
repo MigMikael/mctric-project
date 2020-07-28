@@ -41,11 +41,21 @@
     background-size: cover;
     width: 100%; color: #FFFFFF; background-position: center center">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
+        <div class="row text-center">
+            <div class="col-md-4">
                 <h2 class="bottom15">{{ __('messages.home.philosophyHeading') }}</h2>
                 <p>{{ __('messages.home.philosophyParagraphOne') }}</p>
-                <!--<p>{{ __('messages.home.philosophyParagraphTwo') }}</p>-->
+            </div>
+            <div class="col-md-4">
+                <h2 class="bottom15">{{ __('messages.home.missionHeading') }}</h2>
+                <p>{{ __('messages.home.missionOne') }} <br>
+                    {{ __('messages.home.missionTwo') }} <br>
+                    {{ __('messages.home.missionThree') }}
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h2 class="bottom15">{{ __('messages.home.policyHeading') }}</h2>
+                <p>{{ __('messages.home.policyDescription') }}</p>
             </div>
         </div>
     </div>

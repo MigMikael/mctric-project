@@ -142,7 +142,7 @@ width: 100%; color: #FFFFFF; background-position: center center; padding: 50px 0
             @foreach($business->images as $image)
             <div class="col-sm-6 col-md-4">
                 <div class="image image-business-project">
-                    <img class="img-max-width" src="{{ url('image/show/'.$image->id) }}" alt="">
+                    <img class="img-max-width" src="{{ url('image/show/'.$image->id) }}" alt="" onclick="onClick(this)">
                 </div>
             </div>
             @endforeach
