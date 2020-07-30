@@ -764,6 +764,14 @@ select {
     color: #034679 !important;
 }
 
+.back-btn-custom {
+    position: fixed; 
+    left: 27px; 
+    z-index: 100;
+    bottom: 0;
+    height: 60px;
+}
+
 @media only screen and (max-width: 991px) {
     .navbar-expand-lg > .container {
         padding-right: 15px !important;

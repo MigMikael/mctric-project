@@ -17,7 +17,8 @@
 </header>
 <section class="bg-white">
     <div class="container">
-        <div class="card" style="padding: 25px; cursor: unset !important;">
+        <div class="card" style="padding: 25px; cursor: unset !important; margin-bottom: 0px !important;
+        box-shadow: none !important; border: none !important">
             <div style="text-align: center">
                 <img src="{{ url('image/show/'.$award->image_id) }}" style="width: 100%;
                     max-width: 400px;

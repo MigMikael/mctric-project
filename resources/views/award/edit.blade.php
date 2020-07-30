@@ -12,7 +12,7 @@
 </div>
 <section class="bg-light">
     <div class="container">
-        <div style="position: fixed; top: 50%; left: 27px; z-index: 100;">
+        <div class="back-btn-custom">
             <button type="button" class="btn btn-primary"
                 onclick="location.href='{{ url('dashboard/awards/') }}'">Back</button>
         </div>
