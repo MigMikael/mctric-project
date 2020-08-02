@@ -634,7 +634,7 @@ header .overlay {
   }
 
   .nav-tabs .nav-link.active {
-    color: #034679 !important;
+    color: #034679;
 }
 
 .nav-tabs .nav-link {
@@ -906,6 +906,19 @@ select {
 
     .tab-content {
         padding: 0px;
+    }
+
+    .nav-tabs .nav-link.active {
+        color: #FFFFFF !important;
+        background: #034679;
+    }
+
+    .nav-tabs .nav-link {
+        border-color: #dee2e6;
+    }
+
+    .container {
+        max-width: 640px;
     }
 }
 

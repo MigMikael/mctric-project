@@ -20,6 +20,7 @@
     <meta property="og:title" content="McTRIC Public Company Limited" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="{{url('/image/logo.png')}}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
           integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="https://cdn.tiny.cloud/1/u2m105u0299tvcdij68weonnlsw7ra9as7rkuh3a37rhykr1/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
@@ -127,6 +128,9 @@
 <script src="{{ URL::asset('js/scrolling-nav.js') }}"></script>
 <script src="{{ URL::asset('js/owl.carousel.js') }}"></script>
 <script src="{{ URL::asset('js/owl.autoplay.js') }}"></script>
+<!--Fancybox-->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<!--Custom Script-->
 <script>
     $(function () {
         $(window).scroll(function () {
@@ -212,6 +216,11 @@ $(document).ready(function(){
 
     });
 
+</script>
+<script>
+    $('[data-fancybox]').fancybox({
+	protect: true
+});
 </script>
 <script>
     tinymce.init({
