@@ -15,6 +15,71 @@
         </div>
     </div>
 </header>
+<section class="bg-white">
+    <div class="container" style="max-width: 800px">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <i class="fas fa-map-marked-alt fa-3x"></i>
+                                </div>
+                                <div class="flip-card-back">
+                                    <button class="btn btn-primary" type="button" data-toggle="modal"
+                                        data-target="#addressModal">View</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <i class="fas fa-phone-square fa-3x"></i>
+                                </div>
+                                <div class="flip-card-back">
+                                    <button class="btn btn-primary" type="button" data-toggle="modal"
+                                        data-target="#contactModal">View</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <i class="fas fa-money-check-alt fa-3x"></i>
+                                </div>
+                                <div class="flip-card-back">
+                                    <button class="btn btn-primary" type="button" onclick="window.location.href='http://203.154.157.184/Cheque_Tracking/Cheque/login.php'">View</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <i class="fas fa-file-alt fa-3x"></i>
+                                </div>
+                                <div class="flip-card-back">
+                                    <button class="btn btn-primary" type="button" onclick="window.location.href='http://mctric.quickconnect.to/'">View</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--
 <section class="bg-white" style="padding-bottom: 0px;">
     <div class="container">
         <div class="row">
@@ -64,4 +129,5 @@
         </div>
     </div>
 </section>
+-->
 @endsection

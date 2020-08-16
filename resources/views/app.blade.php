@@ -88,14 +88,16 @@
 </footer>
 -->
 
-<!-- Modal -->
-<div class="modal" id="myModal">
+<!-- Video Modal -->
+<div class="modal" id="videoModal">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body">
+                <!--
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
+                -->
                 <!-- 16:9 aspect ratio -->
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
@@ -106,6 +108,7 @@
     </div>
 </div>
 
+<!-- Business Modal -->
 <div id="modal-preview" class="modal" onclick="this.style.display='none'">
     <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -116,6 +119,71 @@
             <img id="img-preview" style="max-width:100%">
         </div>
     </div>
+    </div>
+</div>
+
+<!-- Address Modal -->
+<div class="modal fade modal-contact" id="addressModal" tabindex="-1" role="dialog" aria-labelledby="addressModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ __('messages.contact.contactAddress') }}</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row about-map-desc-wrapper">
+                    <div class="col-md-12">
+                        <p>
+                            {{ __('messages.home.contactAddressDesc') }}
+                        </p>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="map-wrapper">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.192181848043!2d100.56834121477938!3d13.76728119033743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29e88a01f5421%3A0x50acb168a55704d1!2sMcTric%20Company%20Limited!5e0!3m2!1sth!2sth!4v1569432124464!5m2!1sth!2sth"
+                                width="100%" height="450px" style="border:0; margin-top: -150px;"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Modal -->
+<div class="modal fade modal-contact" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ __('messages.home.contactHeading') }}</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="contact-content-title"><i class="fas fa-envelope"></i>
+                            {{ __('messages.contact.contactEmail') }}</h5>
+                        <p>{{ __('messages.home.contactEmailDesc') }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="contact-content-title"><i class="fas fa-phone-square"></i>
+                            {{ __('messages.contact.contactCall') }}</h5>
+                        <p>{{ __('messages.contact.contactPhone') }}: +66 (0) 2641 2100 <br>
+                            {{ __('messages.contact.contactFax') }}: +66 (0) 2641 2030</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="contact-content-title"><i class="fab fa-facebook"></i> Facebook</h5>
+                        <p><a href="https://www.facebook.com/McTRIC/" target="_blank"
+                                style="color: #212529 !important;">McTRIC Facebook Page</a></p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 class="contact-content-title"><i class="fab fab fa-youtube"></i> Youtube</h5>
+                        <p><a href="https://www.youtube.com/channel/UCpIigCEea3WE5rdFZ99gJ4w" target="_blank"
+                                style="color: #212529 !important;">McTRIC Youtube Channel</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -151,14 +219,14 @@
             $videoSrc = $(this).data("src");
         });
         // when the modal is opened autoplay it
-        $('#myModal').on('shown.bs.modal', function (e) {
+        $('#videoModal').on('shown.bs.modal', function (e) {
             // set the video src to autoplay and not to show related video.
             // Youtube related video is like a box of chocolates... you never know what you're gonna get
             $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
             $('.modal-backdrop').remove();
         })
         // stop playing the youtube video when I close the modal
-        $('#myModal').on('hide.bs.modal', function (e) {
+        $('#videoModal').on('hide.bs.modal', function (e) {
             // a poor man's stop video
             $("#video").attr('src', $videoSrc);
         })
