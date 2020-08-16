@@ -122,7 +122,14 @@
                             <img class="card-img-top" src="{{ url('image/show/'.$business->cover_image) }}"
                                 alt="Card image cap">
                             <div class="card-body" style="min-height: 100px;">
-                                <h5 class="card-title text-center">{{ $business->name }}</h5>
+                                <h5 class="card-title text-center">
+                                    {{ $business->name }}
+                                    @if ($business->display)
+                                        <span class="badge badge-success text-center">Show</span>
+                                    @else
+                                        <span class="badge badge-danger text-center">Hide</span>
+                                    @endif
+                                </h5>
                                 <div class="text-center">
                                     <button type="button" class="btn learn-more-btn"
                                         onclick="location.href='{{ url('businesses/'.$business->id) }}'">
@@ -170,7 +177,14 @@
                             <img class="card-img-top" src="{{ url('image/show/'.$career->image_id) }}"
                                 alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title text-center">{{ $career->name }}</h5>
+                                <h5 class="card-title text-center">
+                                    {{ $career->name }}
+                                    @if ($career->display)
+                                        <span class="badge badge-success text-center">Show</span>
+                                    @else
+                                        <span class="badge badge-danger text-center">Hide</span>
+                                    @endif
+                                </h5>
                                 <div class="text-center">
                                     <button type="button" class="btn learn-more-btn"
                                         onclick="location.href='{{ url('careers/'.$career->id) }}'">
@@ -217,7 +231,14 @@
                             <img class="card-img-top" src="{{ url('image/show/'.$client->image_id) }}"
                                 alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title text-center">{{ $client->name }}</h5>
+                                <h5 class="card-title text-center">
+                                    {{ $client->name }}
+                                    @if ($client->display)
+                                        <span class="badge badge-success text-center">Show</span>
+                                    @else
+                                        <span class="badge badge-danger text-center">Hide</span>
+                                    @endif
+                                </h5>
                             </div>
                             <div class="card-footer text-center">
                                 {!! Form::model($client, ['method' => 'delete', 'url' => '/clients/'.$client->id]) !!}
@@ -259,7 +280,14 @@
                             <img class="card-img-top" src="{{ url('image/show/'.$award->image_id) }}"
                                 alt="Card image cap">
                             <div class="card-body" style="min-height: 150px !important;">
-                                <h5 class="card-title text-center">{{ $award->name }}</h5>
+                                <h5 class="card-title text-center">
+                                    {{ $award->name }}
+                                    @if ($award->display)
+                                        <span class="badge badge-success text-center">Show</span>
+                                    @else
+                                        <span class="badge badge-danger text-center">Hide</span>
+                                    @endif
+                                </h5>
                                 <div class="text-center">
                                     <button type="button" class="btn learn-more-btn"
                                         onclick="location.href='{{ url('awards/'.$award->id) }}'">

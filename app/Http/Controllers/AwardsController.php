@@ -16,7 +16,7 @@ class AwardsController extends Controller
      */
     public function index()
     {
-        $awards = Awards::all();
+        $awards = Awards::show()->get();
         return view('award.index', ['awards' => $awards]);
     }
 

@@ -16,7 +16,7 @@ class CareersController extends Controller
      */
     public function index()
     {
-        $careers = Careers::all();
+        $careers = Careers::show()->get();
         return response(view('career.index', [
             'careers' => $careers
         ]));

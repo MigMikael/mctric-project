@@ -20,3 +20,8 @@
     {!! Form::label('qualification', 'Qualification') !!}
     <textarea name="qualification"></textarea>
 </div>
+
+<div class="col-md-12" style="margin-bottom: 3%">
+    {!! Form::label('Display') !!}
+    {!! Form::select('display', [true => "Show", false => "Hide"], null, ['class' => 'form-control']) !!}
+</div>
