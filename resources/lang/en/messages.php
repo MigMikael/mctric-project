@@ -25,9 +25,9 @@ return [
         'watchStoryButton' => 'Watch Our Story',
 
         'aboutHeading' => 'About Us',
-        'aboutParagraphOne' => 'McTRIC for Construction works and MEP Services namely; Condominium, Hotel, Hospital, Shopping Complex, Department Store, Hypermarket, Factory, Processing Line, Outside Plant Utility and more.',
-        'aboutParagraphTwo' => 'We firmly believe our company in reliable, efficient and trustworthy to ensure a service that will maximize customer benefits.',
-        'aboutParagraphThree' => 'When quality is needed, McTric is the ideal company with know –how, unique and exceptional  management skills and commitment to customer needs with our full service mind.',
+        'aboutParagraphOne' => 'McTRIC is a construction company that evolves with the change of the world. With digital systems involved in many areas as well as engineering development allowing us to support the business of our customers and partners, moving towards sustainability and being environmentally friendly.',
+        'aboutParagraphTwo' => 'We have developed our business in many areas, especially in Automation, to support the fast-growing E-commerce business, as well as the design and consultancy to the solar energy business.',
+        'aboutParagraphThree' => ' We never stop developing and advancing ourselves to keep up with the ever stop changing world.',
 
         'philosophyHeading' => 'Our Vision',
         'philosophyParagraphOne' => 'Best Quality',
