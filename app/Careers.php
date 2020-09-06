@@ -13,7 +13,8 @@ class Careers extends Model
         'description',
         'qualification',
         'image_id',
-        'display'
+        'display',
+        'priority'
     ];
 
     public function image()

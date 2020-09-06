@@ -50,12 +50,17 @@
 
 <div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('Scope of Work') !!}
-    <textarea name="scope_of_work">{{ $business-> scope_of_work }}</textarea>
+    <textarea name="scope_of_work">{{ $business->scope_of_work }}</textarea>
 </div>
+
+{{--<div class="col-md-12" style="margin-bottom: 3%">--}}
+{{--    {!! Form::label('Category') !!}--}}
+{{--    {!! Form::select('category', $category, null, ['class' => 'form-control']) !!}--}}
+{{--</div>--}}
 
 <div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('Category') !!}
-    {!! Form::select('category', $category, null, ['class' => 'form-control']) !!}
+    {!! Form::select('category[]', $category, $business->categories->pluck('id'), ['class' => 'form-control', 'multiple' => 'multiple', 'id' => 'category-select']) !!}
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">

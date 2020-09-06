@@ -130,6 +130,8 @@
 <script src="{{ URL::asset('js/owl.autoplay.js') }}"></script>
 <!--Fancybox-->
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="{{ URL::asset('js/bootstrap-multiselect.js') }}"></script>
+<link rel="stylesheet" href="{{ URL::asset('css/bootstrap-multiselect.css') }}" type="text/css"/>
 <!--Custom Script-->
 <script>
     $(function () {

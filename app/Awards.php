@@ -12,7 +12,8 @@ class Awards extends Model
         'name',
         'description',
         'image_id',
-        'display'
+        'display',
+        'priority'
     ];
 
     public function image()

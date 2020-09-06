@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Business;
+use App\BusinessCategory;
 use App\BusinessImage;
+use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Traits\ImageTrait;
@@ -54,11 +56,17 @@ class BusinessController extends Controller
 
     public function filter($category)
     {
-        $businesses = Business::where("category", "=", $category)->where('display', true)->paginate(6);
+        $category = Category::where('slug', '=', $category)->first();
+        $businesses_categories = BusinessCategory::where('category_id', $category->id)->pluck('business_id');
+
+        $businesses = Business::whereIn('id', $businesses_categories)
+            ->where('display', true)
+            ->paginate(6);
+
         return view('business.list', [
             'businesses' => $businesses,
-            'category' => $this->category[$category],
-            'headingTranslate' => $this->category_translate[$category]
+//            'category' => $this->category[$category],
+            'headingTranslate' => $this->category_translate[$category->slug]
         ]);
     }
 
@@ -97,9 +105,10 @@ class BusinessController extends Controller
      */
     public function create()
     {
+        $category = Category::pluck('name', 'id');
         return response(view('business.create', [
             'status' => $this->status,
-            'category' => $this->category
+            'category' => $category
         ]));
     }
 
@@ -112,13 +121,26 @@ class BusinessController extends Controller
     public function store(Request $request)
     {
         $business = $request->all();
+//        Log::info("Store success here", $business);
+
         $business['slug'] = str_replace(" ", "_", $business['name']);
 
         $file = $request->file('cover_image');
         $cover_image = $this->storeImage($file, "");
         $business['cover_image'] = $cover_image->id;
+        $categories = $business['category'];
+        $business['category'] = "";
 
         $business = Business::create($business);
+
+//        Log::info(print_r($categories));
+        foreach ($categories as $category) {
+            $business_category = [
+                'business_id' => $business->id,
+                'category_id' => intval($category)
+            ];
+            BusinessCategory::create($business_category);
+        }
 
         if ($request->hasFile('images')) {
             $files = $request->file('images');
@@ -129,7 +151,6 @@ class BusinessController extends Controller
                     'image_id' => $image->id
                 ];
                 BusinessImage::create($business_image);
-                # Log::info("Store success here");
             }
         }
 
@@ -161,11 +182,13 @@ class BusinessController extends Controller
     public function edit($id)
     {
         $business = Business::findOrFail($id);
+        $business->categories();
+        $category = Category::pluck('name', 'id');
 
         return view('business.edit', [
             'business' => $business,
             'status' => $this->status,
-            'category' => $this->category
+            'category' => $category
         ]);
     }
 
@@ -202,6 +225,16 @@ class BusinessController extends Controller
             }
         }
 
+        BusinessCategory::where('business_id', '=', $business->id)->delete();
+        $categories = $updateBusiness['category'];
+        foreach ($categories as $category) {
+            $business_category = [
+                'business_id' => $business->id,
+                'category_id' => intval($category)
+            ];
+            BusinessCategory::create($business_category);
+        }
+
         $business->update($updateBusiness);
         //return redirect()->action("BusinessController@filter", ['category' => $business->category]);
         return redirect()->action("HomeController@dashboardBusinesses");
@@ -215,6 +248,8 @@ class BusinessController extends Controller
      */
     public function destroy($id)
     {
+        BusinessCategory::where('business_id', $id)->delete();
+
         $business = Business::findOrFail($id);
         $business->delete();
 

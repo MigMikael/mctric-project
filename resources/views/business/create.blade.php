@@ -81,5 +81,9 @@
                 alert("Pls select only images");
             }
         });
+
+        $(document).ready(function() {
+            $('#category-select').multiselect();
+        });
     </script>
 @endsection

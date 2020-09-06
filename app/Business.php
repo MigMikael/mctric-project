@@ -29,11 +29,17 @@ class Business extends Model
         'social_facebook',
         'social_youtube',
         'social_instagram',
+        'priority'
     ];
 
     public function images()
     {
         return $this->belongsToMany('App\Image', 'business_image', 'business_id', 'image_id');
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany('App\Category', 'businesses_categories', 'business_id', 'category_id');
     }
 
     public function scopeShow($query) {
