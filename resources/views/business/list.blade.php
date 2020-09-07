@@ -22,6 +22,28 @@
                 <button type="button" class="btn btn-primary" onclick="location.href='{{ url('dashboard/summary/') }}'">Back</button>
             </div>
             @endif
+
+            @if(Request::is('dashboard/businesses/status/*'))
+            <div class="row align-items-end">
+                {!! Form::open(['method' => 'get', 'url' => '/dashboard/businesses/status/'.$status, 'class' => 'form-inline']) !!}
+                <div class="col-md-12 form-group" style="margin-bottom: 3%">
+                    {!! Form::label('Filter By Year:') !!}
+                    {!! Form::select('year', $years, $year, ['class' => 'form-control']) !!}
+                    <button class="btn btn-primary" type="submit">Ok</button>
+                </div>
+                {!! Form::close() !!}
+            </div>
+            @elseif(Request::is('businesses/category/*'))
+            <div class="row align-items-end">
+                {!! Form::open(['method' => 'get', 'url' => '/businesses/category/'.$category->slug, 'class' => 'form-inline']) !!}
+                <div class="col-md-12 form-group" style="margin-bottom: 3%">
+                    {!! Form::label('Filter By Year:') !!}
+                    {!! Form::select('year', $years, $year, ['class' => 'form-control']) !!}
+                    <button class="btn btn-primary" type="submit">Ok</button>
+                </div>
+                {!! Form::close() !!}
+            </div>
+            @endif
             <div class="row">
                 @foreach($businesses as $business)
                 <div class="col-md-6 col-lg-4">

@@ -111,6 +111,9 @@
                             <div class="pull-right">
                                 <a class="btn btn-primary"
                                     href="{{ url("businesses/create") }}">{{ __('messages.app.createButton') }}</a>
+
+                                <a class="btn btn-primary"
+                                   href="{{ url("businesses/sort") }}">Sort</a>
                             </div>
                         </div>
                     </div>
@@ -159,6 +162,19 @@
             <div class="tab-pane container @if($activeTab == 'careers') active @endif" id="career">
                 <div style="padding-top: 3%; padding-bottom: 3%">
                     <div class="row">
+                        {!! Form::open(['method' => 'post', 'url' => '/careers/search', 'class' => 'form-inline']) !!}
+                        <div class="col-md-12" style="margin-bottom: 3%">
+                            @if ($search)
+                                {!! Form::text('query', $search, ['class' => 'form-control search-business', 'placeholder'=>'Search by career name']) !!}
+                            @else
+                                {!! Form::text('query', null, ['class' => 'form-control search-business', 'placeholder'=>'Search by career name']) !!}
+                            @endif
+                            <button class="btn btn-primary" type="submit">{{ __('messages.app.searchButton') }}</button>
+                        </div>
+                        {!! Form::close() !!}
+                    </div>
+                    <hr>
+                    <div class="row">
                         <div class="col-md-12">
                             <div class="pull-left">
                                 <h2>{{ __('messages.dashboard.careerSubHeading') }}</h2>
@@ -166,6 +182,9 @@
                             <div class="pull-right">
                                 <a class="btn btn-primary"
                                     href="{{ url("careers/create") }}">{{ __('messages.app.createButton') }}</a>
+
+                                <a class="btn btn-primary"
+                                   href="{{ url("careers/sort") }}">Sort</a>
                             </div>
                         </div>
                     </div>
@@ -213,6 +232,19 @@
             <div class="tab-pane container @if($activeTab == 'clients') active @endif" id="client">
                 <div style="padding-top: 3%; padding-bottom: 3%">
                     <div class="row">
+                        {!! Form::open(['method' => 'post', 'url' => '/clients/search', 'class' => 'form-inline']) !!}
+                        <div class="col-md-12" style="margin-bottom: 3%">
+                            @if ($search)
+                                {!! Form::text('query', $search, ['class' => 'form-control search-business', 'placeholder'=>'Search by client name']) !!}
+                            @else
+                                {!! Form::text('query', null, ['class' => 'form-control search-business', 'placeholder'=>'Search by client name']) !!}
+                            @endif
+                            <button class="btn btn-primary" type="submit">{{ __('messages.app.searchButton') }}</button>
+                        </div>
+                        {!! Form::close() !!}
+                    </div>
+                    <hr>
+                    <div class="row">
                         <div class="col-md-12">
                             <div class="pull-left">
                                 <h2>{{ __('messages.dashboard.clientSubHeading') }}</h2>
@@ -220,6 +252,9 @@
                             <div class="pull-right">
                                 <a class="btn btn-primary"
                                     href="{{ url("clients/create") }}">{{ __('messages.app.createButton') }}</a>
+
+                                <a class="btn btn-primary"
+                                   href="{{ url("clients/sort") }}">Sort</a>
                             </div>
                         </div>
                     </div>
@@ -262,6 +297,19 @@
             <div class="tab-pane container @if($activeTab == 'awards') active @endif" id="award">
                 <div style="padding-top: 3%; padding-bottom: 3%">
                     <div class="row">
+                        {!! Form::open(['method' => 'post', 'url' => '/awards/search', 'class' => 'form-inline']) !!}
+                        <div class="col-md-12" style="margin-bottom: 3%">
+                            @if ($search)
+                                {!! Form::text('query', $search, ['class' => 'form-control search-business', 'placeholder'=>'Search by award name']) !!}
+                            @else
+                                {!! Form::text('query', null, ['class' => 'form-control search-business', 'placeholder'=>'Search by award name']) !!}
+                            @endif
+                            <button class="btn btn-primary" type="submit">{{ __('messages.app.searchButton') }}</button>
+                        </div>
+                        {!! Form::close() !!}
+                    </div>
+                    <hr>
+                    <div class="row">
                         <div class="col-md-12">
                             <div class="pull-left">
                                 <h2>{{ __('messages.dashboard.awardSubHeading') }}</h2>
@@ -269,6 +317,9 @@
                             <div class="pull-right">
                                 <a class="btn btn-primary"
                                     href="{{ url("awards/create") }}">{{ __('messages.app.createButton') }}</a>
+
+                                <a class="btn btn-primary"
+                                   href="{{ url("awards/sort") }}">Sort</a>
                             </div>
                         </div>
                     </div>
@@ -316,6 +367,19 @@
             </div>
             <div class="tab-pane container @if($activeTab == 'users') active @endif" id="user">
                 <div style="padding-top: 3%; padding-bottom: 3%">
+                    <div class="row">
+                        {!! Form::open(['method' => 'post', 'url' => '/users/search', 'class' => 'form-inline']) !!}
+                        <div class="col-md-12" style="margin-bottom: 3%">
+                            @if ($search)
+                                {!! Form::text('query', $search, ['class' => 'form-control search-business', 'placeholder'=>'Search by email']) !!}
+                            @else
+                                {!! Form::text('query', null, ['class' => 'form-control search-business', 'placeholder'=>'Search by email']) !!}
+                            @endif
+                            <button class="btn btn-primary" type="submit">{{ __('messages.app.searchButton') }}</button>
+                        </div>
+                        {!! Form::close() !!}
+                    </div>
+                    <hr>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="pull-left">

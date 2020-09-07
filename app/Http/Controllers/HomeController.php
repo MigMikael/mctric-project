@@ -73,7 +73,7 @@ class HomeController extends Controller
 
     public function dashboardBusinesses()
     {
-        $businesses = Business::paginate(6);
+        $businesses = Business::orderBy('priority', 'desc')->paginate(6);
         return view('dashboard', [
             'businesses' => $businesses,
             'clients' => [],
@@ -89,7 +89,7 @@ class HomeController extends Controller
 
     public function dashboardCareers()
     {
-        $careers = Careers::paginate(9);
+        $careers = Careers::orderBy('priority', 'desc')->paginate(9);
         return view('dashboard', [
             'businesses' => [],
             'clients' => [],
@@ -105,7 +105,7 @@ class HomeController extends Controller
 
     public function dashboardClients()
     {
-        $clients = Clients::paginate(9);
+        $clients = Clients::orderBy('priority', 'desc')->paginate(9);
         return view('dashboard', [
             'businesses' => [],
             'clients' => $clients,
@@ -121,7 +121,7 @@ class HomeController extends Controller
 
     public function dashboardAwards()
     {
-        $awards = Awards::paginate(9);
+        $awards = Awards::orderBy('priority', 'desc')->paginate(9);
         return view('dashboard', [
             'businesses' => [],
             'clients' => [],
@@ -137,7 +137,7 @@ class HomeController extends Controller
 
     public function dashboardUsers()
     {
-        $users = User::all();
+        $users = User::paginate(9);
         return view('dashboard', [
             'businesses' => [],
             'clients' => [],

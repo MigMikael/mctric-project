@@ -264,7 +264,7 @@ ol.circle {
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
   }
-  
+
   .modal-dialog {
       max-width: 800px;
       margin: 30px auto;
@@ -549,7 +549,7 @@ header .overlay {
 }
 
 .image-about > img {
-    width: 100%; 
+    width: 100%;
     object-fit: cover;
 }
 
@@ -561,7 +561,7 @@ header .overlay {
 
 .img-max-width {
     height: 100%;
-    width: 100%; 
+    width: 100%;
     object-fit: cover;
 }
 
@@ -765,8 +765,8 @@ select {
 }
 
 .back-btn-custom {
-    position: fixed; 
-    left: 27px; 
+    position: fixed;
+    left: 27px;
     z-index: 100;
     bottom: 0;
     height: 60px;
@@ -852,7 +852,7 @@ select {
     }
 
     section {
-        padding: 50px 0 !important; 
+        padding: 50px 0 !important;
     }
 
     .sub-title {
@@ -961,11 +961,11 @@ select {
         margin-top: 65px;
     }
 
-    
+
     .image-business-project {
         height: unset !important;
     }
-    
+
 
     .close {
         font-size: unset !important;

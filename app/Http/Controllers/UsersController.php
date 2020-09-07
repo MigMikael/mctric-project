@@ -14,6 +14,24 @@ class UsersController extends Controller
         return response(view('user.create'));
     }
 
+    public function search(Request $request)
+    {
+        $request = $request->all();
+        $query = $request['query'];
+        $users = User::where("email", "like", "%".$query."%")->paginate(9);
+        return view('dashboard', [
+            'businesses' => [],
+            'clients' => [],
+            'awards' => [],
+            'careers' => [],
+            'users' => $users,
+            'activeTab' => 'users',
+            'inProgressCount' => null,
+            'completeCount' => null,
+            'search' => $query
+        ]);
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [

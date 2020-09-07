@@ -9,6 +9,7 @@ use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Traits\ImageTrait;
+use function GuzzleHttp\Psr7\str;
 
 class BusinessController extends Controller
 {
@@ -48,35 +49,95 @@ class BusinessController extends Controller
      */
     public function index()
     {
-        $businesses = Business::where('display', true)->get();
+        $businesses = Business::where('display', true)
+            ->orderBy('priority', 'desc')
+            ->get();
         return response(view('business.index', [
             'businesses' => $businesses
         ]));
     }
 
-    public function filter($category)
+    public function filter(Request $request)
     {
+        $category = $request['category'];
         $category = Category::where('slug', '=', $category)->first();
         $businesses_categories = BusinessCategory::where('category_id', $category->id)->pluck('business_id');
 
-        $businesses = Business::whereIn('id', $businesses_categories)
-            ->where('display', true)
-            ->paginate(6);
+        $year = 0;
+        if ($request->has('year') && $request->query('year') != 0) {
+            $year = $request->query('year');
+            $businesses = Business::whereIn('id', $businesses_categories)
+                ->whereYear('contract_start', '<=', intval($year))
+                ->whereYear('contract_end', '>=', intval($year))
+                ->where('display', true)
+                ->orderBy('priority', 'desc')
+                ->paginate(6);
+        } else {
+            $businesses = Business::whereIn('id', $businesses_categories)
+                ->where('display', true)
+                ->orderBy('priority', 'desc')
+                ->paginate(6);
+        }
+
+        $minDate = Business::all()->min('contract_start');
+        $minYear = explode('-', $minDate)[0];
+
+        $maxDate = Business::all()->max('contract_end');
+        $maxYear = explode('-', $maxDate)[0];
+
+        $years = [];
+        $years[0] = 'All';
+        for ($i = $minYear; $i <= $maxYear; $i++) {
+            $years[strval($i)] = intval($i);
+        }
 
         return view('business.list', [
             'businesses' => $businesses,
-//            'category' => $this->category[$category],
-            'headingTranslate' => $this->category_translate[$category->slug]
+            'category' => $category,
+            'headingTranslate' => $this->category_translate[$category->slug],
+            'years' => $years,
+            'year' => $year
         ]);
     }
 
-    public function status($status)
+    public function status(Request $request)
     {
-        $businesses = Business::where("status", "=", $status)->where('display', true)->paginate(6);
+        $status = $request['status'];
+
+        $year = 0;
+        if ($request->has('year') && $request->query('year') != 0) {
+            $year = $request->query('year');
+            $businesses = Business::where("status", "=", $status)
+                ->whereYear('contract_start', '<=', intval($year))
+                ->whereYear('contract_end', '>=', intval($year))
+                ->where('display', true)
+                ->orderBy('priority', 'desc')
+                ->paginate(6);
+        } else {
+            $businesses = Business::where("status", "=", $status)
+                ->where('display', true)
+                ->orderBy('priority', 'desc')
+                ->paginate(6);
+        }
+
+        $minDate = Business::all()->min('contract_start');
+        $minYear = explode('-', $minDate)[0];
+
+        $maxDate = Business::all()->max('contract_end');
+        $maxYear = explode('-', $maxDate)[0];
+
+        $years = [];
+        $years[0] = 'All';
+        for ($i = $minYear; $i <= $maxYear; $i++) {
+            $years[strval($i)] = intval($i);
+        }
+
         return view('business.list', [
             'businesses' => $businesses,
-            'status' => $this->status[$status],
-            'headingTranslate' => $this->status_translate[$status]
+            'status' => $status,
+            'headingTranslate' => 'messages.status.workInProgress',
+            'years' => $years,
+            'year' => $year
         ]);
     }
 
@@ -84,7 +145,7 @@ class BusinessController extends Controller
     {
         $request = $request->all();
         $query = $request['query'];
-        $businesses = Business::where("name", "like", "%".$query."%")->where('display', true)->paginate(6);
+        $businesses = Business::where("name", "like", "%".$query."%")->paginate(6);
         return view('dashboard', [
             'businesses' => $businesses,
             'clients' => [],
@@ -96,6 +157,34 @@ class BusinessController extends Controller
             'completeCount' => null,
             'search' => $query
         ]);
+    }
+
+    public function sort()
+    {
+        $businesses = Business::orderBy('priority', 'desc')->get();
+        return response(view('business.sort', [
+            'businesses' => $businesses
+        ]));
+    }
+
+    public function storeSort(Request $request)
+    {
+        $request = $request->all();
+        $sortedBusinesses = $request['sorted'];
+
+        $idString = str_replace('order[]=', '', $sortedBusinesses);
+        $idString = str_replace('&', '', $idString);
+        $idArr = str_split($idString);
+
+        $total = Business::all()->count();
+        foreach ($idArr as $id) {
+            $business = Business::find($id);
+            $business->priority = $total;
+            $business->save();
+            $total--;
+        }
+
+        return redirect()->action("HomeController@dashboardBusinesses");
     }
 
     /**
@@ -121,7 +210,6 @@ class BusinessController extends Controller
     public function store(Request $request)
     {
         $business = $request->all();
-//        Log::info("Store success here", $business);
 
         $business['slug'] = str_replace(" ", "_", $business['name']);
 
@@ -131,9 +219,11 @@ class BusinessController extends Controller
         $categories = $business['category'];
         $business['category'] = "";
 
+        $totalBusiness = Business::all()->count();
+        $business['priority'] = $totalBusiness + 1;
+
         $business = Business::create($business);
 
-//        Log::info(print_r($categories));
         foreach ($categories as $category) {
             $business_category = [
                 'business_id' => $business->id,

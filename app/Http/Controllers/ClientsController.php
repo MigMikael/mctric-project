@@ -16,8 +16,56 @@ class ClientsController extends Controller
      */
     public function index()
     {
-        $clients = Clients::show()->get();
+        $clients = Clients::where('display', true)
+            ->orderBy('priority', 'desc')
+            ->get();
         return view('client.index', ['clients' => $clients]);
+    }
+
+    public function search(Request $request)
+    {
+        $request = $request->all();
+        $query = $request['query'];
+        $clients = Clients::where("name", "like", "%".$query."%")->paginate(9);
+        return view('dashboard', [
+            'businesses' => [],
+            'clients' => $clients,
+            'awards' => [],
+            'careers' => [],
+            'users' => [],
+            'activeTab' => 'clients',
+            'inProgressCount' => null,
+            'completeCount' => null,
+            'search' => $query
+        ]);
+    }
+
+    public function sort()
+    {
+        $clients = Clients::orderBy('priority', 'desc')->get();
+        return response(view('client.sort', [
+            'clients' => $clients
+        ]));
+    }
+
+    public function storeSort(Request $request)
+    {
+        $request = $request->all();
+        $sortedClients = $request['sorted'];
+
+        $idString = str_replace('order[]=', '', $sortedClients);
+        $idString = str_replace('&', '', $idString);
+        $idArr = str_split($idString);
+
+        $total = Clients::all()->count();
+        foreach ($idArr as $id) {
+            $business = Clients::find($id);
+            $business->priority = $total;
+            $business->save();
+            $total--;
+        }
+
+        return redirect()->action("HomeController@dashboardClients");
     }
 
     /**
@@ -39,9 +87,13 @@ class ClientsController extends Controller
     public function store(Request $request)
     {
         $client = $request->all();
-        $file = $request->file('image');
-        $image = $this->storeImage($file, '');
-        $client['image_id'] = $image->id;
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $image = $this->storeImage($file, '');
+            $client['image_id'] = $image->id;
+        }
+        $total = Clients::all()->count();
+        $client['priority'] = $total + 1;
 
         Clients::create($client);
         return redirect()->action("HomeController@dashboardClients");
