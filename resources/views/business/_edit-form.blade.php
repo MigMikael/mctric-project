@@ -49,6 +49,11 @@
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
+    {!! Form::label('Show Year') !!}
+    {!! Form::date('show_year', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('Scope of Work') !!}
     <textarea name="scope_of_work">{{ $business->scope_of_work }}</textarea>
 </div>

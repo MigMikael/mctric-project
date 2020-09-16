@@ -104,7 +104,9 @@ return [
         'bath' => 'บาท',
         'project' => 'โครงการ',
 
-        'businessReadMore' => 'ดูเพิ่มเติม'
+        'businessReadMore' => 'เลือกตามปี',
+
+        'filterByYear' => 'Filter By Year'
     ],
     'dashboard' => [
         'dashboardHeading' => 'แอดมินแดชบอร์ด',
@@ -122,7 +124,11 @@ return [
         'userTab' => 'ผู้ใช้งาน',
         'userSubHeading' => 'จัดการผู้ใช้งาน',
 
-        'cardButton' => 'รายละเอียด'
+        'cardButton' => 'รายละเอียด',
+        'sortButton' => 'เรียงลำดับ',
+        'hideButton' => 'ซ่อน',
+        'showButton' => 'แสดง',
+        'saveButton' => 'บันทึก'
     ],
     'career' => [
         'careerHeading' => 'ตำแหน่งงาน',

@@ -17,34 +17,38 @@
     </header>
     <section class="bg-white">
         <div class="container">
+            <div class="back-btn-custom">
+                <button type="button" class="btn btn-primary"
+                    onclick="location.href='{{ url('dashboard/clients/') }}'">Back</button>
+            </div>
             <form method="POST" action="{{ url('/clients/sort') }}" class="col-md-12 col-xs-12">
                 @csrf
                 <input type='hidden' name='sorted' id='sortField'>
                 <div id="sortable">
                     @foreach($clients as $client)
-                        <div class="card mb-12" style="max-width: 100%; max-height: 75px; margin-bottom: 5px" id='{{ 'order_'.$client->id }}'>
+                        <div class="card mb-12" style="max-width: 100%; max-height: 75px; margin-bottom: 15px" id='{{ 'order_'.$client->id }}'>
                             <div class="row no-gutters">
                                 <div class="col-md-1">
                                     <img src="{{ url('image/show/'.$client->image_id) }}" class="card-img" style="max-height: 75px;height: 75px;object-fit: cover">
                                 </div>
                                 <div class="col-md-11">
                                     <div class="card-body">
-                                        <h3>{{ $loop->iteration }}. {{ $client->name }}</h3>
+                                        <h5>{{ $loop->iteration }}. {{ $client->name }}</h5>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     @endforeach
                 </div>
-                <button type='submit' id="submit">Submit</button>
+                <div class="sort-wrapper text-center">
+                    <button type='submit' id="submit" class="btn btn-primary">{{ __('messages.dashboard.saveButton') }}</button>
+                </div>
             </form>
         </div>
     </section>
 @endsection
 
 @section('script')
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
         $( function() {
             $( "#sortable" ).sortable();

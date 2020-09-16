@@ -59,16 +59,17 @@ class BusinessController extends Controller
 
     public function filter(Request $request)
     {
+        
         $category = $request['category'];
         $category = Category::where('slug', '=', $category)->first();
         $businesses_categories = BusinessCategory::where('category_id', $category->id)->pluck('business_id');
-
+        
         $year = 0;
         if ($request->has('year') && $request->query('year') != 0) {
             $year = $request->query('year');
             $businesses = Business::whereIn('id', $businesses_categories)
-                ->whereYear('contract_start', '<=', intval($year))
-                ->whereYear('contract_end', '>=', intval($year))
+                ->whereYear('show_year', '<=', intval($year))
+                ->whereYear('show_year', '>=', intval($year))
                 ->where('display', true)
                 ->orderBy('priority', 'desc')
                 ->paginate(6);
@@ -83,8 +84,9 @@ class BusinessController extends Controller
         $minYear = explode('-', $minDate)[0];
 
         $maxDate = Business::all()->max('contract_end');
-        $maxYear = explode('-', $maxDate)[0];
-
+        //$maxYear = explode('-', $maxDate)[0];
+        $maxYear = date('Y');
+        
         $years = [];
         $years[0] = 'All';
         for ($i = $minYear; $i <= $maxYear; $i++) {
@@ -108,8 +110,10 @@ class BusinessController extends Controller
         if ($request->has('year') && $request->query('year') != 0) {
             $year = $request->query('year');
             $businesses = Business::where("status", "=", $status)
-                ->whereYear('contract_start', '<=', intval($year))
-                ->whereYear('contract_end', '>=', intval($year))
+                ->whereYear('show_year', '<=', intval($year))
+                ->whereYear('show_year', '>=', intval($year))
+                //->whereYear('contract_start', '<=', intval($year))
+                //->whereYear('contract_end', '>=', intval($year))
                 ->where('display', true)
                 ->orderBy('priority', 'desc')
                 ->paginate(6);

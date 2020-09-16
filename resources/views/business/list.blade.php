@@ -24,24 +24,28 @@
             @endif
 
             @if(Request::is('dashboard/businesses/status/*'))
-            <div class="row align-items-end">
-                {!! Form::open(['method' => 'get', 'url' => '/dashboard/businesses/status/'.$status, 'class' => 'form-inline']) !!}
-                <div class="col-md-12 form-group" style="margin-bottom: 3%">
-                    {!! Form::label('Filter By Year:') !!}
-                    {!! Form::select('year', $years, $year, ['class' => 'form-control']) !!}
-                    <button class="btn btn-primary" type="submit">Ok</button>
+            <div class="row filter-date-wrapper">
+                <div class="col-md-12">
+                    {!! Form::open(['method' => 'get', 'url' => '/dashboard/businesses/status/'.$status, 'class' => 'form-inline']) !!}
+                    <div class="form-group form-filter" style="width: 100%">
+                        {!! Form::label('Filter By Year:') !!}
+                        {!! Form::select('year', $years, $year, ['class' => 'form-control select-filter-date']) !!}
+                        <button class="btn btn-primary" type="submit">{{ __('messages.app.searchButton') }}</button>
+                    </div>
+                    {!! Form::close() !!}
                 </div>
-                {!! Form::close() !!}
             </div>
             @elseif(Request::is('businesses/category/*'))
-            <div class="row align-items-end">
-                {!! Form::open(['method' => 'get', 'url' => '/businesses/category/'.$category->slug, 'class' => 'form-inline']) !!}
-                <div class="col-md-12 form-group" style="margin-bottom: 3%">
-                    {!! Form::label('Filter By Year:') !!}
-                    {!! Form::select('year', $years, $year, ['class' => 'form-control']) !!}
-                    <button class="btn btn-primary" type="submit">Ok</button>
+            <div class="row filter-date-wrapper">
+                <div class="col-md-12">
+                    {!! Form::open(['method' => 'get', 'url' => '/businesses/category/'.$category->slug, 'class' => 'form-inline']) !!}
+                    <div class="form-group form-filter" style="width: 100%">
+                        {!! Form::label('Filter By Year:') !!}
+                        {!! Form::select('year', $years, $year, ['class' => 'form-control select-filter-date']) !!}
+                        <button class="btn btn-primary" type="submit">{{ __('messages.app.searchButton') }}</button>
+                    </div>
+                    {!! Form::close() !!}
                 </div>
-                {!! Form::close() !!}
             </div>
             @endif
             <div class="row">

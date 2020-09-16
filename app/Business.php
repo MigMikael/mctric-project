@@ -19,6 +19,7 @@ class Business extends Model
         'contract_value',
         'contract_start',
         'contract_end',
+        'show_year',
         'scope_of_work',
         'slug',
         'category',

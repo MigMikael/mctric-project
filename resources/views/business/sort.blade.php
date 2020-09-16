@@ -17,6 +17,10 @@
     </header>
     <section class="bg-white">
         <div class="container">
+            <div class="back-btn-custom">
+                <button type="button" class="btn btn-primary"
+                    onclick="location.href='{{ url('dashboard/businesses/') }}'">Back</button>
+            </div>
             <form method="POST" action="{{ url('/businesses/sort') }}" class="col-md-12 col-xs-12">
                 @csrf
                 <input type='hidden' name='sorted' id='sortField'>
@@ -29,22 +33,22 @@
                                 </div>
                                 <div class="col-md-11">
                                     <div class="card-body">
-                                        <h3>{{ $loop->iteration }}. {{ $business->name }}</h3>
+                                        <h5>{{ $loop->iteration }}. {{ $business->name }}</h5>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     @endforeach
                 </div>
-                <button type='submit' id="submit">Submit</button>
+                <div class="sort-wrapper text-center">
+                    <button type='submit' id="submit" class="btn btn-primary">{{ __('messages.dashboard.saveButton') }}</button>
+                </div>
             </form>
         </div>
     </section>
 @endsection
 
 @section('script')
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
     $( function() {
         $( "#sortable" ).sortable();

@@ -108,6 +108,8 @@ return [
         'project' => 'Project',
 
         'businessReadMore' => 'READ MORE',
+
+        'filterByYear' => 'Filter By Year'
     ],
     'dashboard' => [
         'dashboardHeading' => 'Admin Dashboard',
@@ -125,7 +127,11 @@ return [
         'userTab' => 'User',
         'userSubHeading' => 'User Management',
 
-        'cardButton' => 'Detail'
+        'cardButton' => 'Detail',
+        'sortButton' => 'Sort',
+        'hideButton' => 'Hide',
+        'showButton' => 'Show',
+        'saveButton' => 'Save'
     ],
     'career' => [
         'careerHeading' => 'Career',

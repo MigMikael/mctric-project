@@ -113,7 +113,7 @@
                                     href="{{ url("businesses/create") }}">{{ __('messages.app.createButton') }}</a>
 
                                 <a class="btn btn-primary"
-                                   href="{{ url("businesses/sort") }}">Sort</a>
+                                   href="{{ url("businesses/sort") }}">{{ __('messages.dashboard.sortButton') }}</a>
                             </div>
                         </div>
                     </div>
@@ -128,9 +128,9 @@
                                 <h5 class="card-title text-center">
                                     {{ $business->name }}
                                     @if ($business->display)
-                                        <span class="badge badge-success text-center">Show</span>
+                                        <span class="badge badge-success text-center">{{ __('messages.dashboard.showButton') }}</span>
                                     @else
-                                        <span class="badge badge-danger text-center">Hide</span>
+                                        <span class="badge badge-danger text-center">{{ __('messages.dashboard.hideButton') }}</span>
                                     @endif
                                 </h5>
                                 <div class="text-center">
@@ -184,7 +184,7 @@
                                     href="{{ url("careers/create") }}">{{ __('messages.app.createButton') }}</a>
 
                                 <a class="btn btn-primary"
-                                   href="{{ url("careers/sort") }}">Sort</a>
+                                   href="{{ url("careers/sort") }}">{{ __('messages.dashboard.sortButton') }}</a>
                             </div>
                         </div>
                     </div>
@@ -199,9 +199,9 @@
                                 <h5 class="card-title text-center">
                                     {{ $career->name }}
                                     @if ($career->display)
-                                        <span class="badge badge-success text-center">Show</span>
+                                        <span class="badge badge-success text-center">{{ __('messages.dashboard.showButton') }}</span>
                                     @else
-                                        <span class="badge badge-danger text-center">Hide</span>
+                                        <span class="badge badge-danger text-center">{{ __('messages.dashboard.hideButton') }}</span>
                                     @endif
                                 </h5>
                                 <div class="text-center">
@@ -254,7 +254,7 @@
                                     href="{{ url("clients/create") }}">{{ __('messages.app.createButton') }}</a>
 
                                 <a class="btn btn-primary"
-                                   href="{{ url("clients/sort") }}">Sort</a>
+                                   href="{{ url("clients/sort") }}">{{ __('messages.dashboard.sortButton') }}</a>
                             </div>
                         </div>
                     </div>
@@ -269,9 +269,9 @@
                                 <h5 class="card-title text-center">
                                     {{ $client->name }}
                                     @if ($client->display)
-                                        <span class="badge badge-success text-center">Show</span>
+                                        <span class="badge badge-success text-center">{{ __('messages.dashboard.showButton') }}</span>
                                     @else
-                                        <span class="badge badge-danger text-center">Hide</span>
+                                        <span class="badge badge-danger text-center">{{ __('messages.dashboard.hideButton') }}</span>
                                     @endif
                                 </h5>
                             </div>
@@ -319,7 +319,7 @@
                                     href="{{ url("awards/create") }}">{{ __('messages.app.createButton') }}</a>
 
                                 <a class="btn btn-primary"
-                                   href="{{ url("awards/sort") }}">Sort</a>
+                                   href="{{ url("awards/sort") }}">{{ __('messages.dashboard.sortButton') }}</a>
                             </div>
                         </div>
                     </div>
@@ -334,9 +334,9 @@
                                 <h5 class="card-title text-center">
                                     {{ $award->name }}
                                     @if ($award->display)
-                                        <span class="badge badge-success text-center">Show</span>
+                                        <span class="badge badge-success text-center">{{ __('messages.dashboard.showButton') }}</span>
                                     @else
-                                        <span class="badge badge-danger text-center">Hide</span>
+                                        <span class="badge badge-danger text-center">{{ __('messages.dashboard.hideButton') }}</span>
                                     @endif
                                 </h5>
                                 <div class="text-center">

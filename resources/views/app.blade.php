@@ -124,6 +124,8 @@
 <script src="{{ URL::asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- Plugin JavaScript -->
 <script src="{{ URL::asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+<!-- Jquery UI -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <!-- Custom JavaScript for this theme -->
 <script src="{{ URL::asset('js/scrolling-nav.js') }}"></script>
 <script src="{{ URL::asset('js/owl.carousel.js') }}"></script>
