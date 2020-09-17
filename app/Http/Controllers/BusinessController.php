@@ -59,7 +59,6 @@ class BusinessController extends Controller
 
     public function filter(Request $request)
     {
-
         $category = $request['category'];
         $category = Category::where('slug', '=', $category)->first();
         $businesses_categories = BusinessCategory::where('category_id', $category->id)->pluck('business_id');
@@ -68,8 +67,10 @@ class BusinessController extends Controller
         if ($request->has('year') && $request->query('year') != 0) {
             $year = $request->query('year');
             $businesses = Business::whereIn('id', $businesses_categories)
-                ->whereYear('show_year', '<=', intval($year))
-                ->whereYear('show_year', '>=', intval($year))
+//                ->whereYear('show_year', '<=', intval($year))
+//                ->whereYear('show_year', '>=', intval($year))
+                ->whereYear('show_year_start', '<=', intval($year))
+                ->whereYear('show_year_end', '>=', intval($year))
                 ->where('display', true)
                 ->orderBy('priority', 'desc')
                 ->paginate(6);
@@ -80,12 +81,12 @@ class BusinessController extends Controller
                 ->paginate(6);
         }
 
-        $minDate = Business::all()->min('contract_start');
+        $minDate = Business::all()->min('show_year_start');
         $minYear = explode('-', $minDate)[0];
 
-        $maxDate = Business::all()->max('contract_end');
-        //$maxYear = explode('-', $maxDate)[0];
-        $maxYear = date('Y');
+        $maxDate = Business::all()->max('show_year_end');
+        $maxYear = explode('-', $maxDate)[0];
+        //$maxYear = date('Y');
 
         $years = [];
         $years[0] = 'All';
@@ -124,10 +125,10 @@ class BusinessController extends Controller
                 ->paginate(6);
         }
 
-        $minDate = Business::all()->min('contract_start');
+        $minDate = Business::all()->min('show_year_start');
         $minYear = explode('-', $minDate)[0];
 
-        $maxDate = Business::all()->max('contract_end');
+        $maxDate = Business::all()->max('show_year_end');
         $maxYear = explode('-', $maxDate)[0];
 
         $years = [];
