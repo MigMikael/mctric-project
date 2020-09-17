@@ -15,8 +15,7 @@
         </div>
     </div>
 </header>
-<!--
-<section class="bg-white" style="padding-bottom: 0px;">
+<section class="bg-white">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -65,8 +64,7 @@
         </div>
     </div>
 </section>
--->
-<section class="bg-white" style="padding-bottom: 50px;">
+<!--<section class="bg-white" style="padding-bottom: 50px;">
     <div class="container">
         <div class="row">
             <div class="col-md-12 col-lg-6">
@@ -153,5 +151,5 @@
             </div>
         </div>
     </div>
-</section>
+</section>-->
 @endsection

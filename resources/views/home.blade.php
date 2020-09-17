@@ -226,8 +226,7 @@
         </div>
     </div>
 </section>
-<!--
-<section class="bg-white" style="padding-bottom: 0px;">
+<section class="bg-white">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -281,7 +280,7 @@
         </div>
     </div>
 </section>
--->
+<!--
 <section class="bg-white" style="padding-bottom: 50px;">
     <div class="container">
         <div class="row">
@@ -370,4 +369,5 @@
         </div>
     </div>
 </section>
+-->
 @endsection

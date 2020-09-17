@@ -1,4 +1,9 @@
 <div class="col-md-12" style="margin-bottom: 3%">
+    {!! Form::label('Display') !!}
+    {!! Form::select('display', [true => "Show", false => "Hide"], null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('name', 'Name') !!}
     {!! Form::text('name', null, ['placeholder' => 'Name of Project', 'class' => 'form-control']) !!}
 </div>
@@ -50,12 +55,12 @@
 
 <div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('Show Year Start') !!}
-    {!! Form::date('show_year_start', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
+    {!! Form::date('show_year_start', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('Show Year End') !!}
-    {!! Form::date('show_year_end', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
+    {!! Form::date('show_year_end', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
@@ -106,11 +111,6 @@
     {!! Form::file('images[]', ['multiple'=>true, 'accept'=>'image/*', 'class' => 'form-control', 'id' => 'upload',
     'value' => 'Choose a files']) !!}
     <div id="image-holder" class="col-xs-12"></div>
-</div>
-
-<div class="col-md-12" style="margin-bottom: 3%">
-    {!! Form::label('Display') !!}
-    {!! Form::select('display', [true => "Show", false => "Hide"], null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
