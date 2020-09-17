@@ -49,8 +49,13 @@
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
-    {!! Form::label('Show Year') !!}
-    {!! Form::date('show_year', null, ['class' => 'form-control']) !!}
+    {!! Form::label('Show Year Start') !!}
+    {!! Form::date('show_year_start', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
+</div>
+
+<div class="col-md-12" style="margin-bottom: 3%">
+    {!! Form::label('Show Year End') !!}
+    {!! Form::date('show_year_end', \Carbon\Carbon::now(), ['class' => 'form-control']) !!}
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">

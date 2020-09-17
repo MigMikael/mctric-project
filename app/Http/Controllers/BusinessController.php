@@ -110,10 +110,10 @@ class BusinessController extends Controller
         if ($request->has('year') && $request->query('year') != 0) {
             $year = $request->query('year');
             $businesses = Business::where("status", "=", $status)
-                ->whereYear('show_year', '<=', intval($year))
-                ->whereYear('show_year', '>=', intval($year))
-                //->whereYear('contract_start', '<=', intval($year))
-                //->whereYear('contract_end', '>=', intval($year))
+                //->whereYear('show_year', '<=', intval($year))
+                //->whereYear('show_year', '>=', intval($year))
+                ->whereYear('show_year_start', '<=', intval($year))
+                ->whereYear('show_year_end', '>=', intval($year))
                 ->where('display', true)
                 ->orderBy('priority', 'desc')
                 ->paginate(6);
