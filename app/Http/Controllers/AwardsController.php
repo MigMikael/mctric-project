@@ -54,8 +54,8 @@ class AwardsController extends Controller
         $sortedAwards = $request['sorted'];
 
         $idString = str_replace('order[]=', '', $sortedAwards);
-        $idString = str_replace('&', '', $idString);
-        $idArr = str_split($idString);
+        $idString = str_replace('&', ' ', $idString);
+        $idArr = explode(' ', $idString);
 
         $total = Awards::all()->count();
         foreach ($idArr as $id) {

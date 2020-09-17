@@ -56,8 +56,8 @@ class CareersController extends Controller
         $sortedCareers = $request['sorted'];
 
         $idString = str_replace('order[]=', '', $sortedCareers);
-        $idString = str_replace('&', '', $idString);
-        $idArr = str_split($idString);
+        $idString = str_replace('&', ' ', $idString);
+        $idArr = explode(' ', $idString);
 
         $total = Careers::all()->count();
         foreach ($idArr as $id) {

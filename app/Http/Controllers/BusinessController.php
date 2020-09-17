@@ -59,11 +59,11 @@ class BusinessController extends Controller
 
     public function filter(Request $request)
     {
-        
+
         $category = $request['category'];
         $category = Category::where('slug', '=', $category)->first();
         $businesses_categories = BusinessCategory::where('category_id', $category->id)->pluck('business_id');
-        
+
         $year = 0;
         if ($request->has('year') && $request->query('year') != 0) {
             $year = $request->query('year');
@@ -86,7 +86,7 @@ class BusinessController extends Controller
         $maxDate = Business::all()->max('contract_end');
         //$maxYear = explode('-', $maxDate)[0];
         $maxYear = date('Y');
-        
+
         $years = [];
         $years[0] = 'All';
         for ($i = $minYear; $i <= $maxYear; $i++) {
@@ -177,8 +177,8 @@ class BusinessController extends Controller
         $sortedBusinesses = $request['sorted'];
 
         $idString = str_replace('order[]=', '', $sortedBusinesses);
-        $idString = str_replace('&', '', $idString);
-        $idArr = str_split($idString);
+        $idString = str_replace('&', ' ', $idString);
+        $idArr = explode(' ', $idString);
 
         $total = Business::all()->count();
         foreach ($idArr as $id) {

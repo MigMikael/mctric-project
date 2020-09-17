@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Clients;
 use Illuminate\Http\Request;
 use App\Traits\ImageTrait;
+use Illuminate\Support\Facades\Log;
 
 class ClientsController extends Controller
 {
@@ -54,8 +55,8 @@ class ClientsController extends Controller
         $sortedClients = $request['sorted'];
 
         $idString = str_replace('order[]=', '', $sortedClients);
-        $idString = str_replace('&', '', $idString);
-        $idArr = str_split($idString);
+        $idString = str_replace('&', ' ', $idString);
+        $idArr = explode(' ', $idString);
 
         $total = Clients::all()->count();
         foreach ($idArr as $id) {
