@@ -752,7 +752,12 @@ select {
 .map-wrapper {
     width: 100%;
     overflow: hidden;
+    border-radius: 25px;
     /*height: 390px;*/
+}
+
+.map-wrapper > iframe {
+    border:0; margin-top: -150px; margin-bottom: 15px; border-radius: 25px;
 }
 
 .page-item.active .page-link {
@@ -822,6 +827,7 @@ ul.multiselect-container {
     margin-bottom: 15px;
     background: #034679;
     cursor: pointer;
+    border-radius: 25px;
 }
 
 .contact-center-wrapper {
@@ -848,6 +854,7 @@ ul.multiselect-container {
     border: 1px solid #DEDEDE;
     margin-bottom: 15px;
     padding: 25px;
+    border-radius: 25px;
 }
 
 @media only screen and (max-width: 991px) {
