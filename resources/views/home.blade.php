@@ -50,7 +50,7 @@
                 <h2 class="bottom15">{{ __('messages.home.missionHeading') }}</h2>
                 <p>{{ __('messages.home.missionOne') }} <br>
                     {{ __('messages.home.missionTwo') }} <br>
-                    {{ __('messages.home.missionThree') }}
+                    <!--{{ __('messages.home.missionThree') }}-->
                 </p>
             </div>
             <div class="col-md-4">
