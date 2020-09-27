@@ -38,19 +38,25 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-4">
-                    <h2 class="bottom15">{{ __('messages.home.philosophyHeading') }}</h2>
-                    <p>{{ __('messages.home.philosophyParagraphOne') }}</p>
+                    <div class="vision-wrapper">
+                        <h2 class="bottom15">{{ __('messages.home.philosophyHeading') }}</h2>
+                        <p>{{ __('messages.home.philosophyParagraphOne') }}</p>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <h2 class="bottom15">{{ __('messages.home.missionHeading') }}</h2>
-                    <p>{{ __('messages.home.missionOne') }} <br>
-                        {{ __('messages.home.missionTwo') }} <br>
-                        <!--{{ __('messages.home.missionThree') }}-->
-                    </p>
+                    <div class="vision-wrapper">
+                        <h2 class="bottom15">{{ __('messages.home.missionHeading') }}</h2>
+                            <p>{{ __('messages.home.missionOne') }} <br>
+                                {{ __('messages.home.missionTwo') }} <br>
+                                <!--{{ __('messages.home.missionThree') }}-->
+                            </p>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <h2 class="bottom15">{{ __('messages.home.policyHeading') }}</h2>
-                    <p>{{ __('messages.home.policyDescription') }}</p>
+                    <div class="vision-wrapper">
+                        <h2 class="bottom15">{{ __('messages.home.policyHeading') }}</h2>
+                        <p>{{ __('messages.home.policyDescription') }}</p>
+                    </div>
                 </div>
             </div>
         </div>

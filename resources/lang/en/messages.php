@@ -156,6 +156,7 @@ return [
         'contactCall' => 'Call Us',
         'contactPhone' => 'Phone',
         'contactFax' => 'Fax',
+        'contactCompanyName' => 'McTRIC Public Company Limited',
     ],
     'status' => [
         'workInProgress' => 'Work In Progress',
