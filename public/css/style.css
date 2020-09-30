@@ -817,7 +817,7 @@ ul.multiselect-container {
 }
 
 .contact-card-wrapper {
-    height: 250px; 
+    height: 250px;
     border: 1px solid #DEDEDE;
     margin-bottom: 15px;
     background: #034679;
@@ -844,7 +844,7 @@ ul.multiselect-container {
 }
 
 .contact-address-wrapper {
-    height: 250px; 
+    height: 250px;
     border: 1px solid #DEDEDE;
     margin-bottom: 15px;
     padding: 25px;
@@ -1098,4 +1098,34 @@ ul.multiselect-container {
 
 .has-error {
     border-width: 3px;
+}
+
+input[type="date"]::-webkit-datetime-edit, input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-clear-button {
+    color: #fff;
+    position: relative;
+}
+
+input[type="date"]::-webkit-datetime-edit-year-field{
+    position: absolute !important;
+    border-left:1px solid #8c8c8c;
+    padding: 2px;
+    color:#000;
+    left: 56px;
+}
+
+input[type="date"]::-webkit-datetime-edit-month-field{
+    position: absolute !important;
+    border-left:1px solid #8c8c8c;
+    padding: 2px;
+    color:#000;
+    left: 26px;
+}
+
+
+input[type="date"]::-webkit-datetime-edit-day-field{
+    position: absolute !important;
+    color:#000;
+    padding: 2px;
+    left: 4px;
+
 }
