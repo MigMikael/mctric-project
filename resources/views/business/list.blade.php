@@ -77,7 +77,8 @@
                 @endforeach
             </div>
             <div class="row" style="justify-content: center">
-                {{ $businesses->links() }}
+                <!--{{ $businesses->links() }}-->
+                {{ $businesses->appends(['year' => $year])->links() }}
             </div>
         </div>
     </section>

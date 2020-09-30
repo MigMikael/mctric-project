@@ -108,6 +108,7 @@ header {
 
 .header-title {
     font-size: 55px;
+    font-weight: 600;
 }
 
 .header-subtitle {
@@ -850,6 +851,16 @@ ul.multiselect-container {
     padding: 25px;
 }
 
+@media only screen and (max-width: 992px) {
+    .vision-wrapper > h2 {
+        font-size: 1.5rem;
+    }
+    
+    .map-wrapper {
+        margin-bottom: 50px;
+    }
+}
+
 @media only screen and (max-width: 991px) {
     .navbar-expand-lg > .container {
         padding-right: 15px !important;
@@ -892,6 +903,28 @@ ul.multiselect-container {
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .section-title {
+        padding-bottom: 25px !important;
+    }
+
+    .map-wrapper {
+        margin-bottom: 25px !important;
+    }
+
+    .award-wrapper {
+        padding: 15px !important;
+    }
+
+    .view-btn {
+        margin-top: 15px !important;
+    }
+
+    .vision-wrapper {
+        padding-bottom: 20px;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     .h2, h2 {
         font-size: 1.75rem;
@@ -922,7 +955,7 @@ ul.multiselect-container {
     }
 
     .award-wrapper {
-        padding: unset !important;
+        padding: 0px !important;
     }
 
     .image-business {

@@ -104,9 +104,9 @@ return [
         'bath' => 'บาท',
         'project' => 'โครงการ',
 
-        'businessReadMore' => 'เลือกตามปี',
+        'businessReadMore' => 'อ่านเพิ่มเติม',
 
-        'filterByYear' => 'Filter By Year'
+        'filterByYear' => 'เลือกตามปี'
     ],
     'dashboard' => [
         'dashboardHeading' => 'แอดมินแดชบอร์ด',
@@ -153,6 +153,7 @@ return [
         'contactCall' => 'โทรหาเรา',
         'contactPhone' => 'โทร',
         'contactFax' => 'แฟกซ์',
+        'contactCompanyName' => 'บริษัท แมคทริค จำกัด (มหาชน)',
     ],
     'status' => [
         'workInProgress' => 'ระหว่างการดำเนินการ',
