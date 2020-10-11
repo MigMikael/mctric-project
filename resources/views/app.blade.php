@@ -134,6 +134,9 @@
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script type="text/javascript" src="{{ URL::asset('js/bootstrap-multiselect.js') }}"></script>
 <link rel="stylesheet" href="{{ URL::asset('css/bootstrap-multiselect.css') }}" type="text/css"/>
+<!--Multiple Upload File-->
+<link href="http://hayageek.github.io/jQuery-Upload-File/4.0.11/uploadfile.css" rel="stylesheet">
+<script src="http://hayageek.github.io/jQuery-Upload-File/4.0.11/jquery.uploadfile.min.js"></script>
 <!--Custom Script-->
 <script>
     $(function () {

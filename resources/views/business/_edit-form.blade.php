@@ -106,11 +106,16 @@
     </div>
 </div>
 
+{{--<div class="col-md-12" style="margin-bottom: 3%">--}}
+{{--    {!! Form::label('images', 'Images (Multiple File)') !!}--}}
+{{--    {!! Form::file('images[]', ['multiple'=>true, 'accept'=>'image/*', 'class' => 'form-control', 'id' => 'upload',--}}
+{{--    'value' => 'Choose a files']) !!}--}}
+{{--    <div id="image-holder" class="col-xs-12"></div>--}}
+{{--</div>--}}
 <div class="col-md-12" style="margin-bottom: 3%">
-    {!! Form::label('images', 'Images (Multiple File)') !!}
-    {!! Form::file('images[]', ['multiple'=>true, 'accept'=>'image/*', 'class' => 'form-control', 'id' => 'upload',
-    'value' => 'Choose a files']) !!}
-    <div id="image-holder" class="col-xs-12"></div>
+    <div id="fileuploader">Images (ขั้นต่ำ 500 x 500px)</div>
+    {!! Form::hidden('images', null, ['id' => 'hidden_image']) !!}
+    {!! Form::hidden('edit_image', 'false', ['id' => 'edit_image']) !!}
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">

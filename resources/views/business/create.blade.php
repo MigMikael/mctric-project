@@ -86,4 +86,27 @@
             $('#category-select').multiselect();
         });
     </script>
+    <script>
+        $(document).ready(function()
+        {
+            var images = [];
+            $("#fileuploader").uploadFile({
+                url: "{{ url('upload_image') }}",
+                multiple: false,
+                dragDrop: true,
+                fileName: "image",
+                acceptFiles: "image/*",
+                showPreview: true,
+                previewHeight: "100px",
+                previewWidth: "100px",
+                sequential: true,
+                sequentialCount:1,
+                onSuccess: function (files,data,xhr,pd) {
+                    // alert(data);
+                    images.push(data["id"]);
+                    $("#hidden_image").val(images);
+                }
+            });
+        });
+    </script>
 @endsection

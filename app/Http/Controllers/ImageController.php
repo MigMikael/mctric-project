@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Business;
 use App\Image;
 use Illuminate\Http\Request;
+use App\Traits\ImageTrait;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
 
 class ImageController extends Controller
 {
+    use ImageTrait;
     /**
      * Display a listing of the resource.
      *
@@ -28,6 +32,24 @@ class ImageController extends Controller
         //
     }
 
+    public function preload($id)
+    {
+        $business = Business::find($id);
+        $images = $business->images;
+
+        $ret= array();
+        foreach ($images as $image) {
+            $path = Storage::disk('local')->path($image->name);
+            $details = array();
+            $details['name']=$image->original_name;
+            $details['path']=url('/image/show/'.$image->id);
+            $details['size']=filesize($path);
+            $details['id']=$image->id;
+            $ret[] = $details;
+        }
+        return response(json_encode($ret), 200)->header('Content-Type', 'application/json');
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -36,7 +58,27 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $file = $request->file('image');
+        $image = $this->storeImage($file, "");
+        $path = Storage::disk('local')->path($image->name);
+        $details = array();
+        $details['name']=$image->original_name;
+        $details['path']=url('/image/show/'.$image->id);
+        $details['size']=filesize($path);
+        $details['id']=$image->id;
+
+        return response(json_encode($details), 200)->header('Content-Type', 'application/json');
+    }
+
+    public function deleteImage(Request $request)
+    {
+        $id = $request->get("id");
+        $op = $request->get("op");
+        Log::info($id);
+        Log::info($op);
+        if ($op == "delete") {
+
+        }
     }
 
     /**

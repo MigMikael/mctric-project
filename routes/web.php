@@ -92,6 +92,9 @@ Route::get('/awards/{id}', "AwardsController@show");
 Route::get('/clients', "ClientsController@index");
 Route::get('/clients/{id}', "ClientsController@show");
 
-Route::get('image/show/{id}', 'ImageController@show');
+Route::get('/image/show/{id}', 'ImageController@show');
+Route::post('/upload_image/', "ImageController@store");
+Route::get('/preload_image/{id}', "ImageController@preload");
+Route::post('/delete_image/', "ImageController@deleteImage");
 
 Route::get('/test', "HomeController@test");
