@@ -1162,3 +1162,36 @@ input[type="date"]::-webkit-datetime-edit-day-field {
     padding: 2px;
     left: 4px;
 }
+
+.ajax-upload-dragdrop {
+    border: 2px dotted #DEDEDE !important;
+    padding: 25px !important;
+    border-radius: 5px !important;
+}
+
+.ajax-upload-dragdrop b {
+    color: #495057;
+}
+
+.ajax-file-upload {
+    background: #034679 !important;
+    padding-bottom: 25px !important;
+}
+
+.ajax-file-upload-statusbar {
+    border: 1px solid #DEDEDE !important;
+    margin: 0 0 15px 0 !important;
+}
+
+.ajax-file-upload-preview {
+    width: auto !important;
+}
+
+.ajax-file-upload-bar {
+    background-color:#28a745!important;
+}
+
+.ajax-file-upload-red {
+    -webkit-box-shadow: unset !important;
+    box-shadow: unset !important;
+}

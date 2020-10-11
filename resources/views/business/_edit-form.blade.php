@@ -113,7 +113,8 @@
 {{--    <div id="image-holder" class="col-xs-12"></div>--}}
 {{--</div>--}}
 <div class="col-md-12" style="margin-bottom: 3%">
-    <div id="fileuploader">Images (ขั้นต่ำ 500 x 500px)</div>
+    <label>Multiple Image (ขั้นต่ำ 500 x 500px)</label>
+    <div id="fileuploader"></div>
     {!! Form::hidden('images', null, ['id' => 'hidden_image']) !!}
     {!! Form::hidden('edit_image', 'false', ['id' => 'edit_image']) !!}
 </div>
