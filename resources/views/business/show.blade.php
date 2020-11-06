@@ -50,8 +50,15 @@
                     @if ($business->contractor != '')
                     <div class="col-sm-6 col-md-6">
                         <!--<i class="fas fa-hard-hat fa-lg"></i>-->
-                        <strong>{{ __('messages.business.mainContractor') }}: </strong>
+                        <strong>{{ __('messages.business.contractor') }}: </strong>
                         <p>{{ $business->contractor }}</p>
+                    </div>
+                    @endif
+                    @if ($business->main_contractor != '')
+                    <div class="col-sm-6 col-md-6">
+                        <!--<i class="fas fa-hard-hat fa-lg"></i>-->
+                        <strong>{{ __('messages.business.mainContractor') }}: </strong>
+                        <p>{{ $business->main_contractor }}</p>
                     </div>
                     @endif
                     @if ($business->contract_start != '' && $business->contract_end != '')
