@@ -95,6 +95,7 @@ return [
         'client' => 'ลูกค้า',
         'designer' => 'ผู้ออกแบบ',
         'consultant' => 'ที่ปรึกษา',
+        'contractor' => 'ผู้รับเหมา',
         'mainContractor' => 'ผู้รับเหมาหลัก',
         'contractPeriod' => 'ระยะเวลาของสัญญา',
         'contractValue' => 'มูลค่าสัญญา',

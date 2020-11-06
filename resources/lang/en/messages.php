@@ -98,6 +98,7 @@ return [
         'client' => 'Client',
         'designer' => 'Designer',
         'consultant' => 'Consultant',
+        'contractor' => 'Contractor',
         'mainContractor' => 'Main Contractor',
         'contractPeriod' => 'Contract Period',
         'contractValue' => 'Contract Value',
