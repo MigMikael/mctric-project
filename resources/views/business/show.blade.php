@@ -69,13 +69,14 @@
                             {{ date('d/m/Y', strtotime($business->contract_end)) }}</p>
                     </div>
                     @endif
-                    @if ($business->contract_value != '')
+                    <!--@if ($business->contract_value != '')
                     <div class="col-sm-6 col-md-6">
-                        <!--<i class="fas fa-dollar-sign fa-lg"></i>-->
+                        <i class="fas fa-dollar-sign fa-lg"></i>
                         <strong>{{ __('messages.business.contractValue') }}: </strong>
                         <p>{{ number_format($business->contract_value) }} {{ __('messages.business.bath') }}</p>
                     </div>
                     @endif
+                    -->
                     @if ($business->scope_of_work != '')
                     <div class="col-sm-6 col-md-6">
                         <!--<i class="fas fa-list-alt fa-lg"></i>-->
