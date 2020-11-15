@@ -108,6 +108,7 @@ header {
 
 .header-title {
     font-size: 55px;
+    font-weight: 600;
 }
 
 .header-subtitle {
@@ -822,7 +823,7 @@ ul.multiselect-container {
 }
 
 .contact-card-wrapper {
-    height: 250px; 
+    height: 250px;
     border: 1px solid #DEDEDE;
     margin-bottom: 15px;
     background: #034679;
@@ -850,11 +851,21 @@ ul.multiselect-container {
 }
 
 .contact-address-wrapper {
-    height: 250px; 
+    height: 250px;
     border: 1px solid #DEDEDE;
     margin-bottom: 15px;
     padding: 25px;
     border-radius: 25px;
+}
+
+@media only screen and (max-width: 992px) {
+    .vision-wrapper > h2 {
+        font-size: 1.5rem;
+    }
+    
+    .map-wrapper {
+        margin-bottom: 50px;
+    }
 }
 
 @media only screen and (max-width: 991px) {
@@ -899,6 +910,28 @@ ul.multiselect-container {
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .section-title {
+        padding-bottom: 25px !important;
+    }
+
+    .map-wrapper {
+        margin-bottom: 25px !important;
+    }
+
+    .award-wrapper {
+        padding: 15px !important;
+    }
+
+    .view-btn {
+        margin-top: 15px !important;
+    }
+
+    .vision-wrapper {
+        padding-bottom: 20px;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     .h2, h2 {
         font-size: 1.75rem;
@@ -929,7 +962,7 @@ ul.multiselect-container {
     }
 
     .award-wrapper {
-        padding: unset !important;
+        padding: 0px !important;
     }
 
     .image-business {
@@ -1105,4 +1138,67 @@ ul.multiselect-container {
 
 .has-error {
     border-width: 3px;
+}
+
+input[type="date"]::-webkit-datetime-edit, input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-clear-button {
+    color: #fff;
+    position: relative;
+    
+}
+
+input[type="date"]::-webkit-datetime-edit-year-field {
+    position: absolute !important;
+    /*border-left:1px solid #8c8c8c;*/
+    padding: 2px;
+    color:#000;
+    left: 56px;
+}
+
+input[type="date"]::-webkit-datetime-edit-month-field {
+    position: absolute !important;
+    /*border-left:1px solid #8c8c8c;*/
+    padding: 2px;
+    color:#000;
+    left: 30px;
+}
+
+
+input[type="date"]::-webkit-datetime-edit-day-field {
+    position: absolute !important;
+    color:#000;
+    padding: 2px;
+    left: 4px;
+}
+
+.ajax-upload-dragdrop {
+    border: 2px dotted #DEDEDE !important;
+    padding: 25px !important;
+    border-radius: 5px !important;
+}
+
+.ajax-upload-dragdrop b {
+    color: #495057;
+}
+
+.ajax-file-upload {
+    background: #034679 !important;
+    padding-bottom: 25px !important;
+}
+
+.ajax-file-upload-statusbar {
+    border: 1px solid #DEDEDE !important;
+    margin: 0 0 15px 0 !important;
+}
+
+.ajax-file-upload-preview {
+    width: auto !important;
+}
+
+.ajax-file-upload-bar {
+    background-color:#28a745!important;
+}
+
+.ajax-file-upload-red {
+    -webkit-box-shadow: unset !important;
+    box-shadow: unset !important;
 }

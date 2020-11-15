@@ -98,6 +98,7 @@ return [
         'client' => 'Client',
         'designer' => 'Designer',
         'consultant' => 'Consultant',
+        'contractor' => 'Contractor',
         'mainContractor' => 'Main Contractor',
         'contractPeriod' => 'Contract Period',
         'contractValue' => 'Contract Value',
@@ -156,9 +157,10 @@ return [
         'contactCall' => 'Call Us',
         'contactPhone' => 'Phone',
         'contactFax' => 'Fax',
+        'contactCompanyName' => 'McTRIC Public Company Limited',
     ],
     'status' => [
         'workInProgress' => 'Work In Progress',
-        'complete' => 'Complete'
+        'complete' => 'Completed'
     ]
 ];

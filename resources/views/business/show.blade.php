@@ -28,50 +28,58 @@
                     @endif
                     @if ($business->client != '')
                     <div class="col-sm-6 col-md-6">
-                        <i class="fas fa-user fa-lg"></i>
+                        <!--<i class="fas fa-user fa-lg"></i>-->
                         <strong>{{ __('messages.business.client') }}: </strong>
                         <p>{{ $business->client }}</p>
                     </div>
                     @endif
                     @if ($business->consultant != '')
                     <div class="col-sm-6 col-md-6">
-                        <i class="fas fa-users-cog fa-lg"></i>
+                        <!--<i class="fas fa-users-cog fa-lg"></i>-->
                         <strong>{{ __('messages.business.consultant') }}: </strong>
                         <p>{{ $business->consultant }}</p>
                     </div>
                     @endif
                     @if ($business->designer != '')
                     <div class="col-sm-6 col-md-6">
-                        <i class="fas fa-drafting-compass fa-lg"></i>
+                        <!--<i class="fas fa-drafting-compass fa-lg"></i>-->
                         <strong>{{ __('messages.business.designer') }}: </strong>
                         <p>{{ $business->designer }}</p>
                     </div>
                     @endif
                     @if ($business->contractor != '')
                     <div class="col-sm-6 col-md-6">
-                        <i class="fas fa-hard-hat fa-lg"></i>
-                        <strong>{{ __('messages.business.mainContractor') }}: </strong>
+                        <!--<i class="fas fa-hard-hat fa-lg"></i>-->
+                        <strong>{{ __('messages.business.contractor') }}: </strong>
                         <p>{{ $business->contractor }}</p>
+                    </div>
+                    @endif
+                    @if ($business->main_contractor != '')
+                    <div class="col-sm-6 col-md-6">
+                        <!--<i class="fas fa-hard-hat fa-lg"></i>-->
+                        <strong>{{ __('messages.business.mainContractor') }}: </strong>
+                        <p>{{ $business->main_contractor }}</p>
                     </div>
                     @endif
                     @if ($business->contract_start != '' && $business->contract_end != '')
                     <div class="col-sm-6 col-md-6">
-                        <i class="far fa-clock fa-lg"></i>
+                        <!--<i class="far fa-clock fa-lg"></i>-->
                         <strong>{{ __('messages.business.contractPeriod') }}: </strong>
-                        <p>{{ date('d/m/Y', strtotime($business->contract_start)) }} -
-                            {{ date('d/m/Y', strtotime($business->contract_end)) }}</p>
+                        <p>{{ date('F Y', strtotime($business->contract_start)) }} -
+                            {{ date('F Y', strtotime($business->contract_end)) }}</p>
                     </div>
                     @endif
-                    @if ($business->contract_value != '')
+                    <!--@if ($business->contract_value != '')
                     <div class="col-sm-6 col-md-6">
                         <i class="fas fa-dollar-sign fa-lg"></i>
                         <strong>{{ __('messages.business.contractValue') }}: </strong>
                         <p>{{ number_format($business->contract_value) }} {{ __('messages.business.bath') }}</p>
                     </div>
                     @endif
+                    -->
                     @if ($business->scope_of_work != '')
                     <div class="col-sm-6 col-md-6">
-                        <i class="fas fa-list-alt fa-lg"></i>
+                        <!--<i class="fas fa-list-alt fa-lg"></i>-->
                         <strong>{{ __('messages.business.scopeOfWork') }}: </strong>
                         {!! $business->scope_of_work !!}
                     </div>

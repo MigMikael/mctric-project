@@ -99,11 +99,16 @@
     </div>
 </div>
 
+{{--<div class="col-md-12" style="margin-bottom: 3%">--}}
+{{--    {!! Form::label('images', 'Images (Multiple File)') !!} (ขั้นต่ำ 500 x 500px)--}}
+{{--    {!! Form::file('images[]', ['multiple'=>true, 'accept'=>'image/*', 'class' => 'form-control', 'id' => 'upload',--}}
+{{--    'value' => 'Choose a files']) !!}--}}
+{{--    <div id="image-holder" class="col-xs-12 responsive"></div>--}}
+{{--</div>--}}
 <div class="col-md-12" style="margin-bottom: 3%">
-    {!! Form::label('images', 'Images (Multiple File)') !!} (ขั้นต่ำ 500 x 500px)
-    {!! Form::file('images[]', ['multiple'=>true, 'accept'=>'image/*', 'class' => 'form-control', 'id' => 'upload',
-    'value' => 'Choose a files']) !!}
-    <div id="image-holder" class="col-xs-12 responsive"></div>
+    <label>Multiple Image (ขั้นต่ำ 500 x 500px)</label>
+    <div id="fileuploader"></div>
+    {!! Form::hidden('images', null, ['id' => 'hidden_image']) !!}
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
@@ -120,4 +125,3 @@
     {!! Form::label('Instagram') !!}
     {!! Form::text('social_instagram', null, ['class' => 'form-control']) !!}
 </div>
-

@@ -95,6 +95,7 @@ return [
         'client' => 'ลูกค้า',
         'designer' => 'ผู้ออกแบบ',
         'consultant' => 'ที่ปรึกษา',
+        'contractor' => 'ผู้รับเหมา',
         'mainContractor' => 'ผู้รับเหมาหลัก',
         'contractPeriod' => 'ระยะเวลาของสัญญา',
         'contractValue' => 'มูลค่าสัญญา',
@@ -104,9 +105,9 @@ return [
         'bath' => 'บาท',
         'project' => 'โครงการ',
 
-        'businessReadMore' => 'เลือกตามปี',
+        'businessReadMore' => 'อ่านเพิ่มเติม',
 
-        'filterByYear' => 'Filter By Year'
+        'filterByYear' => 'เลือกตามปี'
     ],
     'dashboard' => [
         'dashboardHeading' => 'แอดมินแดชบอร์ด',
@@ -153,6 +154,7 @@ return [
         'contactCall' => 'โทรหาเรา',
         'contactPhone' => 'โทร',
         'contactFax' => 'แฟกซ์',
+        'contactCompanyName' => 'บริษัท แมคทริค จำกัด (มหาชน)',
     ],
     'status' => [
         'workInProgress' => 'ระหว่างการดำเนินการ',

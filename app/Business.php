@@ -27,6 +27,7 @@ class Business extends Model
         'completion',
         'display',
         'cover_image',
+        'images',
         'social_facebook',
         'social_youtube',
         'social_instagram',

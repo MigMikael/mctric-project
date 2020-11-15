@@ -6,6 +6,7 @@ use App\Business;
 use App\BusinessCategory;
 use App\BusinessImage;
 use App\Category;
+use App\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Traits\ImageTrait;
@@ -106,6 +107,15 @@ class BusinessController extends Controller
     public function status(Request $request)
     {
         $status = $request['status'];
+        
+        $heading_status = "";
+        if ($status == "work_in_process") {
+            $heading_status = "messages.status.workInProgress";
+        }
+        else if ($status == "complete") {
+            $heading_status = "messages.status.complete";
+        }
+        
 
         $year = 0;
         if ($request->has('year') && $request->query('year') != 0) {
@@ -140,7 +150,7 @@ class BusinessController extends Controller
         return view('business.list', [
             'businesses' => $businesses,
             'status' => $status,
-            'headingTranslate' => 'messages.status.workInProgress',
+            'headingTranslate' => $heading_status,
             'years' => $years,
             'year' => $year
         ]);
@@ -227,6 +237,9 @@ class BusinessController extends Controller
         $totalBusiness = Business::all()->count();
         $business['priority'] = $totalBusiness + 1;
 
+        $images = $business['images'];
+        unset($business['images']);
+
         $business = Business::create($business);
 
         foreach ($categories as $category) {
@@ -237,16 +250,26 @@ class BusinessController extends Controller
             BusinessCategory::create($business_category);
         }
 
-        if ($request->hasFile('images')) {
-            $files = $request->file('images');
-            foreach ($files as $file) {
-                $image = $this->storeImage($file, "");
-                $business_image = [
-                    'business_id' => $business->id,
-                    'image_id' => $image->id
-                ];
-                BusinessImage::create($business_image);
-            }
+//        if ($request->hasFile('images')) {
+//            $files = $request->file('images');
+//            foreach ($files as $file) {
+//                $image = $this->storeImage($file, "");
+//                $business_image = [
+//                    'business_id' => $business->id,
+//                    'image_id' => $image->id
+//                ];
+//                BusinessImage::create($business_image);
+//            }
+//        }
+
+        $images_ids = explode(",", $images);
+        foreach ($images_ids as $id) {
+            $image = Image::find($id);
+            $business_image = [
+                'business_id' => $business->id,
+                'image_id' => $image->id
+            ];
+            BusinessImage::create($business_image);
         }
 
         //return redirect()->action("BusinessController@filter", ['category' => $business->category]);
@@ -306,17 +329,38 @@ class BusinessController extends Controller
             $updateBusiness['cover_image'] = $cover_image->id;
         }
 
-        if ($request->hasFile('images')) {
+//        if ($request->hasFile('images')) {
+//            BusinessImage::where('business_id', '=', $business->id)->delete();
+//            $files = $request->file('images');
+//            foreach ($files as $file) {
+//                $image = $this->storeImage($file, "");
+//                $business_image = [
+//                    'business_id' => $business->id,
+//                    'image_id' => $image->id
+//                ];
+//                BusinessImage::create($business_image);
+//                Log::info("Store success here");
+//            }
+//        }
+        $images = $updateBusiness['images'];
+        unset($updateBusiness['images']);
+
+        $edit_image = $updateBusiness['edit_image'];
+        unset($updateBusiness['edit_image']);
+
+        $images_ids = explode(",", $images);
+        if ($edit_image == "True") {
             BusinessImage::where('business_id', '=', $business->id)->delete();
-            $files = $request->file('images');
-            foreach ($files as $file) {
-                $image = $this->storeImage($file, "");
-                $business_image = [
-                    'business_id' => $business->id,
-                    'image_id' => $image->id
-                ];
-                BusinessImage::create($business_image);
-                Log::info("Store success here");
+
+            if (!is_null($images)) {
+                foreach ($images_ids as $id) {
+                    $image = Image::find($id);
+                    $business_image = [
+                        'business_id' => $business->id,
+                        'image_id' => $image->id
+                    ];
+                    BusinessImage::create($business_image);
+                }
             }
         }
 
