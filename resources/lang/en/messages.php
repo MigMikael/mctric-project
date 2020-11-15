@@ -161,6 +161,6 @@ return [
     ],
     'status' => [
         'workInProgress' => 'Work In Progress',
-        'complete' => 'Complete'
+        'complete' => 'Completed'
     ]
 ];

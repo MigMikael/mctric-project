@@ -65,8 +65,8 @@
                     <div class="col-sm-6 col-md-6">
                         <!--<i class="far fa-clock fa-lg"></i>-->
                         <strong>{{ __('messages.business.contractPeriod') }}: </strong>
-                        <p>{{ date('d/m/Y', strtotime($business->contract_start)) }} -
-                            {{ date('d/m/Y', strtotime($business->contract_end)) }}</p>
+                        <p>{{ date('F Y', strtotime($business->contract_start)) }} -
+                            {{ date('F Y', strtotime($business->contract_end)) }}</p>
                     </div>
                     @endif
                     <!--@if ($business->contract_value != '')

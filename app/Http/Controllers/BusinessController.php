@@ -107,6 +107,15 @@ class BusinessController extends Controller
     public function status(Request $request)
     {
         $status = $request['status'];
+        
+        $heading_status = "";
+        if ($status == "work_in_process") {
+            $heading_status = "messages.status.workInProgress";
+        }
+        else if ($status == "complete") {
+            $heading_status = "messages.status.complete";
+        }
+        
 
         $year = 0;
         if ($request->has('year') && $request->query('year') != 0) {
@@ -141,7 +150,7 @@ class BusinessController extends Controller
         return view('business.list', [
             'businesses' => $businesses,
             'status' => $status,
-            'headingTranslate' => 'messages.status.workInProgress',
+            'headingTranslate' => $heading_status,
             'years' => $years,
             'year' => $year
         ]);
