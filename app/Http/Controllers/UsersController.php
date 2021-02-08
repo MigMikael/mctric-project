@@ -16,9 +16,9 @@ class UsersController extends Controller
 
     public function search(Request $request)
     {
-        $request = $request->all();
-        $query = $request['query'];
-        $users = User::where("email", "like", "%".$query."%")->paginate(9);
+        $query = $request->query('query');
+        $users = User::where("email", "like", "%".$query."%")->paginate(9)
+            ->appends(['query' => $query]);
         return view('dashboard', [
             'businesses' => [],
             'clients' => [],
@@ -30,6 +30,14 @@ class UsersController extends Controller
             'completeCount' => null,
             'search' => $query
         ]);
+    }
+
+    public function attemptSearch(Request $request)
+    {
+        $request = $request->all();
+        $query = $request['query'];
+
+        return redirect("/users/search?query=".$query);
     }
 
     public function store(Request $request)

@@ -25,9 +25,9 @@ class ClientsController extends Controller
 
     public function search(Request $request)
     {
-        $request = $request->all();
-        $query = $request['query'];
-        $clients = Clients::where("name", "like", "%".$query."%")->paginate(9);
+        $query = $request->query('query');
+        $clients = Clients::where("name", "like", "%".$query."%")->paginate(9)
+            ->appends(['query' => $query]);
         return view('dashboard', [
             'businesses' => [],
             'clients' => $clients,
@@ -39,6 +39,14 @@ class ClientsController extends Controller
             'completeCount' => null,
             'search' => $query
         ]);
+    }
+
+    public function attemptSearch(Request $request)
+    {
+        $request = $request->all();
+        $query = $request['query'];
+
+        return redirect("/clients/search?query=".$query);
     }
 
     public function sort()

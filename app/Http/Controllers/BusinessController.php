@@ -107,7 +107,7 @@ class BusinessController extends Controller
     public function status(Request $request)
     {
         $status = $request['status'];
-        
+
         $heading_status = "";
         if ($status == "work_in_process") {
             $heading_status = "messages.status.workInProgress";
@@ -115,7 +115,7 @@ class BusinessController extends Controller
         else if ($status == "complete") {
             $heading_status = "messages.status.complete";
         }
-        
+
 
         $year = 0;
         if ($request->has('year') && $request->query('year') != 0) {
@@ -158,9 +158,9 @@ class BusinessController extends Controller
 
     public function search(Request $request)
     {
-        $request = $request->all();
-        $query = $request['query'];
-        $businesses = Business::where("name", "like", "%".$query."%")->paginate(6);
+        $query = $request->query('query');
+        $businesses = Business::where("name", "like", "%".$query."%")->paginate(6)
+            ->appends(['query' => $query]);
         return view('dashboard', [
             'businesses' => $businesses,
             'clients' => [],
@@ -172,6 +172,14 @@ class BusinessController extends Controller
             'completeCount' => null,
             'search' => $query
         ]);
+    }
+
+    public function attemptSearch(Request $request)
+    {
+        $request = $request->all();
+        $query = $request['query'];
+
+        return redirect("/businesses/search?query=".$query);
     }
 
     public function sort()
