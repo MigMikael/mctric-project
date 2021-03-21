@@ -33,7 +33,8 @@ class Business extends Model
         'social_instagram',
         'priority',
         'show_year_start',
-        'show_year_end'
+        'show_year_end',
+        'social_website'
     ];
 
     public function images()

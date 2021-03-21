@@ -133,3 +133,8 @@
     {!! Form::label('Instagram') !!}
     {!! Form::text('social_instagram', null, ['class' => 'form-control']) !!}
 </div>
+
+<div class="col-md-12" style="margin-bottom: 3%">
+    {!! Form::label('Website') !!}
+    {!! Form::text('social_website', null, ['class' => 'form-control']) !!}
+</div>

@@ -84,7 +84,7 @@
                         {!! $business->scope_of_work !!}
                     </div>
                     @endif
-                    @if ($business->social_facebook != '' || $business->social_youtube != '' || $business->social_instagram != '')
+                    @if ($business->social_facebook != '' || $business->social_youtube != '' || $business->social_instagram != '' || $business->social_website != '')
                     <div class="col-md-6">
                         <div class="business-icon">
                             @if ($business->social_facebook != '')
@@ -95,6 +95,9 @@
                             @endif
                             @if ($business->social_instagram != '')
                             <i class="fab fa-instagram fa-2x" onclick="window.location.href='{{ $business->social_instagram }}'"></i>
+                            @endif
+                            @if ($business->social_website != '')
+                            <i class="fas fa-globe fa-2x" onclick="window.location.href='{{ $business->social_website }}'"></i>
                             @endif
                         </div>
                     </div>
