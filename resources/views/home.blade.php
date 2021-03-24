@@ -272,7 +272,8 @@
                     <div class="col-sm-6 col-md-6" style="margin-bottom: 1rem;">
                         <h5 class="contact-content-title"><i class="fas fa-money-check-alt"></i> {{ __('messages.app.chequeTrackMenu') }}</h5>
                         <!--<a href="http://203.154.157.184/Cheque_Tracking/Cheque/login.php" style="color: #000000;">Cheque Tracking Link</a>-->
-                        <a href="http://203.154.157.184:8888/mangoanywhere/page/authentication/vendor/login/" style="color: #000000;">Cheque Tracking Link</a>
+                        <!--http://203.154.157.184:8888/mangoanywhere/page/authentication/vendor/login/-->
+                        <a href="#" style="color: #000000;">Cheque Tracking Link</a>
                     </div>
                     <div class="col-sm-6 col-md-6" style="margin-bottom: 1rem;">
                         <h5 class="contact-content-title"><i class="fas fa-file-alt"></i> Internal McTRIC</h5>
