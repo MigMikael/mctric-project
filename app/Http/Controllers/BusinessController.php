@@ -272,10 +272,10 @@ class BusinessController extends Controller
 
         $images_ids = explode(",", $images);
         foreach ($images_ids as $id) {
-            $image = Image::find($id);
+            // $image = Image::find($id);
             $business_image = [
                 'business_id' => $business->id,
-                'image_id' => $image->id
+                'image_id' => $id
             ];
             BusinessImage::create($business_image);
         }
