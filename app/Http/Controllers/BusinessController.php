@@ -251,11 +251,13 @@ class BusinessController extends Controller
         $business = Business::create($business);
 
         foreach ($categories as $category) {
-            $business_category = [
-                'business_id' => $business->id,
-                'category_id' => intval($category)
-            ];
-            BusinessCategory::create($business_category);
+			if(!empty($business) && !empty($category)) {
+				$business_category = [
+					'business_id' => $business->id,
+					'category_id' => intval($category)
+				];
+				BusinessCategory::create($business_category);
+			}
         }
 
 //        if ($request->hasFile('images')) {
@@ -273,11 +275,13 @@ class BusinessController extends Controller
         $images_ids = explode(",", $images);
         foreach ($images_ids as $id) {
             // $image = Image::find($id);
-            $business_image = [
-                'business_id' => $business->id,
-                'image_id' => $id
-            ];
-            BusinessImage::create($business_image);
+			if(!empty($business) && !empty($id)) {
+				$business_image = [
+					'business_id' => $business->id,
+					'image_id' => $id
+				];
+				BusinessImage::create($business_image);
+			}
         }
 
         //return redirect()->action("BusinessController@filter", ['category' => $business->category]);
@@ -363,11 +367,13 @@ class BusinessController extends Controller
             if (!is_null($images)) {
                 foreach ($images_ids as $id) {
                     $image = Image::find($id);
-                    $business_image = [
-                        'business_id' => $business->id,
-                        'image_id' => $image->id
-                    ];
-                    BusinessImage::create($business_image);
+					if(!empty($business) && !empty($image)) {
+						$business_image = [
+							'business_id' => $business->id,
+							'image_id' => $image->id
+						];
+						BusinessImage::create($business_image);
+					}
                 }
             }
         }
