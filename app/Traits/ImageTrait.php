@@ -1,28 +1,31 @@
 <?php
 namespace App\Traits;
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
-use Log;
+use Illuminate\Support\Facades\Storage;
 
 trait ImageTrait
 {
     public function storeImage($file, $type)
     {
-//        Log::info($file);
+        //Log::info($file);
         $ex = $file->getClientOriginalExtension();
-        Storage::disk('local')->put($file->getFilename() . '.' . $ex, File::get($file));
+
+        $image_name = Str::random(10) . date('Ymd') . '.' . $ex;
+
+        Storage::disk('local')->put($image_name, File::get($file));
 
         $fileRecord = [
-            'name' => $file->getFilename() . '.' . $ex,
+            'name' => $image_name,
             'mime' => $file->getClientMimeType(),
             'original_name' => $file->getClientOriginalName(),
         ];
 
         $file = \App\Image::create($fileRecord);
 
-        self::compress($file);
+        //$this->compress($file);
         //self::resizeImage($file, $type);
 
         return $file;
