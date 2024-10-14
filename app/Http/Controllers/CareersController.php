@@ -17,8 +17,8 @@ class CareersController extends Controller
     public function index()
     {
         $careers = Careers::where('display', true)
-            ->orderBy('priority', 'desc')
-            ->get();
+                ->orderBy('created_at', 'desc')
+                ->get();
         return response(view('career.index', [
             'careers' => $careers
         ]));
@@ -27,8 +27,10 @@ class CareersController extends Controller
     public function search(Request $request)
     {
         $query = $request->query('query');
-        $careers = Careers::where("name", "like", "%".$query."%")->paginate(9)
-            ->appends(['query' => $query]);
+        $careers = Careers::where("name", "like", "%".$query."%")
+                ->orderBy('created_at', 'desc')
+                ->paginate(9)
+                ->appends(['query' => $query]);
         return view('dashboard', [
             'businesses' => [],
             'clients' => [],

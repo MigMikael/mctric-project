@@ -15,6 +15,7 @@ use function GuzzleHttp\Psr7\str;
 class BusinessController extends Controller
 {
     use ImageTrait;
+
     public $status = [
         'work_in_process' => 'Work In Process',
         'complete' => 'Complete'
@@ -51,8 +52,8 @@ class BusinessController extends Controller
     public function index()
     {
         $businesses = Business::where('display', true)
-            ->orderBy('priority', 'desc')
-            ->get();
+                    ->orderBy('priority', 'desc')
+                    ->get();
         return response(view('business.index', [
             'businesses' => $businesses
         ]));
@@ -68,18 +69,18 @@ class BusinessController extends Controller
         if ($request->has('year') && $request->query('year') != 0) {
             $year = $request->query('year');
             $businesses = Business::whereIn('id', $businesses_categories)
-//                ->whereYear('show_year', '<=', intval($year))
-//                ->whereYear('show_year', '>=', intval($year))
+            //->whereYear('show_year', '<=', intval($year))
+            //->whereYear('show_year', '>=', intval($year))
                 ->whereYear('show_year_start', '<=', intval($year))
                 ->whereYear('show_year_end', '>=', intval($year))
                 ->where('display', true)
                 ->orderBy('priority', 'desc')
-                ->paginate(6);
+                ->paginate(9);
         } else {
             $businesses = Business::whereIn('id', $businesses_categories)
                 ->where('display', true)
                 ->orderBy('priority', 'desc')
-                ->paginate(6);
+                ->paginate(9);
         }
 
         $minDate = Business::all()->min('show_year_start');
@@ -127,12 +128,12 @@ class BusinessController extends Controller
                 ->whereYear('show_year_end', '>=', intval($year))
                 ->where('display', true)
                 ->orderBy('priority', 'desc')
-                ->paginate(6);
+                ->paginate(9);
         } else {
             $businesses = Business::where("status", "=", $status)
                 ->where('display', true)
                 ->orderBy('priority', 'desc')
-                ->paginate(6);
+                ->paginate(9);
         }
 
         $minDate = Business::all()->min('show_year_start');
@@ -159,8 +160,10 @@ class BusinessController extends Controller
     public function search(Request $request)
     {
         $query = $request->query('query');
-        $businesses = Business::where("name", "like", "%".$query."%")->paginate(6)
-            ->appends(['query' => $query]);
+        $businesses = Business::where("name", "like", "%".$query."%")
+                    ->orderBy('created_at', 'desc')
+                    ->paginate(9)
+                    ->appends(['query' => $query]);
         return view('dashboard', [
             'businesses' => $businesses,
             'clients' => [],

@@ -2,6 +2,7 @@
 return [
     'welcome' => 'Welcome to our application',
     'app'   => [
+        'homeMenu' =>  'Home',
         'aboutMenu' =>  'About Us',
         'businessMenu' => 'Business',
         'careerMenu' => 'Career',
@@ -71,15 +72,18 @@ return [
         'awardDescription' => 'Our company has received awards and certifications from various organizations to guarantee the quality, standard and service of the whole process of the company. So customers can be confident in our quality and service.',
         'awardButton' => 'See All Award',
 
+        'companyAnnouncementHeading' => 'Company Announcement',
+        'companyAnnouncementDescription' => 'Stay updated with the latest company news and announcements. Discover important updates, new initiatives, and key developments that shape our future.',
+
         'contactHeading' => 'Contact Us',
         'contactAddress' => 'Address',
         'contactAddressDesc' => '121/105 RS TOWER 39 FL., RATCHADAPISEK RD. DINDAENG, BANGKOK 10400 THAILAND',
         'contactEmail' => 'Email Us',
-        'contactEmailDesc' => 'ADMIN@MCTRIC.COM',
+        'contactEmailDesc' => 'admin@mctric.com',
         'contactCall' => 'Call Us',
         'contactFax' => 'Fax',
         'contactPhone' => 'Phone',
-        
+
         'chequeTracking' => 'Cheque Tracking',
 
         'copyright' => 'Copyright',

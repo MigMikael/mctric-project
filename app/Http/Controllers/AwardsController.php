@@ -17,16 +17,18 @@ class AwardsController extends Controller
     public function index()
     {
         $awards = Awards::where('display', true)
-            ->orderBy('priority', 'desc')
-            ->get();
+                ->orderBy('created_at', 'desc')
+                ->get();
         return view('award.index', ['awards' => $awards]);
     }
 
     public function search(Request $request)
     {
         $query = $request->query('query');
-        $awards = Awards::where("name", "like", "%".$query."%")->paginate(9)
-            ->appends(['query' => $query]);
+        $awards = Awards::where("name", "like", "%".$query."%")
+                ->orderBy('created_at', 'desc')
+                ->paginate(9)
+                ->appends(['query' => $query]);
         return view('dashboard', [
             'businesses' => [],
             'clients' => [],

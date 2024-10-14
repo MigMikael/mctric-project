@@ -38,6 +38,9 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/') }}">{{ __('messages.app.homeMenu') }}</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ url('/about') }}">{{ __('messages.app.aboutMenu') }}</a>
                 </li>
                 <li class="nav-item">

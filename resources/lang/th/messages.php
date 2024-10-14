@@ -2,6 +2,7 @@
 return [
     'welcome'   => 'ยินดีต้อนรับเข้าสู่แอพของเรา',
     'app'   => [
+        'homeMenu' =>  'หน้าหลัก',
         'aboutMenu' =>  'เกี่ยวกับเรา',
         'businessMenu' => 'ธุรกิจของเรา',
         'careerMenu' => 'ตำแหน่งงาน',
@@ -70,11 +71,14 @@ return [
         'awardDescription' => 'บริษัทของเราได้รับรางวัลและการรับรองจากองค์กรเพื่อรับประกันคุณภาพ มาตรฐานและบริการตลอดจนทุกกระบวรการของบริษัท เพื่อให้ลูกค้ามั่นใจในคุณภาพและบริการของเรา',
         'awardButton' => 'ดูรางวัลของเราทั้งหมด',
 
+        'companyAnnouncementHeading' => 'ประกาศบริษัท',
+        'companyAnnouncementDescription' => 'ติดตามข่าวสารและประกาศล่าสุดของบริษัท พบกับข้อมูลสำคัญ ความเคลื่อนไหวใหม่ๆ และพัฒนาการที่สำคัญที่จะกำหนดทิศทางในอนาคตของเรา',
+
         'contactHeading' => 'ติดต่อเรา',
         'contactAddress' => 'ที่อยู่',
         'contactAddressDesc' => '121/105 อาคารอาร์เอส ทาวเวอร์ ชั้น 39 ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง กรุงเทพมหานคร 10400',
         'contactEmail' => 'อีเมลหาเราได้ที่',
-        'contactEmailDesc' => 'ADMIN@MCTRIC.COM',
+        'contactEmailDesc' => 'admin@mctric.com',
         'contactCall' => 'โทรหาเรา',
         'contactFax' => 'แฟกซ์',
         'contactPhone' => 'โทร',

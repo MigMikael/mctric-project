@@ -17,8 +17,11 @@ class UsersController extends Controller
     public function search(Request $request)
     {
         $query = $request->query('query');
-        $users = User::where("email", "like", "%".$query."%")->paginate(9)
-            ->appends(['query' => $query]);
+        $users = User::where("name", "like", "%".$query."%")
+                ->orWhere("email", "like", "%".$query."%")
+                ->orderBy('created_at', 'desc')
+                ->paginate(9)
+                ->appends(['query' => $query]);
         return view('dashboard', [
             'businesses' => [],
             'clients' => [],

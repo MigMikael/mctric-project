@@ -18,8 +18,8 @@ class ClientsController extends Controller
     public function index()
     {
         $clients = Clients::where('display', true)
-            ->orderBy('priority', 'desc')
-            ->get();
+                ->orderBy('created_at', 'asc')
+                ->get();
         return view('client.index', ['clients' => $clients]);
     }
 

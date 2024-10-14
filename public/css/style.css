@@ -39,8 +39,9 @@ body {
 }
 
 nav.top-nav-collapse {
-    background: rgba(0,0,0,0.7) !important;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.7);
+    /*background: rgba(0,0,0,0.7) !important;*/
+    /*box-shadow: 0 1px 3px rgba(0,0,0,0.7);*/
+    background: #000;
     transition: all 0.5s ease;
 }
 
@@ -145,17 +146,18 @@ header {
     text-align: center;
     margin-top: 50px;
     font-size: 14px;
+    border: 2px solid #034679;
 }
 
 .view-btn:hover {
     color: #034679 !important;
     background: #FFFFFF !important;
     border: 2px solid #034679;
-    transition: all .5s linear;
 }
 
 .video-btn:hover i {
     color: #034679!important;
+    border: 2px solid #034679;
 }
 
 
@@ -175,27 +177,25 @@ header {
     line-height: normal;
     cursor: pointer;
     text-align: center;
+    border: 2px solid #034679;
 }
 
 .learn-more-btn:hover {
     background: #FFFFFF;
     color: #034679;
     border: 2px solid #034679;
-    transition: all .5s linear;
 }
 
 a.btn.btn-warning:hover {
     background: #034679;
     color: #FFF;
-    border: 2px solid #FFF;
-    transition: all .5s linear;
+    border: 2px solid #034679;
 }
 
 button.btn-danger:hover {
     background: #034679;
     color: #FFF;
-    border: 2px solid #FFF;
-    transition: all .5s linear;
+    border: 2px solid #034679;
 }
 
 .logo-company {
@@ -413,19 +413,27 @@ header .overlay {
 .card {
     margin-bottom: 30px;
     box-shadow: 0px 1px 4px rgba(0,0,0,0.2);
+    cursor: pointer;
 }
+
+/*
+.card:hover {
+    box-shadow: 0px 3px 4px rgba(0,0,0,0.1);
+}
+*/
 
 .card-title {
     font-size: 18px !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* จำนวนบรรทัดที่ต้องการจำกัด */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; /* แสดงผล ... เมื่อข้อความยาวเกินไป */
+    word-break: break-word; /* ตัดคำเมื่อเกินขอบเขต */
 }
 
 .card-body {
     min-height: 100px;
-}
-
-.card:hover {
-    box-shadow: 0px 3px 4px rgba(0,0,0,0.1);
-    cursor: pointer;
 }
 
 .services {
@@ -680,13 +688,13 @@ header .overlay {
     border-radius: 25px;
     padding-left: 25px;
     padding-right: 25px;
+    border: 2px solid #034679;
 }
 
 .btn-primary:hover {
     background: #FFFFFF;
     color: #034679;
     border: 2px solid #034679;
-    transition: all .5s linear;
 }
 
 .btn-warning {
@@ -699,7 +707,6 @@ header .overlay {
     color: #034679;
     background-color: #FFFFFF;
     border: 2px solid #034679;
-    transition: all .5s linear;
 }
 
 .btn-danger {
@@ -712,7 +719,6 @@ header .overlay {
     background: #FFFFFF;
     color: #034679;
     border: 2px solid #034679;
-    transition: all .5s linear;
 }
 
 .search-business {
@@ -851,11 +857,59 @@ ul.multiselect-container {
     padding: 25px;
 }
 
+.badge {
+    font-size: 85% !important;
+}
+
+.filter-search-wrapper {
+    border-radius: 25px;
+}
+
+.btn-outline-primary {
+    color: #034679;
+    background-color: #FFFFFF;
+    border: 2px solid #034679;
+    border-radius: 25px;
+}
+
+.btn-outline-primary:hover {
+    color: #FFF;
+    background-color: #034679;
+    border: 2px solid #034679;
+    border-radius: 25px;
+}
+
+.btn-create-dashboard {
+    min-width: 150px;
+}
+
+.tab-content-dashboard {
+    padding-top: 0px;
+}
+
+.client-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+}
+
+.client-logo-img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.col-xs-50 {
+    width: 50% !important;
+}
+
 @media only screen and (max-width: 992px) {
     .vision-wrapper > h2 {
         font-size: 1.5rem;
     }
-    
+
     .map-wrapper {
         margin-bottom: 50px;
     }
@@ -900,6 +954,10 @@ ul.multiselect-container {
 
     .navbar-nav {
         margin-left: unset !important;
+    }
+
+    .tab-content-dashboard {
+        padding-top: 15px !important;
     }
 }
 
@@ -1136,7 +1194,7 @@ ul.multiselect-container {
 input[type="date"]::-webkit-datetime-edit, input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-clear-button {
     color: #fff;
     position: relative;
-    
+
 }
 
 input[type="date"]::-webkit-datetime-edit-year-field {
