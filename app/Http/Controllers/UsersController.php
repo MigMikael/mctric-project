@@ -14,6 +14,35 @@ class UsersController extends Controller
         return response(view('user.create'));
     }
 
+    public function search(Request $request)
+    {
+        $query = $request->query('query');
+        $users = User::where("name", "like", "%".$query."%")
+                ->orWhere("email", "like", "%".$query."%")
+                ->orderBy('created_at', 'desc')
+                ->paginate(9)
+                ->appends(['query' => $query]);
+        return view('dashboard', [
+            'businesses' => [],
+            'clients' => [],
+            'awards' => [],
+            'careers' => [],
+            'users' => $users,
+            'activeTab' => 'users',
+            'inProgressCount' => null,
+            'completeCount' => null,
+            'search' => $query
+        ]);
+    }
+
+    public function attemptSearch(Request $request)
+    {
+        $request = $request->all();
+        $query = $request['query'];
+
+        return redirect("/users/search?query=".$query);
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [

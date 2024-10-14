@@ -28,9 +28,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $clients = Clients::all();
-        $awards = Awards::all();
-        $careers = Careers::all();
+        $clients = Clients::show()->get();
+        $awards = Awards::show()->get();
+        $careers = Careers::show()->get();
         return view('home', [
             'clients' => $clients,
             'awards' => $awards,
@@ -40,7 +40,7 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        $businesses = Business::paginate(6);
+        $businesses = Business::paginate(9);
         $clients = Clients::paginate(9);
         $awards = Awards::paginate(9);
         $careers = Careers::paginate(9);
@@ -73,7 +73,9 @@ class HomeController extends Controller
 
     public function dashboardBusinesses()
     {
-        $businesses = Business::paginate(6);
+        //$businesses = Business::orderBy('priority', 'desc')->paginate(9);
+        $businesses = Business::orderBy('created_at', 'desc')
+                    ->paginate(9);
         return view('dashboard', [
             'businesses' => $businesses,
             'clients' => [],
@@ -89,7 +91,8 @@ class HomeController extends Controller
 
     public function dashboardCareers()
     {
-        $careers = Careers::paginate(9);
+        $careers = Careers::orderBy('created_at', 'desc')
+                 ->paginate(9);
         return view('dashboard', [
             'businesses' => [],
             'clients' => [],
@@ -105,7 +108,8 @@ class HomeController extends Controller
 
     public function dashboardClients()
     {
-        $clients = Clients::paginate(9);
+        $clients = Clients::orderBy('created_at', 'desc')
+                 ->paginate(9);
         return view('dashboard', [
             'businesses' => [],
             'clients' => $clients,
@@ -121,7 +125,8 @@ class HomeController extends Controller
 
     public function dashboardAwards()
     {
-        $awards = Awards::paginate(9);
+        $awards = Awards::orderBy('created_at', 'desc')
+                ->paginate(9);
         return view('dashboard', [
             'businesses' => [],
             'clients' => [],
@@ -137,7 +142,8 @@ class HomeController extends Controller
 
     public function dashboardUsers()
     {
-        $users = User::all();
+        $users = User::orderBy('created_at', 'desc')
+               ->paginate(9);
         return view('dashboard', [
             'businesses' => [],
             'clients' => [],

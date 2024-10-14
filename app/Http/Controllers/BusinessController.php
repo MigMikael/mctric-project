@@ -3,14 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Business;
+use App\BusinessCategory;
 use App\BusinessImage;
+use App\Category;
+use App\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Traits\ImageTrait;
+use function GuzzleHttp\Psr7\str;
 
 class BusinessController extends Controller
 {
     use ImageTrait;
+
     public $status = [
         'work_in_process' => 'Work In Process',
         'complete' => 'Complete'
@@ -46,37 +51,119 @@ class BusinessController extends Controller
      */
     public function index()
     {
-        $businesses = Business::where('display', true)->get();
+        $businesses = Business::where('display', true)
+                    ->orderBy('priority', 'desc')
+                    ->get();
         return response(view('business.index', [
             'businesses' => $businesses
         ]));
     }
 
-    public function filter($category)
+    public function filter(Request $request)
     {
-        $businesses = Business::where("category", "=", $category)->where('display', true)->paginate(6);
+        $category = $request['category'];
+        $category = Category::where('slug', '=', $category)->first();
+        $businesses_categories = BusinessCategory::where('category_id', $category->id)->pluck('business_id');
+
+        $year = 0;
+        if ($request->has('year') && $request->query('year') != 0) {
+            $year = $request->query('year');
+            $businesses = Business::whereIn('id', $businesses_categories)
+            //->whereYear('show_year', '<=', intval($year))
+            //->whereYear('show_year', '>=', intval($year))
+                ->whereYear('show_year_start', '<=', intval($year))
+                ->whereYear('show_year_end', '>=', intval($year))
+                ->where('display', true)
+                ->orderBy('priority', 'desc')
+                ->paginate(9);
+        } else {
+            $businesses = Business::whereIn('id', $businesses_categories)
+                ->where('display', true)
+                ->orderBy('priority', 'desc')
+                ->paginate(9);
+        }
+
+        $minDate = Business::all()->min('show_year_start');
+        $minYear = explode('-', $minDate)[0];
+
+        $maxDate = Business::all()->max('show_year_end');
+        $maxYear = explode('-', $maxDate)[0];
+        //$maxYear = date('Y');
+
+        $years = [];
+        $years[0] = 'All';
+        for ($i = $minYear; $i <= $maxYear; $i++) {
+            $years[strval($i)] = intval($i);
+        }
+
         return view('business.list', [
             'businesses' => $businesses,
-            'category' => $this->category[$category],
-            'headingTranslate' => $this->category_translate[$category]
+            'category' => $category,
+            'headingTranslate' => $this->category_translate[$category->slug],
+            'years' => $years,
+            'year' => $year
         ]);
     }
 
-    public function status($status)
+    public function status(Request $request)
     {
-        $businesses = Business::where("status", "=", $status)->where('display', true)->paginate(6);
+        $status = $request['status'];
+
+        $heading_status = "";
+        if ($status == "work_in_process") {
+            $heading_status = "messages.status.workInProgress";
+        }
+        else if ($status == "complete") {
+            $heading_status = "messages.status.complete";
+        }
+
+
+        $year = 0;
+        if ($request->has('year') && $request->query('year') != 0) {
+            $year = $request->query('year');
+            $businesses = Business::where("status", "=", $status)
+                //->whereYear('show_year', '<=', intval($year))
+                //->whereYear('show_year', '>=', intval($year))
+                ->whereYear('show_year_start', '<=', intval($year))
+                ->whereYear('show_year_end', '>=', intval($year))
+                ->where('display', true)
+                ->orderBy('priority', 'desc')
+                ->paginate(9);
+        } else {
+            $businesses = Business::where("status", "=", $status)
+                ->where('display', true)
+                ->orderBy('priority', 'desc')
+                ->paginate(9);
+        }
+
+        $minDate = Business::all()->min('show_year_start');
+        $minYear = explode('-', $minDate)[0];
+
+        $maxDate = Business::all()->max('show_year_end');
+        $maxYear = explode('-', $maxDate)[0];
+
+        $years = [];
+        $years[0] = 'All';
+        for ($i = $minYear; $i <= $maxYear; $i++) {
+            $years[strval($i)] = intval($i);
+        }
+
         return view('business.list', [
             'businesses' => $businesses,
-            'status' => $this->status[$status],
-            'headingTranslate' => $this->status_translate[$status]
+            'status' => $status,
+            'headingTranslate' => $heading_status,
+            'years' => $years,
+            'year' => $year
         ]);
     }
 
     public function search(Request $request)
     {
-        $request = $request->all();
-        $query = $request['query'];
-        $businesses = Business::where("name", "like", "%".$query."%")->where('display', true)->paginate(6);
+        $query = $request->query('query');
+        $businesses = Business::where("name", "like", "%".$query."%")
+                    ->orderBy('created_at', 'desc')
+                    ->paginate(9)
+                    ->appends(['query' => $query]);
         return view('dashboard', [
             'businesses' => $businesses,
             'clients' => [],
@@ -90,6 +177,42 @@ class BusinessController extends Controller
         ]);
     }
 
+    public function attemptSearch(Request $request)
+    {
+        $request = $request->all();
+        $query = $request['query'];
+
+        return redirect("/businesses/search?query=".$query);
+    }
+
+    public function sort()
+    {
+        $businesses = Business::orderBy('priority', 'desc')->get();
+        return response(view('business.sort', [
+            'businesses' => $businesses
+        ]));
+    }
+
+    public function storeSort(Request $request)
+    {
+        $request = $request->all();
+        $sortedBusinesses = $request['sorted'];
+
+        $idString = str_replace('order[]=', '', $sortedBusinesses);
+        $idString = str_replace('&', ' ', $idString);
+        $idArr = explode(' ', $idString);
+
+        $total = Business::all()->count();
+        foreach ($idArr as $id) {
+            $business = Business::find($id);
+            $business->priority = $total;
+            $business->save();
+            $total--;
+        }
+
+        return redirect()->action("HomeController@dashboardBusinesses");
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -97,9 +220,10 @@ class BusinessController extends Controller
      */
     public function create()
     {
+        $category = Category::pluck('name', 'id');
         return response(view('business.create', [
             'status' => $this->status,
-            'category' => $this->category
+            'category' => $category
         ]));
     }
 
@@ -112,25 +236,55 @@ class BusinessController extends Controller
     public function store(Request $request)
     {
         $business = $request->all();
+
         $business['slug'] = str_replace(" ", "_", $business['name']);
 
         $file = $request->file('cover_image');
         $cover_image = $this->storeImage($file, "");
         $business['cover_image'] = $cover_image->id;
+        $categories = $business['category'];
+        $business['category'] = "";
+
+        $totalBusiness = Business::all()->count();
+        $business['priority'] = $totalBusiness + 1;
+
+        $images = $business['images'];
+        unset($business['images']);
 
         $business = Business::create($business);
 
-        if ($request->hasFile('images')) {
-            $files = $request->file('images');
-            foreach ($files as $file) {
-                $image = $this->storeImage($file, "");
-                $business_image = [
-                    'business_id' => $business->id,
-                    'image_id' => $image->id
-                ];
-                BusinessImage::create($business_image);
-                # Log::info("Store success here");
-            }
+        foreach ($categories as $category) {
+			if(!empty($business) && !empty($category)) {
+				$business_category = [
+					'business_id' => $business->id,
+					'category_id' => intval($category)
+				];
+				BusinessCategory::create($business_category);
+			}
+        }
+
+//        if ($request->hasFile('images')) {
+//            $files = $request->file('images');
+//            foreach ($files as $file) {
+//                $image = $this->storeImage($file, "");
+//                $business_image = [
+//                    'business_id' => $business->id,
+//                    'image_id' => $image->id
+//                ];
+//                BusinessImage::create($business_image);
+//            }
+//        }
+
+        $images_ids = explode(",", $images);
+        foreach ($images_ids as $id) {
+            // $image = Image::find($id);
+			if(!empty($business) && !empty($id)) {
+				$business_image = [
+					'business_id' => $business->id,
+					'image_id' => $id
+				];
+				BusinessImage::create($business_image);
+			}
         }
 
         //return redirect()->action("BusinessController@filter", ['category' => $business->category]);
@@ -161,11 +315,13 @@ class BusinessController extends Controller
     public function edit($id)
     {
         $business = Business::findOrFail($id);
+        $business->categories();
+        $category = Category::pluck('name', 'id');
 
         return view('business.edit', [
             'business' => $business,
             'status' => $this->status,
-            'category' => $this->category
+            'category' => $category
         ]);
     }
 
@@ -188,18 +344,51 @@ class BusinessController extends Controller
             $updateBusiness['cover_image'] = $cover_image->id;
         }
 
-        if ($request->hasFile('images')) {
+//        if ($request->hasFile('images')) {
+//            BusinessImage::where('business_id', '=', $business->id)->delete();
+//            $files = $request->file('images');
+//            foreach ($files as $file) {
+//                $image = $this->storeImage($file, "");
+//                $business_image = [
+//                    'business_id' => $business->id,
+//                    'image_id' => $image->id
+//                ];
+//                BusinessImage::create($business_image);
+//                Log::info("Store success here");
+//            }
+//        }
+        $images = $updateBusiness['images'];
+        unset($updateBusiness['images']);
+
+        $edit_image = $updateBusiness['edit_image'];
+        unset($updateBusiness['edit_image']);
+
+        $images_ids = explode(",", $images);
+        if ($edit_image == "True") {
             BusinessImage::where('business_id', '=', $business->id)->delete();
-            $files = $request->file('images');
-            foreach ($files as $file) {
-                $image = $this->storeImage($file, "");
-                $business_image = [
-                    'business_id' => $business->id,
-                    'image_id' => $image->id
-                ];
-                BusinessImage::create($business_image);
-                Log::info("Store success here");
+
+            if (!is_null($images)) {
+                foreach ($images_ids as $id) {
+                    $image = Image::find($id);
+					if(!empty($business) && !empty($image)) {
+						$business_image = [
+							'business_id' => $business->id,
+							'image_id' => $image->id
+						];
+						BusinessImage::create($business_image);
+					}
+                }
             }
+        }
+
+        BusinessCategory::where('business_id', '=', $business->id)->delete();
+        $categories = $updateBusiness['category'];
+        foreach ($categories as $category) {
+            $business_category = [
+                'business_id' => $business->id,
+                'category_id' => intval($category)
+            ];
+            BusinessCategory::create($business_category);
         }
 
         $business->update($updateBusiness);
@@ -215,6 +404,8 @@ class BusinessController extends Controller
      */
     public function destroy($id)
     {
+        BusinessCategory::where('business_id', $id)->delete();
+
         $business = Business::findOrFail($id);
         $business->delete();
 

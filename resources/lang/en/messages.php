@@ -2,6 +2,7 @@
 return [
     'welcome' => 'Welcome to our application',
     'app'   => [
+        'homeMenu' =>  'Home',
         'aboutMenu' =>  'About Us',
         'businessMenu' => 'Business',
         'careerMenu' => 'Career',
@@ -71,15 +72,18 @@ return [
         'awardDescription' => 'Our company has received awards and certifications from various organizations to guarantee the quality, standard and service of the whole process of the company. So customers can be confident in our quality and service.',
         'awardButton' => 'See All Award',
 
+        'companyAnnouncementHeading' => 'Company Announcement',
+        'companyAnnouncementDescription' => 'Stay updated with the latest company news and announcements. Discover important updates, new initiatives, and key developments that shape our future.',
+
         'contactHeading' => 'Contact Us',
         'contactAddress' => 'Address',
         'contactAddressDesc' => '121/105 RS TOWER 39 FL., RATCHADAPISEK RD. DINDAENG, BANGKOK 10400 THAILAND',
         'contactEmail' => 'Email Us',
-        'contactEmailDesc' => 'ADMIN@MCTRIC.COM',
+        'contactEmailDesc' => 'admin@mctric.com',
         'contactCall' => 'Call Us',
         'contactFax' => 'Fax',
         'contactPhone' => 'Phone',
-        
+
         'chequeTracking' => 'Cheque Tracking',
 
         'copyright' => 'Copyright',
@@ -98,6 +102,7 @@ return [
         'client' => 'Client',
         'designer' => 'Designer',
         'consultant' => 'Consultant',
+        'contractor' => 'Contractor',
         'mainContractor' => 'Main Contractor',
         'contractPeriod' => 'Contract Period',
         'contractValue' => 'Contract Value',
@@ -108,6 +113,8 @@ return [
         'project' => 'Project',
 
         'businessReadMore' => 'READ MORE',
+
+        'filterByYear' => 'Filter By Year'
     ],
     'dashboard' => [
         'dashboardHeading' => 'Admin Dashboard',
@@ -125,7 +132,11 @@ return [
         'userTab' => 'User',
         'userSubHeading' => 'User Management',
 
-        'cardButton' => 'Detail'
+        'cardButton' => 'Detail',
+        'sortButton' => 'Sort',
+        'hideButton' => 'Hide',
+        'showButton' => 'Show',
+        'saveButton' => 'Save'
     ],
     'career' => [
         'careerHeading' => 'Career',
@@ -150,9 +161,10 @@ return [
         'contactCall' => 'Call Us',
         'contactPhone' => 'Phone',
         'contactFax' => 'Fax',
+        'contactCompanyName' => 'McTRIC Public Company Limited',
     ],
     'status' => [
         'workInProgress' => 'Work In Progress',
-        'complete' => 'Complete'
+        'complete' => 'Completed'
     ]
 ];

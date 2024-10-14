@@ -81,5 +81,81 @@
                 alert("Pls select only images");
             }
         });
+
+        $(document).ready(function() {
+            $('#category-select').multiselect();
+        });
+    </script>
+    <script>
+        $(document).ready(function()
+        {
+            var images = [];
+            var all_image = [];
+            $("#fileuploader").uploadFile({
+                url: "{{ url('upload_image') }}",
+                multiple: false,
+                dragDrop: true,
+                fileName: "image",
+                acceptFiles: "image/*",
+                showPreview: true,
+                previewHeight: "100px",
+                previewWidth: "100px",
+                sequential: true,
+                sequentialCount:1,
+                returnType: "json",
+                showDelete: true,
+                onSuccess: function (files,data,xhr,pd) {
+                    // alert(data);
+                    images.push(data["id"]);
+                    all_image.push(data);
+                    $("#hidden_image").val(images);
+                    $("#edit_image").val("True");
+                },
+                onLoad: function (obj) {
+                    $.ajax({
+                        cache: false,
+                        url: "{{ url('preload_image/'.$business->id) }}",
+                        dataType: "json",
+                        success: function(data)
+                        {
+                            all_image = data;
+                            for(var i=0;i<data.length;i++)
+                            {
+                                obj.createProgress(data[i]["name"],data[i]["path"],data[i]["size"]);
+                                images.push(data[i]["id"]);
+                            }
+                            $("#hidden_image").val(images);
+                            $("#edit_image").val("False");
+                        }
+                    });
+                },
+                deleteCallback: function (data, pd) {
+                    var removeIndex = null;
+                    var removeId = null;
+                    for(var i = 0; i < all_image.length; i++) {
+                        if (all_image[i].name === data[0]) {
+                            removeId = all_image[i].id;
+                            removeIndex = i;
+                        }
+                    }
+                    for (var i = 0; i < data.length; i++) {
+                        $.post("{{ url('/delete_image/') }}", {op: "delete",id: removeId},
+                            function (resp,textStatus, jqXHR) {
+                                images = images.filter(function (obj) {
+                                    return obj !== removeId;
+                                });
+
+                                all_image = all_image.filter(function (image) {
+                                    return image.id !== removeId;
+                                });
+                                $("#hidden_image").val(images);
+                                $("#edit_image").val("True");
+                            });
+                    }
+
+                    pd.statusbar.hide();
+                },
+            });
+        });
     </script>
 @endsection

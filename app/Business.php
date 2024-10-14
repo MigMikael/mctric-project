@@ -19,6 +19,7 @@ class Business extends Model
         'contract_value',
         'contract_start',
         'contract_end',
+        'show_year',
         'scope_of_work',
         'slug',
         'category',
@@ -26,14 +27,24 @@ class Business extends Model
         'completion',
         'display',
         'cover_image',
+        'images',
         'social_facebook',
         'social_youtube',
         'social_instagram',
+        'priority',
+        'show_year_start',
+        'show_year_end',
+        'social_website'
     ];
 
     public function images()
     {
         return $this->belongsToMany('App\Image', 'business_image', 'business_id', 'image_id');
+    }
+
+    public function categories()
+    {
+        return $this->belongsToMany('App\Category', 'businesses_categories', 'business_id', 'category_id');
     }
 
     public function scopeShow($query) {

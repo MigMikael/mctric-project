@@ -12,11 +12,17 @@ class Careers extends Model
         'name',
         'description',
         'qualification',
-        'image_id'
+        'image_id',
+        'display',
+        'priority'
     ];
 
     public function image()
     {
         return $this->hasOne('App\Image', 'image_id');
+    }
+
+    public function scopeShow($query) {
+        return $query->where('display', true);
     }
 }

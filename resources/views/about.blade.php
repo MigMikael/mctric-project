@@ -37,20 +37,26 @@
     <section class="bg-light">
         <div class="container">
             <div class="row text-center">
-                <div class="col-md-4">
-                    <h2 class="bottom15">{{ __('messages.home.philosophyHeading') }}</h2>
-                    <p>{{ __('messages.home.philosophyParagraphOne') }}</p>
+                <div class="col-md-4 form-group">
+                    <div class="vision-wrapper">
+                        <h2 class="mb-4">{{ __('messages.home.philosophyHeading') }}</h2>
+                        <p>{{ __('messages.home.philosophyParagraphOne') }}</p>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <h2 class="bottom15">{{ __('messages.home.missionHeading') }}</h2>
-                    <p>{{ __('messages.home.missionOne') }} <br>
-                        {{ __('messages.home.missionTwo') }} <br>
-                        {{ __('messages.home.missionThree') }}
-                    </p>
+                <div class="col-md-4 form-group">
+                    <div class="vision-wrapper">
+                        <h2 class="mb-4">{{ __('messages.home.missionHeading') }}</h2>
+                            <p>{{ __('messages.home.missionOne') }} <br>
+                                {{ __('messages.home.missionTwo') }} <br>
+                                <!--{{ __('messages.home.missionThree') }}-->
+                            </p>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <h2 class="bottom15">{{ __('messages.home.policyHeading') }}</h2>
-                    <p>{{ __('messages.home.policyDescription') }}</p>
+                <div class="col-md-4 form-group">
+                    <div class="vision-wrapper">
+                        <h2 class="mb-4">{{ __('messages.home.policyHeading') }}</h2>
+                        <p>{{ __('messages.home.policyDescription') }}</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -59,7 +65,7 @@
         <div class="container">
             <div class="row text-center">
                 <div class="col-md-12">
-                    <h2 class="bottom15">{{ __('messages.home.objectiveHeading') }}</h2>
+                    <h2 class="mb-4">{{ __('messages.home.objectiveHeading') }}</h2>
                     <p>
                         {{ __('messages.home.objectiveOne') }}<br>
                         {{ __('messages.home.objectiveTwo') }}<br>
@@ -118,6 +124,37 @@
                 <div class="col-md-12">
                     <div class="text-center align-items-center">
                         <button type="button" class="btn view-btn" onclick="location.href='{{ url('/awards') }}'">{{ __('messages.home.awardButton') }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-center section-title">{{ __('messages.home.companyAnnouncementHeading') }}</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="award-wrapper text-center">
+                        <div style="padding-bottom: 50px;">
+                            <i class="fas fa-building fa-5x"></i>
+                        </div>
+                        <p>{{ __('messages.home.companyAnnouncementDescription') }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 40px;">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <div class="mb-4">
+                            <a class="btn btn-primary" href="https://mctric.com/file/รายงานประจำปี_2566.pdf" download>รายงานประจำปี 2566</a>
+                        </div>
+                        <div class="mb-4">
+                            <a class="btn btn-primary" href="https://mctric.com/file/หนังสือเชิญประชุมสามัญผู้ถือหุ้นประจำปี_2567.pdf" download>หนังสือเชิญประชุมสามัญผู้ถือหุ้นประจำปี 2567</a>
+                        </div>
                     </div>
                 </div>
             </div>

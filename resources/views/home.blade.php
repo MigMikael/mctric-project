@@ -10,7 +10,6 @@
             <div class="w-100 text-white" style="z-index: 3">
                 <h1 class="header-title">{{ __('messages.home.companyTitle') }}</h1>
                 <span  class="header-subtitle">{{ __('messages.home.companySubtitle') }}</span><br>
-                <!--<p class="header-subtitle">Company Description</p>-->
                 <button type="button" class="btn view-btn video-btn" data-toggle="modal"
                     data-src="https://www.youtube.com/embed/NlIv4u7dtQU" data-target="#videoModal">
                     <i class="fas fa-play-circle fa-lg"></i> {{ __('messages.home.watchStoryButton') }}
@@ -43,19 +42,25 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-md-4">
-                <h2 class="bottom15">{{ __('messages.home.philosophyHeading') }}</h2>
-                <p>{{ __('messages.home.philosophyParagraphOne') }}</p>
+                <div class="vision-wrapper">
+                    <h2 class="mb-4">{{ __('messages.home.philosophyHeading') }}</h2>
+                    <p>{{ __('messages.home.philosophyParagraphOne') }}</p>
+                </div>
             </div>
             <div class="col-md-4">
-                <h2 class="bottom15">{{ __('messages.home.missionHeading') }}</h2>
-                <p>{{ __('messages.home.missionOne') }} <br>
-                    {{ __('messages.home.missionTwo') }} <br>
-                    {{ __('messages.home.missionThree') }}
-                </p>
+              <div class="vision-wrapper">
+                    <h2 class="mb-4">{{ __('messages.home.missionHeading') }}</h2>
+                    <p>{{ __('messages.home.missionOne') }} <br>
+                        {{ __('messages.home.missionTwo') }} <br>
+                        <!--{{ __('messages.home.missionThree') }}-->
+                    </p>
+                </div>
             </div>
             <div class="col-md-4">
-                <h2 class="bottom15">{{ __('messages.home.policyHeading') }}</h2>
-                <p>{{ __('messages.home.policyDescription') }}</p>
+                <div class="vision-wrapper">
+                    <h2 class="mb-4">{{ __('messages.home.policyHeading') }}</h2>
+                    <p>{{ __('messages.home.policyDescription') }}</p>
+                </div>
             </div>
         </div>
     </div>
@@ -101,6 +106,7 @@
                     </div>
                 </div>
             </div>
+            <!--
             <div class="col-lg-4 col-md-6" data-aos="fade-up">
                 <div class="service-box"
                     onclick="location.href='{{ url('businesses/category/supply_chain_automation_systems') }}';"
@@ -110,6 +116,7 @@
                     </div>
                 </div>
             </div>
+            -->
             <div class="col-lg-4 col-md-6" data-aos="fade-up">
                 <div class="service-box" onclick="location.href='{{ url('businesses/category/joint_venture_project') }}';"
                     style="background-image: url(https://images.pexels.com/photos/3740400/pexels-photo-3740400.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));">
@@ -226,114 +233,49 @@
         </div>
     </div>
 </section>
-<!--
 <section class="bg-white">
-    <div class="container" style="max-width: 800px">
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <h2 class="text-center section-title">{{ __('messages.home.contactHeading') }}</h2>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-sm-6 col-md-6">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <i class="fas fa-map-marked-alt fa-3x"></i>
-                                </div>
-                                <div class="flip-card-back">
-                                    <button class="btn btn-primary" type="button" data-toggle="modal"
-                                        data-target="#addressModal">View</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <i class="fas fa-phone-square fa-3x"></i>
-                                </div>
-                                <div class="flip-card-back">
-                                    <button class="btn btn-primary" type="button" data-toggle="modal"
-                                        data-target="#contactModal">View</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-sm-6 col-md-6">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <i class="fas fa-money-check-alt fa-3x"></i>
-                                </div>
-                                <div class="flip-card-back">
-                                    <button class="btn btn-primary" type="button" onclick="window.location.href='http://203.154.157.184/Cheque_Tracking/Cheque/login.php'">View</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-6">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <i class="fas fa-file-alt fa-3x"></i>
-                                </div>
-                                <div class="flip-card-back">
-                                    <button class="btn btn-primary" type="button" onclick="window.location.href='http://mctric.quickconnect.to/'">View</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
--->
-<section class="bg-white">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12 col-lg-6">
                 <div class="map-wrapper">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.192181848043!2d100.56834121477938!3d13.76728119033743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29e88a01f5421%3A0x50acb168a55704d1!2sMcTric%20Company%20Limited!5e0!3m2!1sth!2sth!4v1569432124464!5m2!1sth!2sth"
                         width="100%" height="450px" style="border:0; margin-top: -150px;"></iframe>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12 col-lg-6">
                 <div class="row about-map-desc-wrapper">
                     <div class="col-md-12">
                         <h5 class="contact-content-title"><i class="fas fa-map-marker-alt"></i> {{ __('messages.contact.contactAddress') }}</h5>
                         <p>
+                            {{ __('messages.contact.contactCompanyName') }} <br>
                             {{ __('messages.home.contactAddressDesc') }}
                         </p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-sm-6 col-md-6">
                         <h5 class="contact-content-title"><i class="fas fa-envelope"></i> {{ __('messages.contact.contactEmail') }}</h5>
                         <p>{{ __('messages.home.contactEmailDesc') }}</p>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-6 col-md-6">
                         <h5 class="contact-content-title"><i class="fas fa-phone-square"></i> {{ __('messages.contact.contactCall') }}</h5>
                         <p>{{ __('messages.contact.contactPhone') }}: +66 (0) 2641 2100 <br>
                             {{ __('messages.contact.contactFax') }}: +66 (0) 2641 2030</p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6" style="margin-bottom: 1rem;">
+                    <div class="col-sm-6 col-md-6" style="margin-bottom: 1rem;">
                         <h5 class="contact-content-title"><i class="fas fa-money-check-alt"></i> {{ __('messages.app.chequeTrackMenu') }}</h5>
-                        <a href="http://203.154.157.184/Cheque_Tracking/Cheque/login.php" style="color: #000000;">Cheque Tracking Link</a>
+                        <a href="http://erpmctric.dyndns.org/mangoanywhere/page/authentication/vendor/login/" style="color: #000000;">Cheque Tracking Link</a>
                     </div>
-                    <div class="col-md-6" style="margin-bottom: 1rem;">
+                    <div class="col-sm-6 col-md-6" style="margin-bottom: 1rem;">
                         <h5 class="contact-content-title"><i class="fas fa-file-alt"></i> Internal McTRIC</h5>
-                        <a href="http://mctric.quickconnect.to/" style="color: #000000;"> Internal McTRIC Link</a>
+                        <a href="http://mctric.dyndns.org:5010" style="color: #000000;"> Internal McTRIC Link</a>
                     </div>
                 </div>
                 <div class="row">

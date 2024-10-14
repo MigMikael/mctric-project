@@ -16,10 +16,68 @@ class CareersController extends Controller
      */
     public function index()
     {
-        $careers = Careers::all();
+        $careers = Careers::where('display', true)
+                ->orderBy('created_at', 'desc')
+                ->get();
         return response(view('career.index', [
             'careers' => $careers
         ]));
+    }
+
+    public function search(Request $request)
+    {
+        $query = $request->query('query');
+        $careers = Careers::where("name", "like", "%".$query."%")
+                ->orderBy('created_at', 'desc')
+                ->paginate(9)
+                ->appends(['query' => $query]);
+        return view('dashboard', [
+            'businesses' => [],
+            'clients' => [],
+            'awards' => [],
+            'careers' => $careers,
+            'users' => [],
+            'activeTab' => 'careers',
+            'inProgressCount' => null,
+            'completeCount' => null,
+            'search' => $query
+        ]);
+    }
+
+    public function attemptSearch(Request $request)
+    {
+        $request = $request->all();
+        $query = $request['query'];
+
+        return redirect("/careers/search?query=".$query);
+    }
+
+    public function sort()
+    {
+        $careers = Careers::orderBy('priority', 'desc')->get();
+        return response(view('career.sort', [
+            'careers' => $careers
+        ]));
+    }
+
+    public function storeSort(Request $request)
+    {
+        $request = $request->all();
+        $sortedCareers = $request['sorted'];
+
+        $idString = str_replace('order[]=', '', $sortedCareers);
+        $idString = str_replace('&', ' ', $idString);
+        $idArr = explode(' ', $idString);
+
+        $total = Careers::all()->count();
+        foreach ($idArr as $id) {
+            $business = Careers::find($id);
+            $business->priority = $total;
+            $business->save();
+            $total--;
+        }
+
+        return redirect()->action("HomeController@dashboardCareers");
     }
 
     /**
@@ -46,6 +104,9 @@ class CareersController extends Controller
             $image = $this->storeImage($file, "");
             $career['image_id'] = $image->id;
         }
+        $total = Careers::all()->count();
+        $career['priority'] = $total + 1;
+
         Careers::create($career);
         return redirect()->action("HomeController@dashboardCareers");
     }

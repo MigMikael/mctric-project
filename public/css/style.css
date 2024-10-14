@@ -39,8 +39,9 @@ body {
 }
 
 nav.top-nav-collapse {
-    background: rgba(0,0,0,0.7) !important;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.7);
+    /*background: rgba(0,0,0,0.7) !important;*/
+    /*box-shadow: 0 1px 3px rgba(0,0,0,0.7);*/
+    background: #000;
     transition: all 0.5s ease;
 }
 
@@ -108,6 +109,7 @@ header {
 
 .header-title {
     font-size: 55px;
+    font-weight: 600;
 }
 
 .header-subtitle {
@@ -144,17 +146,18 @@ header {
     text-align: center;
     margin-top: 50px;
     font-size: 14px;
+    border: 2px solid #034679;
 }
 
 .view-btn:hover {
     color: #034679 !important;
     background: #FFFFFF !important;
     border: 2px solid #034679;
-    transition: all .5s linear;
 }
 
 .video-btn:hover i {
     color: #034679!important;
+    border: 2px solid #034679;
 }
 
 
@@ -174,27 +177,25 @@ header {
     line-height: normal;
     cursor: pointer;
     text-align: center;
+    border: 2px solid #034679;
 }
 
 .learn-more-btn:hover {
     background: #FFFFFF;
     color: #034679;
     border: 2px solid #034679;
-    transition: all .5s linear;
 }
 
 a.btn.btn-warning:hover {
     background: #034679;
     color: #FFF;
-    border: 2px solid #FFF;
-    transition: all .5s linear;
+    border: 2px solid #034679;
 }
 
 button.btn-danger:hover {
     background: #034679;
     color: #FFF;
-    border: 2px solid #FFF;
-    transition: all .5s linear;
+    border: 2px solid #034679;
 }
 
 .logo-company {
@@ -265,7 +266,7 @@ ol.circle {
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
     padding-right: 0px !important;
   }
-  
+
   .modal-dialog {
       max-width: 800px;
       margin: 30px auto;
@@ -421,19 +422,27 @@ header .overlay {
 .card {
     margin-bottom: 30px;
     box-shadow: 0px 1px 4px rgba(0,0,0,0.2);
+    cursor: pointer;
 }
 
+/*
+.card:hover {
+    box-shadow: 0px 3px 4px rgba(0,0,0,0.1);
+}
+*/
+
 .card-title {
-    font-size: 16px !important;
+    font-size: 18px !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* จำนวนบรรทัดที่ต้องการจำกัด */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; /* แสดงผล ... เมื่อข้อความยาวเกินไป */
+    word-break: break-word; /* ตัดคำเมื่อเกินขอบเขต */
 }
 
 .card-body {
     min-height: 100px;
-}
-
-.card:hover {
-    box-shadow: 0px 3px 4px rgba(0,0,0,0.1);
-    cursor: pointer;
 }
 
 .services {
@@ -558,7 +567,7 @@ header .overlay {
 }
 
 .image-about > img {
-    width: 100%; 
+    width: 100%;
     object-fit: cover;
 }
 
@@ -570,7 +579,7 @@ header .overlay {
 
 .img-max-width {
     height: 100%;
-    width: 100%; 
+    width: 100%;
     object-fit: cover;
 }
 
@@ -620,12 +629,13 @@ header .overlay {
 
   .form-style {
     background: #FFFFFF;
-    border-radius: 25px;
+    border-radius: 10px;
     padding: 25px
   }
 
   .submit-edit-btn {
-      max-width: 500px;
+      width: 500px;
+      max-width: 90%;
       border-radius: 25px;
   }
 
@@ -687,13 +697,13 @@ header .overlay {
     border-radius: 25px;
     padding-left: 25px;
     padding-right: 25px;
+    border: 2px solid #034679;
 }
 
 .btn-primary:hover {
     background: #FFFFFF;
     color: #034679;
     border: 2px solid #034679;
-    transition: all .5s linear;
 }
 
 .btn-warning {
@@ -706,7 +716,6 @@ header .overlay {
     color: #034679;
     background-color: #FFFFFF;
     border: 2px solid #034679;
-    transition: all .5s linear;
 }
 
 .btn-danger {
@@ -719,7 +728,6 @@ header .overlay {
     background: #FFFFFF;
     color: #034679;
     border: 2px solid #034679;
-    transition: all .5s linear;
 }
 
 .search-business {
@@ -774,43 +782,65 @@ select {
 }
 
 .back-btn-custom {
-    position: fixed; 
-    left: 27px; 
+    position: fixed;
+    left: 27px;
     z-index: 100;
     bottom: 0;
     height: 60px;
 }
 
-.flip-card {
-    background-color: transparent;
-    height: 180px;
-    width: 100%;
+.filter-date-wrapper {
     margin-bottom: 25px;
-  }
-  
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
-  
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-  
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
+}
 
-  .flip-card-front, .flip-card-back > button {
+.select-filter-date {
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 250px !important;
+}
+
+.sort-wrapper {
+    margin-top: 15px;
+}
+
+.sort-wrapper .btn {
+    width: 250px;
+}
+
+span.multiselect-native-select > .btn-group {
+    width: 100%;
+    border: 1px solid #ced4da;
+}
+
+ul.multiselect-container {
+    width: 100%;
+}
+
+.multiselect-container>li>a>label.checkbox, .multiselect-container>li>a>label.radio {
+    margin: 0;
+    color: #000;
+}
+
+.multiselect-selected-text {
+    float: left;
+    color: #495057;
+}
+
+.dropdown-toggle::after {
+    position: absolute;
+    right: 3px;
+    top: 15px;
+}
+
+.contact-card-wrapper {
+    height: 250px;
+    border: 1px solid #DEDEDE;
+    margin-bottom: 15px;
+    background: #034679;
+    cursor: pointer;
+}
+
+.contact-center-wrapper {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -818,31 +848,80 @@ select {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
-  }
-  
-  .flip-card-front {
-      background: #034679;
-  }
+}
 
-  .flip-card-front > i {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    text-align: center;
+.contact-center-wrapper > p {
+    margin-top: 15px;
     color: #FFF;
-    }
-  
-  .flip-card-back {
-    background-color: #FFF;
-    color: white;
-    transform: rotateY(180deg);
-  }
+}
 
-  .modal-backdrop {
-    z-index: 10 !important;
+.contact-card-wrapper > .contact-center-wrapper > i {
+    color: #FFF;
+}
+
+.contact-address-wrapper {
+    height: 250px;
+    border: 1px solid #DEDEDE;
+    margin-bottom: 15px;
+    padding: 25px;
+}
+
+.badge {
+    font-size: 85% !important;
+}
+
+.filter-search-wrapper {
+    border-radius: 25px;
+}
+
+.btn-outline-primary {
+    color: #034679;
+    background-color: #FFFFFF;
+    border: 2px solid #034679;
+    border-radius: 25px;
+}
+
+.btn-outline-primary:hover {
+    color: #FFF;
+    background-color: #034679;
+    border: 2px solid #034679;
+    border-radius: 25px;
+}
+
+.btn-create-dashboard {
+    min-width: 150px;
+}
+
+.tab-content-dashboard {
+    padding-top: 0px;
+}
+
+.client-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 100%;
+}
+
+.client-logo-img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.col-xs-50 {
+    width: 50% !important;
+}
+
+@media only screen and (max-width: 992px) {
+    .vision-wrapper > h2 {
+        font-size: 1.5rem;
+    }
+
+    .map-wrapper {
+        margin-bottom: 50px;
+    }
 }
 
 @media only screen and (max-width: 991px) {
@@ -885,6 +964,32 @@ select {
     .navbar-nav {
         margin-left: unset !important;
     }
+
+    .tab-content-dashboard {
+        padding-top: 15px !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .section-title {
+        padding-bottom: 25px !important;
+    }
+
+    .map-wrapper {
+        margin-bottom: 25px !important;
+    }
+
+    .award-wrapper {
+        padding: 15px !important;
+    }
+
+    .view-btn {
+        margin-top: 15px !important;
+    }
+
+    .vision-wrapper {
+        padding-bottom: 20px;
+    }
 }
 
 @media only screen and (max-width: 767px) {
@@ -917,7 +1022,7 @@ select {
     }
 
     .award-wrapper {
-        padding: unset !important;
+        padding: 0px !important;
     }
 
     .image-business {
@@ -925,7 +1030,7 @@ select {
     }
 
     section {
-        padding: 50px 0 !important; 
+        padding: 50px 0 !important;
     }
 
     .sub-title {
@@ -993,6 +1098,27 @@ select {
     .container {
         max-width: 640px;
     }
+
+    .select-filter-date {
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 15px;
+        width: 100% !important;
+    }
+
+    .form-filter > label {
+        margin-bottom: 15px;
+    }
+
+    .form-style {
+        padding: 0px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .contact-address-wrapper {
+        height: 300px;
+    }
 }
 
 @media only screen and (max-width: 575px) {
@@ -1034,11 +1160,11 @@ select {
         margin-top: 65px;
     }
 
-    
+
     .image-business-project {
         height: unset !important;
     }
-    
+
 
     .close {
         font-size: unset !important;
@@ -1072,4 +1198,67 @@ select {
 
 .has-error {
     border-width: 3px;
+}
+
+input[type="date"]::-webkit-datetime-edit, input[type="date"]::-webkit-inner-spin-button, input[type="date"]::-webkit-clear-button {
+    color: #fff;
+    position: relative;
+
+}
+
+input[type="date"]::-webkit-datetime-edit-year-field {
+    position: absolute !important;
+    /*border-left:1px solid #8c8c8c;*/
+    padding: 2px;
+    color:#000;
+    left: 56px;
+}
+
+input[type="date"]::-webkit-datetime-edit-month-field {
+    position: absolute !important;
+    /*border-left:1px solid #8c8c8c;*/
+    padding: 2px;
+    color:#000;
+    left: 30px;
+}
+
+
+input[type="date"]::-webkit-datetime-edit-day-field {
+    position: absolute !important;
+    color:#000;
+    padding: 2px;
+    left: 4px;
+}
+
+.ajax-upload-dragdrop {
+    border: 2px dotted #DEDEDE !important;
+    padding: 25px !important;
+    border-radius: 5px !important;
+}
+
+.ajax-upload-dragdrop b {
+    color: #495057;
+}
+
+.ajax-file-upload {
+    background: #034679 !important;
+    padding-bottom: 25px !important;
+}
+
+.ajax-file-upload-statusbar {
+    border: 1px solid #DEDEDE !important;
+    margin: 0 0 15px 0 !important;
+}
+
+.ajax-file-upload-preview {
+    width: auto !important;
+}
+
+.ajax-file-upload-bar {
+    background-color:#28a745!important;
+}
+
+.ajax-file-upload-red {
+    -webkit-box-shadow: unset !important;
+    box-shadow: unset !important;
 }

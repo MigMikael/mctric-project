@@ -2,6 +2,7 @@
 return [
     'welcome'   => 'ยินดีต้อนรับเข้าสู่แอพของเรา',
     'app'   => [
+        'homeMenu' =>  'หน้าหลัก',
         'aboutMenu' =>  'เกี่ยวกับเรา',
         'businessMenu' => 'ธุรกิจของเรา',
         'careerMenu' => 'ตำแหน่งงาน',
@@ -71,11 +72,14 @@ return [
         'awardDescription' => 'บริษัทของเราได้รับรางวัลและการรับรองจากองค์กรเพื่อรับประกันคุณภาพ มาตรฐานและบริการตลอดจนทุกกระบวรการของบริษัท เพื่อให้ลูกค้ามั่นใจในคุณภาพและบริการของเรา',
         'awardButton' => 'ดูรางวัลของเราทั้งหมด',
 
+        'companyAnnouncementHeading' => 'ประกาศบริษัท',
+        'companyAnnouncementDescription' => 'ติดตามข่าวสารและประกาศล่าสุดของบริษัท พบกับข้อมูลสำคัญ ความเคลื่อนไหวใหม่ๆ และพัฒนาการที่สำคัญที่จะกำหนดทิศทางในอนาคตของเรา',
+
         'contactHeading' => 'ติดต่อเรา',
         'contactAddress' => 'ที่อยู่',
         'contactAddressDesc' => '121/105 อาคารอาร์เอส ทาวเวอร์ ชั้น 39 ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง กรุงเทพมหานคร 10400',
         'contactEmail' => 'อีเมลหาเราได้ที่',
-        'contactEmailDesc' => 'ADMIN@MCTRIC.COM',
+        'contactEmailDesc' => 'admin@mctric.com',
         'contactCall' => 'โทรหาเรา',
         'contactFax' => 'แฟกซ์',
         'contactPhone' => 'โทร',
@@ -96,6 +100,7 @@ return [
         'client' => 'ลูกค้า',
         'designer' => 'ผู้ออกแบบ',
         'consultant' => 'ที่ปรึกษา',
+        'contractor' => 'ผู้รับเหมา',
         'mainContractor' => 'ผู้รับเหมาหลัก',
         'contractPeriod' => 'ระยะเวลาของสัญญา',
         'contractValue' => 'มูลค่าสัญญา',
@@ -105,7 +110,9 @@ return [
         'bath' => 'บาท',
         'project' => 'โครงการ',
 
-        'businessReadMore' => 'ดูเพิ่มเติม'
+        'businessReadMore' => 'อ่านเพิ่มเติม',
+
+        'filterByYear' => 'เลือกตามปี'
     ],
     'dashboard' => [
         'dashboardHeading' => 'แอดมินแดชบอร์ด',
@@ -123,7 +130,11 @@ return [
         'userTab' => 'ผู้ใช้งาน',
         'userSubHeading' => 'จัดการผู้ใช้งาน',
 
-        'cardButton' => 'รายละเอียด'
+        'cardButton' => 'รายละเอียด',
+        'sortButton' => 'เรียงลำดับ',
+        'hideButton' => 'ซ่อน',
+        'showButton' => 'แสดง',
+        'saveButton' => 'บันทึก'
     ],
     'career' => [
         'careerHeading' => 'ตำแหน่งงาน',
@@ -148,6 +159,7 @@ return [
         'contactCall' => 'โทรหาเรา',
         'contactPhone' => 'โทร',
         'contactFax' => 'แฟกซ์',
+        'contactCompanyName' => 'บริษัท แมคทริค จำกัด (มหาชน)',
     ],
     'status' => [
         'workInProgress' => 'ระหว่างการดำเนินการ',

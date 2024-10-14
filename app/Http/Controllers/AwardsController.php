@@ -16,8 +16,66 @@ class AwardsController extends Controller
      */
     public function index()
     {
-        $awards = Awards::all();
+        $awards = Awards::where('display', true)
+                ->orderBy('created_at', 'desc')
+                ->get();
         return view('award.index', ['awards' => $awards]);
+    }
+
+    public function search(Request $request)
+    {
+        $query = $request->query('query');
+        $awards = Awards::where("name", "like", "%".$query."%")
+                ->orderBy('created_at', 'desc')
+                ->paginate(9)
+                ->appends(['query' => $query]);
+        return view('dashboard', [
+            'businesses' => [],
+            'clients' => [],
+            'awards' => $awards,
+            'careers' => [],
+            'users' => [],
+            'activeTab' => 'awards',
+            'inProgressCount' => null,
+            'completeCount' => null,
+            'search' => $query
+        ]);
+    }
+
+    public function attemptSearch(Request $request)
+    {
+        $request = $request->all();
+        $query = $request['query'];
+
+        return redirect("/awards/search?query=".$query);
+    }
+
+    public function sort()
+    {
+        $awards = Awards::orderBy('priority', 'desc')->get();
+        return response(view('award.sort', [
+            'awards' => $awards
+        ]));
+    }
+
+    public function storeSort(Request $request)
+    {
+        $request = $request->all();
+        $sortedAwards = $request['sorted'];
+
+        $idString = str_replace('order[]=', '', $sortedAwards);
+        $idString = str_replace('&', ' ', $idString);
+        $idArr = explode(' ', $idString);
+
+        $total = Awards::all()->count();
+        foreach ($idArr as $id) {
+            $business = Awards::find($id);
+            $business->priority = $total;
+            $business->save();
+            $total--;
+        }
+
+        return redirect()->action("HomeController@dashboardAwards");
     }
 
     /**
@@ -39,9 +97,13 @@ class AwardsController extends Controller
     public function store(Request $request)
     {
         $award = $request->all();
-        $file = $request->file('image');
-        $image = $this->storeImage($file, '');
-        $award['image_id'] = $image->id;
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $image = $this->storeImage($file, '');
+            $award['image_id'] = $image->id;
+        }
+        $total = Awards::all()->count();
+        $award['priority'] = $total + 1;
 
         Awards::create($award);
         return redirect()->action("HomeController@dashboardAwards");

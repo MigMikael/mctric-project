@@ -30,7 +30,7 @@ class CreateBusinessesTable extends Migration
             $table->string('category')->default("");    // MechanicalElectrical, CivilConstruction, UtilityPipeline, RenewEnergy, SupplyChain
             $table->string('status')->default("");      // OnGoing, InProcess, Complete
             $table->string('completion')->default("")->nullable();
-            $table->boolean('display')->default(false); // show or not show
+            $table->boolean('display')->default(false); // show or hide
             $table->integer('cover_image');
 
             $table->text("social_facebook")->default("")->nullable();

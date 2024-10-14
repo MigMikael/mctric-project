@@ -1,4 +1,9 @@
 <div class="col-md-12" style="margin-bottom: 3%">
+    {!! Form::label('Display') !!}
+    {!! Form::select('display', [true => "Show", false => "Hide"], null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('old_image', 'Old Logo') !!}
     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 shadow-img">
         <img class="responsive"

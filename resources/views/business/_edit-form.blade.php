@@ -1,4 +1,9 @@
 <div class="col-md-12" style="margin-bottom: 3%">
+    {!! Form::label('Display') !!}
+    {!! Form::select('display', [true => "Show", false => "Hide"], null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('name', 'Name') !!}
     {!! Form::text('name', null, ['placeholder' => 'Name of Project', 'class' => 'form-control']) !!}
 </div>
@@ -49,13 +54,28 @@
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
-    {!! Form::label('Scope of Work') !!}
-    <textarea name="scope_of_work">{{ $business-> scope_of_work }}</textarea>
+    {!! Form::label('Show Year Start') !!}
+    {!! Form::date('show_year_start', null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
+    {!! Form::label('Show Year End') !!}
+    {!! Form::date('show_year_end', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="col-md-12" style="margin-bottom: 3%">
+    {!! Form::label('Scope of Work') !!}
+    <textarea name="scope_of_work">{{ $business->scope_of_work }}</textarea>
+</div>
+
+{{--<div class="col-md-12" style="margin-bottom: 3%">--}}
+{{--    {!! Form::label('Category') !!}--}}
+{{--    {!! Form::select('category', $category, null, ['class' => 'form-control']) !!}--}}
+{{--</div>--}}
+
+<div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('Category') !!}
-    {!! Form::select('category', $category, null, ['class' => 'form-control']) !!}
+    {!! Form::select('category[]', $category, $business->categories->pluck('id'), ['class' => 'form-control', 'multiple' => 'multiple', 'id' => 'category-select']) !!}
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
@@ -86,16 +106,17 @@
     </div>
 </div>
 
+{{--<div class="col-md-12" style="margin-bottom: 3%">--}}
+{{--    {!! Form::label('images', 'Images (Multiple File)') !!}--}}
+{{--    {!! Form::file('images[]', ['multiple'=>true, 'accept'=>'image/*', 'class' => 'form-control', 'id' => 'upload',--}}
+{{--    'value' => 'Choose a files']) !!}--}}
+{{--    <div id="image-holder" class="col-xs-12"></div>--}}
+{{--</div>--}}
 <div class="col-md-12" style="margin-bottom: 3%">
-    {!! Form::label('images', 'Images (Multiple File)') !!}
-    {!! Form::file('images[]', ['multiple'=>true, 'accept'=>'image/*', 'class' => 'form-control', 'id' => 'upload',
-    'value' => 'Choose a files']) !!}
-    <div id="image-holder" class="col-xs-12"></div>
-</div>
-
-<div class="col-md-12" style="margin-bottom: 3%">
-    {!! Form::label('Display') !!}
-    {!! Form::select('display', [true => "Show", false => "Not Show"], null, ['class' => 'form-control']) !!}
+    <label>Multiple Image (ขั้นต่ำ 500 x 500px)</label>
+    <div id="fileuploader"></div>
+    {!! Form::hidden('images', null, ['id' => 'hidden_image']) !!}
+    {!! Form::hidden('edit_image', 'false', ['id' => 'edit_image']) !!}
 </div>
 
 <div class="col-md-12" style="margin-bottom: 3%">
@@ -111,4 +132,9 @@
 <div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('Instagram') !!}
     {!! Form::text('social_instagram', null, ['class' => 'form-control']) !!}
+</div>
+
+<div class="col-md-12" style="margin-bottom: 3%">
+    {!! Form::label('Website') !!}
+    {!! Form::text('social_website', null, ['class' => 'form-control']) !!}
 </div>
