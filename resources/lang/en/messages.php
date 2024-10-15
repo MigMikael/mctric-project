@@ -77,7 +77,7 @@ return [
 
         'contactHeading' => 'Contact Us',
         'contactAddress' => 'Address',
-        'contactAddressDesc' => '121/105 RS TOWER 39 FL., RATCHADAPISEK RD. DINDAENG, BANGKOK 10400 THAILAND',
+        'contactAddressDesc' => '121/105 RS Tower Floor 39, Ratchadapisek Rd., Dindaeng, Bangkok 10400',
         'contactEmail' => 'Email Us',
         'contactEmailDesc' => 'admin@mctric.com',
         'contactCall' => 'Call Us',
