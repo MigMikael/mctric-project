@@ -114,8 +114,7 @@
                                 </div>
                             </div>
                         </div>
-                        <hr>
-                        <div class="row" style="padding-top: 15px;">
+                        <div class="row" style="padding-top: 30px;">
                             <div class="col-md-12">
                                 {!! Form::open(['method' => 'post', 'url' => '/businesses/search', 'class' => '']) !!}
                                 <div class="row">
@@ -140,7 +139,6 @@
                                 {!! Form::close() !!}
                             </div>
                         </div>
-                        <hr>
                     </div>
                     <div class="row">
                         @foreach ($businesses as $business)
@@ -207,8 +205,7 @@
                                 </div>
                             </div>
                         </div>
-                        <hr>
-                        <div class="row" style="padding-top: 15px;">
+                        <div class="row" style="padding-top: 30px;">
                             <div class="col-md-12">
                                 {!! Form::open(['method' => 'post', 'url' => '/careers/search', 'class' => '']) !!}
                                 <div class="row">
@@ -233,7 +230,6 @@
                                 {!! Form::close() !!}
                             </div>
                         </div>
-                        <hr>
                     </div>
                     <div class="row">
                         @foreach ($careers as $career)
@@ -299,8 +295,7 @@
                                 </div>
                             </div>
                         </div>
-                        <hr>
-                        <div class="row" style="padding-top: 15px;">
+                        <div class="row" style="padding-top: 30px;">
                             <div class="col-md-12">
                                 {!! Form::open(['method' => 'post', 'url' => '/clients/search', 'class' => '']) !!}
                                 <div class="row">
@@ -325,7 +320,6 @@
                                 {!! Form::close() !!}
                             </div>
                         </div>
-                        <hr>
                     </div>
                     <div class="row">
                         @foreach ($clients as $client)
@@ -385,8 +379,7 @@
                                 </div>
                             </div>
                         </div>
-                        <hr>
-                        <div class="row" style="padding-top: 15px;">
+                        <div class="row" style="padding-top: 30px;">
                             <div class="col-md-12">
                                 {!! Form::open(['method' => 'post', 'url' => '/awards/search', 'class' => '']) !!}
                                 <div class="row">
@@ -411,7 +404,6 @@
                                 {!! Form::close() !!}
                             </div>
                         </div>
-                        <hr>
                     </div>
                     <div class="row">
                         @foreach ($awards as $award)
@@ -473,8 +465,7 @@
                                 </div>
                             </div>
                         </div>
-                        <hr>
-                        <div class="row" style="padding-top: 15px;">
+                        <div class="row" style="padding-top: 30px;">
                             <div class="col-md-12">
                                 {!! Form::open(['method' => 'post', 'url' => '/users/search', 'class' => '']) !!}
                                 <div class="row">
@@ -499,7 +490,6 @@
                                 {!! Form::close() !!}
                             </div>
                         </div>
-                        <hr>
                     </div>
                     <div class="row">
                         @foreach ($users as $user)
