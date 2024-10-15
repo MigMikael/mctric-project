@@ -95,7 +95,7 @@
                 <div class="col-md-12">
                     <p class="text-center"
                         style="color: #FFF; font-size: 13px; margin-top: 5px; margin-bottom: 0px !important;">Copyright
-                        © <?php echo date('Y'); ?> MCTRIC PUBLIC COMPANY LIMITED. All Rights Reserved.</p>
+                        © <?php echo date('Y'); ?> McTRIC Public Company Limited. All Rights Reserved.</p>
                 </div>
             </div>
         </div>
