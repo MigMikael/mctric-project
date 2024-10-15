@@ -69,8 +69,6 @@ class BusinessController extends Controller
         if ($request->has('year') && $request->query('year') != 0) {
             $year = $request->query('year');
             $businesses = Business::whereIn('id', $businesses_categories)
-            //->whereYear('show_year', '<=', intval($year))
-            //->whereYear('show_year', '>=', intval($year))
                 ->whereYear('show_year_start', '<=', intval($year))
                 ->whereYear('show_year_end', '>=', intval($year))
                 ->where('display', true)
@@ -83,12 +81,11 @@ class BusinessController extends Controller
                 ->paginate(9);
         }
 
-        $minDate = Business::all()->min('show_year_start');
+        $minDate = Business::whereIn('id', $businesses_categories)->min('show_year_start');
         $minYear = explode('-', $minDate)[0];
 
-        $maxDate = Business::all()->max('show_year_end');
+        $maxDate = Business::whereIn('id', $businesses_categories)->max('show_year_end');
         $maxYear = explode('-', $maxDate)[0];
-        //$maxYear = date('Y');
 
         $years = [];
         $years[0] = 'All';
