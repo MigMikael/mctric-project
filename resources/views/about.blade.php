@@ -150,10 +150,10 @@
                 <div class="col-md-12">
                     <div class="text-center">
                         <div class="mb-4">
-                            <a class="btn btn-primary" href="https://mctric.com/file/รายงานประจำปี_2566.pdf" download>รายงานประจำปี 2566</a>
+                            <a class="btn btn-primary" href="#" download>รายงานประจำปี 2566</a>
                         </div>
                         <div class="mb-4">
-                            <a class="btn btn-primary" href="https://mctric.com/file/หนังสือเชิญประชุมสามัญผู้ถือหุ้นประจำปี_2567.pdf" download>หนังสือเชิญประชุมสามัญผู้ถือหุ้นประจำปี 2567</a>
+                            <a class="btn btn-primary" href="#" download>หนังสือเชิญประชุมสามัญผู้ถือหุ้นประจำปี 2567</a>
                         </div>
                     </div>
                 </div>
