@@ -50,7 +50,7 @@
             <div class="tab-content tab-content-dashboard">
                 <!-- Start Summary Tab -->
                 <div class="tab-pane container @if ($activeTab == 'summary') active @endif" id="summary">
-                    <div style="padding-top: 3%; padding-bottom: 3%">
+                    <div style="padding-top: 25px; padding-bottom: 15px">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="pull-left">
@@ -98,7 +98,7 @@
 
                 <!-- Start Business Tab -->
                 <div class="tab-pane container @if ($activeTab == 'businesses') active @endif" id="business">
-                    <div style="padding-top: 3%; padding-bottom: 3%">
+                    <div style="padding-top: 25px; padding-bottom: 15px">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="pull-left">
@@ -144,7 +144,7 @@
                     </div>
                     <div class="row">
                         @foreach ($businesses as $business)
-                            <div class="col-sm-6 col-lg-4">
+                            <div class="col-sm-6 col-md-6 col-lg-4">
                                 <div class="card" style="cursor: unset;">
                                     <img class="card-img-top" src="{{ url('image/show/' . $business->cover_image) }}"
                                         alt="Card image cap">
@@ -162,7 +162,7 @@
                                             @endif
                                         </div>
                                         <div class="text-center">
-                                            <button type="button" class="btn learn-more-btn"
+                                            <button type="button" class="btn btn-outline-primary" style="min-width: 120px;"
                                                 onclick="location.href='{{ url('businesses/' . $business->id) }}'">
                                                 {{ __('messages.dashboard.cardButton') }}
                                             </button>
@@ -182,7 +182,7 @@
                         @endforeach
                     </div>
                     @if ($businesses != [])
-                        <div class="row" style="justify-content: center; padding-top: 15px;">
+                        <div class="row" style="justify-content: center; padding-top: 10px;">
                             {{ $businesses->links() }}
                         </div>
                     @endif
@@ -191,7 +191,7 @@
 
                 <!-- Start Career Tab -->
                 <div class="tab-pane container @if ($activeTab == 'careers') active @endif" id="career">
-                    <div style="padding-top: 3%; padding-bottom: 3%">
+                    <div style="padding-top: 25px; padding-bottom: 15px">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="pull-left">
@@ -237,7 +237,7 @@
                     </div>
                     <div class="row">
                         @foreach ($careers as $career)
-                            <div class="col-sm-6 col-lg-4">
+                            <div class="col-sm-6 col-md-6 col-lg-4">
                                 <div class="card" style="cursor: unset;">
                                     <img class="card-img-top" src="{{ url('image/show/' . $career->image_id) }}"
                                         alt="Card image cap">
@@ -255,7 +255,7 @@
                                             @endif
                                         </div>
                                         <div class="text-center">
-                                            <button type="button" class="btn learn-more-btn"
+                                            <button type="button" class="btn btn-outline-primary" style="min-width: 120px;"
                                                 onclick="location.href='{{ url('careers/' . $career->id) }}'">
                                                 {{ __('messages.dashboard.cardButton') }}
                                             </button>
@@ -274,7 +274,7 @@
                         @endforeach
                     </div>
                     @if ($careers != [])
-                        <div class="row" style="justify-content: center; padding-top: 15px;">
+                        <div class="row" style="justify-content: center; padding-top: 10px;">
                             {{ $careers->links() }}
                         </div>
                     @endif
@@ -283,7 +283,7 @@
 
                 <!-- Start Client Tab -->
                 <div class="tab-pane container @if ($activeTab == 'clients') active @endif" id="client">
-                    <div style="padding-top: 3%; padding-bottom: 3%">
+                    <div style="padding-top: 25px; padding-bottom: 15px">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="pull-left">
@@ -329,7 +329,7 @@
                     </div>
                     <div class="row">
                         @foreach ($clients as $client)
-                            <div class="col-sm-6 col-lg-4">
+                            <div class="col-sm-6 col-md-6 col-lg-4">
                                 <div class="card" style="cursor: unset;">
                                     <img class="card-img-top" src="{{ url('image/show/' . $client->image_id) }}"
                                         alt="Card image cap" style="object-fit: contain !important;">
@@ -360,7 +360,7 @@
                         @endforeach
                     </div>
                     @if ($clients != [])
-                        <div class="row" style="justify-content: center; padding-top: 15px;">
+                        <div class="row" style="justify-content: center; padding-top: 10px;">
                             {{ $clients->links() }}
                         </div>
                     @endif
@@ -369,7 +369,7 @@
 
                 <!-- Start Award Tab -->
                 <div class="tab-pane container @if ($activeTab == 'awards') active @endif" id="award">
-                    <div style="padding-top: 3%; padding-bottom: 3%">
+                    <div style="padding-top: 25px; padding-bottom: 15px">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="pull-left">
@@ -415,7 +415,7 @@
                     </div>
                     <div class="row">
                         @foreach ($awards as $award)
-                            <div class="col-sm-6 col-lg-4">
+                            <div class="col-sm-6 col-md-6 col-lg-4">
                                 <div class="card" style="cursor: unset !important;">
                                     <img class="card-img-top" src="{{ url('image/show/' . $award->image_id) }}"
                                         alt="Card image cap" style="object-fit: contain !important;">
@@ -452,7 +452,7 @@
                         @endforeach
                     </div>
                     @if ($awards != [])
-                        <div class="row" style="justify-content: center; padding-top: 15px;">
+                        <div class="row" style="justify-content: center; padding-top: 10px;">
                             {{ $awards->links() }}
                         </div>
                     @endif
@@ -461,7 +461,7 @@
 
                 <!-- Start User Tab -->
                 <div class="tab-pane container @if ($activeTab == 'users') active @endif" id="user">
-                    <div style="padding-top: 3%; padding-bottom: 3%">
+                    <div style="padding-top: 25px; padding-bottom: 15px">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="pull-left">
@@ -503,9 +503,9 @@
                     </div>
                     <div class="row">
                         @foreach ($users as $user)
-                            <div class="col-sm-6 col-lg-4">
+                            <div class="col-sm-6 col-md-6 col-lg-4">
                                 <div class="card" style="cursor: unset !important;">
-                                    <div class="card-body">
+                                    <div class="card-body" style="height: 150px;">
                                         <h5 class="card-title text-center">{{ $user->name }}</h5>
                                         <hr>
                                         <h6 class="card-title text-center">{{ $user->email }}</h6>

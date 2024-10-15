@@ -703,6 +703,8 @@ header .overlay {
     color: #034679;
     background-color: #FFFFFF;
     border: 2px solid #034679;
+    border-radius: 25px;
+    min-width: 100px;
 }
 
 .btn-warning:hover {
@@ -715,6 +717,8 @@ header .overlay {
     color: #034679;
     background-color: #FFFFFF;
     border: 2px solid #034679;
+    border-radius: 25px;
+    min-width: 100px;
 }
 
 .btn-danger:hover {
@@ -955,10 +959,6 @@ ul.multiselect-container {
 
     .navbar-nav {
         margin-left: unset !important;
-    }
-
-    .tab-content-dashboard {
-        padding-top: 15px !important;
     }
 }
 
