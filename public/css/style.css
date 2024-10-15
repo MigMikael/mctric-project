@@ -787,9 +787,8 @@ select {
 }
 
 .select-filter-date {
-    margin-left: 15px;
-    margin-right: 15px;
-    width: 250px !important;
+    width: 100%;
+    border-radius: 25px;
 }
 
 .sort-wrapper {
@@ -1092,12 +1091,14 @@ ul.multiselect-container {
         max-width: 640px;
     }
 
+    /*
     .select-filter-date {
         margin-left: 0px;
         margin-right: 0px;
         margin-bottom: 15px;
         width: 100% !important;
     }
+    */
 
     .form-filter > label {
         margin-bottom: 15px;
