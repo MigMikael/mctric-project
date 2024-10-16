@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="{{ URL::asset('css/owl.theme.default.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('vendor/bootstrap/css/bootstrap.min.css') }}">
     <link href="{{ URL::asset('css/scrolling-nav.css') }}" rel="stylesheet">
-    <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
+    <!-- Start Style CSS -->
+    <link href="{{ URL::asset('css/style.css') }}?v=<?=time()?>" rel="stylesheet">
+    <!-- End Style CSS -->
     <link rel="icon" sizes="16x16" href="{{ url('/image/favicon.ico') }}" type="image/x-icon" />
     <link rel="icon" sizes="32x32" href="{{ URL::asset('favicon.ico') }}" type="image/x-icon" />
     <link rel="shortcut icon" sizes="32x32" type="image/ico" href="{{ URL::asset('favicon.ico') }}" />
