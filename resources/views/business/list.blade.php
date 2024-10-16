@@ -40,7 +40,7 @@
                                 {!! Form::select('year', $years, $year, ['class' => 'form-control select-filter-date']) !!}
                             </div>
                             <div class="col-md-3 col-lg-2 form-group">
-                                <button class="btn btn-outline-primary btn-block"
+                                <button class="btn btn-primary btn-block"
                                     type="submit">{{ __('messages.app.searchButton') }}</button>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                                 {!! Form::select('year', $years, $year, ['class' => 'form-control select-filter-date']) !!}
                             </div>
                             <div class="col-md-3 col-lg-2 form-group">
-                                <button class="btn btn-outline-primary btn-block"
+                                <button class="btn btn-primary btn-block"
                                     type="submit">{{ __('messages.app.searchButton') }}</button>
                             </div>
                         </div>
