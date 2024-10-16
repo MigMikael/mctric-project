@@ -50,16 +50,6 @@ nav.top-nav-collapse {
     color: #FFFFFF;
 }
 
-.navbar-dark .navbar-toggler {
-    border-color: #FFF !important;
-    padding: 10px 15px 10px 15px;
-}
-
-.navbar-dark .navbar-toggler > span i {
-    color: #FFF !important;
-    font-size: 20px;
-}
-
 .fixed-top {
     z-index: 10 !important;
 }
