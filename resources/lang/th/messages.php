@@ -78,8 +78,7 @@ return [
 
         'contactHeading' => 'ติดต่อเรา',
         'contactAddress' => 'ที่อยู่',
-        'contactAddressDesc1' => '121/105 อาคารอาร์เอส ทาวเวอร์ ชั้น 39 ถนนรัชดาภิเษก',
-        'contactAddressDesc2' => 'แขวงดินแดง เขตดินแดง กรุงเทพมหานคร 10400',
+        'contactAddressDesc' => '121/105 อาคารอาร์เอส ทาวเวอร์ ชั้น 39 ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง กรุงเทพมหานคร 10400',
         'contactEmail' => 'อีเมลหาเรา',
         'contactEmailDesc' => 'admin@mctric.com',
         'contactCall' => 'โทรหาเรา',

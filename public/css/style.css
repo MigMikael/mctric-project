@@ -910,6 +910,10 @@ ul.multiselect-container {
     width: 50% !important;
 }
 
+.contact-address-container {
+    width: 75%;
+}
+
 @media only screen and (max-width: 992px) {
     .vision-wrapper > h2 {
         font-size: 1.5rem;
@@ -917,6 +921,12 @@ ul.multiselect-container {
 
     .map-wrapper {
         margin-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 991.98px) {
+    .contact-address-container {
+        width: 100%;
     }
 }
 

@@ -30,10 +30,9 @@
                         <h5 class="contact-content-title">
                             <i class="fas fa-map-marker-alt"></i> {{ __('messages.contact.contactAddress') }}
                         </h5>
-                        <p>
+                        <p class="contact-address-container">
                             {{ __('messages.contact.contactCompanyName') }} <br>
-                            {{ __('messages.home.contactAddressDesc1') }} <br>
-                            {{ __('messages.home.contactAddressDesc2') }}
+                            {{ __('messages.home.contactAddressDesc') }}
                         </p>
                     </div>
                 </div>
