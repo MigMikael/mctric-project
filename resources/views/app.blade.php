@@ -146,14 +146,13 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <p class="text-center"
-                    style="color: #FFF; font-size: 13px; margin-top: 15px; margin-bottom: 15px !important;">Copyright
-                    © <?php echo date('Y'); ?> McTRIC Public Company Limited. All Rights Reserved.</p>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="text-center"
+                        style="color: #FFF; font-size: 13px; margin-top: 15px; margin-bottom: 15px !important;">Copyright
+                        © <?php echo date('Y'); ?> McTRIC Public Company Limited. All Rights Reserved.</p>
+                </div>
             </div>
-        </div>
         </div>
     </footer>
     <!-- End Footer -->
