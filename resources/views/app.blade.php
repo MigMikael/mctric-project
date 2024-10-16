@@ -40,7 +40,8 @@
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <!--<span class="navbar-toggler-icon"></span>-->
+                <span><i class="fas fa-bars"></i></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav mx-auto">
@@ -77,8 +78,10 @@
                         </form>
                     @endif
                     <li class="nav-link lang-menu">
-                        <a href="{{ url('locale/en') }}" class="lang">EN</a> |
-                        <a href="{{ url('locale/th') }}" class="lang">TH</a>
+                        <a href="{{ url('locale/en') }}" class="lang"><img class="mr-2" src="{{ asset('image/en-lang.png') }}"
+                            style="height: 25px;"></a>
+                        <a href="{{ url('locale/th') }}" class="lang"><img src="{{ asset('image/th-lang.png') }}"
+                            style="height: 25px;"></a>
                     </li>
                 </ul>
             </div>
