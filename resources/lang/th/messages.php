@@ -18,6 +18,8 @@ return [
         'editButton' => 'แก้ไข',
         'deleteButton' => 'ลบ',
         'searchButton' => 'ค้นหา',
+
+        'mainMenu' => 'เมนูหลัก',
     ],
     'home' => [
         'webTitle' => 'บริษัท แมคทริค จำกัด (มหาชน)',
@@ -76,8 +78,9 @@ return [
 
         'contactHeading' => 'ติดต่อเรา',
         'contactAddress' => 'ที่อยู่',
-        'contactAddressDesc' => '121/105 อาคารอาร์เอส ทาวเวอร์ ชั้น 39 ถนนรัชดาภิเษก แขวงดินแดง เขตดินแดง กรุงเทพมหานคร 10400',
-        'contactEmail' => 'อีเมลหาเราได้ที่',
+        'contactAddressDesc1' => '121/105 อาคารอาร์เอส ทาวเวอร์ ชั้น 39 ถนนรัชดาภิเษก',
+        'contactAddressDesc2' => 'แขวงดินแดง เขตดินแดง กรุงเทพมหานคร 10400',
+        'contactEmail' => 'อีเมลหาเรา',
         'contactEmailDesc' => 'admin@mctric.com',
         'contactCall' => 'โทรหาเรา',
         'contactFax' => 'แฟกซ์',
@@ -154,7 +157,7 @@ return [
     'contact' => [
         'contactHeading' => 'ติดต่อเรา',
         'contactAddress' => 'ที่อยู่',
-        'contactEmail' => 'อีเมลหาเราได้ที่',
+        'contactEmail' => 'อีเมลหาเรา',
         'contactCall' => 'โทรหาเรา',
         'contactPhone' => 'โทร',
         'contactFax' => 'แฟกซ์',

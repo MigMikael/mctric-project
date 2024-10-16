@@ -18,6 +18,8 @@ return [
         'editButton' => 'Edit',
         'deleteButton' => 'Delete',
         'searchButton' => 'Search',
+
+        'mainMenu' => 'Main Menu',
     ],
     'home' => [
         'webTitle' => 'McTRIC Public Company Limited',
@@ -77,7 +79,8 @@ return [
 
         'contactHeading' => 'Contact Us',
         'contactAddress' => 'Address',
-        'contactAddressDesc' => '121/105 RS Tower Floor 39, Ratchadapisek Rd., Dindaeng, Bangkok 10400',
+        'contactAddressDesc1' => '121/105 RS Tower Floor 39, Ratchadapisek Rd.,',
+        'contactAddressDesc2' => 'Dindaeng, Bangkok 10400',
         'contactEmail' => 'Email Us',
         'contactEmailDesc' => 'admin@mctric.com',
         'contactCall' => 'Call Us',

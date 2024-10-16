@@ -244,7 +244,7 @@
             <div class="col-md-12 col-lg-6">
                 <div class="map-wrapper">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.192181848043!2d100.56834121477938!3d13.76728119033743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29e88a01f5421%3A0x50acb168a55704d1!2sMcTric%20Company%20Limited!5e0!3m2!1sth!2sth!4v1569432124464!5m2!1sth!2sth"
-                        width="100%" height="450px" style="border:0; margin-top: -150px;"></iframe>
+                        width="100%" height="500px" style="border:0; margin-top: -150px;"></iframe>
                 </div>
             </div>
             <div class="col-md-12 col-lg-6">
@@ -253,7 +253,8 @@
                         <h5 class="contact-content-title"><i class="fas fa-map-marker-alt"></i> {{ __('messages.contact.contactAddress') }}</h5>
                         <p>
                             {{ __('messages.contact.contactCompanyName') }} <br>
-                            {{ __('messages.home.contactAddressDesc') }}
+                            {{ __('messages.home.contactAddressDesc1') }} <br>
+                            {{ __('messages.home.contactAddressDesc2') }}
                         </p>
                     </div>
                 </div>
@@ -278,10 +279,12 @@
                         <a href="http://mctric.dyndns.org:5010" style="color: #000000;"> Internal McTRIC Link</a>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mt-3">
                     <div class="col-md-12">
-                        <i class="fab fa-facebook fa-2x" onclick="window.location.href='https://www.facebook.com/McTRIC/'" style="cursor: pointer;"></i> &nbsp;
-                        <i class="fab fa-youtube fa-2x" onclick="window.location.href=' https://www.youtube.com/channel/UCpIigCEea3WE5rdFZ99gJ4w'" style="cursor: pointer;"></i>
+                        <a href="https://www.facebook.com/McTRIC/" target="_blank"><i class="fab fa-facebook fa-2x mr-3"
+                            style="cursor: pointer;"></i></a>
+                        <a href="https://www.youtube.com/channel/UCpIigCEea3WE5rdFZ99gJ4w" target="_blank"><i class="fab fa-youtube fa-2x"
+                            style="cursor: pointer;"></i></a>
                     </div>
                 </div>
             </div>

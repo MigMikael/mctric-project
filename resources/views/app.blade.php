@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ URL::asset('vendor/bootstrap/css/bootstrap.min.css') }}">
     <link href="{{ URL::asset('css/scrolling-nav.css') }}" rel="stylesheet">
     <!-- Start Style CSS -->
-    <link href="{{ URL::asset('css/style.css') }}?v=<?=time()?>" rel="stylesheet">
+    <link href="{{ URL::asset('css/style.css') }}?v=<?= time() ?>" rel="stylesheet">
     <!-- End Style CSS -->
     <link rel="icon" sizes="16x16" href="{{ url('/image/favicon.ico') }}" type="image/x-icon" />
     <link rel="icon" sizes="32x32" href="{{ URL::asset('favicon.ico') }}" type="image/x-icon" />
@@ -93,13 +93,67 @@
     <!-- Start Footer -->
     <footer class="footer" style="background: #000;">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <p class="text-center"
-                        style="color: #FFF; font-size: 13px; margin-top: 5px; margin-bottom: 0px !important;">Copyright
-                        © <?php echo date('Y'); ?> McTRIC Public Company Limited. All Rights Reserved.</p>
+            <div class="row" style="padding-top: 15px; padding-bottom: 35px">
+                <div class="col-sm-12 col-md-12 col-lg-6">
+                    <div class="mb-2">
+                        <img class="logo-company" src="{{ url('/image/logo.png') }}">
+                    </div>
+                    <div>
+                        <p>
+                            {{ __('messages.contact.contactCompanyName') }} <br>
+                            {{ __('messages.home.contactAddressDesc1') }} <br>
+                            {{ __('messages.home.contactAddressDesc2') }}
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-3">
+                    <div class="mt-3">
+                        <h5 class="mb-2" style="font-size: 16px; font-weight: 600;">{{ __('messages.app.mainMenu') }}</h5>
+                        <ul style="list-style: none; padding-left: 0px;">
+                            <li style="margin-bottom: 5px;">
+                                <a href="{{ url('/') }}"
+                                    style="color: #FFF;">{{ __('messages.app.homeMenu') }}</a>
+                            </li>
+                            <li style="margin-bottom: 5px;">
+                                <a href="{{ url('/about') }}"
+                                    style="color: #FFF;">{{ __('messages.app.aboutMenu') }}</a>
+                            </li>
+                            <li style="margin-bottom: 5px;">
+                                <a href="{{ url('/businesses') }}"
+                                    style="color: #FFF;">{{ __('messages.app.businessMenu') }}</a>
+                            </li>
+                            <li style="margin-bottom: 5px;">
+                                <a href="{{ url('/contact') }}"
+                                    style="color: #FFF;">{{ __('messages.app.contactMenu') }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-3">
+                    <div class="mt-3">
+                        <h5 class="mb-2" style="font-size: 16px; font-weight: 600;">
+                            {{ __('messages.app.contactMenu') }}</h5>
+                        <p style="margin-bottom: 5px;">{{ __('messages.contact.contactPhone') }}: +66 (0) 2641 2100
+                        </p>
+                        <p style="margin-bottom: 5px;">{{ __('messages.contact.contactFax') }}: +66 (0) 2641 2030</p>
+                        <p style="margin-bottom: 5px;">Email: {{ __('messages.home.contactEmailDesc') }}</p>
+                    </div>
+                    <div style="padding-top: 7px;">
+                        <a href="https://www.facebook.com/McTRIC/" target="_blank"><i class="fab fa-facebook mr-3"
+                            style="cursor: pointer; font-size: 27px; color: #FFF;"></i></a>
+                        <a href="https://www.youtube.com/channel/UCpIigCEea3WE5rdFZ99gJ4w" target="_blank"><i class="fab fa-youtube"
+                            style="cursor: pointer; font-size: 27px; color: #FFF;"></i></a>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-center"
+                    style="color: #FFF; font-size: 13px; margin-top: 15px; margin-bottom: 15px !important;">Copyright
+                    © <?php echo date('Y'); ?> McTRIC Public Company Limited. All Rights Reserved.</p>
+            </div>
+        </div>
         </div>
     </footer>
     <!-- End Footer -->
