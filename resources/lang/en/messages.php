@@ -159,7 +159,7 @@ return [
     'contact' => [
         'contactHeading' => 'Contact Us',
         'contactAddress' => 'Address',
-        'contactEmail' => 'Email Us At',
+        'contactEmail' => 'Email Us',
         'contactCall' => 'Call Us',
         'contactPhone' => 'Phone',
         'contactFax' => 'Fax',
