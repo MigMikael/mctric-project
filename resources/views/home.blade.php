@@ -21,14 +21,16 @@
     <section class="bg-white">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <h2 class="bottom15">{{ __('messages.home.aboutHeading') }}</h2>
-                    <p>{{ __('messages.home.aboutParagraphOne') }}</p>
-                    <p>{{ __('messages.home.aboutParagraphTwo') }}</p>
-                    <p>{{ __('messages.home.aboutParagraphThree') }}</p>
+                <div class="col-lg-6 v-center">
+                    <div class="form-group">
+                        <h2 class="bottom15">{{ __('messages.home.aboutHeading') }}</h2>
+                        <p>{{ __('messages.home.aboutParagraphOne') }}</p>
+                        <p>{{ __('messages.home.aboutParagraphTwo') }}</p>
+                        <p>{{ __('messages.home.aboutParagraphThree') }}</p>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="iframe-container">
+                <div class="col-lg-6 v-center">
+                    <div class="iframe-container form-group">
                         <iframe src="https://www.youtube.com/embed/NlIv4u7dtQU" frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
@@ -55,7 +57,6 @@
                         <h2 class="mb-4">{{ __('messages.home.missionHeading') }}</h2>
                         <p>{{ __('messages.home.missionOne') }} <br>
                             {{ __('messages.home.missionTwo') }} <br>
-                            <!--{{ __('messages.home.missionThree') }}-->
                         </p>
                     </div>
                 </div>
@@ -117,17 +118,17 @@
                     </a>
                 </div>
                 <!--
-                    <div class="col-lg-4 col-md-6">
-                        <a href="{{ url('businesses/category/supply_chain_automation_systems') }}">
-                            <div class="service-box"
-                                style="background-image: url(https://image.freepik.com/free-photo/foreman-control-loading-containers-box-truck_28668-241.jpg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));">
-                                <div class="services-wrapper">
-                                    <h4>{{ __('messages.home.supplyMenu') }}</h4>
+                        <div class="col-lg-4 col-md-6">
+                            <a href="{{ url('businesses/category/supply_chain_automation_systems') }}">
+                                <div class="service-box"
+                                    style="background-image: url(https://image.freepik.com/free-photo/foreman-control-loading-containers-box-truck_28668-241.jpg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));">
+                                    <div class="services-wrapper">
+                                        <h4>{{ __('messages.home.supplyMenu') }}</h4>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    -->
+                            </a>
+                        </div>
+                        -->
                 <div class="col-lg-4 col-md-6">
                     <a href="{{ url('businesses/category/joint_venture_project') }}">
                         <div class="service-box"
@@ -142,8 +143,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center align-items-center">
-                        <button type="button" class="btn view-btn" style="margin-top: 20px !important;"
-                            onclick="location.href='{{ url('/businesses') }}'">{{ __('messages.home.businessButton') }}</button>
+                        <a href="{{ url('/businesses') }}" class="btn view-btn business-btn">
+                            {{ __('messages.home.businessButton') }}
+                        </a>
                     </div>
                 </div>
             </div>
@@ -162,7 +164,7 @@
             </div>
             <div class="row">
                 <div class="col-md-6 v-center">
-                    <div class="desc">
+                    <div>
                         <h4 class="text-white" style="padding-bottom: 10px;">{{ __('messages.home.careersSubHeading') }}
                         </h4>
                         <p class="text-white">{{ __('messages.home.careersParagraphOne') }}</p>
@@ -183,8 +185,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center align-items-center">
-                        <button type="button" class="btn view-btn"
-                            onclick="location.href='{{ url('/careers') }}'">{{ __('messages.home.careersButton') }}</button>
+                        <a href="{{ url('/careers') }}" class="btn view-btn">
+                            {{ __('messages.home.careersButton') }}
+                        </a>
                     </div>
                 </div>
             </div>
@@ -209,9 +212,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center align-items-center">
-                        <button type="button" class="btn view-btn" onclick="location.href='{{ url('/clients') }}'">
+                        <a href="{{ url('/clients') }}" class="btn view-btn">
                             {{ __('messages.home.clientButton') }}
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -241,8 +244,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center align-items-center">
-                        <button type="button" class="btn view-btn" onclick="location.href='{{ url('/awards') }}'">
-                            {{ __('messages.home.awardButton') }}</button>
+                        <a href="{{ url('/awards') }}" class="btn view-btn">
+                            {{ __('messages.home.awardButton') }}
+                        </a>
                     </div>
                 </div>
             </div>

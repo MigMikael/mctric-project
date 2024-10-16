@@ -18,16 +18,16 @@
     <section class="bg-white">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 v-center">
-                    <div>
+                <div class="col-lg-6 v-center">
+                    <div class="form-group">
                         <h2 class="bottom15">{{ __('messages.home.aboutHeading') }}</h2>
                         <p>{{ __('messages.home.aboutParagraphOne') }}</p>
                         <p>{{ __('messages.home.aboutParagraphTwo') }}</p>
                         <p>{{ __('messages.home.aboutParagraphThree') }}</p>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="iframe-container">
+                <div class="col-lg-6 v-center">
+                    <div class="iframe-container form-group">
                         <iframe src="https://www.youtube.com/embed/NlIv4u7dtQU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
@@ -146,7 +146,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row" style="padding-top: 40px;">
+            <div class="row document-wrapper">
                 <div class="col-md-12">
                     <div class="text-center">
                         <div class="mb-4">

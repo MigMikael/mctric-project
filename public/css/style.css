@@ -914,6 +914,14 @@ ul.multiselect-container {
     width: 75%;
 }
 
+.business-btn {
+    margin-top: 25px;
+}
+
+.document-wrapper {
+    margin-top: 30px;
+}
+
 @media only screen and (max-width: 992px) {
     .vision-wrapper > h2 {
         font-size: 1.5rem;
@@ -931,6 +939,14 @@ ul.multiselect-container {
 
     .navbar-collapse {
         padding-bottom: 15px;
+    }
+
+    .award-wrapper {
+        padding: 0px 50px 0px 50px;
+    }
+
+    .business-btn {
+        margin-top: 35px;
     }
 }
 
@@ -987,7 +1003,8 @@ ul.multiselect-container {
     }
 
     .award-wrapper {
-        padding: 15px !important;
+        padding: 25px;
+        padding-bottom: 10px;
     }
 
     .view-btn {
@@ -1028,9 +1045,11 @@ ul.multiselect-container {
         height: 200px !important;
     }
 
+    /*
     .award-wrapper {
         padding: 0px !important;
     }
+    */
 
     .image-business {
         margin-bottom: 15px;
