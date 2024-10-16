@@ -57,7 +57,7 @@
                         <a href="http://mctric.dyndns.org:5010" style="color: #000000;"> Internal McTRIC Link</a>
                     </div>
                 </div>
-                <div class="row mt-3">
+                <div class="row mt-2">
                     <div class="col-md-12">
                         <a href="https://www.facebook.com/McTRIC/" target="_blank"><i class="fab fa-facebook fa-2x mr-3"
                             style="cursor: pointer;"></i></a>
