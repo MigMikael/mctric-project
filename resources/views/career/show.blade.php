@@ -16,7 +16,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="card-content" style="padding-top: 15px; padding-bottom: 25px;">
+                    <div class="card-content" style="padding-top: 5px; padding-bottom: 25px;">
                         <div class="card-body">
                             <h5>{{ __('messages.career.description') }}</h5>
                             <p>{!! $career->description !!}</p>
