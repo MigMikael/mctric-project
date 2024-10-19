@@ -922,6 +922,10 @@ ul.multiselect-container {
     margin-top: 30px;
 }
 
+.custom-static-section {
+    padding-bottom: 70px;
+}
+
 @media only screen and (max-width: 992px) {
     .vision-wrapper > h2 {
         font-size: 1.5rem;
@@ -1151,6 +1155,10 @@ ul.multiselect-container {
     .owl-job {
         margin-top: 20px;
         margin-bottom: 20px;
+    }
+
+    .custom-static-section {
+        padding-bottom: 20px !important;
     }
 }
 

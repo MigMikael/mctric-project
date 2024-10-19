@@ -15,7 +15,7 @@
             </div>
         </div>
     </header>
-    <section class="bg-white">
+    <section class="bg-white custom-static-section">
         <div class="container">
             <div class="row">
                 @foreach ($careers as $career)

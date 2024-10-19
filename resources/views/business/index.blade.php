@@ -15,7 +15,7 @@
             </div>
         </div>
     </header>
-    <section class="services bg-white" style="padding-bottom: 70px !important;">
+    <section class="services bg-white custom-static-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6">
