@@ -54,7 +54,7 @@
                     </div>
                     <div class="col-sm-6 col-md-6" style="margin-bottom: 1rem;">
                         <h5 class="contact-content-title"><i class="fas fa-file-alt"></i> Internal McTRIC</h5>
-                        <a href="http://mctric.dyndns.org:5010" style="color: #000000;"> Internal McTRIC Link</a>
+                        <a href="https://quickconnect.to/MCTRIC-EBOOK" style="color: #000000;"> Internal McTRIC Link</a>
                     </div>
                 </div>
                 <div class="row mt-2">
