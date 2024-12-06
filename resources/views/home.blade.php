@@ -305,7 +305,7 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col-md-12">
-                            <a href="https://www.facebook.com/McTRIC/" target="_blank"><i
+                            <a href="https://www.facebook.com/profile.php?id=61556035996506" target="_blank"><i
                                     class="fab fa-facebook fa-2x mr-3" style="cursor: pointer;"></i></a>
                             <a href="https://www.youtube.com/channel/UCpIigCEea3WE5rdFZ99gJ4w" target="_blank"><i
                                     class="fab fa-youtube fa-2x" style="cursor: pointer;"></i></a>

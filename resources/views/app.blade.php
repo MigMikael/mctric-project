@@ -140,7 +140,7 @@
                         <p style="margin-bottom: 5px;">Email: {{ __('messages.home.contactEmailDesc') }}</p>
                     </div>
                     <div style="padding-top: 5px;">
-                        <a href="https://www.facebook.com/McTRIC/" target="_blank"><i class="fab fa-facebook mr-3"
+                        <a href="https://www.facebook.com/profile.php?id=61556035996506" target="_blank"><i class="fab fa-facebook mr-3"
                             style="cursor: pointer; font-size: 27px; color: #FFF;"></i></a>
                         <a href="https://www.youtube.com/channel/UCpIigCEea3WE5rdFZ99gJ4w" target="_blank"><i class="fab fa-youtube"
                             style="cursor: pointer; font-size: 27px; color: #FFF;"></i></a>
