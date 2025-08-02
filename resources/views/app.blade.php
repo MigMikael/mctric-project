@@ -207,6 +207,8 @@
     <!--Multiple Upload File-->
     <link href="http://hayageek.github.io/jQuery-Upload-File/4.0.11/uploadfile.css" rel="stylesheet">
     <script src="http://hayageek.github.io/jQuery-Upload-File/4.0.11/jquery.uploadfile.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!--Custom Script-->
     <script>
         $(function() {
@@ -300,7 +302,7 @@
     </script>
     <script>
         tinymce.init({
-            selector: 'textarea',
+            selector: 'textarea:not(#talk-to-ceo-editor)',
             height: 500,
             plugins: [
                 "advlist autolink lists link image charmap print preview anchor",

@@ -1305,3 +1305,11 @@ input[type="date"]::-webkit-datetime-edit-day-field {
     -webkit-box-shadow: unset !important;
     box-shadow: unset !important;
 }
+
+.g-recaptcha {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0px !important;
+    margin-bottom: 20px;
+}

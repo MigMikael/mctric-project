@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use App\Http\Controllers\TalkToCeoEmailController;
+
 Route::get('locale/{locale}', function($locale) {
     Session::put('locale', $locale);
     return redirect()->back();
@@ -23,6 +26,8 @@ Route::get('/contact', function () {
     return view('contact');
 });
 Route::get('/about', "HomeController@about");
+
+Route::post('/talk-to-ceo', [TalkToCeoEmailController::class, 'send'])->name('talk_to_ceo.send');
 
 Route::group(['middleware' => ['auth']], function() {
 //    Route::get('/dashboard', "HomeController@dashboard");
