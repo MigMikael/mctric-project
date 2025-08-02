@@ -316,6 +316,7 @@
             </div>
         </div>
     </section>
+    <!--
     <section
         style="background-image: url(https://images.pexels.com/photos/310479/pexels-photo-310479.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
     background-blend-mode: overlay;
@@ -371,6 +372,7 @@
             </div>
         </div>
     </section>
+    -->
 @endsection
 @section('script')
     <script>
