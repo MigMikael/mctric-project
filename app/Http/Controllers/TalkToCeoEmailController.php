@@ -58,7 +58,7 @@ class TalkToCeoEmailController extends Controller
 
             return response()->json([
                 'success' => true,
-                'message' => 'ส่งข้อมูลสำเร็จแล้ว!',
+                'message' => 'คุณส่งข้อมูลสำเร็จแล้ว',
             ]);
         } catch (\Exception $e) {
             return response()->json([

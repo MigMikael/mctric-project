@@ -94,7 +94,7 @@
                                 <div class="mb-4" style="padding-top: 15px;">
                                     <label class="form-label" style="color: #000;">ชื่อผู้ติดต่อ
                                         <span style="color: red;">*</span></label>
-                                    <input type="text" class="form-control" id="reporter-name" name="reporter_name">
+                                    <input type="text" class="form-control" id="reporter-name" name="reporter_name" required>
                                     <div class="invalid-feedback" id="nameError"></div>
                                 </div>
                                 <div class="mb-4">
@@ -110,7 +110,7 @@
                                 <div class="mb-4">
                                     <label class="form-label" style="color: #000;">รายละเอียดข้อมูล <span
                                             style="color: red;">*</span></label>
-                                    <textarea class="form-control" id="talk-to-ceo-editor" name="reporter_description" rows="8"></textarea>
+                                    <textarea class="form-control" id="talk-to-ceo-editor" name="reporter_description" rows="8" required></textarea>
                                     <div class="invalid-feedback" id="messageError"></div>
                                 </div>
                                 <div class="mb-4">

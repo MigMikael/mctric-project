@@ -30,7 +30,7 @@ class TalkToCeoMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('McTric - Talk to CEO')
+        return $this->subject('McTRIC - Contact Form')
                     ->view('emails.talk-to-ceo');
     }
 }
