@@ -13,11 +13,9 @@ class TalkToCeoEmailController extends Controller
     public function send(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'reporter_name' => 'required',
             'reporter_description' => 'required',
             'g-recaptcha-response' => ['required', new ReCaptcha],
         ], [
-            'reporter_name.required' => 'กรุณาระบุ ชื่อผู้ติดต่อ',
             'reporter_description.required' => 'กรุณาระบุ รายละเอียดข้อมูล',
             'g-recaptcha-response.required' => 'กรุณาคลิก reCAPTCHA เพื่อยืนยัน',
         ]);
@@ -35,6 +33,14 @@ class TalkToCeoEmailController extends Controller
             'reporter_name' => $request->reporter_name,
             'reporter_description' => $request->reporter_description,
         ];
+
+        // ตรวจสอบว่า 'reporter_name' มีค่าส่งมาหรือไม่
+        if ($request->has('reporter_name') && $request->reporter_name) {
+            $mailData['reporter_name'] = $request->reporter_name;
+        }
+        else {
+            $mailData['reporter_name'] = "-";
+        }
 
         // ตรวจสอบว่า 'reporter_phone' มีค่าส่งมาหรือไม่
         if ($request->has('reporter_phone') && $request->reporter_phone) {

@@ -334,9 +334,8 @@
                         <div class="card-body">
                             <form id="talkToCeoForm">
                                 <div class="mb-4" style="padding-top: 15px;">
-                                    <label class="form-label" style="color: #000;">ชื่อผู้ติดต่อ
-                                        <span style="color: red;">*</span></label>
-                                    <input type="text" class="form-control" id="reporter-name" name="reporter_name" required>
+                                    <label class="form-label" style="color: #000;">ชื่อผู้ติดต่อ</label>
+                                    <input type="text" class="form-control" id="reporter-name" name="reporter_name">
                                     <div class="invalid-feedback" id="nameError"></div>
                                 </div>
                                 <div class="mb-4">
