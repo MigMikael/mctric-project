@@ -300,8 +300,7 @@
                         </div>
                         <div class="col-sm-6 col-md-6" style="margin-bottom: 1rem;">
                             <h5 class="contact-content-title"><i class="fas fa-file-alt"></i> Internal McTRIC</h5>
-                            <a href="https://quickconnect.to/MCTRIC-EBOOK" style="color: #000000;"> Internal McTRIC
-                                Link</a>
+                            <a href="http://quickconnect.to/McTRIC" style="color: #000000;"> Internal McTRIC Link</a>
                         </div>
                     </div>
                     <div class="row mt-2 mb-5">
