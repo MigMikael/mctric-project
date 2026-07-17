@@ -150,10 +150,7 @@
                 <div class="col-md-12">
                     <div class="text-center">
                         <div class="mb-4">
-                            <a class="btn btn-primary" href="{{ asset('document/รายงานประจำปี_2566.pdf') }}" download>รายงานประจำปี 2566</a>
-                        </div>
-                        <div class="mb-4">
-                            <a class="btn btn-primary" href="{{ asset('document/หนังสือเชิญประชุมสามัญผู้ถือหุ้นประจำปี_2567.pdf') }}" download>หนังสือเชิญประชุมสามัญผู้ถือหุ้นประจำปี 2567</a>
+                            <a class="btn btn-primary" href="{{ asset('document/ประกาศการแต่งตั้งผู้ดำรงตำแหน่งผู้บริหารระดับสูง.pdf') }}" download>ประกาศการแต่งตั้งผู้ดำรงตำแหน่งผู้บริหารระดับสูง</a>
                         </div>
                     </div>
                 </div>
