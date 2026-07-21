@@ -129,6 +129,7 @@
             </div>
         </div>
     </section>
+    <!--
     <section class="bg-light">
         <div class="container">
             <div class="row">
@@ -150,11 +151,12 @@
                 <div class="col-md-12">
                     <div class="text-center">
                         <div class="mb-4">
-                            <a class="btn btn-primary" href="{{ asset('document/ประกาศการแต่งตั้งผู้ดำรงตำแหน่งผู้บริหารระดับสูง.pdf') }}" download>ประกาศการแต่งตั้งผู้ดำรงตำแหน่งผู้บริหารระดับสูง</a>
+                            <a class="btn btn-primary" href="#" download></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    -->
 @endsection
