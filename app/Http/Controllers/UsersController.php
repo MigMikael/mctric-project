@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
-use Log;
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
-    //
     public function create()
     {
         return response(view('user.create'));
@@ -17,11 +16,13 @@ class UsersController extends Controller
     public function search(Request $request)
     {
         $query = $request->query('query');
-        $users = User::where("name", "like", "%".$query."%")
-                ->orWhere("email", "like", "%".$query."%")
-                ->orderBy('created_at', 'desc')
-                ->paginate(9)
-                ->appends(['query' => $query]);
+
+        $users = User::where("name", "like", "%" . $query . "%")
+            ->orWhere("email", "like", "%" . $query . "%")
+            ->orderBy('created_at', 'desc')
+            ->paginate(9)
+            ->appends(['query' => $query]);
+
         return view('dashboard', [
             'businesses' => [],
             'clients' => [],
@@ -40,19 +41,19 @@ class UsersController extends Controller
         $request = $request->all();
         $query = $request['query'];
 
-        return redirect("/users/search?query=".$query);
+        return redirect("/users/search?query=" . $query);
     }
 
     public function store(Request $request)
     {
-        $this->validate($request, [
+        $user = $request->validate([
             'name' => 'required|min:3|max:50',
-            'email' => 'required|email',
-            'password' => 'min:6|required_with:password_confirmation|same:password_confirmation',
-            'password_confirmation' => 'min:6'
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:6|confirmed',
         ]);
 
-        $user = $request->all();
+        $user['password'] = Hash::make($user['password']);
+
         User::create($user);
 
         return redirect()->action("HomeController@dashboardUsers");
@@ -71,18 +72,20 @@ class UsersController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|min:3|max:50',
-            'email' => 'required|email',
-            'password' => 'min:0|same:password_confirmation',
-            'password_confirmation' => 'min:0'
+            'email' => 'required|email|unique:users,email,'.$id,
+            'password' => 'nullable|min:6|confirmed',
         ]);
 
         $user = User::findOrFail($id);
         $user->name = $request->get('name');
         $user->email = $request->get('email');
-        if($request->has('password')){
+
+        if ($request->filled('password')) {
             $user->password = bcrypt($request->get('password'));
         }
+
         $user->save();
+
         return redirect()->action("HomeController@dashboardUsers");
     }
 

@@ -22,7 +22,7 @@
                     {!! Form::open(['url' => 'careers', 'method' => 'post', 'files' => 'true']) !!}
                     @include('career._create-form')
                     <div class="text-center">
-                        <button class="btn btn-primary form-control submit-edit-btn" type="submit">Finish</button>
+                        <button class="btn btn-primary form-control submit-edit-btn" type="submit">Save</button>
                     </div>
                     {!! Form::close() !!}
                 </div>

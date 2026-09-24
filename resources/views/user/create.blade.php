@@ -20,7 +20,7 @@
                         {!! Form::open(['url' => 'users', 'method' => 'post', 'files' => 'true']) !!}
                         @include('user._create-form')
                         <div class="text-center">
-                            <button class="btn btn-primary form-control submit-edit-btn" type="submit">Finish</button>
+                            <button class="btn btn-primary form-control submit-edit-btn" type="submit">Save</button>
                         </div>
                         {!! Form::close() !!}
                     </div>

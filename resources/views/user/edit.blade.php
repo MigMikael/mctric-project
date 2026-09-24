@@ -22,7 +22,7 @@
                         {!! Form::model($user, ['url' => 'users/'.$user->id, 'method' => 'put', 'files' => 'true']) !!}
                         @include('user._edit-form')
                         <div class="text-center">
-                            <button class="btn btn-primary form-control submit-edit-btn" type="submit">Finish</button>
+                            <button class="btn btn-primary form-control submit-edit-btn" type="submit">Save</button>
                         </div>
                         {!! Form::close() !!}
                     </div>
