@@ -19,7 +19,6 @@ class ClientsController extends Controller
     {
         $clients = Clients::where('display', true)
                 ->orderBy('created_at', 'asc')
-                ->take(20)
                 ->get();
         return view('client.index', ['clients' => $clients]);
     }
