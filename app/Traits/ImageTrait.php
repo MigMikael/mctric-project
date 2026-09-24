@@ -4,7 +4,7 @@ namespace App\Traits;
 
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\File;
+// use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 
