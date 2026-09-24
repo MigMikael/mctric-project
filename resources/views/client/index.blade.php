@@ -21,7 +21,7 @@
                 @foreach ($clients as $client)
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-50">
                         <div class="client-logo-wrapper mb-4">
-                            <img class="client-logo-img" src="{{ url('image/show/' . $client->image_id) }}">
+                            <img class="client-logo-img" src="{{ url('image/show/' . $client->image_id) }}" loading="lazy" decoding="async">
                         </div>
                     </div>
                 @endforeach
