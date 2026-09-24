@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Clients;
 use Illuminate\Http\Request;
 use App\Traits\ImageTrait;
-use Illuminate\Support\Facades\Log;
 
 class ClientsController extends Controller
 {

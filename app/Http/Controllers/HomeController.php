@@ -7,7 +7,6 @@ use App\Careers;
 use App\Clients;
 use App\Awards;
 use App\User;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
