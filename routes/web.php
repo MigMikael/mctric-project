@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\TalkToCeoEmailController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,8 +15,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-use App\Http\Controllers\TalkToCeoEmailController;
 
 Route::get('locale/{locale}', function($locale) {
     Session::put('locale', $locale);
@@ -110,5 +113,3 @@ Route::get('/image/show/{id}', 'ImageController@show');
 Route::post('upload_image/', "ImageController@store");
 Route::get('/preload_image/{id}', "ImageController@preload");
 Route::post('delete_image/', "ImageController@deleteImage");
-
-Route::get('/test', "HomeController@test");
