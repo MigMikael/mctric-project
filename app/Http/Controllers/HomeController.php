@@ -28,7 +28,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $clients = Clients::show()->get();
+        $clients = Clients::show()->take(8)->get();
         $awards = Awards::show()->get();
         $careers = Careers::show()->get();
         return view('home', [
