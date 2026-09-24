@@ -90,10 +90,27 @@ class ImageController extends Controller
      */
     public function show($id)
     {
+        /*
         $image = Image::findOrFail($id);
         $file = Storage::disk('local')->get($image->name);
 
         return response($file, 200)->header('Content-type', $image->mime);
+        */
+
+        $image = Image::findOrFail($id);
+        $disk = Storage::disk('local');
+
+        if (!$disk->exists($image->name)) {
+            abort(404);
+        }
+
+        return response()->file(
+            $disk->path($image->name),
+            [
+                'Content-Type' => $image->mime,
+                'Cache-Control' => 'public, max-age=86400',
+            ]
+        );
     }
 
     /**
