@@ -267,7 +267,6 @@
                 responsive: {
                     0: {
                         items: 1,
-                        nav: true
                     },
                     400: {
                         items: 2,
