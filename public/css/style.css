@@ -1164,6 +1164,10 @@ ul.multiselect-container {
     .custom-static-section {
         padding-bottom: 20px !important;
     }
+
+    .home-client-image {
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 575px) {
@@ -1236,6 +1240,10 @@ ul.multiselect-container {
 
     .col-home-client-xs {
         width: 25%;
+    }
+
+    .home-client-image {
+        width: 100%;
     }
 }
 
