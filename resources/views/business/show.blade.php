@@ -14,12 +14,12 @@
 <section class="bg-white">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <div class="image image-business">
+            <div class="col-md-12 col-lg-6">
+                <div class="image image-business mb-5">
                     <img class="img-max-width" src="{{ url('image/show/'.$business->cover_image) }}">
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12 col-lg-6">
                 <div class="row">
                     @if ($business->client != '')
                     <div class="col-sm-6 col-md-6">
