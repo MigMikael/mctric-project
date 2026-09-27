@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Rules\ReCaptcha;
 use App\Mail\TalkToCeoMail;
+use App\Rules\ReCaptcha;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
@@ -37,24 +38,21 @@ class TalkToCeoEmailController extends Controller
         // ตรวจสอบว่า 'reporter_name' มีค่าส่งมาหรือไม่
         if ($request->has('reporter_name') && $request->reporter_name) {
             $mailData['reporter_name'] = $request->reporter_name;
-        }
-        else {
+        } else {
             $mailData['reporter_name'] = "-";
         }
 
         // ตรวจสอบว่า 'reporter_phone' มีค่าส่งมาหรือไม่
         if ($request->has('reporter_phone') && $request->reporter_phone) {
             $mailData['reporter_phone'] = $request->reporter_phone;
-        }
-        else {
+        } else {
             $mailData['reporter_phone'] = "-";
         }
 
         // ตรวจสอบว่า 'reporter_email' มีค่าส่งมาหรือไม่
         if ($request->has('reporter_email') && $request->reporter_email) {
             $mailData['reporter_email'] = $request->reporter_email;
-        }
-        else {
+        } else {
             $mailData['reporter_email'] = "-";
         }
 
@@ -67,9 +65,11 @@ class TalkToCeoEmailController extends Controller
                 'message' => 'คุณส่งข้อมูลสำเร็จแล้ว',
             ]);
         } catch (\Exception $e) {
+            Log::error('ส่งอีเมล Talk to CEO ล้มเหลว: ' . $e->getMessage());
+
             return response()->json([
                 'success' => false,
-                'message' => 'เกิดข้อผิดพลาดในการบันทึกข้อมูล: ' . $e->getMessage(),
+                'message' => 'เกิดข้อผิดพลาดในการบันทึกข้อมูล กรุณาลองใหม่อีกครั้ง',
             ], 500);
         }
     }
