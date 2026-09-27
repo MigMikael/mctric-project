@@ -205,7 +205,7 @@
                     @foreach ($clients as $client)
                         <div class="col-home-client-xs col-sm-3 col-md-3">
                             <div class="text-center">
-                                <img class="home-client-image" src="{{ url('image/show/' . $client->image_id) }}">
+                                <img class="home-client-image" src="{{ url('image/show/' . $client->image_id) }}" loading="lazy" decoding="async">
                             </div>
                         </div>
                     @endforeach
