@@ -104,15 +104,13 @@ class ImageController extends Controller
             ->where('id', $id)
             ->first();
 
-        $disk = Storage::disk('local');
-
-        /*
-        if (!$disk->exists($image->name)) {
+        if (!$image) {
             abort(404);
         }
-        */
 
-        if (!$image) {
+        $disk = Storage::disk('local');
+
+        if (!$disk->exists($image->name)) {
             abort(404);
         }
 
