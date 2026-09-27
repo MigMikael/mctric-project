@@ -158,11 +158,9 @@ class HomeController extends Controller
 
     public function about()
     {
-        $clients = Clients::all();
-        $awards = Awards::all();
+        $clients = Clients::show()->take(8)->get();
         return view('about', [
             'clients' => $clients,
-            'awards' => $awards,
         ]);
     }
 }

@@ -85,8 +85,8 @@
                 </div>
             </div>
             <div class="client-wrapper">
-                <div class="owl-general owl-carousel">
-                    @foreach($clients as $client)
+                <div class="owl-general owl-carousel owl-theme">
+                    @foreach ($clients as $client)
                         <div>
                             <img class="image-client" src="{{ url('image/show/'.$client->image_id) }}">
                         </div>
