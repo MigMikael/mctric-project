@@ -11,7 +11,7 @@
                     <h1 class="header-title">{{ __('messages.home.companyTitle') }}</h1>
                     <span class="header-subtitle">{{ __('messages.home.companySubtitle') }}</span><br>
                     <button type="button" class="btn view-btn video-btn" data-toggle="modal"
-                        data-src="https://www.youtube.com/embed/NlIv4u7dtQU" data-target="#myModal">
+                        data-src="https://www.youtube-nocookie.com/embed/NlIv4u7dtQU" data-target="#myModal">
                         <i class="fas fa-play-circle fa-lg"></i> {{ __('messages.home.watchStoryButton') }}
                     </button>
                 </div>
@@ -118,17 +118,17 @@
                     </a>
                 </div>
                 <!--
-                                            <div class="col-lg-4 col-md-6">
-                                                <a href="{{ url('businesses/category/supply_chain_automation_systems') }}">
-                                                    <div class="service-box"
-                                                        style="background-image: url(https://image.freepik.com/free-photo/foreman-control-loading-containers-box-truck_28668-241.jpg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));">
-                                                        <div class="services-wrapper">
-                                                            <h4>{{ __('messages.home.supplyMenu') }}</h4>
+                                                <div class="col-lg-4 col-md-6">
+                                                    <a href="{{ url('businesses/category/supply_chain_automation_systems') }}">
+                                                        <div class="service-box"
+                                                            style="background-image: url(https://image.freepik.com/free-photo/foreman-control-loading-containers-box-truck_28668-241.jpg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));">
+                                                            <div class="services-wrapper">
+                                                                <h4>{{ __('messages.home.supplyMenu') }}</h4>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            -->
+                                                    </a>
+                                                </div>
+                                                -->
                 <div class="col-lg-4 col-md-6">
                     <a href="{{ url('businesses/category/joint_venture_project') }}">
                         <div class="service-box"
@@ -203,9 +203,9 @@
             <div class="client-wrapper">
                 <div class="owl-general owl-carousel owl-theme">
                     @foreach ($clients as $client)
-                    <div>
-                        <img class="image-client" src="{{ url('image/show/' . $client->image_id) }}">
-                    </div>
+                        <div>
+                            <img class="image-client" src="{{ url('image/show/' . $client->image_id) }}">
+                        </div>
                     @endforeach
                 </div>
             </div>
