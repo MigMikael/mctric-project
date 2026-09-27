@@ -203,7 +203,7 @@
             <div class="client-wrapper" style="padding-bottom: 0px;">
                 <div class="row">
                     @foreach ($clients as $client)
-                        <div class="col-home-client-xs col-sm-3 col-md-2">
+                        <div class="col-home-client-xs col-sm-3 col-md-3">
                             <div class="text-center">
                                 <img class="home-client-image" src="{{ url('image/show/' . $client->image_id) }}">
                             </div>
