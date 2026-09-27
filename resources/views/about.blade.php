@@ -28,7 +28,9 @@
                 </div>
                 <div class="col-lg-6 v-center">
                     <div class="iframe-container form-group">
-                        <iframe src="https://www.youtube.com/embed/NlIv4u7dtQU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                         <iframe src="https://www.youtube-nocookie.com/embed/NlIv4u7dtQU" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
