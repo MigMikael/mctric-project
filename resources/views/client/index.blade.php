@@ -19,8 +19,8 @@
         <div class="container">
             <div class="row">
                 @foreach ($clients as $client)
-                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-50">
-                        <div class="client-logo-wrapper mb-4">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-33">
+                        <div class="client-logo-wrapper mb-3">
                             <img class="client-logo-img" src="{{ url('image/show/' . $client->image_id) }}" loading="lazy" decoding="async">
                         </div>
                     </div>

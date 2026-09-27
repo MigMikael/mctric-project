@@ -910,6 +910,14 @@ ul.multiselect-container {
     width: 50% !important;
 }
 
+.col-xs-33 {
+    width: 33.33% !important;
+}
+
+.col-xs-25 {
+    width: 25% !important;
+}
+
 .contact-address-container {
     width: 75%;
 }
@@ -1167,6 +1175,11 @@ ul.multiselect-container {
 
     .home-client-image {
         width: 100%;
+    }
+
+    .client-logo-wrapper {
+        width: 100%;
+        height: unset !important;
     }
 }
 
