@@ -8,13 +8,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
     <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
-    <link rel="stylesheet" href="{{ URL::asset('css/owl.carousel.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('css/owl.theme.default.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('vendor/bootstrap/css/bootstrap.min.css') }}">
     <link href="{{ URL::asset('css/scrolling-nav.css') }}" rel="stylesheet">
     <!-- Start Style CSS -->
     <link href="{{ URL::asset('css/style.css') }}?v=<?= time() ?>" rel="stylesheet">
     <!-- End Style CSS -->
+    <!-- Start Owl Carousel 2 CSS -->
+    <link rel="stylesheet" href="{{ URL::asset('css/owl.carousel2.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/owl.theme2.default.min.css') }}">
+     <!-- End Owl Carousel 2 CSS -->
     <link rel="icon" sizes="16x16" href="{{ url('/image/favicon.ico') }}" type="image/x-icon" />
     <link rel="icon" sizes="32x32" href="{{ URL::asset('favicon.ico') }}" type="image/x-icon" />
     <link rel="shortcut icon" sizes="32x32" type="image/ico" href="{{ URL::asset('favicon.ico') }}" />
@@ -77,10 +79,10 @@
                         </form>
                     @endif
                     <li class="nav-link lang-menu">
-                        <a href="{{ url('locale/en') }}" class="lang"><img class="mr-2" src="{{ asset('image/en-lang.png') }}"
-                            style="height: 25px;"></a>
+                        <a href="{{ url('locale/en') }}" class="lang"><img class="mr-2"
+                                src="{{ asset('image/en-lang.png') }}" style="height: 25px;"></a>
                         <a href="{{ url('locale/th') }}" class="lang"><img src="{{ asset('image/th-lang.png') }}"
-                            style="height: 25px;"></a>
+                                style="height: 25px;"></a>
                     </li>
                 </ul>
             </div>
@@ -109,7 +111,8 @@
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-3">
                     <div class="mt-3">
-                        <h5 class="mb-2" style="font-size: 16px; font-weight: 600;">{{ __('messages.app.mainMenu') }}</h5>
+                        <h5 class="mb-2" style="font-size: 16px; font-weight: 600;">
+                            {{ __('messages.app.mainMenu') }}</h5>
                         <ul style="list-style: none; padding-left: 0px;">
                             <li style="margin-bottom: 5px;">
                                 <a href="{{ url('/') }}"
@@ -140,17 +143,19 @@
                         <p style="margin-bottom: 5px;">Email: {{ __('messages.home.contactEmailDesc') }}</p>
                     </div>
                     <div style="padding-top: 5px;">
-                        <a href="https://www.facebook.com/profile.php?id=61556035996506" target="_blank"><i class="fab fa-facebook mr-3"
-                            style="cursor: pointer; font-size: 27px; color: #FFF;"></i></a>
-                        <a href="https://www.youtube.com/channel/UCpIigCEea3WE5rdFZ99gJ4w" target="_blank"><i class="fab fa-youtube"
-                            style="cursor: pointer; font-size: 27px; color: #FFF;"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61556035996506" target="_blank"><i
+                                class="fab fa-facebook mr-3"
+                                style="cursor: pointer; font-size: 27px; color: #FFF;"></i></a>
+                        <a href="https://www.youtube.com/channel/UCpIigCEea3WE5rdFZ99gJ4w" target="_blank"><i
+                                class="fab fa-youtube" style="cursor: pointer; font-size: 27px; color: #FFF;"></i></a>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <p class="text-center"
-                        style="color: #FFF; font-size: 13px; margin-top: 15px; margin-bottom: 15px !important;">Copyright
+                        style="color: #FFF; font-size: 13px; margin-top: 15px; margin-bottom: 15px !important;">
+                        Copyright
                         © <?php echo date('Y'); ?> McTRIC Public Company Limited. All Rights Reserved.</p>
                 </div>
             </div>
@@ -198,7 +203,8 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <!-- Custom JavaScript for this theme -->
     <script src="{{ URL::asset('js/scrolling-nav.js') }}"></script>
-    <script src="{{ URL::asset('js/owl.carousel.js') }}"></script>
+    <!-- Start Owl Carousel 2 CSS -->
+    <script src="{{ URL::asset('js/owl.carousel2.min.js') }}"></script>
     <script src="{{ URL::asset('js/owl.autoplay.js') }}"></script>
     <!--Fancybox-->
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
@@ -253,14 +259,10 @@
     </script>
     <script>
         $(document).ready(function() {
-
             $(".owl-general").owlCarousel({
                 items: 4,
                 loop: true,
-                autoplay: true,
-                autoPlaySpeed: 5000,
-                autoPlayTimeout: 5000,
-                autoplayHoverPause: true,
+                autoplay: false,
                 responsiveClass: true,
                 responsive: {
                     0: {
@@ -269,19 +271,15 @@
                     },
                     400: {
                         items: 2,
-                        nav: true
                     },
                     600: {
                         items: 2,
-                        nav: true
                     },
                     767: {
                         items: 3,
-                        nav: true
                     },
                     1000: {
                         items: 4,
-                        nav: true
                     },
                 }
             })
@@ -289,10 +287,7 @@
             $('.owl-job').owlCarousel({
                 items: 1,
                 loop: true,
-                autoplay: true,
-                autoPlaySpeed: 5000,
-                autoPlayTimeout: 5000,
-                autoplayHoverPause: true,
+                autoplay: false,
             })
 
         });

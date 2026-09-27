@@ -31,8 +31,8 @@
                 </div>
                 <div class="col-lg-6 v-center">
                     <div class="iframe-container form-group">
-                        <iframe src="https://www.youtube.com/embed/NlIv4u7dtQU" frameborder="0"
-                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        <iframe src="https://www.youtube-nocookie.com/embed/NlIv4u7dtQU" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
                     </div>
                 </div>
@@ -118,17 +118,17 @@
                     </a>
                 </div>
                 <!--
-                                    <div class="col-lg-4 col-md-6">
-                                        <a href="{{ url('businesses/category/supply_chain_automation_systems') }}">
-                                            <div class="service-box"
-                                                style="background-image: url(https://image.freepik.com/free-photo/foreman-control-loading-containers-box-truck_28668-241.jpg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));">
-                                                <div class="services-wrapper">
-                                                    <h4>{{ __('messages.home.supplyMenu') }}</h4>
-                                                </div>
+                                            <div class="col-lg-4 col-md-6">
+                                                <a href="{{ url('businesses/category/supply_chain_automation_systems') }}">
+                                                    <div class="service-box"
+                                                        style="background-image: url(https://image.freepik.com/free-photo/foreman-control-loading-containers-box-truck_28668-241.jpg), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));">
+                                                        <div class="services-wrapper">
+                                                            <h4>{{ __('messages.home.supplyMenu') }}</h4>
+                                                        </div>
+                                                    </div>
+                                                </a>
                                             </div>
-                                        </a>
-                                    </div>
-                                    -->
+                                            -->
                 <div class="col-lg-4 col-md-6">
                     <a href="{{ url('businesses/category/joint_venture_project') }}">
                         <div class="service-box"
@@ -172,7 +172,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 v-center">
-                    <div class="owl-job owl-carousel">
+                    <div class="owl-job owl-carousel owl-theme">
                         @foreach ($careers as $career)
                             <div class="image">
                                 <img class="d-block w-100" src="{{ url('image/show/' . $career->image_id) }}"
@@ -200,30 +200,19 @@
                     <h2 class="text-center section-title">{{ __('messages.home.clientHeading') }}</h2>
                 </div>
             </div>
-            <div class="client-wrapper" style="padding-bottom: 0px;">
-                <div class="row">
+            <div class="client-wrapper">
+                <div class="owl-general owl-carousel owl-theme">
                     @foreach ($clients as $client)
-                        <div class="col-home-client-xs col-sm-3 col-md-3">
-                            <div class="text-center">
-                                <img class="home-client-image" src="{{ url('image/show/' . $client->image_id) }}" loading="lazy" decoding="async">
-                            </div>
-                        </div>
+                    <div>
+                        <img class="image-client" src="{{ url('image/show/' . $client->image_id) }}">
+                    </div>
                     @endforeach
                 </div>
-                <!--
-                <div class="owl-general owl-carousel">
-                    foreach ($clients as $client)
-                        <div>
-                            <img class="image-client" src="#">
-                        </div>
-                    endforeach
-                </div>
-                -->
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center align-items-center">
-                        <a href="{{ url('/clients') }}" class="btn view-btn" style="margin-top: 40px;">
+                        <a href="{{ url('/clients') }}" class="btn view-btn" style="margin-top: 30px;">
                             {{ __('messages.home.clientButton') }}
                         </a>
                     </div>
@@ -367,7 +356,8 @@
                                     <div class="invalid-feedback" id="messageError"></div>
                                 </div>
                                 <div class="mb-4">
-                                    <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>
+                                    <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}">
+                                    </div>
                                 </div>
                                 <div style="padding-bottom: 15px;">
                                     <button type="submit" class="btn btn-primary btn-block"
