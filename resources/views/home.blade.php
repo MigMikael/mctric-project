@@ -200,19 +200,30 @@
                     <h2 class="text-center section-title">{{ __('messages.home.clientHeading') }}</h2>
                 </div>
             </div>
-            <div class="client-wrapper">
-                <div class="owl-general owl-carousel">
+            <div class="client-wrapper" style="padding-bottom: 0px;">
+                <div class="row">
                     @foreach ($clients as $client)
-                        <div>
-                            <img class="image-client" src="{{ url('image/show/' . $client->image_id) }}">
+                        <div class="col-home-client-xs col-sm-3 col-md-2">
+                            <div class="text-center">
+                                <img class="home-client-image" src="{{ url('image/show/' . $client->image_id) }}">
+                            </div>
                         </div>
                     @endforeach
                 </div>
+                <!--
+                <div class="owl-general owl-carousel">
+                    foreach ($clients as $client)
+                        <div>
+                            <img class="image-client" src="#">
+                        </div>
+                    endforeach
+                </div>
+                -->
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center align-items-center">
-                        <a href="{{ url('/clients') }}" class="btn view-btn">
+                        <a href="{{ url('/clients') }}" class="btn view-btn" style="margin-top: 40px;">
                             {{ __('messages.home.clientButton') }}
                         </a>
                     </div>

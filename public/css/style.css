@@ -926,6 +926,10 @@ ul.multiselect-container {
     padding-bottom: 70px;
 }
 
+.home-client-image {
+    width: 100px;
+}
+
 @media only screen and (max-width: 992px) {
     .vision-wrapper > h2 {
         font-size: 1.5rem;
@@ -1228,6 +1232,10 @@ ul.multiselect-container {
 
     .contact-content-title {
         font-size: 1rem;
+    }
+
+    .col-home-client-xs {
+        width: 25%;
     }
 }
 
