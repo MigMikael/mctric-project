@@ -96,7 +96,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center align-items-center">
-                        <button type="button" class="btn view-btn" onclick="location.href='{{ url('/clients') }}'">
+                        <button type="button" class="btn view-btn" onclick="location.href='{{ url('/clients') }}'" style="margin-top: 30px;">
                             {{ __('messages.home.clientButton') }}</button>
                     </div>
                 </div>
