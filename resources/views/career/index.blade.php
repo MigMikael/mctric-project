@@ -25,7 +25,7 @@
                                 <img class="card-img-top" src="{{ url('image/show/' . $career->image_id) }}" alt="">
                                 <div class="card-body">
                                     <h5 class="card-title text-center" style="color: #000;">
-                                        {!! $career->name !!}
+                                        {{ $career->name }}
                                     </h5>
                                 </div>
                             </div>

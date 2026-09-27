@@ -6,7 +6,7 @@
     <div class="sub-title" style="background-image: url({{ url('image/show/'.$client->image_id) }}) !important;">
         <div class="container">
             <h1 class="text-ellipsis text-center">
-                {!! $client->name !!}
+                {{ $client->name }}
             </h1>
         </div>
     </div>
@@ -17,10 +17,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h4>Name</h4>
-                            <p>{!! $client->name !!}</p>
-                            <hr>
-                            <h4>Description</h4>
-                            <p>{!! $client->description !!}</p>
+                            <p>{{ $client->name }}</p>
                         </div>
                     </div>
                 </div>

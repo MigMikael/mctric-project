@@ -21,11 +21,13 @@
             </div>
             <div class="col-md-6">
                 <div class="row">
+                    <!--
                     @if ($business->description != '')
                     <div class="col-md-12">
-                        {!! $business->description !!}
+                        {{ $business->description }}
                     </div>
                     @endif
+                    -->
                     @if ($business->client != '')
                     <div class="col-sm-6 col-md-6">
                         <!--<i class="fas fa-user fa-lg"></i>-->

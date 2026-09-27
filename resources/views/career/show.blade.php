@@ -8,7 +8,7 @@
         background-blend-mode: overlay;">
         <div class="container">
             <h1 class="text-ellipsis text-center">
-                {!! $career->name !!}
+                {{ $career->name }}
             </h1>
         </div>
     </div>

@@ -16,7 +16,9 @@
     {!! Form::text('name', null, ['placeholder' => 'Name of Award', 'class' => 'form-control']) !!}
 </div>
 
+<!--
 <div class="col-md-12" style="margin-bottom: 3%">
     {!! Form::label('description', 'Description') !!}
     <textarea name="description"></textarea>
 </div>
+-->

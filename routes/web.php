@@ -29,31 +29,8 @@ Auth::routes([
 
 Route::get('/', "HomeController@index");
 
-Route::get('/about', "HomeController@about");
-
-Route::get('/businesses', "BusinessController@index");
-Route::get('/businesses/{id}', "BusinessController@show");
-Route::get('/businesses/category/{category}', "BusinessController@filter");
-
-Route::get('/careers', "CareersController@index");
-Route::get('/careers/{id}', "CareersController@show");
-
-Route::get('/awards', "AwardsController@index");
-Route::get('/awards/{id}', "AwardsController@show");
-
-Route::get('/clients', "ClientsController@index");
-Route::get('/clients/{id}', "ClientsController@show");
-
-Route::get('/contact', function () {
-    return view('contact');
-});
-
-Route::get('/image/show/{id}', 'ImageController@show');
-
-Route::post('/talk-to-ceo', [TalkToCeoEmailController::class, 'send'])->name('talk_to_ceo.send');
-
 Route::group(['middleware' => ['auth']], function() {
-//    Route::get('/dashboard', "HomeController@dashboard");
+    // Route::get('/dashboard', "HomeController@dashboard");
     Route::get('/dashboard/summary', "HomeController@dashboardSummary");
     Route::get('/dashboard/businesses/status/{status}', "BusinessController@status");
     Route::get('/dashboard/businesses', "HomeController@dashboardBusinesses");
@@ -114,3 +91,26 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/preload_image/{id}', "ImageController@preload");
     Route::post('delete_image/', "ImageController@deleteImage");
 });
+
+Route::get('/about', "HomeController@about");
+
+Route::get('/businesses', "BusinessController@index");
+Route::get('/businesses/{id}', "BusinessController@show");
+Route::get('/businesses/category/{category}', "BusinessController@filter");
+
+Route::get('/careers', "CareersController@index");
+Route::get('/careers/{id}', "CareersController@show");
+
+Route::get('/awards', "AwardsController@index");
+Route::get('/awards/{id}', "AwardsController@show");
+
+Route::get('/clients', "ClientsController@index");
+Route::get('/clients/{id}', "ClientsController@show");
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/image/show/{id}', 'ImageController@show');
+
+Route::post('/talk-to-ceo', [TalkToCeoEmailController::class, 'send'])->name('talk_to_ceo.send');
