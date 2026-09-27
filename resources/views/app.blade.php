@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ URL::asset('vendor/bootstrap/css/bootstrap.min.css') }}">
     <link href="{{ URL::asset('css/scrolling-nav.css') }}" rel="stylesheet">
     <!-- Start Style CSS -->
-    <link href="{{ URL::asset('css/style.css') }}?v=<?= time() ?>" rel="stylesheet">
+    <link href="{{ URL::asset('css/style.css') }}?v={{ filemtime(public_path('css/style.css')) }}" rel="stylesheet">
     <!-- End Style CSS -->
     <!-- Start Owl Carousel 2 CSS -->
     <link rel="stylesheet" href="{{ URL::asset('css/owl.carousel2.min.css') }}">
