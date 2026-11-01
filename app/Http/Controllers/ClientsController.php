@@ -16,18 +16,10 @@ class ClientsController extends Controller
      */
     public function index()
     {
-        /*
         $clients = Clients::where('display', true)
                 ->orderBy('created_at', 'asc')
-                ->take(32)
+                ->take(24)
                 ->get();
-        */
-
-        $clients = Clients::with('image')
-            ->where('display', true)
-            ->orderBy('created_at', 'asc')
-            ->take(32)
-            ->get();
 
         return view('client.index', ['clients' => $clients]);
     }
