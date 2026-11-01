@@ -61,6 +61,12 @@ class UsersController extends Controller
 
     public function edit($id)
     {
+        abort_unless(
+            auth()->user()->email === 'admin@gmail.com'
+                || auth()->id() == $id,
+            403
+        );
+
         $user = User::findOrFail($id);
 
         return view('user.edit', [
@@ -70,9 +76,15 @@ class UsersController extends Controller
 
     public function update(Request $request, $id)
     {
+        abort_unless(
+            auth()->user()->email === 'admin@gmail.com'
+                || auth()->id() == $id,
+            403
+        );
+
         $this->validate($request, [
             'name' => 'required|min:3|max:50',
-            'email' => 'required|email|unique:users,email,'.$id,
+            'email' => 'required|email|unique:users,email,' . $id,
             'password' => 'nullable|min:6|confirmed',
         ]);
 
@@ -91,6 +103,12 @@ class UsersController extends Controller
 
     public function destroy($id)
     {
+        abort_unless(
+            auth()->user()->email === 'admin@gmail.com'
+                || auth()->id() == $id,
+            403
+        );
+
         $user = User::findOrFail($id);
         $user->delete();
 

@@ -67,7 +67,10 @@ class AwardsController extends Controller
         $idString = str_replace('&', ' ', $idString);
         $idArr = explode(' ', $idString);
 
-        $total = Awards::all()->count();
+        //$total = Awards::all()->count();
+
+        $total = Awards::count();
+
         foreach ($idArr as $id) {
             $business = Awards::find($id);
             $business->priority = $total;
@@ -102,7 +105,11 @@ class AwardsController extends Controller
             $image = $this->storeImage($file, '');
             $award['image_id'] = $image->id;
         }
-        $total = Awards::all()->count();
+
+        //$total = Awards::all()->count();
+
+        $total = Awards::count();
+
         $award['priority'] = $total + 1;
 
         Awards::create($award);

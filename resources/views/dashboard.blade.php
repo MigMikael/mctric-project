@@ -108,9 +108,9 @@
                                     <a class="btn btn-primary btn-create-dashboard"
                                         href="{{ url('businesses/create') }}">{{ __('messages.app.createButton') }}</a>
                                     <!--
-                                            <a class="btn btn-primary"
-                                                href="{{ url('businesses/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
-                                            -->
+                                    <a class="btn btn-primary"
+                                        href="{{ url('businesses/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
+                                    -->
                                 </div>
                             </div>
                         </div>
@@ -167,7 +167,11 @@
                                         </div>
                                     </div>
                                     <div class="card-footer text-center">
-                                        {!! Form::model($business, ['method' => 'delete', 'url' => '/businesses/' . $business->id, 'onsubmit' => 'return confirmDelete()']) !!}
+                                        {!! Form::model($business, [
+                                            'method' => 'delete',
+                                            'url' => '/businesses/' . $business->id,
+                                            'onsubmit' => 'return confirmDelete()',
+                                        ]) !!}
                                         <a class="btn btn-warning mr-3"
                                             href="{{ url('businesses/' . $business->id . '/edit/') }}">
                                             {{ __('messages.app.editButton') }}</a>
@@ -199,9 +203,9 @@
                                     <a class="btn btn-primary btn-create-dashboard"
                                         href="{{ url('careers/create') }}">{{ __('messages.app.createButton') }}</a>
                                     <!--
-                                            <a class="btn btn-primary"
-                                                href="{{ url('careers/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
-                                            -->
+                                    <a class="btn btn-primary"
+                                        href="{{ url('careers/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
+                                    -->
                                 </div>
                             </div>
                         </div>
@@ -251,14 +255,19 @@
                                             @endif
                                         </div>
                                         <div class="text-center">
-                                            <button type="button" class="btn btn-outline-primary" style="min-width: 120px;"
+                                            <button type="button" class="btn btn-outline-primary"
+                                                style="min-width: 120px;"
                                                 onclick="location.href='{{ url('careers/' . $career->id) }}'">
                                                 {{ __('messages.dashboard.cardButton') }}
                                             </button>
                                         </div>
                                     </div>
                                     <div class="card-footer text-center">
-                                        {!! Form::model($career, ['method' => 'delete', 'url' => '/careers/' . $career->id, 'onsubmit' => 'return confirmDelete()']) !!}
+                                        {!! Form::model($career, [
+                                            'method' => 'delete',
+                                            'url' => '/careers/' . $career->id,
+                                            'onsubmit' => 'return confirmDelete()',
+                                        ]) !!}
                                         <a class="btn btn-warning mr-3"
                                             href="{{ url('careers/' . $career->id . '/edit') }}">{{ __('messages.app.editButton') }}</a>
                                         <button class="btn btn-danger"
@@ -289,9 +298,9 @@
                                     <a class="btn btn-primary btn-create-dashboard"
                                         href="{{ url('clients/create') }}">{{ __('messages.app.createButton') }}</a>
                                     <!--
-                                            <a class="btn btn-primary"
-                                                href="{{ url('clients/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
-                                            -->
+                                    <a class="btn btn-primary"
+                                        href="{{ url('clients/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
+                                    -->
                                 </div>
                             </div>
                         </div>
@@ -342,7 +351,11 @@
                                         </div>
                                     </div>
                                     <div class="card-footer text-center">
-                                        {!! Form::model($client, ['method' => 'delete', 'url' => '/clients/' . $client->id, 'onsubmit' => 'return confirmDelete()']) !!}
+                                        {!! Form::model($client, [
+                                            'method' => 'delete',
+                                            'url' => '/clients/' . $client->id,
+                                            'onsubmit' => 'return confirmDelete()',
+                                        ]) !!}
                                         <a class="btn btn-warning mr-3"
                                             href="{{ url('clients/' . $client->id . '/edit') }}">{{ __('messages.app.editButton') }}</a>
                                         <button class="btn btn-danger"
@@ -373,9 +386,9 @@
                                     <a class="btn btn-primary btn-create-dashboard"
                                         href="{{ url('awards/create') }}">{{ __('messages.app.createButton') }}</a>
                                     <!--
-                                        <a class="btn btn-primary"
-                                            href="{{ url('awards/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
-                                        -->
+                                    <a class="btn btn-primary"
+                                        href="{{ url('awards/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
+                                    -->
                                 </div>
                             </div>
                         </div>
@@ -432,7 +445,11 @@
                                         </div>
                                     </div>
                                     <div class="card-footer text-center">
-                                        {!! Form::model($award, ['method' => 'delete', 'url' => '/awards/' . $award->id, 'onsubmit' => 'return confirmDelete()']) !!}
+                                        {!! Form::model($award, [
+                                            'method' => 'delete',
+                                            'url' => '/awards/' . $award->id,
+                                            'onsubmit' => 'return confirmDelete()',
+                                        ]) !!}
                                         <a class="btn btn-warning mr-3"
                                             href="{{ url('awards/' . $award->id . '/edit') }}">{{ __('messages.app.editButton') }}</a>
                                         <button class="btn btn-danger"
@@ -500,16 +517,20 @@
                                         <hr>
                                         <h6 class="card-title text-center">{{ $user->email }}</h6>
                                     </div>
-                                    <div class="card-footer text-center">
-                                        {!! Form::model($user, ['method' => 'delete', 'url' => '/users/' . $user->id, 'onsubmit' => 'return confirmDelete()']) !!}
-                                        <a class="btn btn-warning mr-3"
-                                            href="{{ url('users/' . $user->id . '/edit') }}">{{ __('messages.app.editButton') }}</a>
-                                        @if ($user->email != 'admin@gmail.com')
+                                    @if (auth()->user()->email === 'admin@gmail.com' || auth()->id() == $user->id)
+                                        <div class="card-footer text-center">
+                                            {!! Form::model($user, [
+                                                'method' => 'delete',
+                                                'url' => '/users/' . $user->id,
+                                                'onsubmit' => 'return confirmDelete()',
+                                            ]) !!}
+                                            <a class="btn btn-warning mr-3"
+                                                href="{{ url('users/' . $user->id . '/edit') }}">{{ __('messages.app.editButton') }}</a>
                                             <button class="btn btn-danger"
                                                 type="submit">{{ __('messages.app.deleteButton') }}</button>
-                                        @endif
-                                        {!! Form::close() !!}
-                                    </div>
+                                            {!! Form::close() !!}
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         @endforeach

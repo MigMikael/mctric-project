@@ -69,7 +69,10 @@ class CareersController extends Controller
         $idString = str_replace('&', ' ', $idString);
         $idArr = explode(' ', $idString);
 
-        $total = Careers::all()->count();
+        //$total = Careers::all()->count();
+
+        $total = Careers::count();
+
         foreach ($idArr as $id) {
             $business = Careers::find($id);
             $business->priority = $total;
@@ -104,7 +107,11 @@ class CareersController extends Controller
             $image = $this->storeImage($file, "");
             $career['image_id'] = $image->id;
         }
-        $total = Careers::all()->count();
+
+        //$total = Careers::all()->count();
+
+        $total = Careers::count();
+
         $career['priority'] = $total + 1;
 
         Careers::create($career);

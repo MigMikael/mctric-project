@@ -133,10 +133,18 @@ class BusinessController extends Controller
                 ->paginate(9);
         }
 
+        /*
         $minDate = Business::all()->min('show_year_start');
         $minYear = explode('-', $minDate)[0];
 
         $maxDate = Business::all()->max('show_year_end');
+        $maxYear = explode('-', $maxDate)[0];
+        */
+
+        $minDate = Business::min('show_year_start');
+        $minYear = explode('-', $minDate)[0];
+
+        $maxDate = Business::max('show_year_end');
         $maxYear = explode('-', $maxDate)[0];
 
         $years = [];
@@ -199,7 +207,10 @@ class BusinessController extends Controller
         $idString = str_replace('&', ' ', $idString);
         $idArr = explode(' ', $idString);
 
-        $total = Business::all()->count();
+        //$total = Business::all()->count();
+
+        $total = Business::count();
+
         foreach ($idArr as $id) {
             $business = Business::find($id);
             $business->priority = $total;
@@ -242,7 +253,10 @@ class BusinessController extends Controller
         $categories = $business['category'];
         $business['category'] = "";
 
-        $totalBusiness = Business::all()->count();
+        //$totalBusiness = Business::all()->count();
+
+        $totalBusiness = Business::count();
+
         $business['priority'] = $totalBusiness + 1;
 
         $images = $business['images'];
@@ -296,7 +310,8 @@ class BusinessController extends Controller
      */
     public function show($id)
     {
-        $business = Business::findOrFail($id);
+        //$business = Business::findOrFail($id);
+        $business = Business::where('display', true)->findOrFail($id);
         $business->images;
 
         //return $business;

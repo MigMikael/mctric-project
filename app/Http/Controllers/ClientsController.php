@@ -66,7 +66,10 @@ class ClientsController extends Controller
         $idString = str_replace('&', ' ', $idString);
         $idArr = explode(' ', $idString);
 
-        $total = Clients::all()->count();
+        //$total = Clients::all()->count();
+
+        $total = Clients::count();
+
         foreach ($idArr as $id) {
             $business = Clients::find($id);
             $business->priority = $total;
@@ -101,7 +104,11 @@ class ClientsController extends Controller
             $image = $this->storeImage($file, '');
             $client['image_id'] = $image->id;
         }
-        $total = Clients::all()->count();
+
+        //$total = Clients::all()->count();
+
+        $total = Clients::count();
+
         $client['priority'] = $total + 1;
 
         Clients::create($client);
