@@ -14,14 +14,26 @@ class ClientsController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
         $clients = Clients::where('display', true)
-                ->orderBy('created_at', 'asc')
-                ->take(24)
-                ->get();
+        ->orderBy('created_at', 'asc')
+        ->orderBy('id', 'asc')
+        ->paginate(8);
 
-        return view('client.index', ['clients' => $clients]);
+        // Request จากปุ่ม Load more
+        if ($request->wantsJson()) {
+            return response()->json([
+                'html' => view('client._load-more', [
+                    'clients' => $clients,
+                ])->render(),
+                'next_page_url' => $clients->nextPageUrl(),
+            ]);
+        }
+
+        return view('client.index', [
+            'clients' => $clients
+        ]);
     }
 
     public function search(Request $request)

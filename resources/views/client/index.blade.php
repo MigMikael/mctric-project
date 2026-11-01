@@ -17,15 +17,79 @@
     </header>
     <section class="bg-white">
         <div class="container">
-            <div class="row">
-                @foreach ($clients as $client)
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-33">
-                        <div class="client-logo-wrapper mb-3">
-                            <img class="client-logo-img" src="{{ url('image/show/' . $client->image_id) }}">
-                        </div>
-                    </div>
-                @endforeach
+            <div class="row" id="client-list">
+                @include('client._load-more', ['clients' => $clients])
+            </div>
+            <div class="text-center mt-4">
+                <button type="button" class="btn btn-primary" id="load-more-clients"
+                    data-next-url="{{ $clients->nextPageUrl() }}" @if (!$clients->hasMorePages()) hidden @endif>
+                    Load more
+                </button>
+
+                <p id="client-load-error" class="text-danger mt-2" role="alert" hidden>
+                    โหลดข้อมูลไม่สำเร็จ กรุณากด Load more เพื่อลองอีกครั้ง
+                </p>
             </div>
         </div>
     </section>
+@endsection
+
+@section('script')
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const button = document.getElementById('load-more-clients');
+            const list = document.getElementById('client-list');
+            const error = document.getElementById('client-load-error');
+
+            let loading = false;
+
+            button.addEventListener('click', async function () {
+                const nextUrl = button.dataset.nextUrl;
+
+                if (loading || !nextUrl) {
+                    return;
+                }
+
+                loading = true;
+                button.disabled = true;
+                button.textContent = 'Loading...';
+                error.hidden = true;
+
+                try {
+                    const response = await fetch(nextUrl, {
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Unable to load clients');
+                    }
+
+                    const data = await response.json();
+
+                    if (
+                        typeof data.html !== 'string' ||
+                        !(
+                            data.next_page_url === null ||
+                            typeof data.next_page_url === 'string'
+                        )
+                    ) {
+                        throw new Error('Invalid response');
+                    }
+
+                    list.insertAdjacentHTML('beforeend', data.html);
+
+                    button.dataset.nextUrl = data.next_page_url || '';
+                    button.hidden = !data.next_page_url;
+                } catch (e) {
+                    error.hidden = false;
+                } finally {
+                    loading = false;
+                    button.disabled = false;
+                    button.textContent = 'Load more';
+                }
+            });
+        });
+    </script>
 @endsection
