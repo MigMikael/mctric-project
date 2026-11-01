@@ -8,7 +8,6 @@ use App\BusinessImage;
 use App\Category;
 use App\Image;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use App\Traits\ImageTrait;
 use function GuzzleHttp\Psr7\str;
 
