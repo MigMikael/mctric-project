@@ -16,18 +16,30 @@ class ClientsController extends Controller
      */
     public function index()
     {
+        /*
         $clients = Clients::where('display', true)
                 ->orderBy('created_at', 'asc')
                 ->take(32)
                 ->get();
+        */
+
+        $clients = Clients::with('image')
+            ->where('display', true)
+            ->orderBy('created_at', 'asc')
+            ->take(32)
+            ->get();
+
         return view('client.index', ['clients' => $clients]);
     }
 
     public function search(Request $request)
     {
         $query = $request->query('query');
-        $clients = Clients::where("name", "like", "%".$query."%")->paginate(9)
+
+        $clients = Clients::where("name", "like", "%" . $query . "%")
+            ->paginate(9)
             ->appends(['query' => $query]);
+
         return view('dashboard', [
             'businesses' => [],
             'clients' => $clients,
@@ -46,7 +58,7 @@ class ClientsController extends Controller
         $request = $request->all();
         $query = $request['query'];
 
-        return redirect("/clients/search?query=".$query);
+        return redirect("/clients/search?query=" . $query);
     }
 
     public function sort()

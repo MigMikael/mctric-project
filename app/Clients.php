@@ -16,9 +16,16 @@ class Clients extends Model
         'priority'
     ];
 
+    /*
     public function image()
     {
         return $this->hasOne('App\Image', 'image_id');
+    }
+    */
+
+    public function image()
+    {
+        return $this->belongsTo(Image::class, 'image_id');
     }
 
     public function scopeShow($query) {
