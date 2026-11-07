@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Image;
 use App\Management;
 use App\Traits\ImageTrait;
 use Illuminate\Http\Request;
@@ -108,16 +109,32 @@ class ManagementController extends Controller
     public function update(Request $request, $id)
     {
         $management = Management::findOrFail($id);
-        $updateManagement = $request->all();
 
-        if ($request->hasFile('image')) {
-            $file = $request->file('image');
-            $image = $this->storeImage($file, "");
+        $updateManagement = $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'job_title' => 'required|string|max:255',
+            'display' => 'required|boolean',
+            'cropped_image' => 'nullable|string',
+        ]);
+
+        // แยกรูปออกจากข้อมูลที่จะบันทึกลงตาราง managements
+        $croppedImage = $updateManagement['cropped_image'] ?? null;
+        unset($updateManagement['cropped_image']);
+
+        $oldImageId = null;
+
+        if ($croppedImage !== null && $croppedImage !== '') {
+            $oldImageId = $management->image_id;
+            $image = $this->storeCropperImage($croppedImage);
             $updateManagement['image_id'] = $image->id;
         }
 
-        $management->update($updateManagement);
-        return redirect()->action("HomeController@dashboardManagements");
+        if ($management->update($updateManagement) && $oldImageId !== null) {
+            $this->deleteImageIfUnused($oldImageId);
+        }
+
+        return redirect()->action('HomeController@dashboardManagements');
     }
 
     public function destroy($id)
@@ -181,6 +198,21 @@ class ManagementController extends Controller
             if (is_file($temporaryPath)) {
                 unlink($temporaryPath);
             }
+        }
+    }
+
+    private function deleteImageIfUnused($imageId)
+    {
+        $image = Image::find($imageId);
+
+        if (!$image) {
+            return;
+        }
+
+        $fileName = $image->name;
+
+        if ($image->delete()) {
+            \Illuminate\Support\Facades\Storage::disk('local')->delete($fileName);
         }
     }
 }
