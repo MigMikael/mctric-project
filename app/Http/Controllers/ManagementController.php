@@ -69,20 +69,22 @@ class ManagementController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
+        $management = $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'job_title' => 'required|string|max:255',
+            'display' => 'required|boolean',
             'cropped_image' => 'required|string',
         ], [
-            'cropped_image.required' => 'กรุณาอัปโหลดรูปโปรไฟล์และกดยืนยันการครอป',
+            'cropped_image.required' => 'กรุณาอัปโหลดรูปโปรไฟล์',
             'cropped_image.string' => 'ข้อมูลรูปโปรไฟล์ไม่ถูกต้อง',
         ]);
 
-        $management = $request->all();
+        $croppedImage = $management['cropped_image'];
+        unset($management['cropped_image']);
 
-        if ($request->get('cropped_image')) {
-            $croppedImage = $request->get('cropped_image');
-            $image = $this->storeCropperImage($croppedImage);
-            $management['image_id'] = $image->id;
-        }
+        $image = $this->storeCropperImage($croppedImage);
+        $management['image_id'] = $image->id;
 
         $management['priority'] = (int) Management::max('priority') + 1;
 
@@ -118,7 +120,6 @@ class ManagementController extends Controller
             'cropped_image' => 'nullable|string',
         ]);
 
-        // แยกรูปออกจากข้อมูลที่จะบันทึกลงตาราง managements
         $croppedImage = $updateManagement['cropped_image'] ?? null;
         unset($updateManagement['cropped_image']);
 
