@@ -522,7 +522,7 @@
                                 <div class="card" style="cursor: unset !important;">
                                     <img class="card-img-top" src="{{ url('image/show/' . $management->image_id) }}"
                                         alt="Card image cap" style="object-fit: contain !important;">
-                                    <div class="card-body" style="height: 180px;">
+                                    <div class="card-body" style="height: 120px;">
                                         <h5 class="card-title text-center">
                                             {{ $management->first_name }}  {{ $management->last_name }}
                                         </h5>
@@ -534,12 +534,6 @@
                                                 <span
                                                     class="badge badge-danger text-center">{{ __('messages.dashboard.hideButton') }}</span>
                                             @endif
-                                        </div>
-                                        <div class="text-center">
-                                            <button type="button" class="btn learn-more-btn"
-                                                onclick="location.href='{{ url('managements/' . $management->id) }}'">
-                                                {{ __('messages.dashboard.cardButton') }}
-                                            </button>
                                         </div>
                                     </div>
                                     <div class="card-footer text-center">
