@@ -40,6 +40,10 @@
                         href="{{ url('/dashboard/awards') }}">{{ __('messages.dashboard.awardTab') }}</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link @if ($activeTab == 'managements') active @endif"
+                        href="{{ url('/dashboard/managements') }}">Management</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link @if ($activeTab == 'users') active @endif"
                         href="{{ url('/dashboard/users') }}">{{ __('messages.dashboard.userTab') }}</a>
                 </li>
@@ -452,6 +456,100 @@
                                         ]) !!}
                                         <a class="btn btn-warning mr-3"
                                             href="{{ url('awards/' . $award->id . '/edit') }}">{{ __('messages.app.editButton') }}</a>
+                                        <button class="btn btn-danger"
+                                            type="submit">{{ __('messages.app.deleteButton') }}</button>
+                                        {!! Form::close() !!}
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    @if ($awards != [])
+                        <div class="row" style="justify-content: center; padding-top: 10px;">
+                            {{ $awards->links() }}
+                        </div>
+                    @endif
+                </div>
+                <!-- End Award Tab -->
+
+                <!-- Start Management Tab -->
+                <div class="tab-pane container @if ($activeTab == 'managements') active @endif" id="management">
+                    <div style="padding-top: 25px; padding-bottom: 15px">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="pull-left">
+                                    <h2>Management Team</h2>
+                                </div>
+                                <div class="pull-right">
+                                    <a class="btn btn-primary btn-create-dashboard"
+                                        href="{{ url('managements/create') }}">{{ __('messages.app.createButton') }}</a>
+                                    <!--
+                                    <a class="btn btn-primary"
+                                        href="{{ url('managements/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
+                                    -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top: 30px;">
+                            <div class="col-md-12">
+                                {!! Form::open(['method' => 'post', 'url' => '/managements/search', 'class' => '']) !!}
+                                <div class="row">
+                                    <div class="col-md-9 col-lg-10 form-group">
+                                        @if ($search)
+                                            {!! Form::text('query', $search, [
+                                                'class' => 'form-control filter-search-wrapper',
+                                                'placeholder' => 'Search by name',
+                                            ]) !!}
+                                        @else
+                                            {!! Form::text('query', null, [
+                                                'class' => 'form-control filter-search-wrapper',
+                                                'placeholder' => 'Search by name',
+                                            ]) !!}
+                                        @endif
+                                    </div>
+                                    <div class="col-md-3 col-lg-2 form-group">
+                                        <button class="btn btn-outline-primary btn-block"
+                                            type="submit">{{ __('messages.app.searchButton') }}</button>
+                                    </div>
+                                </div>
+                                {!! Form::close() !!}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @foreach ($managements as $management)
+                            <div class="col-sm-6 col-md-6 col-lg-4">
+                                <div class="card" style="cursor: unset !important;">
+                                    <img class="card-img-top" src="{{ url('image/show/' . $management->image_id) }}"
+                                        alt="Card image cap" style="object-fit: contain !important;">
+                                    <div class="card-body" style="height: 180px;">
+                                        <h5 class="card-title text-center">
+                                            {{ $management->first_name }}  {{ $management->last_name }}
+                                        </h5>
+                                        <div class="text-center form-group">
+                                            @if ($management->display)
+                                                <span
+                                                    class="badge badge-success text-center">{{ __('messages.dashboard.showButton') }}</span>
+                                            @else
+                                                <span
+                                                    class="badge badge-danger text-center">{{ __('messages.dashboard.hideButton') }}</span>
+                                            @endif
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="button" class="btn learn-more-btn"
+                                                onclick="location.href='{{ url('managements/' . $management->id) }}'">
+                                                {{ __('messages.dashboard.cardButton') }}
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        {!! Form::model($management, [
+                                            'method' => 'delete',
+                                            'url' => '/managements/' . $management->id,
+                                            'onsubmit' => 'return confirmDelete()',
+                                        ]) !!}
+                                        <a class="btn btn-warning mr-3"
+                                            href="{{ url('managements/' . $management->id . '/edit') }}">{{ __('messages.app.editButton') }}</a>
                                         <button class="btn btn-danger"
                                             type="submit">{{ __('messages.app.deleteButton') }}</button>
                                         {!! Form::close() !!}

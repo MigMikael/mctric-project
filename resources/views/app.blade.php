@@ -17,6 +17,12 @@
     <link rel="stylesheet" href="{{ URL::asset('css/owl.carousel2.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/owl.theme2.default.min.css') }}">
      <!-- End Owl Carousel 2 CSS -->
+    <!-- Cropper 1.6.2 CSS -->
+    <link rel="stylesheet" href="{{ asset('css/cropper.min.css') }}">
+    <!-- FilePond Core Styles -->
+    <link rel="stylesheet" href="{{ asset('css/filepond.css') }}">
+    <!-- FilePond Plugin Styles -->
+    <link rel="stylesheet" href="{{ asset('css/filepond-plugin-image-preview.css') }}">
     <link rel="icon" sizes="16x16" href="{{ url('/image/favicon.ico') }}" type="image/x-icon" />
     <link rel="icon" sizes="32x32" href="{{ URL::asset('favicon.ico') }}" type="image/x-icon" />
     <link rel="shortcut icon" sizes="32x32" type="image/ico" href="{{ URL::asset('favicon.ico') }}" />
@@ -217,6 +223,17 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Google reCAPTCHA -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Cropper 1.6.2 Script -->
+    <script src="{{ asset('js/cropper.min.js') }}"></script>
+    <!-- Filepond Core Script -->
+    <script src="{{ asset('/js/filepond.min.js') }}"></script>
+    <!-- FilePond Plugins Script -->
+    <script src="{{ asset('/js/filepond-plugin-file-validate-type.min.js') }}"></script>
+    <script src="{{ asset('/js/filepond-plugin-file-validate-size.min.js') }}"></script>
+    <script src="{{ asset('/js/filepond-plugin-image-preview.min.js') }}"></script>
+    <script src="{{ asset('/js/filepond-plugin-image-resize.min.js') }}"></script>
+    <script src="{{ asset('/js/filepond-plugin-file-encode.min.js') }}"></script>
+    <script src="{{ asset('/js/filepond-plugin-image-transform.min.js') }}"></script>
     <!--Custom Script-->
     <script>
         $(function() {

@@ -6,6 +6,7 @@ use App\Business;
 use App\Careers;
 use App\Clients;
 use App\Awards;
+use App\Management;
 use App\User;
 
 class HomeController extends Controller
@@ -43,12 +44,14 @@ class HomeController extends Controller
         $clients = Clients::paginate(9);
         $awards = Awards::paginate(9);
         $careers = Careers::paginate(9);
+        $managements = Management::paginate(9);
         $users = User::all();
         return view('dashboard', [
             'businesses' => $businesses,
             'clients' => $clients,
             'awards' => $awards,
             'careers' => $careers,
+            'managements' => $managements,
             'users' => $users,
         ]);
     }
@@ -62,6 +65,7 @@ class HomeController extends Controller
             'clients' => [],
             'awards' => [],
             'careers' => [],
+            'managements' => [],
             'users' => [],
             'activeTab' => 'summary',
             'inProgressCount' => $inProgressCount,
@@ -80,6 +84,7 @@ class HomeController extends Controller
             'clients' => [],
             'awards' => [],
             'careers' => [],
+            'managements' => [],
             'users' => [],
             'activeTab' => 'businesses',
             'inProgressCount' => null,
@@ -97,6 +102,7 @@ class HomeController extends Controller
             'clients' => [],
             'awards' => [],
             'careers' => $careers,
+            'managements' => [],
             'users' => [],
             'activeTab' => 'careers',
             'inProgressCount' => null,
@@ -114,6 +120,7 @@ class HomeController extends Controller
             'clients' => $clients,
             'awards' => [],
             'careers' => [],
+            'managements' => [],
             'users' => [],
             'activeTab' => 'clients',
             'inProgressCount' => null,
@@ -131,8 +138,27 @@ class HomeController extends Controller
             'clients' => [],
             'awards' => $awards,
             'careers' => [],
+            'managements' => [],
             'users' => [],
             'activeTab' => 'awards',
+            'inProgressCount' => null,
+            'completeCount' => null,
+            'search' => null
+        ]);
+    }
+
+    public function dashboardManagements()
+    {
+        $managements = Management::orderBy('created_at', 'desc')
+                ->paginate(9);
+        return view('dashboard', [
+            'businesses' => [],
+            'clients' => [],
+            'awards' => [],
+            'careers' => [],
+            'managements' => $managements,
+            'users' => [],
+            'activeTab' => 'managements',
             'inProgressCount' => null,
             'completeCount' => null,
             'search' => null
@@ -148,6 +174,7 @@ class HomeController extends Controller
             'clients' => [],
             'awards' => [],
             'careers' => [],
+            'managements' => [],
             'users' => $users,
             'activeTab' => 'users',
             'inProgressCount' => null,

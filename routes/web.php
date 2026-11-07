@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/dashboard/careers', "HomeController@dashboardCareers");
     Route::get('/dashboard/clients', "HomeController@dashboardClients");
     Route::get('/dashboard/awards', "HomeController@dashboardAwards");
+    Route::get('/dashboard/managements', "HomeController@dashboardManagements");
     Route::get('/dashboard/users', "HomeController@dashboardUsers");
 
     Route::get('/businesses/search', "BusinessController@search");
@@ -78,6 +79,14 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/awards/{id}/edit', "AwardsController@edit");
     Route::put('/awards/{id}', "AwardsController@update");
     Route::delete('/awards/{id}', "AwardsController@destroy");
+
+    Route::get('/managements/search', "ManagementController@search");
+    Route::post('/managements/search', "ManagementController@attemptSearch");
+    Route::get('/managements/create', "ManagementController@create");
+    Route::post('/managements', "ManagementController@store");
+    Route::get('/managements/{id}/edit', "ManagementController@edit");
+    Route::put('/managements/{id}', "ManagementController@update");
+    Route::delete('/managements/{id}', "ManagementController@destroy");
 
     Route::get('/users/search', "UsersController@search");
     Route::post('/users/search', "UsersController@attemptSearch");
