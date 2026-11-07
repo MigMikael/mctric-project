@@ -522,10 +522,13 @@
                                 <div class="card" style="cursor: unset !important;">
                                     <img class="card-img-top" src="{{ url('image/show/' . $management->image_id) }}"
                                         alt="Card image cap" style="object-fit: contain !important;">
-                                    <div class="card-body" style="height: 120px;">
+                                    <div class="card-body" style="height: 150px;">
                                         <h5 class="card-title text-center">
                                             {{ $management->first_name }}  {{ $management->last_name }}
                                         </h5>
+                                        <div class="text-center mb-3">
+                                             <strong>{{ $management->job_title }}</strong>
+                                        </div>
                                         <div class="text-center form-group">
                                             @if ($management->display)
                                                 <span
