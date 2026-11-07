@@ -173,6 +173,8 @@ class BusinessController extends Controller
             'clients' => [],
             'awards' => [],
             'careers' => [],
+            'managements' => [],
+            'news' => [],
             'users' => [],
             'activeTab' => 'businesses',
             'inProgressCount' => null,

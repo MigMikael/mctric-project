@@ -34,6 +34,8 @@ class AwardsController extends Controller
             'clients' => [],
             'awards' => $awards,
             'careers' => [],
+            'managements' => [],
+            'news' => [],
             'users' => [],
             'activeTab' => 'awards',
             'inProgressCount' => null,

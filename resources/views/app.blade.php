@@ -315,7 +315,7 @@
     </script>
     <script>
         tinymce.init({
-            selector: 'textarea:not(#talk-to-ceo-editor)',
+            selector: 'textarea:not(#talk-to-ceo-editor):not(.news-content-editor)',
             height: 500,
             plugins: [
                 "advlist autolink lists link image charmap print preview anchor",

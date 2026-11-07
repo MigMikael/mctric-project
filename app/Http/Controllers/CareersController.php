@@ -36,6 +36,8 @@ class CareersController extends Controller
             'clients' => [],
             'awards' => [],
             'careers' => $careers,
+            'managements' => [],
+            'news' => [],
             'users' => [],
             'activeTab' => 'careers',
             'inProgressCount' => null,

@@ -38,6 +38,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/dashboard/clients', "HomeController@dashboardClients");
     Route::get('/dashboard/awards', "HomeController@dashboardAwards");
     Route::get('/dashboard/managements', "HomeController@dashboardManagements");
+    Route::get('/dashboard/news', "HomeController@dashboardNews");
     Route::get('/dashboard/users', "HomeController@dashboardUsers");
 
     Route::get('/businesses/search', "BusinessController@search");
@@ -89,6 +90,16 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/managements/{id}/edit', "ManagementController@edit");
     Route::put('/managements/{id}', "ManagementController@update");
     Route::delete('/managements/{id}', "ManagementController@destroy");
+
+    Route::get('/news/search', "NewsController@search");
+    Route::post('/news/search', "NewsController@attemptSearch");
+    Route::get('/news/create', 'NewsController@create');
+    Route::post('/news', 'NewsController@store');
+    Route::get('/news/{id}/edit', 'NewsController@edit');
+    Route::put('/news/{id}', 'NewsController@update');
+    Route::delete('/news/{id}', 'NewsController@destroy');
+    Route::post('/news/content-images', 'NewsController@uploadContentImage')
+    ->name('news.content-images.store');
 
     Route::get('/users/search', "UsersController@search");
     Route::post('/users/search', "UsersController@attemptSearch");

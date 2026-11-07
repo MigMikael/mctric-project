@@ -49,6 +49,8 @@ class ClientsController extends Controller
             'clients' => $clients,
             'awards' => [],
             'careers' => [],
+            'managements' => [],
+            'news' => [],
             'users' => [],
             'activeTab' => 'clients',
             'inProgressCount' => null,

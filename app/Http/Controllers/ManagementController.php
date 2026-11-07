@@ -48,6 +48,7 @@ class ManagementController extends Controller
             'careers' => [],
             'users' => [],
             'managements' => $managements,
+            'news' => [],
             'activeTab' => 'managements',
             'inProgressCount' => null,
             'completeCount' => null,

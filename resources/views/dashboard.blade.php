@@ -44,6 +44,10 @@
                         href="{{ url('/dashboard/managements') }}">Management</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link @if ($activeTab == 'news') active @endif"
+                        href="{{ url('/dashboard/news') }}">News</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link @if ($activeTab == 'users') active @endif"
                         href="{{ url('/dashboard/users') }}">{{ __('messages.dashboard.userTab') }}</a>
                 </li>
@@ -560,6 +564,95 @@
                     @endif
                 </div>
                 <!-- End Management Tab -->
+
+                <!-- Start News Tab -->
+                <div class="tab-pane container @if ($activeTab == 'news') active @endif" id="news">
+                    <div style="padding-top: 25px; padding-bottom: 15px">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="pull-left">
+                                    <h2>News</h2>
+                                </div>
+                                <div class="pull-right">
+                                    <a class="btn btn-primary mr-2"
+                                        href="{{ url('news/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
+                                    <a class="btn btn-primary btn-create-dashboard"
+                                        href="{{ url('news/create') }}">{{ __('messages.app.createButton') }}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top: 30px;">
+                            <div class="col-md-12">
+                                {!! Form::open(['method' => 'post', 'url' => '/news/search', 'class' => '']) !!}
+                                <div class="row">
+                                    <div class="col-md-9 col-lg-10 form-group">
+                                        @if ($search)
+                                            {!! Form::text('query', $search, [
+                                                'class' => 'form-control filter-search-wrapper',
+                                                'placeholder' => 'Search by title',
+                                            ]) !!}
+                                        @else
+                                            {!! Form::text('query', null, [
+                                                'class' => 'form-control filter-search-wrapper',
+                                                'placeholder' => 'Search by title',
+                                            ]) !!}
+                                        @endif
+                                    </div>
+                                    <div class="col-md-3 col-lg-2 form-group">
+                                        <button class="btn btn-outline-primary btn-block"
+                                            type="submit">{{ __('messages.app.searchButton') }}</button>
+                                    </div>
+                                </div>
+                                {!! Form::close() !!}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @foreach ($news as $newsItem)
+                            <div class="col-sm-6 col-md-6 col-lg-4">
+                                <div class="card" style="cursor: unset !important;">
+                                    <img src="{{ url('image/show/' . $newsItem->cover_image_id) }}"
+                                        alt="{{ $newsItem->title }}" loading="lazy">
+                                    <div class="card-body" style="height: 150px;">
+                                        <h5 class="card-title text-center">
+                                            {{ $newsItem->title }}
+                                        </h5>
+                                        <div class="text-center mb-3">
+                                            <strong>{{ $newsItem->created_at->format('d/m/Y H:i') }}</strong>
+                                        </div>
+                                        <div class="text-center form-group">
+                                            @if ($newsItem->display)
+                                                <span
+                                                    class="badge badge-success text-center">{{ __('messages.dashboard.showButton') }}</span>
+                                            @else
+                                                <span
+                                                    class="badge badge-danger text-center">{{ __('messages.dashboard.hideButton') }}</span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="card-footer text-center">
+                                        {!! Form::model($newsItem, [
+                                            'method' => 'delete',
+                                            'url' => '/news/' . $newsItem->id,
+                                            'onsubmit' => 'return confirmDelete()',
+                                        ]) !!}
+                                        <a class="btn btn-warning mr-3"
+                                            href="{{ url('news/' . $newsItem->id . '/edit') }}">{{ __('messages.app.editButton') }}</a>
+                                        <button class="btn btn-danger"
+                                            type="submit">{{ __('messages.app.deleteButton') }}</button>
+                                        {!! Form::close() !!}
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    @if ($news != [])
+                        <div class="row" style="justify-content: center; padding-top: 10px;">
+                            {{ $news->links() }}
+                        </div>
+                    @endif
+                </div>
+                <!-- End News Tab -->
 
                 <!-- Start User Tab -->
                 <div class="tab-pane container @if ($activeTab == 'users') active @endif" id="user">
