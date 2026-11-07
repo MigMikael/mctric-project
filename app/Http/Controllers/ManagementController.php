@@ -29,9 +29,15 @@ class ManagementController extends Controller
     {
         $query = $request->query('query');
 
-        $managements = Management::where("name", "like", "%" . $query . "%")
-            ->paginate(9)
-            ->appends(['query' => $query]);
+        $managements = Management::when($query, function ($q) use ($query) {
+            $q->where(function ($sub) use ($query) {
+                $sub->where('first_name', 'like', "%{$query}%")
+                    ->orWhere('last_name', 'like', "%{$query}%")
+                    ->orWhereRaw("CONCAT(first_name, ' ', last_name) LIKE ?", ["%{$query}%"]);
+            });
+        })
+        ->paginate(9)
+        ->appends(['query' => $query]);
 
         return view('dashboard', [
             'businesses' => [],

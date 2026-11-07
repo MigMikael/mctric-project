@@ -552,13 +552,13 @@
                             </div>
                         @endforeach
                     </div>
-                    @if ($awards != [])
+                    @if ($managements != [])
                         <div class="row" style="justify-content: center; padding-top: 10px;">
-                            {{ $awards->links() }}
+                            {{ $managements->links() }}
                         </div>
                     @endif
                 </div>
-                <!-- End Award Tab -->
+                <!-- End Management Tab -->
 
                 <!-- Start User Tab -->
                 <div class="tab-pane container @if ($activeTab == 'users') active @endif" id="user">
