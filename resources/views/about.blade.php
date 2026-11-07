@@ -3,18 +3,18 @@
 @section('title', __('messages.home.webTitle'))
 
 @section('content')
-<header class="sub-title">
-    <div class="sub-title-overlay"></div>
-    <div class="container h-100">
-        <div class="d-flex h-100 text-center align-items-center">
-            <div class="w-100 text-white" style="z-index: 3">
-                <h1 class="text-ellipsis text-center">
-                    {{ __('messages.app.aboutMenu') }}
-                </h1>
+    <header class="sub-title">
+        <div class="sub-title-overlay"></div>
+        <div class="container h-100">
+            <div class="d-flex h-100 text-center align-items-center">
+                <div class="w-100 text-white" style="z-index: 3">
+                    <h1 class="text-ellipsis text-center">
+                        {{ __('messages.app.aboutMenu') }}
+                    </h1>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
     <section class="bg-white">
         <div class="container">
             <div class="row">
@@ -28,7 +28,7 @@
                 </div>
                 <div class="col-lg-6 v-center">
                     <div class="iframe-container form-group">
-                         <iframe src="https://www.youtube-nocookie.com/embed/NlIv4u7dtQU" frameborder="0"
+                        <iframe src="https://www.youtube-nocookie.com/embed/NlIv4u7dtQU" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
                     </div>
@@ -48,10 +48,10 @@
                 <div class="col-md-4 form-group">
                     <div class="vision-wrapper">
                         <h2 class="mb-4">{{ __('messages.home.missionHeading') }}</h2>
-                            <p>{{ __('messages.home.missionOne') }} <br>
-                                {{ __('messages.home.missionTwo') }} <br>
-                                <!--{{ __('messages.home.missionThree') }}-->
-                            </p>
+                        <p>{{ __('messages.home.missionOne') }} <br>
+                            {{ __('messages.home.missionTwo') }} <br>
+                            <!--{{ __('messages.home.missionThree') }}-->
+                        </p>
                     </div>
                 </div>
                 <div class="col-md-4 form-group">
@@ -79,7 +79,31 @@
             </div>
         </div>
     </section>
-    <section class="bg-light">
+    <section class="bg-light py-5" aria-labelledby="management-heading">
+        <div class="container">
+            <h2 id="management-heading" class="text-center section-title mb-4">
+                คณะกรรมการ
+            </h2>
+            <div class="row justify-content-center">
+                @foreach ($managements as $management)
+                    <div class="col-6 col-md-4 col-lg-3 mb-4">
+                        <div class="text-center">
+                            @if ($management->image_id)
+                                <img class="img-fluid rounded mb-3" src="{{ url('image/show/' . $management->image_id) }}"
+                                    alt="{{ $management->first_name }} {{ $management->last_name }}" width="600"
+                                    height="600" loading="lazy" style="width: 100%; max-width: 240px; height: auto;">
+                            @endif
+                            <h3 class="h5 mb-1">
+                                {{ $management->first_name }} {{ $management->last_name }}
+                            </h3>
+                            <p class="text-muted mb-0">{{ $management->job_title }}</p>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    <section class="bg-white">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -90,7 +114,7 @@
                 <div class="owl-general owl-carousel owl-theme">
                     @foreach ($clients as $client)
                         <div>
-                            <img class="image-client" src="{{ url('image/show/'.$client->image_id) }}">
+                            <img class="image-client" src="{{ url('image/show/' . $client->image_id) }}">
                         </div>
                     @endforeach
                 </div>
@@ -98,14 +122,15 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center align-items-center">
-                        <button type="button" class="btn view-btn" onclick="location.href='{{ url('/clients') }}'" style="margin-top: 30px;">
+                        <button type="button" class="btn view-btn" onclick="location.href='{{ url('/clients') }}'"
+                            style="margin-top: 30px;">
                             {{ __('messages.home.clientButton') }}</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="bg-white">
+    <section class="bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -125,14 +150,15 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center align-items-center">
-                        <button type="button" class="btn view-btn" onclick="location.href='{{ url('/awards') }}'">{{ __('messages.home.awardButton') }}</button>
+                        <button type="button" class="btn view-btn"
+                            onclick="location.href='{{ url('/awards') }}'">{{ __('messages.home.awardButton') }}</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!--
-    <section class="bg-light">
+    <section class="bg-white">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">

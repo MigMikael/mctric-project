@@ -78,7 +78,7 @@ class HomeController extends Controller
     {
         //$businesses = Business::orderBy('priority', 'desc')->paginate(9);
         $businesses = Business::orderBy('created_at', 'desc')
-                    ->paginate(9);
+            ->paginate(9);
         return view('dashboard', [
             'businesses' => $businesses,
             'clients' => [],
@@ -96,7 +96,7 @@ class HomeController extends Controller
     public function dashboardCareers()
     {
         $careers = Careers::orderBy('created_at', 'desc')
-                 ->paginate(9);
+            ->paginate(9);
         return view('dashboard', [
             'businesses' => [],
             'clients' => [],
@@ -114,7 +114,7 @@ class HomeController extends Controller
     public function dashboardClients()
     {
         $clients = Clients::orderBy('created_at', 'desc')
-                 ->paginate(9);
+            ->paginate(9);
         return view('dashboard', [
             'businesses' => [],
             'clients' => $clients,
@@ -132,7 +132,7 @@ class HomeController extends Controller
     public function dashboardAwards()
     {
         $awards = Awards::orderBy('created_at', 'desc')
-                ->paginate(9);
+            ->paginate(9);
         return view('dashboard', [
             'businesses' => [],
             'clients' => [],
@@ -150,7 +150,7 @@ class HomeController extends Controller
     public function dashboardManagements()
     {
         $managements = Management::orderBy('created_at', 'desc')
-                ->paginate(9);
+            ->paginate(9);
         return view('dashboard', [
             'businesses' => [],
             'clients' => [],
@@ -168,7 +168,7 @@ class HomeController extends Controller
     public function dashboardUsers()
     {
         $users = User::orderBy('created_at', 'desc')
-               ->paginate(9);
+            ->paginate(9);
         return view('dashboard', [
             'businesses' => [],
             'clients' => [],
@@ -186,8 +186,15 @@ class HomeController extends Controller
     public function about()
     {
         $clients = Clients::show()->take(8)->get();
+
+        $managements = Management::where('display', true)
+            ->orderBy('priority', 'asc')
+            ->orderBy('id', 'asc')
+            ->get();
+
         return view('about', [
             'clients' => $clients,
+            'managements' => $managements,
         ]);
     }
 }
