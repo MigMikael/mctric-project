@@ -149,7 +149,7 @@
                             <div class="col-sm-6 col-md-6 col-lg-4">
                                 <div class="card" style="cursor: unset;">
                                     <img class="card-img-top" src="{{ url('image/show/' . $business->cover_image) }}"
-                                        alt="Card image cap">
+                                        alt="Card image cap" loading="lazy">
                                     <div class="card-body" style="height: 180px;">
                                         <h5 class="card-title text-center">
                                             {{ $business->name }}
@@ -244,7 +244,7 @@
                             <div class="col-sm-6 col-md-6 col-lg-4">
                                 <div class="card" style="cursor: unset;">
                                     <img class="card-img-top" src="{{ url('image/show/' . $career->image_id) }}"
-                                        alt="Card image cap">
+                                        alt="Card image cap" loading="lazy">
                                     <div class="card-body" style="height: 180px;">
                                         <h5 class="card-title text-center">
                                             {{ $career->name }}
@@ -339,7 +339,7 @@
                             <div class="col-sm-6 col-md-6 col-lg-4">
                                 <div class="card" style="cursor: unset;">
                                     <img class="card-img-top" src="{{ url('image/show/' . $client->image_id) }}"
-                                        alt="Card image cap" style="object-fit: contain !important;">
+                                        alt="Card image cap" style="object-fit: contain !important;" loading="lazy">
                                     <div class="card-body" style="height: 120px;">
                                         <h5 class="card-title text-center">
                                             {{ $client->name }}
@@ -427,7 +427,7 @@
                             <div class="col-sm-6 col-md-6 col-lg-4">
                                 <div class="card" style="cursor: unset !important;">
                                     <img class="card-img-top" src="{{ url('image/show/' . $award->image_id) }}"
-                                        alt="Card image cap" style="object-fit: contain !important;">
+                                        alt="Card image cap" style="object-fit: contain !important;" loading="lazy">
                                     <div class="card-body" style="height: 180px;">
                                         <h5 class="card-title text-center">
                                             {{ $award->name }}
@@ -521,7 +521,7 @@
                             <div class="col-sm-6 col-md-6 col-lg-4">
                                 <div class="card" style="cursor: unset !important;">
                                     <img class="card-img-top" src="{{ url('image/show/' . $management->image_id) }}"
-                                        alt="Card image cap" style="object-fit: contain !important;">
+                                        alt="Card image cap" loading="lazy">
                                     <div class="card-body" style="height: 150px;">
                                         <h5 class="card-title text-center">
                                             {{ $management->first_name }}  {{ $management->last_name }}

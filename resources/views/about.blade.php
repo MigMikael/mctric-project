@@ -114,7 +114,7 @@
                 <div class="owl-general owl-carousel owl-theme">
                     @foreach ($clients as $client)
                         <div>
-                            <img class="image-client" src="{{ url('image/show/' . $client->image_id) }}">
+                            <img class="image-client" src="{{ url('image/show/' . $client->image_id) }}" loading="lazy">
                         </div>
                     @endforeach
                 </div>

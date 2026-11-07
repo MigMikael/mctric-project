@@ -22,7 +22,7 @@
                     <div class="col-md-6 col-lg-4">
                         <a href="{{ url('careers/' . $career->id) }}" style="text-decoration: none !important;">
                             <div class="card">
-                                <img class="card-img-top" src="{{ url('image/show/' . $career->image_id) }}" alt="">
+                                <img class="card-img-top" src="{{ url('image/show/' . $career->image_id) }}" alt="" loading="lazy">
                                 <div class="card-body">
                                     <h5 class="card-title text-center" style="color: #000;">
                                         {{ $career->name }}

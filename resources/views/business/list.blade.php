@@ -77,7 +77,7 @@
                     <div class="col-md-6 col-lg-4">
                         <div class="card" onclick="location.href='{{ url('businesses/' . $business->id) }}'">
                             <img class="card-img-top" src="{{ url('image/show/' . $business->cover_image) }}"
-                                alt="Card image cap">
+                                alt="Card image cap" loading="lazy">
                             <div class="card-body"
                                 style="
                             @if (Request::is('dashboard/businesses/status/*')) height: 180px;
