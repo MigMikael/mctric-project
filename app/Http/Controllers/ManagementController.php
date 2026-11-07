@@ -131,7 +131,9 @@ class ManagementController extends Controller
             $updateManagement['image_id'] = $image->id;
         }
 
-        if ($management->update($updateManagement) && $oldImageId !== null) {
+        $updateManagementResult = $management->update($updateManagement);
+
+        if ($updateManagementResult && $oldImageId !== null) {
             $this->deleteImageIfUnused($oldImageId);
         }
 
@@ -141,9 +143,15 @@ class ManagementController extends Controller
     public function destroy($id)
     {
         $management = Management::findOrFail($id);
-        $management->delete();
+        $oldImageId = $management->image_id;
 
-        return redirect()->action("HomeController@dashboardManagements");
+        $deleteManagementResult = $management->delete();
+
+        if ($deleteManagementResult && $oldImageId !== null) {
+            $this->deleteImageIfUnused($oldImageId);
+        }
+
+        return redirect()->action('HomeController@dashboardManagements');
     }
 
     private function storeCropperImage(string $croppedImage)
@@ -202,7 +210,7 @@ class ManagementController extends Controller
         }
     }
 
-    private function deleteImageIfUnused($imageId)
+    private function deleteImageIfUnused(string $imageId)
     {
         $image = Image::find($imageId);
 
