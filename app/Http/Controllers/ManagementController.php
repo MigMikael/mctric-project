@@ -36,8 +36,8 @@ class ManagementController extends Controller
                     ->orWhereRaw("CONCAT(first_name, ' ', last_name) LIKE ?", ["%{$query}%"]);
             });
         })
-        ->paginate(9)
-        ->appends(['query' => $query]);
+            ->paginate(9)
+            ->appends(['query' => $query]);
 
         return view('dashboard', [
             'businesses' => [],
@@ -79,54 +79,7 @@ class ManagementController extends Controller
 
         if ($request->get('cropped_image')) {
             $croppedImage = $request->get('cropped_image');
-
-            $parts = explode(',', $croppedImage, 2);
-
-            $binary = isset($parts[1])
-                ? base64_decode($parts[1], true)
-                : false;
-
-            $imageInfo = $binary !== false
-                ? @getimagesizefromstring($binary)
-                : false;
-
-            $extensions = [
-                'image/jpeg' => 'jpg',
-                'image/png' => 'png',
-                'image/webp' => 'webp',
-            ];
-
-            if (
-                $imageInfo === false ||
-                !isset($extensions[$imageInfo['mime']])
-            ) {
-                throw \Illuminate\Validation\ValidationException::withMessages([
-                    'cropped_image' => 'ข้อมูลรูปภาพไม่ถูกต้อง',
-                ]);
-            }
-
-            $mime = $imageInfo['mime'];
-            $fileName = 'management-profile.' . $extensions[$mime];
-            $temporaryPath = tempnam(sys_get_temp_dir(), 'management_');
-
-            if ($temporaryPath === false) {
-                throw new \RuntimeException('Unable to create temporary image.');
-            }
-
-            // เขียนข้อมูลรูปลงไฟล์ชั่วคราวก่อน
-            if (file_put_contents($temporaryPath, $binary) !== strlen($binary)) {
-                throw new \RuntimeException('Unable to write temporary image.');
-            }
-
-            $file = new \Illuminate\Http\UploadedFile(
-                $temporaryPath,
-                $fileName,
-                $mime,
-                UPLOAD_ERR_OK,
-                true
-            );
-
-            $image = $this->storeImage($file, '');
+            $image = $this->storeCropperImage($croppedImage);
             $management['image_id'] = $image->id;
         }
 
@@ -173,5 +126,61 @@ class ManagementController extends Controller
         $management->delete();
 
         return redirect()->action("HomeController@dashboardManagements");
+    }
+
+    private function storeCropperImage(string $croppedImage)
+    {
+        $parts = explode(',', $croppedImage, 2);
+
+        $binary = isset($parts[1])
+            ? base64_decode($parts[1], true)
+            : false;
+
+        $imageInfo = $binary !== false
+            ? @getimagesizefromstring($binary)
+            : false;
+
+        $extensions = [
+            'image/jpeg' => 'jpg',
+            'image/png' => 'png',
+            'image/webp' => 'webp',
+        ];
+
+        if (
+            $imageInfo === false ||
+            !isset($extensions[$imageInfo['mime']])
+        ) {
+            throw \Illuminate\Validation\ValidationException::withMessages([
+                'cropped_image' => 'ข้อมูลรูปภาพไม่ถูกต้อง',
+            ]);
+        }
+
+        $mime = $imageInfo['mime'];
+        $fileName = 'management-profile.' . $extensions[$mime];
+        $temporaryPath = tempnam(sys_get_temp_dir(), 'management_');
+
+        if ($temporaryPath === false) {
+            throw new \RuntimeException('Unable to create temporary image.');
+        }
+
+        try {
+            if (file_put_contents($temporaryPath, $binary) !== strlen($binary)) {
+                throw new \RuntimeException('Unable to write temporary image.');
+            }
+
+            $file = new \Illuminate\Http\UploadedFile(
+                $temporaryPath,
+                $fileName,
+                $mime,
+                UPLOAD_ERR_OK,
+                true
+            );
+
+            return $this->storeImage($file, '');
+        } finally {
+            if (is_file($temporaryPath)) {
+                unlink($temporaryPath);
+            }
+        }
     }
 }

@@ -198,8 +198,8 @@
             cropButton.addEventListener('click', function() {
                 if (cropper) {
                     var canvas = cropper.getCroppedCanvas({
-                        width: 400, // เปลี่ยนค่าตามความเหมาะสม
-                        height: 400, // เปลี่ยนค่าตามความเหมาะสม
+                        width: 600, // เปลี่ยนค่าตามความเหมาะสม
+                        height: 600, // เปลี่ยนค่าตามความเหมาะสม
                     });
 
                     canvas.toBlob(function(blob) {
