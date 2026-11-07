@@ -65,7 +65,9 @@ class ManagementController extends Controller
 
     public function sort()
     {
-        $managements = Management::orderBy('priority', 'asc')->get();
+        $managements = Management::orderBy('priority', 'asc')
+            ->orderBy('id', 'asc')
+            ->get();
 
         return response(view('management.sort', [
             'managements' => $managements
@@ -96,7 +98,7 @@ class ManagementController extends Controller
                 array_diff($orderedIds, $currentIds)
             ) {
                 throw \Illuminate\Validation\ValidationException::withMessages([
-                    'order' => 'รายชื่อคณะกรรมการเปลี่ยนไป กรุณาเปิดหน้าจัดลำดับใหม่แล้วลองอีกครั้ง',
+                    'order' => 'จำนวนคณะกรรมการเปลี่ยนแปลงไป กรุณาลองใหม่อีกครั้ง',
                 ]);
             }
 
@@ -105,7 +107,7 @@ class ManagementController extends Controller
                 $management->priority = $index + 1;
 
                 if (!$management->save()) {
-                    throw new \RuntimeException('Unable to save management order.');
+                    throw new \RuntimeException('ไม่สามารถบันทึกการจัดลำดับได้ กรุณาลองใหม่อีกครั้ง');
                 }
             }
         });

@@ -22,30 +22,42 @@
                     onclick="location.href='{{ url('dashboard/managements/') }}'">Back</button>
             </div>
             <div>
+                @if ($errors->any())
+                    <div class="alert alert-danger" role="alert">
+                        @foreach ($errors->all() as $message)
+                            <div>{{ $message }}</div>
+                        @endforeach
+                    </div>
+                @endif
                 <form id="management-sort-form" method="POST" action="{{ url('/managements/sort') }}">
                     @csrf
                     <div id="sortable">
                         @forelse ($managements as $management)
                             <div class="card mb-3" data-id="{{ $management->id }}">
                                 <div class="card-body d-flex align-items-center">
-                                    <span><i class="fas fa-grip-vertical mr-3"></i></span>
+                                    <span aria-hidden="true">
+                                        <i class="fas fa-grip-vertical mr-3"></i>
+                                    </span>
+
                                     <span class="badge badge-primary mr-3 sort-position">
                                         {{ $loop->iteration }}
                                     </span>
+
                                     @if ($management->image_id)
                                         <img src="{{ url('image/show/' . $management->image_id) }}" width="60"
                                             height="60" loading="lazy" alt="" class="rounded mr-3"
                                             style="object-fit: cover;">
                                     @endif
+
                                     <div class="mr-auto">
                                         <strong>{{ $management->first_name }} {{ $management->last_name }}</strong>
                                         <div>{{ $management->job_title }}</div>
                                         <small>{{ $management->display ? 'Show' : 'Hide' }}</small>
                                     </div>
 
-                                    <button type="button" class="btn btn-sm btn-outline-secondary sort-up"
+                                    <button type="button" class="btn btn-sm btn-outline-primary sort-up"
                                         aria-label="เลื่อนขึ้น">↑</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary sort-down ml-1"
+                                    <button type="button" class="btn btn-sm btn-outline-primary sort-down ml-1"
                                         aria-label="เลื่อนลง">↓</button>
                                 </div>
                             </div>
@@ -53,7 +65,9 @@
                             <p>ยังไม่มีรายชื่อคณะกรรมการให้จัดลำดับ</p>
                         @endforelse
                     </div>
+
                     <div id="management-sort-inputs"></div>
+
                     @if ($managements->count() > 1)
                         <div class="text-center mt-5">
                             <button type="submit" class="btn btn-primary" style="width: 500px; max-width: 90%">
