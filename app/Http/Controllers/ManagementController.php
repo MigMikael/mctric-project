@@ -210,7 +210,7 @@ class ManagementController extends Controller
         }
     }
 
-    private function deleteImageIfUnused(string $imageId)
+    private function deleteImageIfUnused($imageId)
     {
         $image = Image::find($imageId);
 
