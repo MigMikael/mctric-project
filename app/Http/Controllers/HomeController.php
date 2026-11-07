@@ -149,7 +149,7 @@ class HomeController extends Controller
 
     public function dashboardManagements()
     {
-        $managements = Management::orderBy('created_at', 'desc')
+        $managements = Management::orderBy('priority', 'asc')
             ->paginate(9);
         return view('dashboard', [
             'businesses' => [],

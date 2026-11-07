@@ -6,6 +6,7 @@ use App\Image;
 use App\Management;
 use App\Traits\ImageTrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ManagementController extends Controller
 {
@@ -18,11 +19,11 @@ class ManagementController extends Controller
     public function index()
     {
         $managements = Management::where('display', true)
-            ->orderBy('created_at', 'desc')
+            ->orderBy('priority', 'asc')
             ->get();
 
-        return view('award.index', [
-            'manag$managements' => $managements
+        return view('managements.index', [
+            'managements' => $managements
         ]);
     }
 
@@ -60,6 +61,56 @@ class ManagementController extends Controller
         $query = $request['query'];
 
         return redirect("/managements/search?query=" . $query);
+    }
+
+    public function sort()
+    {
+        $managements = Management::orderBy('priority', 'asc')->get();
+
+        return response(view('management.sort', [
+            'managements' => $managements
+        ]));
+    }
+
+    public function storeSort(Request $request)
+    {
+        $data = $request->validate([
+            'order' => 'required|array|min:1',
+            'order.*' => 'required|integer|min:1|distinct',
+        ]);
+
+        // เทียบ ID เป็นข้อความเหมือนกันทั้งสองฝั่ง
+        $orderedIds = array_map('strval', array_values($data['order']));
+
+        DB::transaction(function () use ($orderedIds) {
+            $managements = Management::orderBy('id')
+                ->lockForUpdate()
+                ->get()
+                ->keyBy('id');
+
+            $currentIds = array_map('strval', $managements->keys()->all());
+
+            if (
+                count($orderedIds) !== count($currentIds) ||
+                array_diff($currentIds, $orderedIds) ||
+                array_diff($orderedIds, $currentIds)
+            ) {
+                throw \Illuminate\Validation\ValidationException::withMessages([
+                    'order' => 'รายชื่อคณะกรรมการเปลี่ยนไป กรุณาเปิดหน้าจัดลำดับใหม่แล้วลองอีกครั้ง',
+                ]);
+            }
+
+            foreach ($orderedIds as $index => $id) {
+                $management = $managements->get($id);
+                $management->priority = $index + 1;
+
+                if (!$management->save()) {
+                    throw new \RuntimeException('Unable to save management order.');
+                }
+            }
+        });
+
+        return redirect()->action('HomeController@dashboardManagements');
     }
 
     public function create()

@@ -77,8 +77,8 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12">
-                                    <div class="form-group">
-                                        <button type="submit" class="btn btn-primary btn-submit">Save</button>
+                                    <div class="form-group text-center">
+                                        <button type="submit" class="btn btn-primary btn-submit" style="width: 500px; max-width: 90%">Save</button>
                                     </div>
                                 </div>
                             </div>

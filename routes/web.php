@@ -82,6 +82,8 @@ Route::group(['middleware' => ['auth']], function() {
 
     Route::get('/managements/search', "ManagementController@search");
     Route::post('/managements/search', "ManagementController@attemptSearch");
+    Route::get('/managements/sort', "ManagementController@sort");
+    Route::post('/managements/sort', 'ManagementController@storeSort');
     Route::get('/managements/create', "ManagementController@create");
     Route::post('/managements', "ManagementController@store");
     Route::get('/managements/{id}/edit', "ManagementController@edit");

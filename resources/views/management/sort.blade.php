@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', "Sort Clients")
+@section('title', 'Sort Management')
 
 @section('content')
     <header class="sub-title">
@@ -9,7 +9,7 @@
             <div class="d-flex h-100 text-center align-items-center">
                 <div class="w-100 text-white" style="z-index: 3">
                     <h1 class="text-ellipsis text-center">
-                        Sort Clients
+                        Sort Management
                     </h1>
                 </div>
             </div>
@@ -19,44 +19,102 @@
         <div class="container">
             <div class="back-btn-custom">
                 <button type="button" class="btn btn-primary"
-                    onclick="location.href='{{ url('dashboard/clients/') }}'">Back</button>
+                    onclick="location.href='{{ url('dashboard/managements/') }}'">Back</button>
             </div>
-            <form method="POST" action="{{ url('/clients/sort') }}" class="col-md-12 col-xs-12">
-                @csrf
-                <input type='hidden' name='sorted' id='sortField'>
-                <div id="sortable">
-                    @foreach($clients as $client)
-                        <div class="card mb-12" style="max-width: 100%; max-height: 75px; margin-bottom: 15px" id='{{ 'order_'.$client->id }}'>
-                            <div class="row no-gutters">
-                                <div class="col-md-1">
-                                    <img src="{{ url('image/show/'.$client->image_id) }}" class="card-img" style="max-height: 75px;height: 75px;object-fit: cover">
-                                </div>
-                                <div class="col-md-11">
-                                    <div class="card-body">
-                                        <h5>{{ $loop->iteration }}. {{ $client->name }}</h5>
+            <div>
+                <form id="management-sort-form" method="POST" action="{{ url('/managements/sort') }}">
+                    @csrf
+                    <div id="sortable">
+                        @forelse ($managements as $management)
+                            <div class="card mb-3" data-id="{{ $management->id }}">
+                                <div class="card-body d-flex align-items-center">
+                                    <span><i class="fas fa-grip-vertical mr-3"></i></span>
+                                    <span class="badge badge-primary mr-3 sort-position">
+                                        {{ $loop->iteration }}
+                                    </span>
+                                    @if ($management->image_id)
+                                        <img src="{{ url('image/show/' . $management->image_id) }}" width="60"
+                                            height="60" loading="lazy" alt="" class="rounded mr-3"
+                                            style="object-fit: cover;">
+                                    @endif
+                                    <div class="mr-auto">
+                                        <strong>{{ $management->first_name }} {{ $management->last_name }}</strong>
+                                        <div>{{ $management->job_title }}</div>
+                                        <small>{{ $management->display ? 'Show' : 'Hide' }}</small>
                                     </div>
+
+                                    <button type="button" class="btn btn-sm btn-outline-secondary sort-up"
+                                        aria-label="เลื่อนขึ้น">↑</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary sort-down ml-1"
+                                        aria-label="เลื่อนลง">↓</button>
                                 </div>
                             </div>
+                        @empty
+                            <p>ยังไม่มีรายชื่อคณะกรรมการให้จัดลำดับ</p>
+                        @endforelse
+                    </div>
+                    <div id="management-sort-inputs"></div>
+                    @if ($managements->count() > 1)
+                        <div class="text-center mt-5">
+                            <button type="submit" class="btn btn-primary" style="width: 500px; max-width: 90%">
+                                {{ __('messages.dashboard.saveButton') }}
+                            </button>
                         </div>
-                    @endforeach
-                </div>
-                <div class="sort-wrapper text-center">
-                    <button type='submit' id="submit" class="btn btn-primary">{{ __('messages.dashboard.saveButton') }}</button>
-                </div>
-            </form>
+                    @endif
+                </form>
+            </div>
         </div>
     </section>
 @endsection
 
 @section('script')
     <script>
-        $( function() {
-            $( "#sortable" ).sortable();
-            $( "#sortable" ).disableSelection();
-        } );
+        $(function() {
+            var $list = $('#sortable');
 
-        $('form').submit(function(){
-            $('#sortField').val($( "#sortable" ).sortable("serialize"));
+            function updatePositions() {
+                $list.children('[data-id]').each(function(index) {
+                    $(this).find('.sort-position').text(index + 1);
+                });
+            }
+
+            $list.sortable({
+                items: '> [data-id]',
+                cancel: 'button',
+                update: updatePositions
+            });
+
+            $list.on('click', '.sort-up, .sort-down', function() {
+                var $card = $(this).closest('[data-id]');
+                var moveUp = $(this).hasClass('sort-up');
+                var $neighbor = moveUp ?
+                    $card.prev('[data-id]') :
+                    $card.next('[data-id]');
+
+                if (!$neighbor.length) {
+                    return;
+                }
+
+                if (moveUp) {
+                    $card.insertBefore($neighbor);
+                } else {
+                    $card.insertAfter($neighbor);
+                }
+
+                updatePositions();
+            });
+
+            $('#management-sort-form').on('submit', function() {
+                var $inputs = $('#management-sort-inputs').empty();
+
+                $list.children('[data-id]').each(function() {
+                    $('<input>', {
+                        type: 'hidden',
+                        name: 'order[]',
+                        value: $(this).attr('data-id')
+                    }).appendTo($inputs);
+                });
+            });
         });
     </script>
 @endsection

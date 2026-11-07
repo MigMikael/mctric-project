@@ -112,9 +112,9 @@
                                     <a class="btn btn-primary btn-create-dashboard"
                                         href="{{ url('businesses/create') }}">{{ __('messages.app.createButton') }}</a>
                                     <!--
-                                    <a class="btn btn-primary"
-                                        href="{{ url('businesses/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
-                                    -->
+                                        <a class="btn btn-primary"
+                                            href="{{ url('businesses/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
+                                        -->
                                 </div>
                             </div>
                         </div>
@@ -207,9 +207,9 @@
                                     <a class="btn btn-primary btn-create-dashboard"
                                         href="{{ url('careers/create') }}">{{ __('messages.app.createButton') }}</a>
                                     <!--
-                                    <a class="btn btn-primary"
-                                        href="{{ url('careers/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
-                                    -->
+                                        <a class="btn btn-primary"
+                                            href="{{ url('careers/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
+                                        -->
                                 </div>
                             </div>
                         </div>
@@ -302,9 +302,9 @@
                                     <a class="btn btn-primary btn-create-dashboard"
                                         href="{{ url('clients/create') }}">{{ __('messages.app.createButton') }}</a>
                                     <!--
-                                    <a class="btn btn-primary"
-                                        href="{{ url('clients/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
-                                    -->
+                                        <a class="btn btn-primary"
+                                            href="{{ url('clients/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
+                                        -->
                                 </div>
                             </div>
                         </div>
@@ -390,9 +390,9 @@
                                     <a class="btn btn-primary btn-create-dashboard"
                                         href="{{ url('awards/create') }}">{{ __('messages.app.createButton') }}</a>
                                     <!--
-                                    <a class="btn btn-primary"
-                                        href="{{ url('awards/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
-                                    -->
+                                        <a class="btn btn-primary"
+                                            href="{{ url('awards/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
+                                        -->
                                 </div>
                             </div>
                         </div>
@@ -481,12 +481,10 @@
                                     <h2>Management Team</h2>
                                 </div>
                                 <div class="pull-right">
+                                    <a class="btn btn-primary mr-2"
+                                        href="{{ url('managements/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
                                     <a class="btn btn-primary btn-create-dashboard"
                                         href="{{ url('managements/create') }}">{{ __('messages.app.createButton') }}</a>
-                                    <!--
-                                    <a class="btn btn-primary"
-                                        href="{{ url('managements/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
-                                    -->
                                 </div>
                             </div>
                         </div>
@@ -521,13 +519,13 @@
                             <div class="col-sm-6 col-md-6 col-lg-4">
                                 <div class="card" style="cursor: unset !important;">
                                     <img class="card-img-top" src="{{ url('image/show/' . $management->image_id) }}"
-                                        alt="Card image cap" loading="lazy">
+                                        alt="Card image cap" style="object-fit: contain !important;" loading="lazy">
                                     <div class="card-body" style="height: 150px;">
                                         <h5 class="card-title text-center">
-                                            {{ $management->first_name }}  {{ $management->last_name }}
+                                            {{ $management->first_name }} {{ $management->last_name }}
                                         </h5>
                                         <div class="text-center mb-3">
-                                             <strong>{{ $management->job_title }}</strong>
+                                            <strong>{{ $management->job_title }}</strong>
                                         </div>
                                         <div class="text-center form-group">
                                             @if ($management->display)
