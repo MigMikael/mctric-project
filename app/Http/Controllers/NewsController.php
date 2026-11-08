@@ -16,12 +16,12 @@ class NewsController extends Controller
 
     public function index()
     {
-        $articles = News::where('display', true)
+        $news = News::where('display', true)
             ->orderBy('created_at', 'desc')
             ->orderBy('id', 'desc')
             ->paginate(9);
 
-        return view('news.index', ['articles' => $articles]);
+        return view('news.index', ['news' => $news]);
     }
 
     public function search(Request $request)

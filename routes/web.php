@@ -129,6 +129,9 @@ Route::get('/awards/{id}', "AwardsController@show");
 Route::get('/clients', "ClientsController@index");
 Route::get('/clients/{id}', "ClientsController@show");
 
+Route::get('/news', "NewsController@index");
+Route::get('/news/{slug}', 'NewsController@show');
+
 Route::get('/contact', function () {
     return view('contact');
 });

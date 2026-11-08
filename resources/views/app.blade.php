@@ -65,6 +65,9 @@
                         <a class="nav-link" href="{{ url('/careers') }}">{{ __('messages.app.careerMenu') }}</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/news') }}">News</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ url('/contact') }}">{{ __('messages.app.contactMenu') }}</a>
                     </li>
                 </ul>
