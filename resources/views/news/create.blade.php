@@ -233,6 +233,21 @@
                 if (files && files.length > 0) {
                     file = files[0];
 
+                    var allowedTypes = ['image/jpeg', 'image/png'];
+                    var maxBytes = 5 * 1024 * 1024;
+
+                    if (allowedTypes.indexOf(file.type) === -1) {
+                        inputImage.value = '';
+                        Swal.fire('พบข้อผิดพลาด', 'กรุณาเลือกไฟล์ JPG หรือ PNG', 'error');
+                        return;
+                    }
+
+                    if (file.size === 0 || file.size > maxBytes) {
+                        inputImage.value = '';
+                        Swal.fire('พบข้อผิดพลาด', 'ไฟล์รูปต้องไม่ว่างและมีขนาดไม่เกิน 5 MB', 'error');
+                        return;
+                    }
+
                     if (URL) {
                         done(URL.createObjectURL(file));
                     } else if (FileReader) {

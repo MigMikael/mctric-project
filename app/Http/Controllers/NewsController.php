@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Image;
 use App\News;
 use App\Traits\ImageTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 
@@ -56,11 +58,11 @@ class NewsController extends Controller
 
     public function show($slug)
     {
-        $article = News::where('display', true)
+        $newsItem = News::where('display', true)
             ->where('slug', $slug)
             ->firstOrFail();
 
-        return view('news.show', ['article' => $article]);
+        return view('news.show', ['newsItem' => $newsItem]);
     }
 
     public function create()
@@ -70,7 +72,7 @@ class NewsController extends Controller
 
     public function store(Request $request)
     {
-        $data = $this->validateArticle($request);
+        $data = $this->validateNews($request);
         $data = $this->saveCoverImage($request, $data);
 
         DB::transaction(function () use ($data) {
@@ -96,31 +98,60 @@ class NewsController extends Controller
 
     public function edit($id)
     {
-        $article = News::findOrFail($id);
+        $newsItem = News::findOrFail($id);
 
-        return view('news.edit', ['article' => $article]);
+        return view('news.edit', ['newsItem' => $newsItem]);
     }
 
     public function update(Request $request, $id)
     {
-        $article = News::findOrFail($id);
-        $data = $this->validateArticle($request, $article);
+        $newsItem = News::findOrFail($id);
+
+        $oldCoverImageId = $newsItem->cover_image_id;
+
+        $data = $this->validateNews($request, $newsItem);
         $data = $this->saveCoverImage($request, $data);
 
-        $article->update($data);
+        $coverChanged = isset($data['cover_image_id'])
+            && (string) $data['cover_image_id'] !== (string) $oldCoverImageId;
 
-        return redirect()->action('NewsController@dashboard');
+        $updateNewsResult  = $newsItem->update($data);
+
+        if (!$updateNewsResult) {
+            return back()->withErrors(['update' => 'อัปเดตข่าวไม่สำเร็จ']);
+        }
+
+        if ($coverChanged && $oldCoverImageId !== null) {
+            $this->deleteImageIfUnused($oldCoverImageId);
+        }
+
+        return redirect()->action('HomeController@dashboardNews');
     }
 
     public function destroy($id)
     {
-        $article = News::findOrFail($id);
-        $article->delete();
+        $newsItem = News::findOrFail($id);
 
-        return redirect()->action('NewsController@dashboard');
+        $imageIds = $this->contentImageIds($newsItem->content);
+
+        if ($newsItem->cover_image_id !== null) {
+            $imageIds[] = (string) $newsItem->cover_image_id;
+        }
+
+        if (!$newsItem->delete()) {
+            return back()->withErrors([
+                'delete' => 'ลบข่าวไม่สำเร็จ',
+            ]);
+        }
+
+        foreach (array_unique($imageIds) as $imageId) {
+            $this->deleteImageIfUnused($imageId);
+        }
+
+        return redirect()->action('HomeController@dashboardNews');
     }
 
-    private function validateArticle(Request $request, ?News $article = null)
+    private function validateNews(Request $request, ?News $article = null)
     {
         $data = $request->validate([
             'title' => 'required|string|max:255',
@@ -168,5 +199,71 @@ class NewsController extends Controller
         return response()->json([
             'location' => url('image/show/' . $image->id),
         ], 201);
+    }
+
+    private function contentImageIds(?string $content): array
+    {
+        if ($content === null || trim($content) === '') {
+            return [];
+        }
+
+        $document = new \DOMDocument();
+
+        $loaded = $document->loadHTML(
+            '<?xml encoding="UTF-8">' . $content,
+            LIBXML_NONET | LIBXML_NOERROR | LIBXML_NOWARNING
+        );
+
+        if (!$loaded) {
+            return [];
+        }
+
+        $imageBase = parse_url(url('image/show'));
+        $basePath = rtrim($imageBase['path'], '/');
+        $pattern = '~^' . preg_quote($basePath, '~') . '/([1-9][0-9]*)$~';
+        $ids = [];
+
+        foreach ($document->getElementsByTagName('img') as $tag) {
+            $url = parse_url(trim($tag->getAttribute('src')));
+
+            if ($url === false || !isset($url['path'])) {
+                continue;
+            }
+
+            if (
+                isset($url['scheme']) &&
+                !in_array(strtolower($url['scheme']), ['http', 'https'], true)
+            ) {
+                continue;
+            }
+
+            if (
+                isset($url['host']) &&
+                strcasecmp($url['host'], $imageBase['host']) !== 0
+            ) {
+                continue;
+            }
+
+            if (preg_match($pattern, $url['path'], $matches)) {
+                $ids[] = $matches[1];
+            }
+        }
+
+        return array_values(array_unique($ids));
+    }
+
+    private function deleteImageIfUnused($imageId)
+    {
+        $image = Image::find($imageId);
+
+        if (!$image) {
+            return;
+        }
+
+        $fileName = $image->name;
+
+        if ($image->delete()) {
+            \Illuminate\Support\Facades\Storage::disk('local')->delete($fileName);
+        }
     }
 }
