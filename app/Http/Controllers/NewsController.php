@@ -7,7 +7,6 @@ use App\News;
 use App\Traits\ImageTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 
@@ -86,9 +85,9 @@ class NewsController extends Controller
                 ->format('Ymd');
 
             $newsItem->slug = $date . '-' . $newsItem->id;
-            $newsItem->save();
+            $createNewsResult = $newsItem->save();
 
-            if (!$newsItem->save()) {
+            if (!$createNewsResult) {
                 throw new \RuntimeException('Unable to save the news slug.');
             }
         });
@@ -155,20 +154,20 @@ class NewsController extends Controller
     {
         $data = $request->validate([
             'title' => 'required|string|max:255',
-            'content' => 'nullable|string|required_if:display,1',
+            'content' => 'required|string',
             'display' => 'required|boolean',
             'cover_image' => 'nullable|image|mimes:jpg,jpeg,png|max:5120'
                 . '|dimensions:max_width=4000,max_height=4000',
         ], [
-            'content.required_if' => 'กรุณาระบุเนื้อหาก่อนเผยแพร่ข่าว',
+            'content.required' => 'กรุณาระบุเนื้อหาข่าว',
         ]);
 
         $hasCover = $request->hasFile('cover_image')
             || ($article !== null && $article->cover_image_id !== null);
 
-        if ((bool) $data['display'] && !$hasCover) {
+        if (!$hasCover) {
             throw ValidationException::withMessages([
-                'cover_image' => 'กรุณาเลือกรูปปกก่อนเผยแพร่ข่าว',
+                'cover_image' => 'กรุณาเลือกรูปปกข่าว',
             ]);
         }
 

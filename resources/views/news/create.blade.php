@@ -329,7 +329,7 @@
                 }
 
                 if (!croppedCoverFile.files.length) {
-                    Swal.fire('พบข้อผิดพลาด', 'กรุณาใส่รูปปกก่อนเผยแพร่ข่าว', 'error');
+                    Swal.fire('พบข้อผิดพลาด', 'กรุณาอัปโหลดรูปปกข่าว', 'error');
                     return;
                 }
 

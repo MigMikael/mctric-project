@@ -28,6 +28,8 @@ class UsersController extends Controller
             'clients' => [],
             'awards' => [],
             'careers' => [],
+            'managements' => [],
+            'news' => [],
             'users' => $users,
             'activeTab' => 'users',
             'inProgressCount' => null,

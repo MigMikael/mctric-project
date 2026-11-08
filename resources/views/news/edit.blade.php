@@ -336,7 +336,7 @@
                 if (!hasExistingCover && !hasNewCover) {
                     Swal.fire(
                         'พบข้อผิดพลาด',
-                        'กรุณาใส่รูปปกก่อนเผยแพร่ข่าว',
+                        'กรุณาอัปโหลดรูปปกข่าว',
                         'error'
                     );
                     return;
