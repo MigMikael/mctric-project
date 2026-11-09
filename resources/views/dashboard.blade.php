@@ -574,8 +574,6 @@
                                     <h2>News</h2>
                                 </div>
                                 <div class="pull-right">
-                                    <a class="btn btn-primary mr-2"
-                                        href="{{ url('news/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
                                     <a class="btn btn-primary btn-create-dashboard"
                                         href="{{ url('news/create') }}">{{ __('messages.app.createButton') }}</a>
                                 </div>
