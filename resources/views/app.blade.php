@@ -16,7 +16,7 @@
     <!-- Start Owl Carousel 2 CSS -->
     <link rel="stylesheet" href="{{ URL::asset('css/owl.carousel2.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('css/owl.theme2.default.min.css') }}">
-     <!-- End Owl Carousel 2 CSS -->
+    <!-- End Owl Carousel 2 CSS -->
     <!-- Cropper 1.6.2 CSS -->
     <link rel="stylesheet" href="{{ asset('css/cropper.min.css') }}">
     <!-- FilePond Core Styles -->
