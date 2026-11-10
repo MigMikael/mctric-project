@@ -8,6 +8,7 @@ return [
         'careerMenu' => 'ตำแหน่งงาน',
         'clientMenu' => 'ลูกค้าของเรา',
         'awardMenu' => 'รางวัลและการรับรองของเรา',
+        'newsMenu' => 'ข่าวสารบริษัท',
         'contactMenu' => 'ติดต่อเรา',
         'chequeTrackMenu' => 'ติดตามเช็ค',
         'dashboardMenu' => 'แดชบอร์ด',
@@ -75,6 +76,10 @@ return [
 
         'companyAnnouncementHeading' => 'ประกาศบริษัท',
         'companyAnnouncementDescription' => 'ติดตามข่าวสารและประกาศล่าสุดของบริษัท พบกับข้อมูลสำคัญ ความเคลื่อนไหวใหม่ๆ และพัฒนาการที่สำคัญที่จะกำหนดทิศทางในอนาคตของเรา',
+
+        'newsHeading' => 'ข่าวสารบริษัท',
+
+        'managementTeamHeading' => 'คณะกรรมการบริษัท',
 
         'contactHeading' => 'ติดต่อเรา',
         'contactAddress' => 'ที่อยู่',

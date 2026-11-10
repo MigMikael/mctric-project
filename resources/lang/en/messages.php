@@ -8,6 +8,7 @@ return [
         'careerMenu' => 'Career',
         'clientMenu' => 'Client',
         'awardMenu' => 'Awards and Accreditations',
+        'newsMenu' => 'News',
         'contactMenu' => 'Contact Us',
         'chequeTrackMenu' => 'Cheque Tracking',
         'dashboardMenu' => 'Dashboard',
@@ -76,6 +77,10 @@ return [
 
         'companyAnnouncementHeading' => 'Company Announcement',
         'companyAnnouncementDescription' => 'Stay updated with the latest company news and announcements. Discover important updates, new initiatives, and key developments that shape our future.',
+
+        'newsHeading' => 'Company News',
+
+        'managementTeamHeading' => 'Management Team',
 
         'contactHeading' => 'Contact Us',
         'contactAddress' => 'Address',

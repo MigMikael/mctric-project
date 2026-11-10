@@ -82,7 +82,7 @@
     <section class="bg-light py-5" aria-labelledby="management-heading">
         <div class="container">
             <h2 id="management-heading" class="text-center section-title mb-4">
-                คณะกรรมการ
+                {{ __('messages.home.managementTeamHeading') }}
             </h2>
             <div class="row justify-content-center">
                 @foreach ($managements as $management)

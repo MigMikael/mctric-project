@@ -482,7 +482,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="pull-left">
-                                    <h2>Management Team</h2>
+                                    <h2>{{ __('messages.home.managementTeamHeading') }}</h2>
                                 </div>
                                 <div class="pull-right">
                                     <a class="btn btn-primary mr-2"
@@ -571,7 +571,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="pull-left">
-                                    <h2>News</h2>
+                                    <h2>{{ __('messages.home.newsHeading') }}</h2>
                                 </div>
                                 <div class="pull-right">
                                     <a class="btn btn-primary btn-create-dashboard"

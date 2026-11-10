@@ -9,7 +9,7 @@
             <div class="d-flex h-100 text-center align-items-center">
                 <div class="w-100 text-white" style="z-index: 3">
                     <h1 class="text-ellipsis text-center">
-                        News
+                        {{ __('messages.home.newsHeading') }}
                     </h1>
                 </div>
             </div>
