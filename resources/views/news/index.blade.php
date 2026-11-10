@@ -159,6 +159,10 @@
             color: #004b93;
         }
 
+        .card-btn > a {
+            color: #0f172a;
+        }
+
         .card-btn svg {
             width: 16px;
             height: 16px;
