@@ -116,9 +116,9 @@
                                     <a class="btn btn-primary btn-create-dashboard"
                                         href="{{ url('businesses/create') }}">{{ __('messages.app.createButton') }}</a>
                                     <!--
-                                        <a class="btn btn-primary"
-                                            href="{{ url('businesses/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
-                                        -->
+                                            <a class="btn btn-primary"
+                                                href="{{ url('businesses/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
+                                            -->
                                 </div>
                             </div>
                         </div>
@@ -211,9 +211,9 @@
                                     <a class="btn btn-primary btn-create-dashboard"
                                         href="{{ url('careers/create') }}">{{ __('messages.app.createButton') }}</a>
                                     <!--
-                                        <a class="btn btn-primary"
-                                            href="{{ url('careers/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
-                                        -->
+                                            <a class="btn btn-primary"
+                                                href="{{ url('careers/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
+                                            -->
                                 </div>
                             </div>
                         </div>
@@ -306,9 +306,9 @@
                                     <a class="btn btn-primary btn-create-dashboard"
                                         href="{{ url('clients/create') }}">{{ __('messages.app.createButton') }}</a>
                                     <!--
-                                        <a class="btn btn-primary"
-                                            href="{{ url('clients/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
-                                        -->
+                                            <a class="btn btn-primary"
+                                                href="{{ url('clients/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
+                                            -->
                                 </div>
                             </div>
                         </div>
@@ -394,9 +394,9 @@
                                     <a class="btn btn-primary btn-create-dashboard"
                                         href="{{ url('awards/create') }}">{{ __('messages.app.createButton') }}</a>
                                     <!--
-                                        <a class="btn btn-primary"
-                                            href="{{ url('awards/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
-                                        -->
+                                            <a class="btn btn-primary"
+                                                href="{{ url('awards/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
+                                            -->
                                 </div>
                             </div>
                         </div>
@@ -611,7 +611,7 @@
                                 <div class="card" style="cursor: unset !important;">
                                     <img src="{{ url('image/show/' . $newsItem->cover_image_id) }}"
                                         alt="{{ $newsItem->title }}" loading="lazy">
-                                    <div class="card-body" style="height: 150px;">
+                                    <div class="card-body" style="height: 220px;">
                                         <h5 class="card-title text-center">
                                             {{ $newsItem->title }}
                                         </h5>
@@ -626,6 +626,13 @@
                                                 <span
                                                     class="badge badge-danger text-center">{{ __('messages.dashboard.hideButton') }}</span>
                                             @endif
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="button" class="btn btn-outline-primary"
+                                                style="min-width: 120px;"
+                                                onclick="location.href='{{ url('news/' . $newsItem->slug) }}'">
+                                                {{ __('messages.dashboard.cardButton') }}
+                                            </button>
                                         </div>
                                     </div>
                                     <div class="card-footer text-center">
