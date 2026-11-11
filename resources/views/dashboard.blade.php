@@ -115,10 +115,6 @@
                                 <div class="pull-right">
                                     <a class="btn btn-primary btn-create-dashboard"
                                         href="{{ url('businesses/create') }}">{{ __('messages.app.createButton') }}</a>
-                                    <!--
-                                            <a class="btn btn-primary"
-                                                href="{{ url('businesses/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
-                                            -->
                                 </div>
                             </div>
                         </div>
@@ -149,47 +145,57 @@
                         </div>
                     </div>
                     <div class="row">
-                        @foreach ($businesses as $business)
-                            <div class="col-sm-6 col-md-6 col-lg-4">
-                                <div class="card" style="cursor: unset;">
-                                    <img class="card-img-top" src="{{ url('image/show/' . $business->cover_image) }}"
-                                        alt="Card image cap" loading="lazy">
-                                    <div class="card-body" style="height: 180px;">
-                                        <h5 class="card-title text-center">
-                                            {{ $business->name }}
-                                        </h5>
-                                        <div class="text-center form-group">
-                                            @if ($business->display)
-                                                <span
-                                                    class="badge badge-success text-center">{{ __('messages.dashboard.showButton') }}</span>
-                                            @else
-                                                <span
-                                                    class="badge badge-danger text-center">{{ __('messages.dashboard.hideButton') }}</span>
-                                            @endif
+                        @if (count($businesses) > 0)
+                            @foreach ($businesses as $business)
+                                <div class="col-sm-6 col-md-6 col-lg-4">
+                                    <div class="card" style="cursor: unset;">
+                                        <img class="card-img-top" src="{{ url('image/show/' . $business->cover_image) }}"
+                                            alt="Card image cap" loading="lazy">
+                                        <div class="card-body" style="height: 180px;">
+                                            <h5 class="card-title text-center">
+                                                {{ $business->name }}
+                                            </h5>
+                                            <div class="text-center form-group">
+                                                @if ($business->display)
+                                                    <span
+                                                        class="badge badge-success text-center">{{ __('messages.dashboard.showButton') }}</span>
+                                                @else
+                                                    <span
+                                                        class="badge badge-danger text-center">{{ __('messages.dashboard.hideButton') }}</span>
+                                                @endif
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="button" class="btn btn-outline-primary"
+                                                    style="min-width: 120px;"
+                                                    onclick="location.href='{{ url('businesses/' . $business->id) }}'">
+                                                    {{ __('messages.dashboard.cardButton') }}
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div class="text-center">
-                                            <button type="button" class="btn btn-outline-primary" style="min-width: 120px;"
-                                                onclick="location.href='{{ url('businesses/' . $business->id) }}'">
-                                                {{ __('messages.dashboard.cardButton') }}
-                                            </button>
+                                        <div class="card-footer text-center">
+                                            {!! Form::model($business, [
+                                                'method' => 'delete',
+                                                'url' => '/businesses/' . $business->id,
+                                                'onsubmit' => 'return confirmDelete()',
+                                            ]) !!}
+                                            <a class="btn btn-warning mr-3"
+                                                href="{{ url('businesses/' . $business->id . '/edit/') }}">
+                                                {{ __('messages.app.editButton') }}</a>
+                                            <button class="btn btn-danger"
+                                                type="submit">{{ __('messages.app.deleteButton') }}</button>
+                                            {!! Form::close() !!}
                                         </div>
-                                    </div>
-                                    <div class="card-footer text-center">
-                                        {!! Form::model($business, [
-                                            'method' => 'delete',
-                                            'url' => '/businesses/' . $business->id,
-                                            'onsubmit' => 'return confirmDelete()',
-                                        ]) !!}
-                                        <a class="btn btn-warning mr-3"
-                                            href="{{ url('businesses/' . $business->id . '/edit/') }}">
-                                            {{ __('messages.app.editButton') }}</a>
-                                        <button class="btn btn-danger"
-                                            type="submit">{{ __('messages.app.deleteButton') }}</button>
-                                        {!! Form::close() !!}
                                     </div>
                                 </div>
+                            @endforeach
+                        @else
+                            <div class="col-md-12">
+                                <div class="text-center">
+                                    <img class="img-fluid" src="{{ asset('image/no-data-image.png') }}"
+                                        style="max-width: 320px; height: auto;">
+                                </div>
                             </div>
-                        @endforeach
+                        @endif
                     </div>
                     @if ($businesses != [])
                         <div class="row" style="justify-content: center; padding-top: 10px;">
@@ -210,10 +216,6 @@
                                 <div class="pull-right">
                                     <a class="btn btn-primary btn-create-dashboard"
                                         href="{{ url('careers/create') }}">{{ __('messages.app.createButton') }}</a>
-                                    <!--
-                                            <a class="btn btn-primary"
-                                                href="{{ url('careers/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
-                                            -->
                                 </div>
                             </div>
                         </div>
@@ -244,47 +246,56 @@
                         </div>
                     </div>
                     <div class="row">
-                        @foreach ($careers as $career)
-                            <div class="col-sm-6 col-md-6 col-lg-4">
-                                <div class="card" style="cursor: unset;">
-                                    <img class="card-img-top" src="{{ url('image/show/' . $career->image_id) }}"
-                                        alt="Card image cap" loading="lazy">
-                                    <div class="card-body" style="height: 180px;">
-                                        <h5 class="card-title text-center">
-                                            {{ $career->name }}
-                                        </h5>
-                                        <div class="text-center form-group">
-                                            @if ($career->display)
-                                                <span
-                                                    class="badge badge-success text-center">{{ __('messages.dashboard.showButton') }}</span>
-                                            @else
-                                                <span
-                                                    class="badge badge-danger text-center">{{ __('messages.dashboard.hideButton') }}</span>
-                                            @endif
+                        @if (count($careers) > 0)
+                            @foreach ($careers as $career)
+                                <div class="col-sm-6 col-md-6 col-lg-4">
+                                    <div class="card" style="cursor: unset;">
+                                        <img class="card-img-top" src="{{ url('image/show/' . $career->image_id) }}"
+                                            alt="Card image cap" loading="lazy">
+                                        <div class="card-body" style="height: 180px;">
+                                            <h5 class="card-title text-center">
+                                                {{ $career->name }}
+                                            </h5>
+                                            <div class="text-center form-group">
+                                                @if ($career->display)
+                                                    <span
+                                                        class="badge badge-success text-center">{{ __('messages.dashboard.showButton') }}</span>
+                                                @else
+                                                    <span
+                                                        class="badge badge-danger text-center">{{ __('messages.dashboard.hideButton') }}</span>
+                                                @endif
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="button" class="btn btn-outline-primary"
+                                                    style="min-width: 120px;"
+                                                    onclick="location.href='{{ url('careers/' . $career->id) }}'">
+                                                    {{ __('messages.dashboard.cardButton') }}
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div class="text-center">
-                                            <button type="button" class="btn btn-outline-primary"
-                                                style="min-width: 120px;"
-                                                onclick="location.href='{{ url('careers/' . $career->id) }}'">
-                                                {{ __('messages.dashboard.cardButton') }}
-                                            </button>
+                                        <div class="card-footer text-center">
+                                            {!! Form::model($career, [
+                                                'method' => 'delete',
+                                                'url' => '/careers/' . $career->id,
+                                                'onsubmit' => 'return confirmDelete()',
+                                            ]) !!}
+                                            <a class="btn btn-warning mr-3"
+                                                href="{{ url('careers/' . $career->id . '/edit') }}">{{ __('messages.app.editButton') }}</a>
+                                            <button class="btn btn-danger"
+                                                type="submit">{{ __('messages.app.deleteButton') }}</button>
+                                            {!! Form::close() !!}
                                         </div>
-                                    </div>
-                                    <div class="card-footer text-center">
-                                        {!! Form::model($career, [
-                                            'method' => 'delete',
-                                            'url' => '/careers/' . $career->id,
-                                            'onsubmit' => 'return confirmDelete()',
-                                        ]) !!}
-                                        <a class="btn btn-warning mr-3"
-                                            href="{{ url('careers/' . $career->id . '/edit') }}">{{ __('messages.app.editButton') }}</a>
-                                        <button class="btn btn-danger"
-                                            type="submit">{{ __('messages.app.deleteButton') }}</button>
-                                        {!! Form::close() !!}
                                     </div>
                                 </div>
+                            @endforeach
+                        @else
+                            <div class="col-md-12">
+                                <div class="text-center">
+                                    <img class="img-fluid" src="{{ asset('image/no-data-image.png') }}"
+                                        style="max-width: 320px; height: auto;">
+                                </div>
                             </div>
-                        @endforeach
+                        @endif
                     </div>
                     @if ($careers != [])
                         <div class="row" style="justify-content: center; padding-top: 10px;">
@@ -305,10 +316,6 @@
                                 <div class="pull-right">
                                     <a class="btn btn-primary btn-create-dashboard"
                                         href="{{ url('clients/create') }}">{{ __('messages.app.createButton') }}</a>
-                                    <!--
-                                            <a class="btn btn-primary"
-                                                href="{{ url('clients/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
-                                            -->
                                 </div>
                             </div>
                         </div>
@@ -339,40 +346,49 @@
                         </div>
                     </div>
                     <div class="row">
-                        @foreach ($clients as $client)
-                            <div class="col-sm-6 col-md-6 col-lg-4">
-                                <div class="card" style="cursor: unset;">
-                                    <img class="card-img-top" src="{{ url('image/show/' . $client->image_id) }}"
-                                        alt="Card image cap" style="object-fit: contain !important;" loading="lazy">
-                                    <div class="card-body" style="height: 120px;">
-                                        <h5 class="card-title text-center">
-                                            {{ $client->name }}
-                                        </h5>
-                                        <div class="text-center">
-                                            @if ($client->display)
-                                                <span
-                                                    class="badge badge-success text-center">{{ __('messages.dashboard.showButton') }}</span>
-                                            @else
-                                                <span
-                                                    class="badge badge-danger text-center">{{ __('messages.dashboard.hideButton') }}</span>
-                                            @endif
+                        @if (count($clients) > 0)
+                            @foreach ($clients as $client)
+                                <div class="col-sm-6 col-md-6 col-lg-4">
+                                    <div class="card" style="cursor: unset;">
+                                        <img class="card-img-top" src="{{ url('image/show/' . $client->image_id) }}"
+                                            alt="Card image cap" style="object-fit: contain !important;" loading="lazy">
+                                        <div class="card-body" style="height: 120px;">
+                                            <h5 class="card-title text-center">
+                                                {{ $client->name }}
+                                            </h5>
+                                            <div class="text-center">
+                                                @if ($client->display)
+                                                    <span
+                                                        class="badge badge-success text-center">{{ __('messages.dashboard.showButton') }}</span>
+                                                @else
+                                                    <span
+                                                        class="badge badge-danger text-center">{{ __('messages.dashboard.hideButton') }}</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-center">
+                                            {!! Form::model($client, [
+                                                'method' => 'delete',
+                                                'url' => '/clients/' . $client->id,
+                                                'onsubmit' => 'return confirmDelete()',
+                                            ]) !!}
+                                            <a class="btn btn-warning mr-3"
+                                                href="{{ url('clients/' . $client->id . '/edit') }}">{{ __('messages.app.editButton') }}</a>
+                                            <button class="btn btn-danger"
+                                                type="submit">{{ __('messages.app.deleteButton') }}</button>
+                                            {!! Form::close() !!}
                                         </div>
                                     </div>
-                                    <div class="card-footer text-center">
-                                        {!! Form::model($client, [
-                                            'method' => 'delete',
-                                            'url' => '/clients/' . $client->id,
-                                            'onsubmit' => 'return confirmDelete()',
-                                        ]) !!}
-                                        <a class="btn btn-warning mr-3"
-                                            href="{{ url('clients/' . $client->id . '/edit') }}">{{ __('messages.app.editButton') }}</a>
-                                        <button class="btn btn-danger"
-                                            type="submit">{{ __('messages.app.deleteButton') }}</button>
-                                        {!! Form::close() !!}
-                                    </div>
+                                </div>
+                            @endforeach
+                        @else
+                            <div class="col-md-12">
+                                <div class="text-center">
+                                    <img class="img-fluid" src="{{ asset('image/no-data-image.png') }}"
+                                        style="max-width: 320px; height: auto;">
                                 </div>
                             </div>
-                        @endforeach
+                        @endif
                     </div>
                     @if ($clients != [])
                         <div class="row" style="justify-content: center; padding-top: 10px;">
@@ -393,10 +409,6 @@
                                 <div class="pull-right">
                                     <a class="btn btn-primary btn-create-dashboard"
                                         href="{{ url('awards/create') }}">{{ __('messages.app.createButton') }}</a>
-                                    <!--
-                                            <a class="btn btn-primary"
-                                                href="{{ url('awards/sort') }}">{{ __('messages.dashboard.sortButton') }}</a>
-                                            -->
                                 </div>
                             </div>
                         </div>
@@ -427,46 +439,55 @@
                         </div>
                     </div>
                     <div class="row">
-                        @foreach ($awards as $award)
-                            <div class="col-sm-6 col-md-6 col-lg-4">
-                                <div class="card" style="cursor: unset !important;">
-                                    <img class="card-img-top" src="{{ url('image/show/' . $award->image_id) }}"
-                                        alt="Card image cap" style="object-fit: contain !important;" loading="lazy">
-                                    <div class="card-body" style="height: 180px;">
-                                        <h5 class="card-title text-center">
-                                            {{ $award->name }}
-                                        </h5>
-                                        <div class="text-center form-group">
-                                            @if ($award->display)
-                                                <span
-                                                    class="badge badge-success text-center">{{ __('messages.dashboard.showButton') }}</span>
-                                            @else
-                                                <span
-                                                    class="badge badge-danger text-center">{{ __('messages.dashboard.hideButton') }}</span>
-                                            @endif
+                        @if (count($awards) > 0)
+                            @foreach ($awards as $award)
+                                <div class="col-sm-6 col-md-6 col-lg-4">
+                                    <div class="card" style="cursor: unset !important;">
+                                        <img class="card-img-top" src="{{ url('image/show/' . $award->image_id) }}"
+                                            alt="Card image cap" style="object-fit: contain !important;" loading="lazy">
+                                        <div class="card-body" style="height: 180px;">
+                                            <h5 class="card-title text-center">
+                                                {{ $award->name }}
+                                            </h5>
+                                            <div class="text-center form-group">
+                                                @if ($award->display)
+                                                    <span
+                                                        class="badge badge-success text-center">{{ __('messages.dashboard.showButton') }}</span>
+                                                @else
+                                                    <span
+                                                        class="badge badge-danger text-center">{{ __('messages.dashboard.hideButton') }}</span>
+                                                @endif
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="button" class="btn learn-more-btn"
+                                                    onclick="location.href='{{ url('awards/' . $award->id) }}'">
+                                                    {{ __('messages.dashboard.cardButton') }}
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div class="text-center">
-                                            <button type="button" class="btn learn-more-btn"
-                                                onclick="location.href='{{ url('awards/' . $award->id) }}'">
-                                                {{ __('messages.dashboard.cardButton') }}
-                                            </button>
+                                        <div class="card-footer text-center">
+                                            {!! Form::model($award, [
+                                                'method' => 'delete',
+                                                'url' => '/awards/' . $award->id,
+                                                'onsubmit' => 'return confirmDelete()',
+                                            ]) !!}
+                                            <a class="btn btn-warning mr-3"
+                                                href="{{ url('awards/' . $award->id . '/edit') }}">{{ __('messages.app.editButton') }}</a>
+                                            <button class="btn btn-danger"
+                                                type="submit">{{ __('messages.app.deleteButton') }}</button>
+                                            {!! Form::close() !!}
                                         </div>
-                                    </div>
-                                    <div class="card-footer text-center">
-                                        {!! Form::model($award, [
-                                            'method' => 'delete',
-                                            'url' => '/awards/' . $award->id,
-                                            'onsubmit' => 'return confirmDelete()',
-                                        ]) !!}
-                                        <a class="btn btn-warning mr-3"
-                                            href="{{ url('awards/' . $award->id . '/edit') }}">{{ __('messages.app.editButton') }}</a>
-                                        <button class="btn btn-danger"
-                                            type="submit">{{ __('messages.app.deleteButton') }}</button>
-                                        {!! Form::close() !!}
                                     </div>
                                 </div>
+                            @endforeach
+                        @else
+                            <div class="col-md-12">
+                                <div class="text-center">
+                                    <img class="img-fluid" src="{{ asset('image/no-data-image.png') }}"
+                                        style="max-width: 320px; height: auto;">
+                                </div>
                             </div>
-                        @endforeach
+                        @endif
                     </div>
                     @if ($awards != [])
                         <div class="row" style="justify-content: center; padding-top: 10px;">
@@ -519,43 +540,52 @@
                         </div>
                     </div>
                     <div class="row">
-                        @foreach ($managements as $management)
-                            <div class="col-sm-6 col-md-6 col-lg-4">
-                                <div class="card" style="cursor: unset !important;">
-                                    <img class="card-img-top" src="{{ url('image/show/' . $management->image_id) }}"
-                                        alt="Card image cap" style="object-fit: contain !important;" loading="lazy">
-                                    <div class="card-body" style="height: 150px;">
-                                        <h5 class="card-title text-center">
-                                            {{ $management->first_name }} {{ $management->last_name }}
-                                        </h5>
-                                        <div class="text-center mb-3">
-                                            <strong>{{ $management->job_title }}</strong>
+                        @if (count($managements) > 0)
+                            @foreach ($managements as $management)
+                                <div class="col-sm-6 col-md-6 col-lg-4">
+                                    <div class="card" style="cursor: unset !important;">
+                                        <img class="card-img-top" src="{{ url('image/show/' . $management->image_id) }}"
+                                            alt="Card image cap" style="object-fit: contain !important;" loading="lazy">
+                                        <div class="card-body" style="height: 150px;">
+                                            <h5 class="card-title text-center">
+                                                {{ $management->first_name }} {{ $management->last_name }}
+                                            </h5>
+                                            <div class="text-center mb-3">
+                                                <strong>{{ $management->job_title }}</strong>
+                                            </div>
+                                            <div class="text-center form-group">
+                                                @if ($management->display)
+                                                    <span
+                                                        class="badge badge-success text-center">{{ __('messages.dashboard.showButton') }}</span>
+                                                @else
+                                                    <span
+                                                        class="badge badge-danger text-center">{{ __('messages.dashboard.hideButton') }}</span>
+                                                @endif
+                                            </div>
                                         </div>
-                                        <div class="text-center form-group">
-                                            @if ($management->display)
-                                                <span
-                                                    class="badge badge-success text-center">{{ __('messages.dashboard.showButton') }}</span>
-                                            @else
-                                                <span
-                                                    class="badge badge-danger text-center">{{ __('messages.dashboard.hideButton') }}</span>
-                                            @endif
+                                        <div class="card-footer text-center">
+                                            {!! Form::model($management, [
+                                                'method' => 'delete',
+                                                'url' => '/managements/' . $management->id,
+                                                'onsubmit' => 'return confirmDelete()',
+                                            ]) !!}
+                                            <a class="btn btn-warning mr-3"
+                                                href="{{ url('managements/' . $management->id . '/edit') }}">{{ __('messages.app.editButton') }}</a>
+                                            <button class="btn btn-danger"
+                                                type="submit">{{ __('messages.app.deleteButton') }}</button>
+                                            {!! Form::close() !!}
                                         </div>
-                                    </div>
-                                    <div class="card-footer text-center">
-                                        {!! Form::model($management, [
-                                            'method' => 'delete',
-                                            'url' => '/managements/' . $management->id,
-                                            'onsubmit' => 'return confirmDelete()',
-                                        ]) !!}
-                                        <a class="btn btn-warning mr-3"
-                                            href="{{ url('managements/' . $management->id . '/edit') }}">{{ __('messages.app.editButton') }}</a>
-                                        <button class="btn btn-danger"
-                                            type="submit">{{ __('messages.app.deleteButton') }}</button>
-                                        {!! Form::close() !!}
                                     </div>
                                 </div>
+                            @endforeach
+                        @else
+                            <div class="col-md-12">
+                                <div class="text-center">
+                                    <img class="img-fluid" src="{{ asset('image/no-data-image.png') }}"
+                                        style="max-width: 320px; height: auto;">
+                                </div>
                             </div>
-                        @endforeach
+                        @endif
                     </div>
                     @if ($managements != [])
                         <div class="row" style="justify-content: center; padding-top: 10px;">
@@ -606,50 +636,59 @@
                         </div>
                     </div>
                     <div class="row">
-                        @foreach ($news as $newsItem)
-                            <div class="col-sm-6 col-md-6 col-lg-4">
-                                <div class="card" style="cursor: unset !important;">
-                                    <img src="{{ url('image/show/' . $newsItem->cover_image_id) }}"
-                                        alt="{{ $newsItem->title }}" loading="lazy">
-                                    <div class="card-body" style="height: 220px;">
-                                        <h5 class="card-title text-center">
-                                            {{ $newsItem->title }}
-                                        </h5>
-                                        <div class="text-center mb-3">
-                                            <strong>{{ $newsItem->created_at->format('d/m/Y H:i') }}</strong>
+                        @if (count($news) > 0)
+                            @foreach ($news as $newsItem)
+                                <div class="col-sm-6 col-md-6 col-lg-4">
+                                    <div class="card" style="cursor: unset !important;">
+                                        <img src="{{ url('image/show/' . $newsItem->cover_image_id) }}"
+                                            alt="{{ $newsItem->title }}" loading="lazy">
+                                        <div class="card-body" style="height: 220px;">
+                                            <h5 class="card-title text-center">
+                                                {{ $newsItem->title }}
+                                            </h5>
+                                            <div class="text-center mb-3">
+                                                <strong>{{ $newsItem->created_at->format('d/m/Y H:i') }}</strong>
+                                            </div>
+                                            <div class="text-center form-group">
+                                                @if ($newsItem->display)
+                                                    <span
+                                                        class="badge badge-success text-center">{{ __('messages.dashboard.showButton') }}</span>
+                                                @else
+                                                    <span
+                                                        class="badge badge-danger text-center">{{ __('messages.dashboard.hideButton') }}</span>
+                                                @endif
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="button" class="btn btn-outline-primary"
+                                                    style="min-width: 120px;"
+                                                    onclick="location.href='{{ url('news/' . $newsItem->slug) }}'">
+                                                    {{ __('messages.dashboard.cardButton') }}
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div class="text-center form-group">
-                                            @if ($newsItem->display)
-                                                <span
-                                                    class="badge badge-success text-center">{{ __('messages.dashboard.showButton') }}</span>
-                                            @else
-                                                <span
-                                                    class="badge badge-danger text-center">{{ __('messages.dashboard.hideButton') }}</span>
-                                            @endif
+                                        <div class="card-footer text-center">
+                                            {!! Form::model($newsItem, [
+                                                'method' => 'delete',
+                                                'url' => '/news/' . $newsItem->id,
+                                                'onsubmit' => 'return confirmDelete()',
+                                            ]) !!}
+                                            <a class="btn btn-warning mr-3"
+                                                href="{{ url('news/' . $newsItem->id . '/edit') }}">{{ __('messages.app.editButton') }}</a>
+                                            <button class="btn btn-danger"
+                                                type="submit">{{ __('messages.app.deleteButton') }}</button>
+                                            {!! Form::close() !!}
                                         </div>
-                                        <div class="text-center">
-                                            <button type="button" class="btn btn-outline-primary"
-                                                style="min-width: 120px;"
-                                                onclick="location.href='{{ url('news/' . $newsItem->slug) }}'">
-                                                {{ __('messages.dashboard.cardButton') }}
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer text-center">
-                                        {!! Form::model($newsItem, [
-                                            'method' => 'delete',
-                                            'url' => '/news/' . $newsItem->id,
-                                            'onsubmit' => 'return confirmDelete()',
-                                        ]) !!}
-                                        <a class="btn btn-warning mr-3"
-                                            href="{{ url('news/' . $newsItem->id . '/edit') }}">{{ __('messages.app.editButton') }}</a>
-                                        <button class="btn btn-danger"
-                                            type="submit">{{ __('messages.app.deleteButton') }}</button>
-                                        {!! Form::close() !!}
                                     </div>
                                 </div>
+                            @endforeach
+                        @else
+                            <div class="col-md-12">
+                                <div class="text-center">
+                                    <img class="img-fluid" src="{{ asset('image/no-data-image.png') }}"
+                                        style="max-width: 320px; height: auto;">
+                                </div>
                             </div>
-                        @endforeach
+                        @endif
                     </div>
                     @if ($news != [])
                         <div class="row" style="justify-content: center; padding-top: 10px;">
@@ -700,31 +739,40 @@
                         </div>
                     </div>
                     <div class="row">
-                        @foreach ($users as $user)
-                            <div class="col-sm-6 col-md-6 col-lg-4">
-                                <div class="card" style="cursor: unset !important;">
-                                    <div class="card-body" style="height: 150px;">
-                                        <h5 class="card-title text-center">{{ $user->name }}</h5>
-                                        <hr>
-                                        <h6 class="card-title text-center">{{ $user->email }}</h6>
-                                    </div>
-                                    @if (auth()->user()->email === 'admin@gmail.com' || auth()->id() == $user->id)
-                                        <div class="card-footer text-center">
-                                            {!! Form::model($user, [
-                                                'method' => 'delete',
-                                                'url' => '/users/' . $user->id,
-                                                'onsubmit' => 'return confirmDelete()',
-                                            ]) !!}
-                                            <a class="btn btn-warning mr-3"
-                                                href="{{ url('users/' . $user->id . '/edit') }}">{{ __('messages.app.editButton') }}</a>
-                                            <button class="btn btn-danger"
-                                                type="submit">{{ __('messages.app.deleteButton') }}</button>
-                                            {!! Form::close() !!}
+                        @if (count($users) > 0)
+                            @foreach ($users as $user)
+                                <div class="col-sm-6 col-md-6 col-lg-4">
+                                    <div class="card" style="cursor: unset !important;">
+                                        <div class="card-body" style="height: 150px;">
+                                            <h5 class="card-title text-center">{{ $user->name }}</h5>
+                                            <hr>
+                                            <h6 class="card-title text-center">{{ $user->email }}</h6>
                                         </div>
-                                    @endif
+                                        @if (auth()->user()->email === 'admin@gmail.com' || auth()->id() == $user->id)
+                                            <div class="card-footer text-center">
+                                                {!! Form::model($user, [
+                                                    'method' => 'delete',
+                                                    'url' => '/users/' . $user->id,
+                                                    'onsubmit' => 'return confirmDelete()',
+                                                ]) !!}
+                                                <a class="btn btn-warning mr-3"
+                                                    href="{{ url('users/' . $user->id . '/edit') }}">{{ __('messages.app.editButton') }}</a>
+                                                <button class="btn btn-danger"
+                                                    type="submit">{{ __('messages.app.deleteButton') }}</button>
+                                                {!! Form::close() !!}
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+                            @endforeach
+                        @else
+                            <div class="col-md-12">
+                                <div class="text-center">
+                                    <img class="img-fluid" src="{{ asset('image/no-data-image.png') }}"
+                                        style="max-width: 320px; height: auto;">
                                 </div>
                             </div>
-                        @endforeach
+                        @endif
                     </div>
                 </div>
                 <!-- End User Tab -->
