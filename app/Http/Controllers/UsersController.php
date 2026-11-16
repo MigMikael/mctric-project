@@ -105,11 +105,7 @@ class UsersController extends Controller
 
     public function destroy($id)
     {
-        abort_unless(
-            auth()->user()->email === 'admin@gmail.com'
-                || auth()->id() == $id,
-            403
-        );
+        abort_unless(auth()->user()->email === 'admin@gmail.com', 403);
 
         $user = User::findOrFail($id);
         $user->delete();

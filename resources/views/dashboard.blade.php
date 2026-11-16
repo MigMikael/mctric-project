@@ -750,16 +750,23 @@
                                         </div>
                                         @if (auth()->user()->email === 'admin@gmail.com' || auth()->id() == $user->id)
                                             <div class="card-footer text-center">
-                                                {!! Form::model($user, [
-                                                    'method' => 'delete',
-                                                    'url' => '/users/' . $user->id,
-                                                    'onsubmit' => 'return confirmDelete()',
-                                                ]) !!}
-                                                <a class="btn btn-warning mr-3"
-                                                    href="{{ url('users/' . $user->id . '/edit') }}">{{ __('messages.app.editButton') }}</a>
-                                                <button class="btn btn-danger"
-                                                    type="submit">{{ __('messages.app.deleteButton') }}</button>
-                                                {!! Form::close() !!}
+                                                <a class="btn btn-warning"
+                                                    href="{{ url('users/' . $user->id . '/edit') }}">
+                                                    {{ __('messages.app.editButton') }}
+                                                </a>
+
+                                                @if (auth()->user()->email === 'admin@gmail.com')
+                                                    {!! Form::model($user, [
+                                                        'method' => 'delete',
+                                                        'url' => '/users/' . $user->id,
+                                                        'class' => 'd-inline ml-3',
+                                                        'onsubmit' => 'return confirmDelete()',
+                                                    ]) !!}
+                                                    <button class="btn btn-danger" type="submit">
+                                                        {{ __('messages.app.deleteButton') }}
+                                                    </button>
+                                                    {!! Form::close() !!}
+                                                @endif
                                             </div>
                                         @endif
                                     </div>
