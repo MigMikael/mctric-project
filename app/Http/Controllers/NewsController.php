@@ -84,7 +84,7 @@ class NewsController extends Controller
                 ->timezone('Asia/Bangkok')
                 ->format('Ymd');
 
-            $newsItem->slug = $date . '-' . $newsItem->id;
+            $newsItem->slug = $date . $newsItem->id;
             $createNewsResult = $newsItem->save();
 
             if (!$createNewsResult) {
