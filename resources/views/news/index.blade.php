@@ -20,10 +20,23 @@
             <div class="row">
                 @if ($news->isEmpty())
                     <div class="col-12">
-                        <p class="text-center text-muted">ยังไม่มีข่าวสาร</p>
+                        <p class="text-center text-muted">{{ __('messages.app.noNews') }}</p>
                     </div>
                 @else
                     @foreach ($news as $newsItem)
+                        @php
+                            $useNewsThai =
+                                app()->getLocale() === 'th' &&
+                                filled($newsItem->title_th) &&
+                                filled($newsItem->content_th);
+
+                            $newsTitle = $useNewsThai
+                                ? $newsItem->title_th
+                                : $newsItem->title;
+                            $newsContent = $useNewsThai
+                                ? $newsItem->content_th
+                                : $newsItem->content;
+                        @endphp
                         <div class="col-12 col-sm-6 col-lg-4 mb-4">
                             <article class="corporate-card">
                                 <div class="card-thumb">
@@ -33,11 +46,11 @@
                                 <div class="card-body">
                                     <span class="card-date">
                                         {{ $newsItem->created_at->copy()->timezone('Asia/Bangkok')->format('d/m/Y') }}</span>
-                                    <h3 class="card-title"> {{ $newsItem->title }}</h3>
+                                    <h3 class="card-title"> {{ $newsTitle }}</h3>
                                     <div class="card-footer">
                                         <span class="card-btn">
                                             <a href="{{ url('news/' . $newsItem->slug) }}">
-                                                อ่านเพิ่มเติม
+                                                {{ __('messages.app.viewMore') }}
                                             </a>
                                             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -159,7 +172,7 @@
             color: #004b93;
         }
 
-        .card-btn > a {
+        .card-btn>a {
             color: #0f172a;
         }
 

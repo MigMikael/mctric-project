@@ -9,28 +9,35 @@
         <div class="container h-100">
             <div class="d-flex h-100 align-items-center justify-content-center">
                 <h1 class="text-white text-center" style="z-index: 3;">
-                   {{ __('messages.home.newsHeading') }}
+                    {{ __('messages.home.newsHeading') }}
                 </h1>
             </div>
         </div>
     </header>
 
+    @php
+        $useNewsThai = app()->getLocale() === 'th' && filled($newsItem->title_th) && filled($newsItem->content_th);
+
+        $newsTitle = $useNewsThai ? $newsItem->title_th : $newsItem->title;
+        $newsContent = $useNewsThai ? $newsItem->content_th : $newsItem->content;
+    @endphp
+
     <section class="bg-white py-5">
         <div class="container-narrow">
             <article class="mx-auto" style="max-width: 900px;">
-                <h2>{{ $newsItem->title }}</h2>
+                <h2>{{ $newsTitle }}</h2>
                 <div class="d-block small text-muted mb-4" style="font-size: 15px;">
-                    McTRIC Public Company Limited •
-                    {{ $newsItem->created_at->copy()->timezone('Asia/Bangkok')->format('d/m/Y') }} น.
+                    {{ __('messages.app.mctricCompanyName') }} •
+                    {{ $newsItem->created_at->copy()->timezone('Asia/Bangkok')->format('d/m/Y') }}
                 </div>
 
                 @if ($newsItem->cover_image_id)
                     <img src="{{ url('image/show/' . $newsItem->cover_image_id) }}" class="d-block w-100 rounded mb-4"
-                        width="1280" height="720" style="height: auto;" alt="{{ $newsItem->title }}">
+                        width="1280" height="720" style="height: auto;" alt="News Cover Image">
                 @endif
 
                 <div class="news-content">
-                    {!! $newsItem->content !!}
+                    {!! $newsContent !!}
                 </div>
             </article>
         </div>

@@ -106,13 +106,10 @@ class NewsController extends Controller
     {
         $newsItem = News::findOrFail($id);
 
-        $oldCoverImageId = $newsItem->cover_image_id;
+        $oldImageIds = $this->newsImageIds($newsItem);
 
         $data = $this->validateNews($request, $newsItem);
         $data = $this->saveCoverImage($request, $data);
-
-        $coverChanged = isset($data['cover_image_id'])
-            && (string) $data['cover_image_id'] !== (string) $oldCoverImageId;
 
         $updateNewsResult  = $newsItem->update($data);
 
@@ -120,8 +117,8 @@ class NewsController extends Controller
             return back()->withErrors(['update' => 'อัปเดตข่าวไม่สำเร็จ']);
         }
 
-        if ($coverChanged && $oldCoverImageId !== null) {
-            $this->deleteImageIfUnused($oldCoverImageId);
+        foreach (array_diff($oldImageIds, $this->newsImageIds($newsItem)) as $imageId) {
+            $this->deleteImageIfUnused($imageId);
         }
 
         return redirect()->action('HomeController@dashboardNews');
@@ -131,11 +128,7 @@ class NewsController extends Controller
     {
         $newsItem = News::findOrFail($id);
 
-        $imageIds = $this->contentImageIds($newsItem->content);
-
-        if ($newsItem->cover_image_id !== null) {
-            $imageIds[] = (string) $newsItem->cover_image_id;
-        }
+        $imageIds = $this->newsImageIds($newsItem);
 
         if (!$newsItem->delete()) {
             return back()->withErrors([
@@ -143,7 +136,7 @@ class NewsController extends Controller
             ]);
         }
 
-        foreach (array_unique($imageIds) as $imageId) {
+        foreach ($imageIds as $imageId) {
             $this->deleteImageIfUnused($imageId);
         }
 
@@ -154,7 +147,9 @@ class NewsController extends Controller
     {
         $data = $request->validate([
             'title' => 'required|string|max:255',
+            'title_th' => 'required|string|max:255',
             'content' => 'required|string',
+            'content_th' => 'required|string',
             'display' => 'required|boolean',
             'cover_image' => 'nullable|image|mimes:jpg,jpeg,png|max:5120'
                 . '|dimensions:max_width=4000,max_height=4000',
@@ -198,6 +193,20 @@ class NewsController extends Controller
         return response()->json([
             'location' => url('image/show/' . $image->id),
         ], 201);
+    }
+
+    private function newsImageIds(News $newsItem): array
+    {
+        $imageIds = array_merge(
+            $this->contentImageIds($newsItem->content),
+            $this->contentImageIds($newsItem->content_th)
+        );
+
+        if ($newsItem->cover_image_id !== null) {
+            $imageIds[] = (string) $newsItem->cover_image_id;
+        }
+
+        return array_unique($imageIds);
     }
 
     private function contentImageIds(?string $content): array
@@ -253,6 +262,12 @@ class NewsController extends Controller
 
     private function deleteImageIfUnused($imageId)
     {
+        foreach (News::select('cover_image_id', 'content', 'content_th')->cursor() as $article) {
+            if (in_array((string) $imageId, $this->newsImageIds($article), true)) {
+                return;
+            }
+        }
+
         $image = Image::find($imageId);
 
         if (!$image) {

@@ -21,6 +21,10 @@ return [
         'searchButton' => 'Search',
 
         'mainMenu' => 'Main Menu',
+
+        'noNews' => 'No News.',
+        'viewMore' => 'View More',
+        'mctricCompanyName' => 'McTRIC Public Company Limited',
     ],
     'home' => [
         'webTitle' => 'McTRIC Public Company Limited',

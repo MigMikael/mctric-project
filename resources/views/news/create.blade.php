@@ -33,8 +33,15 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Title <span class="required">*</span></label>
+                                        <label>Title (EN)<span class="required">*</span></label>
                                         <input type="text" class="form-control" name="title" id="title"
+                                            value="" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Title (TH)<span class="required">*</span></label>
+                                        <input type="text" class="form-control" name="title_th" id="title_th"
                                             value="" required>
                                     </div>
                                 </div>
@@ -60,8 +67,14 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Content <span class="required">*</span></label>
+                                        <label>Content (EN)<span class="required">*</span></label>
                                         <textarea class="form-control news-content-editor" name="content" id="content" rows="12"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Content (TH)<span class="required">*</span></label>
+                                        <textarea class="form-control news-content-editor-th" name="content_th" id="content_th" rows="12"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -156,8 +169,8 @@
     <script>
         $(document).ready(function() {
             tinymce.init({
-                selector: '#content',
-                height: 450,
+                selector: '#content, #content_th',
+                height: 500,
                 plugins: 'lists link image paste',
                 toolbar: 'undo redo | formatselect | bold italic | bullist numlist | link image',
                 automatic_uploads: true,
@@ -321,10 +334,16 @@
 
                 var form = this;
                 var editor = tinymce.get('content');
+                var editorTH = tinymce.get('content_th');
                 var saveButton = form.querySelector('.btn-submit');
 
                 if (!$('#title').val().trim()) {
-                    Swal.fire('พบข้อผิดพลาด', 'กรุณาระบุชื่อข่าวสาร', 'error');
+                    Swal.fire('พบข้อผิดพลาด', 'กรุณาระบุชื่อข่าวสาร (EN)', 'error');
+                    return;
+                }
+
+                if (!$('#title_th').val().trim()) {
+                    Swal.fire('พบข้อผิดพลาด', 'กรุณาระบุชื่อข่าวสาร (TH)', 'error');
                     return;
                 }
 
@@ -333,33 +352,75 @@
                     return;
                 }
 
-                if (!editor || !editor.initialized) {
-                    Swal.fire('พบข้อผิดพลาด', 'ตัวแก้ไขเนื้อหายังไม่พร้อม กรุณาลองอีกครั้ง', 'error');
+                if (!editor || !editor.initialized || !editorTH || !editorTH.initialized) {
+                    Swal.fire(
+                        'พบข้อผิดพลาด',
+                        'ตัวแก้ไขเนื้อหาข่าวยังไม่พร้อม กรุณารอสักครู่แล้วลองบันทึกอีกครั้ง',
+                        'error'
+                    );
+                    return;
+                }
+
+                if (!editor.getContent({
+                        format: 'text'
+                    }).trim()) {
+                    Swal.fire('พบข้อผิดพลาด', 'กรุณาระบุเนื้อหาข่าว (EN)', 'error');
+                    return;
+                }
+
+                if (!editorTH.getContent({
+                        format: 'text'
+                    }).trim()) {
+                    Swal.fire('พบข้อผิดพลาด', 'กรุณาระบุเนื้อหาข่าว (TH)', 'error');
                     return;
                 }
 
                 saveButton.disabled = true;
 
-                editor.uploadImages(function() {
-                    var images = editor.getBody().querySelectorAll('img');
-                    var hasPendingImage = Array.from(images).some(function(image) {
-                        return /^(blob:|data:)/i.test((image.getAttribute('src') || '')
-                            .trim());
-                    });
+                var editors = [editor, editorTH];
 
-                    if (hasPendingImage) {
+                var uploads = editors.map(function(newsEditor) {
+                    return new Promise(function(resolve, reject) {
+                        newsEditor.uploadImages(function(results) {
+                            if (results.some(function(result) {
+                                    return result.status === false;
+                                })) {
+                                reject(new Error('อัปโหลดรูปไม่สำเร็จ'));
+                                return;
+                            }
+
+                            resolve();
+                        });
+                    });
+                });
+
+                Promise.all(uploads)
+                    .then(function() {
+                        var hasPendingImage = editors.some(function(newsEditor) {
+                            var images = newsEditor.getBody().querySelectorAll('img');
+
+                            return Array.from(images).some(function(image) {
+                                return /^(blob:|data:)/i.test((image.getAttribute(
+                                    'src') || '').trim());
+                            });
+                        });
+
+                        if (hasPendingImage) {
+                            throw new Error('ยังมีรูปที่อัปโหลดไม่สำเร็จ');
+                        }
+
+                        editor.save();
+                        editorTH.save();
+                        form.submit();
+                    })
+                    .catch(function() {
                         saveButton.disabled = false;
                         Swal.fire(
                             'พบข้อผิดพลาด',
-                            'ยังมีรูปที่อัปโหลดไม่สำเร็จ กรุณาอัปโหลดใหม่หรือนำรูปนั้นออกก่อนบันทึก',
+                            'กรุณาอัปโหลดรูปใหม่หรือนำรูปที่อัปโหลดไม่สำเร็จออกก่อนบันทึก',
                             'error'
                         );
-                        return;
-                    }
-
-                    editor.save(); // คัด HTML กลับลง textarea name="content"
-                    form.submit(); // ส่งฟอร์มจริงโดยไม่เข้าตัวจัดการ submit ซ้ำ
-                });
+                    });
             });
         });
     </script>
