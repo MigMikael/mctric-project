@@ -34,22 +34,43 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>First Name <span class="required">*</span></label>
+                                        <label>First Name (EN)<span class="required">*</span></label>
                                         <input type="text" class="form-control" name="first_name" id="first_name"
                                             value="" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Last Name <span class="required">*</span></label>
+                                        <label>First Name (TH)<span class="required">*</span></label>
+                                        <input type="text" class="form-control" name="first_name_th" id="first_name_th"
+                                            value="" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Last Name (EN)<span class="required">*</span></label>
                                         <input type="text" class="form-control" name="last_name" id="last_name"
+                                            value="" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Last Name (TH)<span class="required">*</span></label>
+                                        <input type="text" class="form-control" name="last_name_th" id="last_name_th"
                                             value="" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Job Title <span class="required">*</span></label>
+                                        <label>Job Title (EN)<span class="required">*</span></label>
                                         <input type="text" class="form-control" name="job_title" id="job_title"
+                                            value="" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label>Job Title (TH)<span class="required">*</span></label>
+                                        <input type="text" class="form-control" name="job_title_th" id="job_title_th"
                                             value="" required>
                                     </div>
                                 </div>
@@ -256,17 +277,29 @@
                 var last_name = $("#last_name").val();
                 var job_title = $("#job_title").val();
 
+                var first_name_th = $("#first_name_th").val();
+                var last_name_th = $("#last_name_th").val();
+                var job_title_th = $("#job_title_th").val();
+
                 if (first_name === null || first_name === '') {
                     isOk = false;
-                    messageError = "กรุณาระบุ ชื่อ";
+                    messageError = "กรุณาระบุ ชื่อ (EN)";
                 } else if (last_name === null || last_name === '') {
                     isOk = false;
-                    messageError = "กรุณาระบุ นามสกุล"
+                    messageError = "กรุณาระบุ นามสกุล (EN)"
                 } else if (job_title === null || job_title === '') {
                     isOk = false;
-                    messageError = "กรุณาระบุ ตำแหน่ง"
-                }
-                else if (!croppedImageInput.value.trim()) {
+                    messageError = "กรุณาระบุ ตำแหน่ง (EN)"
+                } else if (first_name_th === null || first_name_th === '') {
+                    isOk = false;
+                    messageError = "กรุณาระบุ ชื่อ (TH)";
+                } else if (last_name_th === null || last_name_th === '') {
+                    isOk = false;
+                    messageError = "กรุณาระบุ นามสกุล (TH)"
+                } else if (job_title_th === null || job_title_th === '') {
+                    isOk = false;
+                    messageError = "กรุณาระบุ ตำแหน่ง (TH)"
+                } else if (!croppedImageInput.value.trim()) {
                     isOk = false;
                     messageError = 'กรุณาอัปโหลดรูปโปรไฟล์';
                 }

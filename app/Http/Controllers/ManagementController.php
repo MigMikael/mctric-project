@@ -127,6 +127,9 @@ class ManagementController extends Controller
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'job_title' => 'required|string|max:255',
+            'first_name_th' => 'required|string|max:255',
+            'last_name_th' => 'required|string|max:255',
+            'job_title_th' => 'required|string|max:255',
             'display' => 'required|boolean',
             'cropped_image' => 'required|string',
         ], [
@@ -170,6 +173,9 @@ class ManagementController extends Controller
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'job_title' => 'required|string|max:255',
+            'first_name_th' => 'required|string|max:255',
+            'last_name_th' => 'required|string|max:255',
+            'job_title_th' => 'required|string|max:255',
             'display' => 'required|boolean',
             'cropped_image' => 'nullable|string',
         ]);

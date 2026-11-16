@@ -86,17 +86,30 @@
             </h2>
             <div class="row justify-content-center">
                 @foreach ($managements as $management)
+                    @php
+                        $useManagementThai =
+                            app()->getLocale() === 'th' &&
+                            filled($management->first_name_th) &&
+                            filled($management->last_name_th) &&
+                            filled($management->job_title_th);
+
+                        $managementFirstName = $useManagementThai
+                            ? $management->first_name_th
+                            : $management->first_name;
+                        $managementLastName = $useManagementThai ? $management->last_name_th : $management->last_name;
+                        $managementJobTitle = $useManagementThai ? $management->job_title_th : $management->job_title;
+                    @endphp
                     <div class="col-6 col-md-4 col-lg-3 mb-4">
-                        <div class="text-center">
+                        <div class="text-center mb-3">
                             @if ($management->image_id)
                                 <img class="img-fluid rounded mb-3" src="{{ url('image/show/' . $management->image_id) }}"
-                                    alt="{{ $management->first_name }} {{ $management->last_name }}" width="600"
+                                    alt="{{ $managementFirstName }} {{ $managementLastName }}" width="600"
                                     height="600" loading="lazy" style="width: 100%; max-width: 240px; height: auto;">
                             @endif
-                            <h3 class="h5 mb-1">
-                                {{ $management->first_name }} {{ $management->last_name }}
-                            </h3>
-                            <p class="text-muted mb-0">{{ $management->job_title }}</p>
+                            <h5 class="mb-1">
+                                {{ $managementFirstName }} {{ $managementLastName }}
+                            </h5>
+                            <p class="text-muted mb-0">{{ $managementJobTitle }}</p>
                         </div>
                     </div>
                 @endforeach
@@ -186,5 +199,5 @@
             </div>
         </div>
     </section>
-    -->
+-->
 @endsection

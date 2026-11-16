@@ -10,8 +10,11 @@ class Management extends Model
     protected $table = 'managements';
     protected $fillable = [
         'first_name',
+        'first_name_th',
         'last_name',
+        'last_name_th',
         'job_title',
+        'job_title_th',
         'priority',
         'display',
         'image_id'
