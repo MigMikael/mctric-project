@@ -22,7 +22,7 @@ return [
 
         'mainMenu' => 'Main Menu',
 
-        'noNews' => 'No News.',
+        'noNews' => 'No News',
         'viewMore' => 'View More',
         'mctricCompanyName' => 'McTRIC Public Company Limited',
     ],
